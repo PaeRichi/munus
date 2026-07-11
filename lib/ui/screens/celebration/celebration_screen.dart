@@ -43,11 +43,6 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
     super.dispose();
   }
 
-  /// Arma la lista de bloques a mostrar. Cuando un título de sección está
-  /// seguido, sin nada en el medio, por un bloque que tiene opciones, los
-  /// combina en una sola línea: título a la izquierda, botón "Elegir
-  /// fórmula" a la derecha. En cualquier otro caso, cada bloque se muestra
-  /// como siempre, con su propio botón (si tiene opciones) arriba del texto.
   List<Widget> _buildElementWidgets(
     List<LiturgicalElement> elements,
     Map<String, String> preferences,
@@ -76,7 +71,7 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
         addSpacer();
         widgets.add(_TitleWithOptionsButton(
           titleElement: el,
-          optionsElement: next,
+          optionsElement: next!,
           preferences: preferences,
           fontSize: fontSize,
           onOptionSelected: handleSelected,
@@ -157,15 +152,9 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
   onPressed: () async {
     final service = ref.read(assemblyUrlServiceProvider);
     final prefsService = ref.read(celebrationPreferencesServiceProvider);
-    final celebrationId = widget.celebrationMeta['id'] ?? '';
     final preferences = await prefsService.getPreferences(celebrationId);
-    final celebration = await ref
-        .read(celebrationRepositoryProvider)
-        .getCelebration(
-          assetPath: widget.celebrationMeta['assetPath']!,
-          categoryId: widget.categoryId,
-        );
-    final url = service.generateUrl(celebration, preferences);
+    final assetPath = widget.celebrationMeta['assetPath']!;
+    final url = service.generateUrl(assetPath, preferences);
     if (context.mounted) {
       context.push('/qr', extra: {
         'url': url,
@@ -242,9 +231,6 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
   }
 }
 
-/// Fila combinada: título de sección a la izquierda, botón "Elegir
-/// fórmula" a la derecha, para cuando el bloque con opciones está
-/// pegado justo debajo de un título.
 class _TitleWithOptionsButton extends StatelessWidget {
   final LiturgicalElement titleElement;
   final LiturgicalElement optionsElement;
