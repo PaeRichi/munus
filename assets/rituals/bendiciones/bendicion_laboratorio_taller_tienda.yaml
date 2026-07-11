@@ -1,0 +1,312 @@
+id: bendicion_laboratorio_taller_tienda
+
+metadata:
+  titulo: "Bendición de un laboratorio, un taller o una tienda de comercio"
+  tipo: bendicion
+  libro: "Bendicional"
+  parte: "Segunda"
+  capitulo: "XVI"
+  numeros:
+    inicio: 665
+    fin: 683
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+
+praenotanda: |
+  665. El hombre, con el trabajo asiduo de sus manos, y el desempeño de su cometido, cuida incesantemente de la creación. Por otra parte, «el progreso de las técnicas de producción y la mejor organización del comercio y de los servicios han convertido la economía en un instrumento capaz de satisfacer las nuevas necesidades de la familia humana que no dejan de acrecentarse». Existe, pues, motivo más que suficiente para bendecir aquellos lugares donde el hombre trabaja con empeño en beneficio propio y en provecho de sus semejantes.
+
+  666. Esta celebración mira no sólo a la comunidad en cuyo beneficio se construyen los nuevos laboratorios, talleres y tiendas de comercio, sino también a los que en ellos trabajan. De ahí que en la celebración de la bendición se requiera la presencia de la comunidad o, por lo menos, de algunos de sus representantes, como también de los que de un modo u otro trabajarán en los diversos menesteres.
+
+  667. Este rito puede utilizarlo el sacerdote o el diácono, los cuales, respetando su estructura y los elementos principales de que consta, adaptarán la celebración a las circunstancias concretas del lugar y de las personas.
+
+  668. En aquellas regiones donde cada año, durante el tiempo pascual o en cualquier otro tiempo, parece oportuno impartir también la bendición en dichos locales, se preparará una adecuada celebración, empleando de manera conveniente los principales elementos que se indican en esta Bendición.
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: rubrica_669
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "669. Reunida la comunidad en el lugar adecuado, después de un canto conveniente el celebrante dice:"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_669
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_670
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "670. Luego el celebrante saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante_670
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Dios, que dio al hombre el mando sobre las obras de sus manos, esté con todos vosotros."
+
+  - id: rubrica_otras_palabras_670
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "U otras palabras adecuadas, tomadas preferentemente de la Sagrada Escritura."
+
+  - id: rubrica_todos_responden_670
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos responden:"
+
+  - id: respuesta_y_con_tu_espiritu_670
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_otro_modo_670
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "O de otro modo adecuado."
+
+  - id: rubrica_671
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "671. El celebrante dispone a los presentes a recibir la bendición, con estas palabras u otras semejantes:"
+
+  - id: monicion_671
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Jesucristo puso de manifiesto la gran dignidad del trabajo cuando Él mismo, la Palabra del Padre hecha carne, quiso ser llamado hijo del carpintero y trabajar humildemente con sus propias manos. Así alejó la antigua maldición del pecado y convirtió el trabajo humano en fuente de bendición. En efecto, el hombre, realizando fielmente su trabajo y todo lo que se refiere al progreso temporal y ofreciéndolo humildemente a Dios, se purifica a sí mismo, desarrolla con su inteligencia y habilidad la obra de la creación, ejercita la caridad, se hace capaz de ayudar a los que son más pobres que él y, asociándose a Cristo Redentor, se perfecciona en el amor a Él. Bendigamos, pues, a Dios y pidámosle que derrame su bendición sobre todos los que desempeñen sus tareas en este lugar."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: rubrica_672
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "672. Luego el lector, uno de los presentes o el mismo celebrante, lee un texto de la Sagrada Escritura."
+
+  - id: lectura_gn_1_27_31
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    referencia: "Gn 1, 27-31a"
+    encabezado: "Escuchad ahora, hermanos, las palabras del libro del Génesis. «Llenad la tierra y sometedla»."
+    texto: |
+      Creó Dios al hombre a su imagen; a imagen de Dios lo creó; hombre y mujer los creó. Y los bendijo Dios y les dijo: «Creced, multiplicaos, llenad la tierra y sometedla; dominad los peces del mar, las aves del cielo, los vivientes que se mueven sobre la tierra». Y dijo Dios: «Mirad, os entrego todas las hierbas que engendran semilla sobre la faz de la tierra; y todos los árboles frutales que engendran semilla os servirán de alimento; y a todas las fieras de la tierra, a todas las aves del cielo, a todos los reptiles de la tierra, a todo ser que respira, la hierba verde les servirá de alimento». Y así fue. Y vio Dios todo lo que había hecho; y era muy bueno.
+    opciones:
+      - id: opcion_mc_6_1_3
+        referencia: "Mc 6, 1-3"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Marcos. «¿No es éste el carpintero, el hijo de María?»."
+        texto: |
+          En aquel tiempo, se marchó Jesús de allí y fue a su pueblo en compañía de sus discípulos. Cuando llegó el sábado, empezó a enseñar en la sinagoga; la multitud que lo oía se preguntaba asombrada: «¿De dónde saca todo eso? ¿Qué sabiduría es ésa que le han enseñado? ¿Y esos milagros de sus manos? ¿No es éste el carpintero, el hijo de María, hermano de Santiago y José y Judas y Simón? Y sus hermanas ¿no viven con nosotros aquí?». Y esto les resultaba escandaloso.
+      - id: opcion_si_38_24_34
+        referencia: "Si 38, 24-34"
+      - id: opcion_1ts_4_9_12
+        referencia: "1 Ts 4, 9-12"
+      - id: opcion_2ts_3_6_13
+        referencia: "2 Ts 3, 6-13"
+      - id: opcion_mt_6_25_34
+        referencia: "Mt 6, 25-34"
+      - id: opcion_mt_25_14_29
+        referencia: "Mt 25, 14-29"
+      - id: opcion_lc_16_9_12
+        referencia: "Lc 16, 9-12"
+
+  - id: respuesta_palabra_de_dios
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Palabra de Dios."
+
+  - id: rubrica_675_salmo
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "675. Según las circunstancias, se puede decir o cantar un salmo responsorial u otro canto adecuado."
+
+  - id: salmo_89_90
+    tipo: salmo
+    actor: lector
+    obligatorio: false
+    referencia: "Sal 89 (90), 2. 3-4. 12-13. 14 y 16 (R.: cf. 17)"
+    estribillo: "Haz prósperas, Señor, las obras de nuestras manos."
+    estrofas:
+      - "Antes que naciesen los montes o fuera engendrado el orbe de la tierra, desde siempre y por siempre tú eres Dios."
+      - "Tú reduces el hombre a polvo, diciendo: «Retornad, hijos de Adán». Mil años en tu presencia son un ayer que pasó; una vela nocturna."
+      - "Enséñanos a calcular nuestros años, para que adquiramos un corazón sensato. Vuélvete, Señor, ¿hasta cuándo? Ten compasión de tus siervos."
+      - "Por la mañana sácianos de tu misericordia, y toda nuestra vida será alegría y júbilo. Que tus siervos vean tu acción, y sus hijos tu gloria."
+    opciones:
+      - id: salmo_103_104
+        referencia: "Sal 103 (104), 1ab y 5. 14-15. 23-24"
+        estribillo: "Gloria a Dios para siempre, goce el Señor con sus obras."
+
+  - id: rubrica_677_exhortacion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "677. El celebrante, según las circunstancias, exhorta brevemente a los presentes, explicándoles la lectura bíblica, para que perciban por la fe el significado de la celebración."
+
+  - id: rubrica_titulo_preces
+    tipo: titulo
+    actor: celebrante
+    obligatorio: false
+    texto: "Preces"
+
+  - id: rubrica_678_preces_intro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "678. Si se estima oportuno, antes de la oración de bendición puede hacerse la plegaria común. Entre las invocaciones que aquí se proponen, el celebrante puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las circunstancias del momento."
+
+  - id: preces_obras_de_nuestras_manos
+    tipo: preces
+    actor: celebrante
+    obligatorio: false
+    invitacion: "Dios, nuestro Señor, que creó el mundo y lo llenó de maravillas como signo de su poder, santificó también en sus orígenes el trabajo del hombre, para que éste, sometiéndose humildemente a la bondad del Creador, se dedicara con perseverancia a perfeccionar de día en día la obra de la creación. Roguémosle, pues, diciendo:"
+    respuesta_fija: "Guía, Señor, las obras de nuestras manos."
+    invocaciones:
+      - invocacion: "Bendito seas, Señor, que nos has dado la ley del trabajo, para que, con nuestra inteligencia y nuestros brazos, nos dediquemos con empeño a perfeccionar las cosas creadas."
+        respuesta: "Guía, Señor, las obras de nuestras manos."
+      - invocacion: "Bendito seas, Señor, que quisiste que tu Hijo, hecho hombre por nosotros, trabajara como humilde artesano."
+        respuesta: "Guía, Señor, las obras de nuestras manos."
+      - invocacion: "Bendito seas, Señor, que has hecho que en Cristo nos fuera llevadero el yugo y ligera la carga de nuestro trabajo."
+        respuesta: "Guía, Señor, las obras de nuestras manos."
+      - invocacion: "Bendito seas, Señor, que en tu providencia nos exiges que procuremos hacer nuestro trabajo con la máxima perfección."
+        respuesta: "Guía, Señor, las obras de nuestras manos."
+      - invocacion: "Bendito seas, Señor, que te dignas aceptar nuestro trabajo como una ofrenda y como una penitencia saludable, motivo de alegría para los hermanos y ocasión de prestar ayuda a los pobres."
+        respuesta: "Guía, Señor, las obras de nuestras manos."
+      - invocacion: "Bendito seas, Señor, que elevas a la sublime dignidad de la Eucaristía el pan y el vino, fruto de nuestro trabajo."
+        respuesta: "Guía, Señor, las obras de nuestras manos."
+
+  - id: rubrica_679_sin_preces
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "679. Cuando no se dicen las preces, antes de la oración de bendición, el celebrante invita a todos a orar, para que imploren la ayuda divina, diciendo:"
+
+  - id: invitacion_oremos_679
+    tipo: monicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Oremos."
+
+  - id: rubrica_silencio_679
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Y, según las circunstancias, todos oran durante algún tiempo en silencio."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: rubrica_680
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "680. El celebrante, con las manos extendidas, dice la oración de bendición correspondiente al tipo de local:"
+
+  - id: bendicion_lugar_de_trabajo
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    opciones:
+      - id: formula_laboratorio
+        encabezado: "a) Bendición de un laboratorio"
+        texto: "Oh, Dios, que en el designio de tu providencia, aceptas bondadosamente perfeccionar con tus bendiciones todas las actividades de los hombres, tanto las corporales como las intelectuales, te pedimos que todos los que en este lugar traten, con sus experimentos, de estudiar los males y hallar los remedios, puedan, con tu ayuda, determinar con precisión lo que investiguen y realizar con éxito el fruto de su estudio. Por Jesucristo, nuestro Señor."
+      - id: formula_taller
+        encabezado: "b) Bendición de un taller"
+        texto: "Oh, Dios, tu Hijo, con el trabajo de sus manos, elevó la dignidad del trabajo humano y nos concedió el don inestimable de colaborar con nuestro trabajo a su obra redentora; concede a tus fieles la bendición que esperan de ti, para que, dedicándose a transformar con habilidad las cosas que tú has creado, reconozcan su dignidad y se alegren de aliviar con su esfuerzo las necesidades de la familia humana, para alabanza de tu gloria. Por Jesucristo, nuestro Señor."
+      - id: formula_tienda_comercio
+        encabezado: "c) Bendición de una tienda de comercio"
+        texto: "Dios, Padre providentísimo, que pusiste en manos del hombre la tierra y sus productos para que contribuyera con su trabajo a que los bienes creados alcancen a todos, bendice a los que usen este local y haz que, observando en sus compras y ventas la justicia y la caridad, puedan alegrarse de contribuir al bien común y al progreso de la comunidad humana. Por Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion_bendicion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_681_aspersion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "681. Después de la oración de bendición, el celebrante rocía con agua bendita a los presentes y el local, mientras se interpreta un canto adecuado."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_682
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "682. El celebrante concluye el rito, diciendo, con las manos extendidas sobre los presentes:"
+
+  - id: conclusion_mirada_bondadosa
+    tipo: conclusion
+    actor: celebrante
+    obligatorio: true
+    texto: "Dios, Padre de bondad, que nos ha mandado ayudarnos en todo como verdaderos hermanos, dirija su mirada bondadosa sobre vosotros y sobre todos los que entren aquí."
+
+  - id: respuesta_amen_conclusion_682a
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_682_luego_dice
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Luego dice:"
+
+  - id: bendicion_final_trinitaria
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y a todos vosotros, que estáis aquí presentes, os bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+
+  - id: respuesta_amen_conclusion_682b
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_683_canto
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "683. Es aconsejable terminar el rito con un canto adecuado."

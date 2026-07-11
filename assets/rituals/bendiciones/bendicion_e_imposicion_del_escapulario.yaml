@@ -1,0 +1,271 @@
+id: bendicion_e_imposicion_del_escapulario
+
+metadata:
+  titulo: "Bendición e imposición del escapulario"
+  tipo: bendicion
+  libro: "Bendicional"
+  parte: "Cuarta"
+  capitulo: "XLV"
+  numeros:
+    inicio: 1394
+    fin: 1410
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+
+praenotanda: |
+  1394. La bendición e imposición del escapulario debe hacerse, siempre que sea posible, dentro de una celebración comunitaria. Cuando se trata de una imposición del escapulario por la que los fieles son admitidos a la cofradía de algún Instituto religioso, tal admisión debe hacerla un miembro o un ministro debidamente delegado por la autoridad competente del mismo Instituto.
+
+  1395. Para la bendición e imposición, hay que emplear un escapulario de la forma y materia determinadas por la cofradía o asociación de que se trata; posteriormente, puede substituirse por una medalla bendita.
+
+  1396. Para el ingreso en una cofradía en la cual uno se hace partícipe espiritualmente de algún Instituto religioso, hay que tener en cuenta las normas peculiares determinadas por cada Instituto y observarlas íntegramente.
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: rubrica_1397
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1397. Reunido el pueblo, o por lo menos los miembros de la cofradía, el celebrante se dirige hacia ellos, mientras se canta oportunamente algún himno relacionado con la celebración. Terminado el canto, el celebrante dice:"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_1397
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_1398
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1398. Luego el celebrante saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante_1398
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "La gracia y la paz de Dios, nuestro Padre, de Quien, por el Hijo nacido de la Virgen, procede todo bien, estén con todos vosotros."
+
+  - id: rubrica_otras_palabras_1398
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "U otras palabras adecuadas, tomadas preferentemente de la Sagrada Escritura."
+
+  - id: rubrica_todos_responden_1398
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos responden:"
+
+  - id: respuesta_y_con_tu_espiritu
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_otro_modo_1398
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "O de otro modo adecuado."
+
+  - id: rubrica_1399
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1399. El celebrante dispone a los presentes para la celebración del rito, con estas palabras u otras semejantes:"
+
+  - id: monicion_1399
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Dios se vale de unos signos humildes para manifestar su gran misericordia para con nosotros. También el hombre adopta estos signos tan humildes para expresar sus sentimientos de gratitud, para mostrar su voluntad de servir a Dios y su propósito de ser siempre fiel a su consagración bautismal. Este escapulario, que es considerado como un signo de ingreso en la confraternidad con la Orden religiosa de N., aprobada por la Iglesia, expresa una voluntad definida de participar del espíritu de dicha Orden. Esto equivale a renovar el propósito bautismal de revestirnos de Cristo, con la ayuda de la Virgen María, que desea en gran manera que seamos imitadores de Cristo, para alabanza de la Santísima Trinidad, hasta que, vestidos con el traje de bodas, seamos introducidos en la patria celestial."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: rubrica_1400
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1400. Luego, el lector, uno de los presentes o el mismo celebrante, lee un texto de la Sagrada Escritura, seleccionado principalmente entre los que en el Leccionario tratan de la Santísima Trinidad, de los Misterios del Señor o de Santa María Virgen. Puede escogerse algún texto que tenga relación con el espíritu del Instituto religioso al que está adherida la cofradía."
+
+  - id: lectura_2co_4_13_5_10
+    tipo: lectura
+    actor: lector
+    obligatorio: false
+    referencia: "2 Co 4, 13—5, 10"
+    encabezado: "Escuchad ahora, hermanos, las palabras del apóstol san Pablo a los Corintios. 2 Co 4, 13—5, 10: No querríamos desnudarnos del cuerpo, sino ponernos encima el otro"
+    texto: |
+      Teniendo el mismo espíritu de fe, según lo que está escrito:
+
+      «Creí; por eso hablé», también nosotros creemos y por eso hablamos; sabiendo que quien resucitó al Señor Jesús también con Jesús nos resucitará y nos hará estar con vosotros. Todo es para vuestro bien. Cuantos más reciban la gracia, mayor será el agradecimiento, para gloria de Dios. Por eso, no nos desanimamos. Aunque nuestro hombre exterior se vaya deshaciendo, nuestro interior se renueva día a día. Y una tribulación pasajera y liviana produce un inmenso e incalculable tesoro de gloria. No nos fijamos en lo que se ve, sino en lo que no se ve. Lo que se ve es transitorio; lo que no se ve es eterno.
+
+      Es cosa que ya sabemos: Si se destruye este nuestro tabernáculo terreno, tenemos un sólido edificio construido por Dios, una casa que no ha sido levantada por mano de hombre y que tiene una duración eterna en los cielos; y, de hecho, por eso suspiramos, por el anhelo de vestirnos encima la morada que viene del cielo, suponiendo que nos encuentre aún vestidos, no desnudos. Los que vivimos en tiendas suspiramos bajo ese peso, porque no querríamos desnudarnos del cuerpo, sino ponernos encima el otro, y que lo mortal quedara absorbido por la vida. Dios mismo nos creó para eso y como garantía nos dio el Espíritu. En consecuencia, siempre tenemos confianza, aunque sabemos que, mientras sea el cuerpo nuestro domicilio, estamos desterrados lejos del Señor. Caminamos sin verlo, guiados por la fe. Y es tal nuestra confianza, que preferimos desterrarnos del cuerpo y vivir junto al Señor. Por lo cual, en destierro o en patria, nos esforzamos en agradarle. Porque todos tendremos que comparecer ante el tribunal de Cristo para recibir premio o castigo por lo que hayamos hecho mientras teníamos este cuerpo.
+
+  - id: respuesta_palabra_de_dios
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Palabra de Dios."
+
+  - id: rubrica_1402
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1402. El celebrante hace la homilía, en la cual explica a los presentes el significado de la celebración."
+
+  - id: rubrica_titulo_preces
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Preces"
+
+  - id: rubrica_1403
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1403. Sigue la plegaria común. Entre las intercesiones que aquí se proponen, el celebrante puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las peculiaridades de los fieles o las circunstancias del momento."
+
+  - id: preces_escapulario
+    tipo: preces
+    actor: celebrante
+    obligatorio: true
+    invitacion: "Apoyados en la intercesión de María, que entretejió la vestidura de nuestra condición mortal para el Verbo, encarnado por nosotros en ella por obra del Espíritu Santo, para que nosotros pudiéramos participar de la gracia del que es nuestro Hermano primogénito y vivir la alabanza de Dios, invoquemos al Padre, diciendo:"
+    respuesta_fija: "Concédenos, Señor, que nos vistamos de Cristo."
+    invocaciones:
+      - invocacion: "Tú que dispusiste que tu Hijo amado se vistiera de nuestra carne, para que, por medio de él, los hombres participaran en Cristo de tu vida, —haz que nos llamemos y seamos siempre hijos tuyos."
+        respuesta: "Concédenos, Señor, que nos vistamos de Cristo."
+      - invocacion: "Tú que quisiste que Cristo fuera en todo como nosotros, menos en el pecado, para que, siguiéndolo, seamos imagen de tu Hijo, —concédenos imitar de tal manera a Cristo que te agrademos en todo."
+        respuesta: "Concédenos, Señor, que nos vistamos de Cristo."
+      - invocacion: "Tú que llamas a los hombres al banquete de la gracia, cubiertos con la vestidura nupcial de tu reino, con el fin de revelarles tu gloria, —enséñanos a servirte con fidelidad."
+        respuesta: "Concédenos, Señor, que nos vistamos de Cristo."
+      - invocacion: "Tú que por boca del Apóstol nos exhortas a ser en el mundo la fragancia de Cristo, —haz que reconozcamos en los hermanos el signo de la presencia de Cristo."
+        respuesta: "Concédenos, Señor, que nos vistamos de Cristo."
+      - invocacion: "Tú que nos embelleces con la vestidura de la santidad y la justicia, para que vivamos para ti en el Espíritu Santo, mostrando así la santidad de la Iglesia, —haz que nuestra santidad vaya siempre en aumento, para que cooperemos generosamente en la salvación de nuestros hermanos."
+        respuesta: "Concédenos, Señor, que nos vistamos de Cristo."
+      - invocacion: "Tú que en la persona de Cristo no dejas de bendecirnos con toda clase de bienes espirituales, hasta el momento en que, vestidos con el ropaje nupcial, salgamos a su encuentro, —haz que, por la intercesión de la Virgen María, pasemos felizmente de la muerte a la vida."
+        respuesta: "Concédenos, Señor, que nos vistamos de Cristo."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: rubrica_1404
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "1404. El celebrante, con las manos extendidas, añade:"
+
+  - id: oracion_bendicion_escapulario
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oh, Dios, inicio y complemento de nuestra santidad, que llamas a la plenitud de la vida cristiana y a la perfección de la caridad a los que han renacido del agua y del Espíritu Santo, mira con bondad a estos servidores tuyos, que reciben con devoción este escapulario para alabanza de la Santísima Trinidad (en honor de la Pasión de Cristo/en honor de Santa María Virgen), y haz que sean imagen de Cristo, tu Hijo, y así, terminado felizmente su paso por esta vida, con la ayuda de la Virgen Madre de Dios, sean admitidos al gozo de tu mansión. Por Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_imposicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Imposición del escapulario"
+
+  - id: rubrica_1405
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "1405. Luego, el celebrante impone el escapulario a los candidatos, diciendo las siguientes palabras u otras semejantes del Ritual propio."
+
+  - id: imposicion_escapulario
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Recibe este hábito, por el cual quedas admitido en la cofradía de la Familia religiosa de N. dedicada a Santa María Virgen, y compórtate de tal manera que, con la ayuda de la Santísima Virgen, para gloria de la Santísima Trinidad y para el bien de la Iglesia y de los hombres, te esfuerces cada día más en vestirte de Cristo y hacer que su vida se manifieste en la tuya."
+
+  - id: respuesta_amen_imposicion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_1406_1407
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "1406. Según las circunstancias, el celebrante pronuncia en voz alta la fórmula de imposición una sola vez para todos. Todos a la vez responden: Amén, y se acercan al celebrante para recibir el escapulario. 1407. El celebrante, vuelto hacia los nuevos cofrades, les dice:"
+
+  - id: admision_cofradia
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Por la bendición de este escapulario, habéis sido admitidos en la Familia religiosa de N, para que podáis servir con mayor dedicación a Cristo y a su Iglesia, dentro del espíritu de la misma Orden. Para que lo consigáis con más perfección, yo, con la potestad que se me ha concedido, os admito a la participación de todos los bienes espirituales de esta Familia religiosa."
+
+  - id: rubrica_1408
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "1408. El celebrante, después de haberlos instruido sobre los deberes y obligaciones de la cofradía, los rocía a todos con agua bendita, sin decir nada."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_1409
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1409. El celebrante concluye el rito, diciendo:"
+
+  - id: bendicion_final
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "El Dios todopoderoso os bendiga con su misericordia y os llene de la sabiduría eterna.\nR. Amén.\nÉl aumente en vosotros la fe y os dé la perseverancia en el bien obrar.\nR. Amén.\nAtraiga hacia sí vuestros pasos y os muestre el camino del amor y de la paz.\nR. Amén.\nY la bendición de Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo, descienda sobre vosotros."
+
+  - id: respuesta_amen_bendicion_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_otra_bendicion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "U otra fórmula de bendición, relacionada con el título del escapulario."
+
+  - id: rubrica_canto_final
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1410. Es aconsejable terminar el rito con un canto adecuado."

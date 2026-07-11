@@ -1,0 +1,119 @@
+id: bendicion_medalla_san_benito
+
+metadata:
+  titulo: "Bendición de la Medalla de San Benito"
+  tipo: bendicion
+  libro: "Tradición benedictina"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  fuente: "Abadía de Santa Escolástica, santaescolastica.com.ar"
+  advertencia: "La fuente no es un libro litúrgico oficial verificado. Texto circulante en la tradición benedictina, autorizado para cualquier sacerdote por instrucción de la Iglesia de Roma del 26 de septiembre de 1964."
+  ministros: [sacerdote]
+  idioma: es
+  version: 1
+
+contenido:
+  - id: rubrica_titulo_exorcismo
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Exorcismo"
+
+  - id: versiculo_nuestra_ayuda
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Nuestra ayuda nos viene del Señor."
+
+  - id: respuesta_nuestra_ayuda
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Que hizo el cielo y la tierra."
+
+  - id: versiculo_el_senor_este
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor esté contigo."
+
+  - id: respuesta_y_con_tu_espiritu
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: exorcismo_medalla
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Yo exorcizo esta medalla por Dios Padre ✠ Todopoderoso, que hizo el cielo y la tierra, el mar y todo lo que en ellos se contiene. Que todo el poder del enemigo, todas las fuerzas y asaltos del demonio, toda tentación diabólica, sean destruidos y expulsados de esta medalla. Que aquellos que la usen gocen de salud del alma y del cuerpo. En nombre de Dios Padre omnipotente y de Jesucristo, su Hijo y Señor nuestro y del Espíritu Santo paráclito y en el amor del mismo nuestro Señor Jesucristo, que ha de venir a juzgar a los vivos y a los muertos por medio del fuego."
+
+  - id: respuesta_amen_exorcismo
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Bendición"
+
+  - id: versiculo_senor_escucha
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Señor, escucha mi oración."
+
+  - id: respuesta_llegue_a_ti
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y llegue a ti mi clamor."
+
+  - id: versiculo_el_senor_este_2
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor esté contigo."
+
+  - id: respuesta_y_con_tu_espiritu_2
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_oracion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración"
+
+  - id: invitacion_oremos
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oremos."
+
+  - id: oracion_bendicion_medalla
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Dios Todopoderoso, dispensador de todos los bienes, te suplicamos que, por la intercesión de san Benito, bendigas esta medalla a fin de que el que la use y practique buenas obras, merezca obtener la salud del alma y del cuerpo, la gracia de santificarse y las indulgencias que nos son concedidas. Que pueda, con el auxilio de tu misericordia, rechazar todas las acechanzas y engaños del demonio y presentarse, un día, santo e inmaculado ante tu presencia."
+
+  - id: respuesta_amen_oracion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_aspersion_final
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Seguidamente, el oficiante rocía la medalla con agua bendita."

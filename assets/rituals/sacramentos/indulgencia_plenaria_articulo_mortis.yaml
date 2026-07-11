@@ -1,0 +1,39 @@
+id: indulgencia_plenaria_articulo_mortis
+
+metadata:
+  titulo: "PRUEBA"
+  tipo: bendicion
+  libro: "Ritual para la atención pastoral de los enfermos"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  fuente: "Conferencia Episcopal de los Estados Unidos (USCCB)"
+  advertencia: "Ritual particular de la Conferencia Episcopal de los Estados Unidos, no el Ritual Romano universal."
+  ministros: [sacerdote]
+  idioma: es
+  version: 1
+
+contenido:
+  - id: rubrica_introduccion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Al concluir el sacramento de la penitencia o el rito penitencial, el sacerdote puede dar el perdón apostólico para los moribundos, utilizando uno de los siguientes:"
+
+  - id: perdon_apostolico
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    opciones:
+      - id: formula_misericordia
+        texto: "Por los santos misterios de nuestra redención, que Dios Todopoderoso os libere de todo castigo en esta vida y en la venidera. Que os abra las puertas del paraíso y os dé la bienvenida a la alegría eterna."
+      - id: formula_sede_apostolica
+        texto: "Por la autoridad que me ha conferido la Sede Apostólica, os concedo el perdón completo y la remisión de todos vuestros pecados en el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: respuesta_amen
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."

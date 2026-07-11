@@ -1,0 +1,272 @@
+id: bendicion_objetos_piadosos
+
+metadata:
+  titulo: "Bendición de los objetos destinados a ejercitar la piedad y la devoción"
+  tipo: bendicion
+  libro: "Bendicional"
+  parte: "Cuarta"
+  capitulo: "XLIII"
+  numeros:
+    inicio: 1346
+    fin: 1361
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+  nota: "Se transcribe únicamente el Rito I de la bendición (nn. 1346-1362). Se omiten el Rito breve (nn. 1363-1366) y la fórmula brevísima (n. 1367) como estructuras propias; la oración de bendición del Rito breve (n. 1366) se incorpora como fórmula alternativa de la oración de bendición principal (n. 1360), por tratarse de una variante oficial de la misma acción litúrgica."
+
+praenotanda: |
+  1346. El presente rito debe utilizarse en la bendición de medallas, pequeñas cruces, imágenes religiosas que no se han de exponer en lugares sagrados, escapularios, coronas y objetos similares que se usan para la práctica de ejercicios piadosos.
+
+  1347. Principalmente en los santuarios o lugares de peregrinación que se distinguen por la afluencia de fieles, esta bendición de objetos piadosos suele efectuarse en una celebración común y puede incluirse de modo conveniente en las celebraciones que tienen lugar para los peregrinos.
+
+  1348. Este rito pueden utilizarlo el sacerdote y el diácono, los cuales, respetando su estructura y elementos principales, adaptarán la celebración a las circunstancias del momento y de las personas.
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "I. RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: rubrica_1350
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1350. Reunido el pueblo, el celebrante dice:"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_1350
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_1351
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1351. Luego el celebrante saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante_1351
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "La gracia, la misericordia y la paz del Padre, y del Hijo, y del Espíritu Santo estén con todos vosotros."
+
+  - id: rubrica_otras_palabras_1351
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "U otras palabras adecuadas, tomadas preferentemente de la Sagrada Escritura."
+
+  - id: rubrica_todos_responden_1351
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos responden:"
+
+  - id: respuesta_y_con_tu_espiritu_1351
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_otro_modo_1351
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "O de otro modo adecuado."
+
+  - id: rubrica_1352
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1352. El celebrante dispone a los presentes para la celebración de la bendición, con estas palabras u otras semejantes:"
+
+  - id: monicion_1352
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Los objetos piadosos que habéis traído para bendecir muestran, cada uno a su manera, vuestra fe, ya que sirven para recordar el amor de nuestro Señor, o también para aumentar vuestra confianza en la ayuda de la Santísima Virgen María y de los santos. Al pedir la bendición del Señor sobre estos objetos e imágenes, lo que hemos de procurar ante todo es dar el testimonio de vida cristiana que de nosotros exige el uso de estos objetos."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: rubrica_1353
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1353. Luego el lector, uno de los presentes o el mismo celebrante, lee un texto de la sagrada Escritura, seleccionado principalmente entre los que se proponen a continuación. También pueden emplearse otros textos adecuados al rito."
+
+  - id: lectura_2co_3_4
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    referencia: "2 Co 3, 17b—4, 2"
+    encabezado: "Escuchad ahora, hermanos, las palabras del apóstol san Pablo a los Corintios. «Reflejamos la gloria del Señor y nos vamos transformando en su imagen»."
+    texto: |
+      Donde está el Espíritu del Señor hay libertad. Y nosotros todos, que llevamos la cara descubierta, reflejamos la gloria del Señor y nos vamos transformando en su imagen con resplandor creciente; así es como actúa el Señor, que es Espíritu. Por eso, encargados de este ministerio por misericordia de Dios, no nos acobardamos; al contrario, hemos renunciado a la clandestinidad vergonzante, dejándonos de intrigas y no adulterando la Palabra de Dios; sino que, mostrando nuestra sinceridad, nos recomendamos a la conciencia de todo hombre delante de Dios.
+    opciones:
+      - id: opcion_rm_8_26_31
+        referencia: "Rm 8, 26-31"
+      - id: opcion_1co_13_8_13
+        referencia: "1 Co 13, 8-13"
+      - id: opcion_1co_15_45_50
+        referencia: "1 Co 15, 45-50"
+      - id: opcion_2co_4_1_7
+        referencia: "2 Co 4, 1-7"
+      - id: opcion_ga_1_2
+        referencia: "Ga 1, 1.3-5; 2, 19b-20"
+      - id: opcion_ef_3_14_21
+        referencia: "Ef 3, 14-21"
+      - id: opcion_col_3_14_17
+        referencia: "Col 3, 14-17"
+      - id: opcion_lc_11_5_13
+        referencia: "Lc 11, 5-13"
+      - id: opcion_lc_18_1_8
+        referencia: "Lc 18, 1-8"
+
+  - id: respuesta_palabra_de_dios
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Palabra de Dios."
+
+  - id: rubrica_1355_salmo
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1355. Según las circunstancias, se puede decir o cantar un salmo responsorial u otro canto adecuado."
+
+  - id: salmo_99_100
+    tipo: salmo
+    actor: lector
+    obligatorio: false
+    referencia: "Sal 99 (100), 2. 3. 4. 5 (R.: 5b)"
+    estribillo: "La misericordia del Señor es eterna."
+    estrofas:
+      - "Aclama al Señor, tierra entera, servid al Señor con alegría, entrad en su presencia con vítores."
+      - "Sabed que el Señor es Dios: que él nos hizo y somos suyos, su pueblo y ovejas de su rebaño."
+      - "Entrad por sus puertas con acción de gracias, por sus atrios con himnos, dándole gracias y bendiciendo su nombre."
+      - "«El Señor es bueno, su misericordia es eterna, su fidelidad por todas las edades»."
+    opciones:
+      - id: salmo_122_123
+        referencia: "Sal 122 (123), 1. 2. 3-4"
+        estribillo: "A ti levanto mis ojos, a ti que habitas en el cielo."
+      - id: salmo_138_139
+        referencia: "Sal 138 (139), 1-2. 3-4. 5-6. 7-8. 9-10"
+        estribillo: "Tú, Señor, lo sabes todo."
+      - id: salmo_150
+        referencia: "Sal 150, 1-2. 3-4. 5"
+        estribillo: "Alabad al Señor por sus obras magníficas."
+
+  - id: rubrica_1357_homilia
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1357. Después de la lectura, se hace oportunamente la homilía, en la cual el celebrante explica la lectura y el significado del rito."
+
+  - id: rubrica_1358_preces_intro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1358. Antes de la oración de bendición puede hacerse la plegaria común. Entre las invocaciones que aquí se proponen, el celebrante puede seleccionar las que le parezcan más adecuadas o añadir otras directamente relacionadas con las circunstancias de los presentes o del momento."
+
+  - id: preces_espiritu_piedad
+    tipo: preces
+    actor: celebrante
+    obligatorio: false
+    invitacion: "Nosotros, hermanos, no queremos tener un semblante de piedad, sino que la profesamos de corazón; por esto, invoquemos al Señor, diciendo:"
+    respuesta_fija: "Envíanos, Señor, el espíritu de piedad."
+    invocaciones:
+      - invocacion: "Dios clementísimo, que quieres que recordemos siempre tus maravillas, haz que la visión corporal de estos objetos materiales nos eleve a la contemplación de los signos de tu misericordia."
+        respuesta: "Envíanos, Señor, el espíritu de piedad."
+      - invocacion: "Tú que deseas que te demos culto en espíritu y verdad, concédenos que, con la ayuda de estos objetos y de lo que significan, practiquemos siempre la justicia y la piedad."
+        respuesta: "Envíanos, Señor, el espíritu de piedad."
+      - invocacion: "Tú que, por medio de tu Hijo, nos diste el mandato de orar siempre, haz que, dedicándonos a la oración, podamos llevar una vida con toda piedad y decoro."
+        respuesta: "Envíanos, Señor, el espíritu de piedad."
+      - invocacion: "Tú que, en tu Iglesia, distribuyes de manera admirable diversidad de ayudas para nuestra santidad y piedad, haz que lo que recibimos de manos de la Iglesia lo utilicemos para crecimiento de ella."
+        respuesta: "Envíanos, Señor, el espíritu de piedad."
+
+  - id: rubrica_1359_sin_preces
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1359. Cuando no se dicen las preces, antes de la oración de bendición el celebrante dice:"
+
+  - id: invitacion_oremos_1359
+    tipo: monicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Oremos."
+
+  - id: rubrica_silencio_1359
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Y todos oran durante algún tiempo en silencio. Luego el celebrante dice la oración de bendición."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: rubrica_1360
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "1360. El celebrante, con las manos extendidas, dice:"
+
+  - id: oracion_bendicion_objetos
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Bendito seas, Señor, fuente y origen de toda bendición, que te complaces en la piedad sincera de tus fieles; te pedimos que atiendas a los deseos de tus servidores y les concedas que, llevando consigo estos signos de fe y de piedad, se esfuercen por irse transformando en la imagen de tu Hijo. Que vive y reina por los siglos de los siglos."
+    opciones:
+      - id: oracion_bendicion_rito_breve_1366
+        texto: "El Señor, con su bendición, ✠ se digne aumentar y fortalecer tus sentimientos de devoción y piedad, para que transcurra sin tropiezo tu vida presente y alcances felizmente la eterna. Por Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion_bendicion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_1361
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1361. El celebrante concluye el rito, diciendo:"
+
+  - id: conclusion_rito_objetos
+    tipo: conclusion
+    actor: celebrante
+    obligatorio: true
+    texto: "Dios, que en Cristo nos ha revelado su gloria, haga que vuestra vida sea imagen suya, para que podáis un día gozar de su presencia gloriosa. R. Amén. Y la bendición de Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo, descienda sobre vosotros. R. Amén."
+
+  - id: rubrica_1362_canto
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1362. Es aconsejable terminar el rito con un canto adecuado."

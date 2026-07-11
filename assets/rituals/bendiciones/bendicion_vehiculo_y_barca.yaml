@@ -1,0 +1,316 @@
+id: bendicion_vehiculo_y_barca
+
+metadata:
+  titulo: "Bendición de todo lo relacionado con los desplazamientos humanos — Vehículo y barca"
+  tipo: bendicion
+  libro: "Bendicional"
+  parte: "Segunda"
+  capitulo: "XIX"
+  numeros:
+    inicio: 720
+    fin: 742
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+  nota: "El capítulo XIX del Bendicional ofrece cinco tipos de bendición según el medio (puente/calle/plaza/vía férrea/puerto/aeropuerto, vehículo, avión, barca, nave); aquí se transcriben únicamente vehículo y barca. El capítulo también prevé un ministro laico con fórmulas propias (nn. 728 y 741); siguiendo el principio editorial de la biblioteca, esas ramas se omiten y solo se modelan las fórmulas para sacerdote o diácono. Se omite asimismo el Rito breve (nn. 743-747) como estructura aparte: sus oraciones de bendición para vehículo (n. 745) y barca (n. 746) son literalmente idénticas a las del n. 738 b) y d) aquí incluidas."
+
+praenotanda: |
+  720. La vida humana encuentra una eficaz ayuda en el uso de aquellos medios o instrumentos que sirven para acortar las distancias y hacer posible el encuentro, la unión y la mutua comunicación entre los hombres, y que pueden designarse, de un modo genérico, como medios relacionados con los desplazamientos humanos. Entre estas realidades cabe enumerar, por ejemplo, una calle o carretera, una plaza, un puente, una vía férrea, un puerto, un vehículo cualquiera, una nave y un avión. Puesto que en el uso de dichos medios se aviva y fomenta la conciencia de las mutuas obligaciones, ello nos ofrece una buena ocasión de bendecir a Dios y de orar al mismo tiempo por las personas que los utilizarán en lo sucesivo.
+
+  721. El rito que aquí se ofrece puede utilizarse con motivo del estreno o inauguración de aquellos medios que, de un modo u otro, se relacionan con los viajes o los desplazamientos. No obstante, si en algún lugar es habitual que, en días determinados, la gente acuda a la Iglesia utilizando coches u otros medios de locomoción para implorar la bendición divina, como prenda de la protección de Dios en sus viajes, puede hacerse una bendición especial para este caso, sirviéndose de los elementos de este rito.
+
+  722. La bendición de calles o carreteras, puentes, plazas, vías férreas, atañe a la comunidad en cuyo beneficio se construyen. Por esto se requiere la presencia de la comunidad o, por lo menos, de algunos delegados suyos, que la representen.
+
+  723. Este rito pueden utilizarlo el sacerdote, el diácono y también el laico, con los ritos y fórmulas previstos para él.
+
+  724. Con el fin de acomodar la celebración a las circunstancias del lugar y de las personas, pueden adaptarse algunos de los elementos de este rito, respetando siempre la estructura de la celebración y sus elementos principales.
+
+  725. Cuando se ha de bendecir un solo vehículo, puede emplearse el Rito breve propuesto más adelante, núms. 743-747.
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "I. RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: rubrica_726
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "726. Reunida la comunidad, puede entonarse un canto adecuado, terminado el cual, el ministro dice:"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_726
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_727
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "727. Luego el ministro, si es sacerdote o diácono, saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante_727
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor, que es el camino, y la verdad, y la vida, esté con todos vosotros."
+
+  - id: rubrica_otras_palabras_727
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "U otras palabras adecuadas, tomadas preferentemente de la Sagrada Escritura."
+
+  - id: rubrica_todos_responden_727
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos responden:"
+
+  - id: respuesta_y_con_tu_espiritu_727
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_otro_modo_727
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "O de otro modo adecuado."
+
+  - id: rubrica_729
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "729. El ministro dispone a los presentes a recibir la bendición, con estas palabras u otras semejantes:"
+
+  - id: monicion_729
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Cristo, el Hijo de Dios, vino al mundo para reunir a los dispersos. Por consiguiente, todo aquello que contribuye a que los hombres se unan entre sí es conforme a los designios de Dios, ya que la construcción de nuevas vías de comunicación y el progreso técnico en los transportes acortan las distancias existentes y suprimen la separación que existe entre los pueblos a causa de las montañas o los mares. Pidamos al Señor que bendiga a los que han trabajado en la construcción de esta obra (este medio de transporte) y proteja con su ayuda a los usuarios."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: rubrica_730
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "730. Luego el lector, uno de los presentes o el mismo celebrante, lee un texto de la Sagrada Escritura, elegido de manera que esté relacionado con las circunstancias concretas del caso."
+
+  - id: lectura_jn_14_6_7
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    referencia: "Jn 14, 6-7"
+    encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Juan. «Yo soy el camino, y la verdad, y la vida»."
+    texto: |
+      Dijo Jesús a sus discípulos: «Yo soy el camino, y la verdad, y la vida. Nadie va al Padre, sino por mí. Si me conocierais a mí, conoceríais también a mi Padre. Ahora ya lo conocéis y lo habéis visto».
+    opciones:
+      - id: opcion_hch_17_22_28
+        referencia: "Hch 17, 22-28"
+        encabezado: "Escuchad ahora, hermanos, las palabras del libro de los Hechos de los apóstoles. «En él vivimos, nos movemos y existimos»."
+        texto: |
+          Pablo, de pie en medio del Areópago, dijo: «Atenienses, veo que sois casi nimios en lo que toca a religión. Porque, paseándome por ahí y fijándome en vuestros monumentos sagrados, me encontré un altar con esta inscripción: "Al Dios desconocido". Pues eso que veneráis sin conocerlo, os lo anuncio yo. El Dios que hizo el mundo y lo que contiene, él es Señor de cielo y tierra y no habita en templos construidos por hombres, ni lo sirven manos humanas; como si necesitara de alguien, él que a todos da la vida y el aliento, y todo. De un solo hombre sacó todo el género humano para que habitara la tierra entera, determinando las épocas de su historia y las fronteras de sus territorios. Quería que lo buscasen a él, a ver si, al menos a tientas, lo encontraban; aunque no está lejos de ninguno de nosotros, pues en él vivimos, nos movemos y existimos; así lo dicen incluso algunos de vuestros poetas: "Somos estirpe suya"».
+      - id: opcion_is_40_1_5
+        referencia: "Is 40, 1a.3-5"
+      - id: opcion_hch_8_27_39
+        referencia: "Hch 8, 27-39"
+      - id: opcion_mc_4_35_41
+        referencia: "Mc 4, 35-41"
+      - id: opcion_lc_3_3_6
+        referencia: "Lc 3, 3-6"
+      - id: opcion_jn_1_47_51
+        referencia: "Jn 1, 47-51"
+      - id: opcion_jn_14_1_7
+        referencia: "Jn 14, 1-7"
+
+  - id: respuesta_palabra_del_senor_vehiculo
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Palabra del Señor."
+
+  - id: rubrica_733_salmo
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "733. Según las circunstancias, se puede decir o cantar un salmo responsorial u otro canto adecuado."
+
+  - id: salmo_24_25
+    tipo: salmo
+    actor: lector
+    obligatorio: false
+    referencia: "Sal 24 (25), 4-5. 9-10. 12-13 (R.: 2a)"
+    estribillo: "Dios mío, en ti confío."
+    estrofas:
+      - "Señor, enséñame tus caminos, instrúyeme en tus sendas: haz que camine con lealtad; enséñame, porque tú eres mi Dios y Salvador, y todo el día te estoy esperando."
+      - "Hace caminar a los humildes con rectitud, enseña su camino a los humildes. Las sendas del Señor son misericordia y lealtad para los que guardan su alianza y sus mandatos."
+      - "¿Hay alguien que tema al Señor? Él le enseñará el camino escogido: su alma vivirá feliz, su descendencia poseerá la tierra."
+    opciones:
+      - id: salmo_22_23
+        referencia: "Sal 22 (23), 1-3. 4. 5. 6"
+        estribillo: "Guíame, Señor, por el sendero justo."
+      - id: salmo_150_desplazamientos
+        referencia: "Sal 150, 1-2. 3-4. 5"
+        estribillo: "Alabad al Señor por su inmensa grandeza."
+
+  - id: rubrica_735_exhortacion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "735. El ministro, según las circunstancias, exhorta brevemente a los presentes, explicándoles la lectura bíblica, para que perciban por la fe el significado de la celebración."
+
+  - id: rubrica_titulo_preces
+    tipo: titulo
+    actor: celebrante
+    obligatorio: false
+    texto: "Preces"
+
+  - id: rubrica_736_preces_intro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "736. Si se estima oportuno, antes de la oración de bendición puede hacerse la plegaria común. Entre las invocaciones que aquí se proponen, el ministro puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las circunstancias del momento."
+
+  - id: preces_guia_nuestros_pasos
+    tipo: preces
+    actor: celebrante
+    obligatorio: false
+    invitacion: "Unamos nuestras voces para invocar humildemente a Jesucristo, el Señor, que es el camino que nos conduce a la patria definitiva."
+    respuesta_fija: "Guía, Señor, nuestros pasos por tu camino."
+    invocaciones:
+      - invocacion: "Jesús, Señor, que al hacerte hombre has querido convivir con los hombres, concédenos, con el apoyo de tu presencia constante, caminar felizmente por la senda de tu amor."
+        respuesta: "Guía, Señor, nuestros pasos por tu camino."
+      - invocacion: "Jesús, Señor, que recorrías las poblaciones anunciando tu Evangelio y curando a los enfermos, continúa transitando por nuestras plazas y calles y confórtanos con tu misericordia."
+        respuesta: "Guía, Señor, nuestros pasos por tu camino."
+      - invocacion: "Jesús, Señor, que te presentaste a los discípulos cuando navegaban por el mar y los libraste del peligro, asístenos siempre en las tempestades de este mundo."
+        respuesta: "Guía, Señor, nuestros pasos por tu camino."
+      - invocacion: "Jesús, Señor, que te hiciste compañero de camino de tus discípulos, bendice nuestros pasos e inflama nuestro corazón con tu palabra."
+        respuesta: "Guía, Señor, nuestros pasos por tu camino."
+      - invocacion: "Jesús, Señor, que al subir al cielo nos abriste camino a nosotros, ampáranos durante nuestra peregrinación en la tierra, hasta que lleguemos al hogar que tu Padre nos tiene preparado."
+        respuesta: "Guía, Señor, nuestros pasos por tu camino."
+      - invocacion: "Jesús, Señor, que nos encomendaste como hijos a María, tu madre, danos, por su intercesión, seguridad en nuestros viajes, para que un día podamos contemplarte y alegrarnos contigo para siempre."
+        respuesta: "Guía, Señor, nuestros pasos por tu camino."
+
+  - id: rubrica_737_sin_preces
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "737. Cuando no se dicen las preces, antes de la oración de bendición el ministro dice:"
+
+  - id: invitacion_oremos_737
+    tipo: monicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Oremos."
+
+  - id: rubrica_silencio_737
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Y, según las circunstancias, todos oran durante algún tiempo en silencio. Luego dice la oración de bendición."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: rubrica_738
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "738. El ministro, si es sacerdote o diácono, con las manos extendidas, dice la oración de bendición correspondiente:"
+
+  - id: bendicion_vehiculo_o_barca
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    opciones:
+      - id: formula_vehiculo
+        encabezado: "b) Bendición de un vehículo cualquiera"
+        texto: "Dios todopoderoso, creador del cielo y la tierra, que, en tu gran sabiduría, encomendaste al hombre hacer cosas grandes y bellas, te pedimos por los que usen este vehículo: que recorran su camino con precaución y seguridad, eviten toda imprudencia peligrosa para los otros, y, tanto si viajan por placer o por necesidad, experimenten siempre la compañía de Cristo, que vive y reina contigo por los siglos de los siglos."
+      - id: formula_barca
+        encabezado: "d) Bendición de una barca"
+        texto: "Atiende, Señor, nuestras súplicas, con las que imploramos tu clemencia, para que alejes de esta barca todo vendaval adverso y domines con tu poder la turbulencia de las olas; así, los que en ella naveguen, salvaguardados con tu protección, podrán ver realizados sus deseos y llegar salvos al puerto anhelado. Por Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion_bendicion_vehiculo
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_739_aspersion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "739. Después de la oración de bendición, según las circunstancias, el ministro rocía con agua bendita los locales, los vehículos y a los asistentes, mientras se entona un canto adecuado."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_740
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "740. El ministro, si es sacerdote o diácono, concluye el rito, diciendo:"
+
+  - id: conclusion_el_senor_os_guie
+    tipo: conclusion
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor os guíe en vuestros desplazamientos, para que hagáis en paz vuestro camino y lleguéis a la vida eterna."
+
+  - id: respuesta_amen_conclusion_740a
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_740_luego_dice
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Luego dice:"
+
+  - id: bendicion_final_trinitaria
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y la bendición de Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo, descienda sobre vosotros."
+
+  - id: respuesta_amen_conclusion_740b
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_742_canto
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "742. Es aconsejable terminar el rito con un canto adecuado."

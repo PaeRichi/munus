@@ -1,0 +1,237 @@
+id: bendicion_del_agua_fuera_de_la_misa
+
+metadata:
+  titulo: "Bendición del agua fuera de la celebración de la Misa"
+  tipo: bendicion
+  libro: "Bendicional"
+  parte: "Tercera"
+  capitulo: "XXXVI"
+  numeros:
+    inicio: 1223
+    fin: 1234
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+
+praenotanda: |
+  1223. Un elemento que gozó siempre de gran veneración en la Iglesia y constituye uno de los signos que con frecuencia usa para bendecir a los fieles es el agua. El agua ritualmente bendecida evoca en los fieles el recuerdo de Cristo, que representó para nosotros la culminación de las bendiciones divinas. Él, en efecto, que se dio a sí mismo el apelativo de «agua viva», instituyó para nosotros el bautismo, sacramento del agua, como signo de bendición salvadora.
+
+  1224. La bendición y aspersión del agua se hace normalmente el domingo, según el rito descrito en el Misal romano (31).
+
+  1225. Cuando la bendición del agua tiene lugar fuera de la celebración de la Misa, el sacerdote o el diácono usarán el formulario que aquí se propone, de modo que, respetando su estructura y los elementos principales, adapten la celebración a las circunstancias del momento.
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: rubrica_1226
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1226. El celebrante empieza, diciendo:"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_1226
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_1227
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1227. Luego el celebrante saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante_1227
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Dios, que del agua y del Espíritu Santo, nos ha hecho nacer de nuevo en Cristo, esté con todos vosotros."
+
+  - id: rubrica_otras_palabras_1227
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "U otras palabras adecuadas, tomadas preferentemente de la sagrada Escritura."
+
+  - id: rubrica_todos_responden_1227
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos responden:"
+
+  - id: respuesta_y_con_tu_espiritu_1227
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_otro_modo_1227
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "O de otro modo adecuado."
+
+  - id: rubrica_1228
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1228. El celebrante, según las circunstancias, dispone a los presentes para la celebración de la bendición, con estas palabras u otras semejantes:"
+
+  - id: monicion_1228
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Con esta bendición del agua, recordamos a Cristo, agua viva, así como el sacramento del bautismo, en el cual nacimos de nuevo del agua y del Espíritu Santo. Siempre, pues, que seamos rociados con esta agua o que nos santigüemos con ella al entrar en la iglesia o dentro de nuestras casas, daremos gracias a Dios por su don inexplicable, y pediremos su ayuda para vivir siempre de acuerdo con las exigencias del bautismo, sacramento de la fe, que un día recibimos."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: rubrica_1229
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1229. Luego uno de los presentes, o el mismo celebrante, hace una breve lectura de la sagrada Escritura."
+
+  - id: lectura_evangelio
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    referencia: "Jn 7, 37-39"
+    encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Juan. Jn 7, 37-39: El que tenga sed, que venga a mí"
+    texto: |
+      El último día, el más solemne de las fiestas, Jesús, en pie, gritaba:
+
+      —«El que tenga sed, que venga a mí; el que cree en mí, que beba. Como dice la Escritura: de sus entrañas manarán torrentes de agua viva.» Decía esto refiriéndose al Espíritu que habían de recibir los que creyeran en él.
+    opciones:
+      - id: opcion_is_12_1_6
+        referencia: "Is 12, 1-6"
+      - id: opcion_is_55_1_11
+        referencia: "Is 55, 1-11"
+      - id: opcion_si_15_1_6
+        referencia: "Si 15, 1-6"
+      - id: opcion_jn_5_1_6
+        referencia: "Jn 5, 1-6"
+      - id: opcion_ap_7_13_17
+        referencia: "Ap 7, 13-17"
+      - id: opcion_ap_22_1_5
+        referencia: "Ap 22, 1-5"
+      - id: opcion_jn_13_3_15
+        referencia: "Jn 13, 3-15"
+
+  - id: respuesta_palabra_del_senor
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Palabra del Señor."
+
+  - id: rubrica_1230
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1230. Pueden también leerse: Is 12, 1-6; Is 55, 1-11; Si 15, 1-6; Jn 5, 1-6; Ap 7, 13-17; Ap 22, 1-5; Jn 13, 3-15."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: rubrica_1231_oremos
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1231. Luego el celebrante dice:"
+
+  - id: invitacion_oremos_1231
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oremos."
+
+  - id: rubrica_1231_pausa_y_manos
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Después de una breve pausa de silencio, el celebrante, con las manos extendidas, dice la oración de bendición:"
+
+  - id: oracion_bendicion
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Bendito seas, Señor, Dios todopoderoso, que te has dignado bendecirnos y transformarnos interiormente en Cristo, agua viva de nuestra salvación; haz, te pedimos, que los que nos protegemos con la aspersión o el uso de esta agua sintamos, por la fuerza del Espíritu Santo, renovada la juventud de nuestra alma y andemos siempre en una vida nueva. Por Jesucristo, nuestro Señor."
+    opciones:
+      - id: alternativa_1232
+        texto: "Señor, Padre santo, dirige tu mirada sobre nosotros, que, redimidos por tu Hijo, hemos nacido de nuevo del agua y del Espíritu Santo en la fuente bautismal; concédenos, te pedimos, que todos los que reciban la aspersión de esta agua queden renovados en el cuerpo y en el alma y te sirvan con limpieza de vida. Por Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion_bendicion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_1232_o_bien
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1232. O bien:"
+
+  - id: rubrica_1233_o_bien_letania
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "1233. O bien el celebrante dice:"
+
+  - id: letania_bendicion_agua_1233
+    tipo: letania
+    actor: celebrante
+    obligatorio: false
+    invocaciones:
+      - invocacion: "Oh, Dios, creador de todas las cosas, que por el agua y el Espíritu diste forma y figura al hombre y al universo."
+        respuesta: "Bendice y purifica a tu Iglesia."
+      - invocacion: "Oh, Cristo, que de tu costado abierto en la cruz hiciste manar los sacramentos de salvación."
+        respuesta: "Bendice y purifica a tu Iglesia."
+      - invocacion: "Oh, Espíritu Santo, que, del seno bautismal de la Iglesia, nos haces renacer como nuevas criaturas."
+        respuesta: "Bendice y purifica a tu Iglesia."
+
+  - id: rubrica_1234_aspersion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "1234. Después de la oración de bendición, el celebrante rocía con el agua bendecida a los presentes, diciendo, según las circunstancias:"
+
+  - id: bendicion_aspersion_1234
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que esta agua nos recuerde nuestro bautismo en Cristo, que nos redimió con su muerte y resurrección."
+
+  - id: respuesta_amen_1234
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_canto_final
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Mientras, se entona un canto adecuado."

@@ -1,0 +1,135 @@
+id: exorcismo_bendicion_sal_y_agua
+
+metadata:
+  titulo: "Exorcismo y bendición de la sal y el agua"
+  tipo: bendicion
+  libro: "Missale Romanum, editio typica tertia, Appendix II"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  ministros: [sacerdote]
+  idioma: es
+  version: 1
+
+contenido:
+  - id: rubrica_titulo_sal
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "SAL"
+
+  - id: exorcismo_sal
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Te exorcizo, creatura de la sal, por Dios Vivo, por Dios Verdadero, por Dios Santo, por Dios que ordenó por medio del Profeta Eliseo, que fueses puesta en el agua para sanar su esterilidad. Para que te convirtieras como sal exorcizada, en salud para los creyentes; para que seas salud de alma y cuerpo para todos aquellos que te consuman; para que huya y se aparte del lugar donde seas puesta, toda maldad, toda acción del demonio, todo espíritu inmundo, conjurado por este Señor que ha de venir a juzgar a los vivos y a los muertos, y el siglo por medio del fuego."
+
+  - id: respuesta_amen_exorcismo_sal
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: invitacion_oremos_sal
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oremos."
+
+  - id: oracion_bendicion_sal
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Imploramos humildemente Tu inmensa Clemencia, Omnipotente y Eterno Dios, para que Te dignes, por Tu Piedad, bendecir y santificar esta creatura de la sal que Tú creaste para el uso del género humano, a fin de que se convierta en salud de alma y cuerpo para todos los que la consuman, y para que todo aquello que sea tocado por esta sal carezca de toda inmundicia y de toda impregnación del espíritu del mal. Por nuestro Señor Jesucristo."
+
+  - id: respuesta_amen_oracion_sal
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_agua
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "AGUA"
+
+  - id: exorcismo_agua
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Te exorcizo, creatura de agua, en nombre de Dios Omnipotente, en el nombre de Jesucristo, Su Hijo, nuestro Señor, y con el poder del Espíritu Santo, para que seas agua exorcizada para ahuyentar toda fuerza del enemigo, y para que puedas erradicar y arrancar al mismo enemigo con sus ángeles apóstatas. Por virtud de Jesucristo, nuestro Señor, que ha de venir a juzgar a los vivos y a los muertos, y este siglo por el fuego."
+
+  - id: respuesta_amen_exorcismo_agua
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: invitacion_oremos_agua
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oremos."
+
+  - id: oracion_bendicion_agua
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "¡Oh!, Dios, sé propicio a nuestras súplicas e infunde la fuerza de Tu Bendición a esta agua que hemos preparado con estas purificaciones, para que esta Tu creatura, sirva para alejar a los demonios, sanar las enfermedades; para que al ser derramada sobre las casas y los lugares de los fieles, estos queden libres de toda inmundicia y de todo mal, que no resida allí un espíritu pestilente, se alejen todas las insidias del enemigo y si hay algo que perjudique a los que habiten en ella o a su tranquilidad, por la aspersión de esta agua, huyan; para que la salud que Te pedimos por la invocación de Tu Nombre, quede defendida de toda impugnación del maligno. Por Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion_agua
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: gesto_mezcla_sal_agua
+    tipo: gesto
+    actor: celebrante
+    obligatorio: true
+    texto: "Coloca de esta sal en el agua, tres veces, en forma de Cruz."
+
+  - id: formula_mezcla
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que esta mezcla de la sal y del agua se realice en el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: respuesta_amen_mezcla
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: versiculo_el_senor_este
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor esté con vosotros."
+
+  - id: respuesta_y_con_tu_espiritu
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: invitacion_oremos_final
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oremos."
+
+  - id: oracion_final_mezcla
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "¡Oh!, Dios, Autor de todo poder y Rey insuperable de todo dominio, y siempre triunfador y magnífico, que reprimes las fuerzas del dominio del mal, que superas la sevicia del enemigo, que poderosamente vences las huestes enemigas. A Ti, humildes, Te pedimos, ¡oh!, Señor, que mires con bondad estas creaturas de sal y agua y las santifiques con Tu Bondad, para que dondequiera que sea regada por invocación de Tu Santo Nombre, desaparezca toda infestación del espíritu inmundo, sea alejado el terror de la serpiente infernal mediante la presencia del Espíritu Santo, nos concedas benigno Tu Misericordia, ya que humildemente Te la suplicamos. Por nuestro Señor Jesucristo, Tu Hijo, que vive y reina Contigo, y en la unidad del Espíritu Santo, y es Dios por los siglos de los siglos."
+
+  - id: respuesta_amen_oracion_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."

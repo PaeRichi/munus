@@ -1,0 +1,118 @@
+id: ultimo_adios_al_cuerpo_del_difunto
+
+metadata:
+  titulo: "Último adiós al cuerpo del difunto"
+  tipo: exequias
+  libro: "Ritual de exequias"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  advertencia: "Fuente litúrgica exacta no identificada. Texto de uso pastoral extendido."
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+
+contenido:
+  - id: monicion_inicial
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Dentro de breves momentos, al llegar al cementerio, los familiares y amigos de nuestro hermano (nuestra hermana) cumplirán cristianamente con el deber de dar sepultura a su cuerpo; pidamos, pues, en este momento, a Dios, para quien toda criatura vive, que admita su alma en la asamblea de los santos; que este cuerpo, que hoy será enterrado en debilidad, el Señor lo resucite, lleno de vigor y de gloria, en el último día.\n\nQue Dios escuche nuestras súplicas y, en el momento del juicio, use con él (ella) de misericordia, para que, libre de la muerte, absuelto (absuelta) de sus culpas, reconciliado (reconciliada) con el Padre, llevado (llevada) sobre los hombros del Buen Pastor y agregado (agregada) al séquito del Rey eterno, disfrute para siempre de la gloria eterna y de la compañía de los santos."
+
+  - id: rubrica_silencio
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos oran unos momentos en silencio."
+
+  - id: monicion_aspersion
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "El agua que vamos a derramar ahora sobre el cuerpo de este hermano nuestro (esta hermana nuestra) nos recuerda que en el bautismo fue hecho (hecha) miembro del cuerpo de Jesucristo, que murió y fue sepultado, pero que con su gloriosa resurrección venció la muerte.\n\n[El incienso con que perfumaremos luego su cadáver nos traerá a la memoria que lo que ahora solo es su cuerpo fue templo del Espíritu y está llamado a ser, por la resurrección, piedra viva del templo de la Jerusalén celestial]."
+
+  - id: gesto_aspersion_feretro
+    tipo: gesto
+    actor: celebrante
+    obligatorio: true
+    texto: "El que preside da la vuelta alrededor del féretro aspergiéndolo con agua bendita."
+
+  - id: oracion_final
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Señor Jesucristo, redentor del género humano, te pedimos que des entrada en tu paraíso a nuestro hermano (nuestra hermana) N., que acaba de cerrar sus ojos a la luz de este mundo y los ha abierto para contemplarte a ti, Luz verdadera; líbralo (líbrala), Señor, de la oscuridad de la muerte y haz que contigo goce en el festín de las bodas eternas; que se alegre en tu reino, su verdadera patria, donde no hay ni tristeza ni muerte, donde todo es vida y alegría sin fin, y contemple tu rostro glorioso por los siglos de los siglos."
+
+  - id: respuesta_amen_oracion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_biografia
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "En este momento, uno de los familiares o amigos puede hacer una breve biografía del difunto y agradecer a los presentes su participación en las exequias."
+
+  - id: conclusion_despedida
+    tipo: conclusion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que el Señor abra las puertas de la salvación a nuestro hermano (nuestra hermana), para que, terminado el duro combate de su vida mortal, entre como vencedor (vencedora) por las puertas de los justos y en sus tiendas entone cantos de victoria por los siglos de los siglos."
+
+  - id: respuesta_amen_despedida
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: conclusion_consuelo
+    tipo: conclusion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y a todos nosotros nos dé la certeza de que no está muerto (muerta), sino que duerme, de que no ha perdido la vida, sino que reposa, porque ha sido llamado (llamada) a la vida eterna por los siglos de los siglos."
+
+  - id: respuesta_amen_consuelo
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: versiculo_descanso_eterno
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Señor, dale el descanso eterno."
+
+  - id: respuesta_luz_eterna
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y brille sobre él (ella) la luz eterna."
+
+  - id: versiculo_descanse_en_paz
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Descanse en paz."
+
+  - id: respuesta_amen_paz
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: versiculo_fieles_difuntos
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Su alma y las almas de todos los fieles difuntos, por la misericordia de Dios, descansen en paz."
+
+  - id: respuesta_amen_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."

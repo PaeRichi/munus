@@ -1,0 +1,743 @@
+id: uncion_cap2_rito_ordinario
+
+metadata:
+  titulo: "Unción del enfermo — Rito ordinario"
+  tipo: bendicion
+  libro: "Ritual de la Unción y de la pastoral de enfermos"
+  parte: ~
+  capitulo: "II"
+  numeros:
+    inicio: 121
+    fin: 153
+  ministros: [sacerdote]
+  idioma: es
+  version: 2
+  nota: "Actualizado a MUNUS YAML Spec v1.1: saludos iniciales (nn. 125-127), acto penitencial (nn. 131-134), letanía por el enfermo (nn. 136-138) y bendición del óleo (nn. 140-142) migrados a opciones con elementos (Regla 3.2), por tratarse de variantes estructuralmente distintas entre sí, no solo de contenido. Se retiraron las marcas literales 'V.'/'R.' de los textos de saludo y respuesta, redundantes con tipo/actor. Se agregaron display_name a las opciones con elementos y a las de texto largo. Se retiraron los números de cita del libro al inicio de rúbricas, títulos y el gesto de imposición de manos (se conservaron las referencias cruzadas a otros números dentro del texto, ej. 'n. 259', 'nn. 260 ss', 'n. 21', 'nn. 105-110')."
+
+contenido:
+  - id: rubrica_preparativos
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El sacerdote, antes de administrar la santa Unción, se informará del estado del enfermo, teniendo en cuenta su situación en la disposición del rito y en la elección de lecturas y oraciones. Si es posible, determinará estas cosas de acuerdo con el enfermo o su familia. Cuando sea necesario oír al enfermo en confesión sacramental, lo hará, si es posible, antes de la Unción; si se confiesa dentro del rito, lo hará al principio."
+
+  - id: rubrica_titulo_ritos_iniciales
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Ritos iniciales"
+
+  - id: rubrica_125_llegada
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El sacerdote, vestido cual conviene al sagrado ministerio que va a realizar, llega al enfermo y, con sencillas y afectuosas palabras, saluda al enfermo y a cuantos están con él. Puede decir, si le parece, uno de estos saludos:"
+
+  - id: saludo_inicial
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "La paz del Señor a esta casa y a todos los aquí presentes."
+    opciones:
+      - id: saludo_paz_contigo
+        texto: "La paz del Señor sea con vosotros (contigo)."
+      - id: saludo_gracia_comunion
+        display_name: "La gracia de nuestro Señor..."
+        elementos:
+          - id: linea_gracia_comunion
+            tipo: saludo
+            actor: celebrante
+            obligatorio: true
+            texto: "La gracia de nuestro Señor Jesucristo, el amor del Padre y la comunión del Espíritu Santo estén con todos vosotros."
+          - id: respuesta_gracia_comunion
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Y con tu espíritu."
+      - id: saludo_gracia_y_paz
+        display_name: "La gracia y la paz..."
+        elementos:
+          - id: linea_gracia_y_paz
+            tipo: saludo
+            actor: celebrante
+            obligatorio: true
+            texto: "La gracia y la paz de parte de Dios, nuestro Padre, y de Jesucristo, el Señor, estén con todos vosotros."
+          - id: respuesta_gracia_y_paz
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Bendito sea Dios, Padre de nuestro Señor Jesucristo."
+            opciones:
+              - id: respuesta_gracia_y_paz_alt
+                texto: "Y con tu espíritu."
+
+  - id: rubrica_128_aspersion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Luego, si es oportuno, rocía con agua bendita (si hay que bendecir el agua, se hace con la oración propuesta en el n. 259) al enfermo y a la habitación, diciendo esta fórmula:"
+
+  - id: bendicion_aspersion_128
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Que esta agua nos recuerde nuestro bautismo en Cristo, que nos redimió con su muerte y resurrección."
+
+  - id: rubrica_129_monicion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Seguidamente se dirige a los presentes con estas o parecidas palabras:"
+
+  - id: monicion_129_santiago
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Queridos hermanos: En el Evangelio leemos que nuestro Señor Jesucristo curaba a los enfermos, que acudían a él en busca de salud. El mismo, que durante su vida sufrió tanto por los hombres, está ahora presente en medio de nosotros, reunidos en su nombre, y nos dice por medio del apóstol Santiago: «¿Está enfermo alguno de vosotros? Llame a los presbíteros de la Iglesia, y que recen sobre él, después de ungirlo con óleo, en nombre del Señor. Y la oración de fe salvará al enfermo, y el Señor lo curará, y, si ha cometido pecado, lo perdonará». Pongamos, pues, a nuestro hermano enfermo en manos de Cristo, que lo ama y puede curarlo, para que le conceda alivio y salud."
+
+  - id: rubrica_130_o_bien_oracion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "O bien puede decir la siguiente oración:"
+
+  - id: oracion_130_escucha
+    tipo: oracion
+    actor: celebrante
+    obligatorio: false
+    texto: "Señor, Dios nuestro, que por medio de tu apóstol Santiago nos has dicho: «¿Está enfermo alguno de vosotros? Llame a los presbíteros de la Iglesia, y que recen sobre él, después de ungirlo con óleo, en nombre del Señor. Y la oración de fe salvará al enfermo, y el Señor lo curará, y, si ha cometido pecado, lo perdonará». Escucha la oración de quienes nos hemos reunido en tu nombre y protege misericordiosamente a N., nuestro hermano enfermo (y a todos los otros enfermos de esta casa). Por Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion_130
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: rubrica_titulo_acto_penitencial
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Acto penitencial"
+
+  - id: rubrica_131_si_no_hay_confesion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Si no hay confesión sacramental, hágase el acto penitencial. A continuación se ofrecen tres fórmulas; el sacerdote elige una."
+
+  - id: acto_penitencial
+    tipo: preces
+    actor: celebrante
+    obligatorio: false
+    opciones:
+      - id: formula_confiteor
+        display_name: "Primera fórmula"
+        elementos:
+          - id: rubrica_132_primera_formula
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Primera fórmula"
+          - id: monicion_penitencial_invitacion
+            tipo: monicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Hermanos: para participar con fruto en esta celebración, comencemos por reconocer nuestros pecados."
+          - id: confesion_general_yo_confieso
+            tipo: respuesta
+            actor: todos
+            obligatorio: true
+            texto: "Yo confieso ante Dios todopoderoso y ante vosotros, hermanos, que he pecado mucho de pensamiento, palabra, obra y omisión. Por mi culpa, por mi culpa, por mi gran culpa. Por eso ruego a Santa María, siempre Virgen, a los ángeles, a los santos y a vosotros, hermanos, que intercedáis por mí ante Dios, nuestro Señor."
+          - id: oracion_conclusion_penitencial_1
+            tipo: oracion
+            actor: celebrante
+            obligatorio: true
+            texto: "Dios todopoderoso tenga misericordia de nosotros, perdone nuestros pecados y nos lleve a la vida eterna."
+          - id: respuesta_amen_penitencial_1
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+      - id: formula_dialogo_breve
+        display_name: "Segunda fórmula"
+        elementos:
+          - id: rubrica_133_segunda_formula
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Segunda fórmula"
+          - id: monicion_penitencial_invitacion_2
+            tipo: monicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Hermanos: para participar con fruto en esta celebración, comencemos por reconocer nuestros pecados."
+          - id: dialogo_penitencial_2
+            tipo: letania
+            actor: celebrante
+            obligatorio: true
+            invocaciones:
+              - invocacion: "Señor, ten misericordia de nosotros."
+                respuesta: "Porque hemos pecado contra ti."
+              - invocacion: "Muéstranos, Señor, tu misericordia."
+                respuesta: "Y danos tu salvación."
+          - id: oracion_conclusion_penitencial_2
+            tipo: oracion
+            actor: celebrante
+            obligatorio: true
+            texto: "Dios todopoderoso tenga misericordia de nosotros, perdone nuestros pecados y nos lleve a la vida eterna."
+          - id: respuesta_amen_penitencial_2
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+      - id: formula_letania_kyrie
+        display_name: "Tercera fórmula"
+        elementos:
+          - id: rubrica_134_tercera_formula
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Tercera fórmula"
+          - id: monicion_penitencial_invitacion_3
+            tipo: monicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Hermanos: para participar con fruto en esta celebración, comencemos por reconocer nuestros pecados."
+          - id: rubrica_invocaciones_senor_ten_piedad
+            tipo: rubrica
+            actor: celebrante
+            obligatorio: false
+            texto: "Después el sacerdote, o uno de los presentes, hace las siguientes u otras invocaciones con el Señor, ten piedad."
+          - id: letania_penitencial_3
+            tipo: letania
+            actor: celebrante
+            obligatorio: true
+            invocaciones:
+              - invocacion: "Tú que por el misterio pascual nos has obtenido la salvación: Señor, ten piedad."
+                respuesta: "Señor, ten piedad."
+              - invocacion: "Tú que no cesas de actualizar entre nosotros las maravillas de tu pasión: Cristo, ten piedad."
+                respuesta: "Cristo, ten piedad."
+              - invocacion: "Tú que por la comunión de tu cuerpo nos haces participar del sacrificio pascual: Señor, ten piedad."
+                respuesta: "Señor, ten piedad."
+          - id: oracion_conclusion_penitencial_3
+            tipo: oracion
+            actor: celebrante
+            obligatorio: true
+            texto: "Dios todopoderoso tenga misericordia de nosotros, perdone nuestros pecados y nos lleve a la vida eterna."
+          - id: respuesta_amen_penitencial_3
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+
+  - id: rubrica_titulo_liturgia_palabra
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Liturgia de la Palabra — Proclamación de la Palabra de Dios"
+
+  - id: rubrica_135_lectura
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "A continuación, puede leerse por uno de los presentes o por el mismo sacerdote algún texto de la Sagrada Escritura, v. gr.:"
+
+  - id: lectura_mt_8_centurion
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    referencia: "Mt 8, 5-10.13"
+    encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según San Mateo."
+    texto: |
+      Al entrar Jesús en Cafarnaún, un centurión se le acercó, rogándole:
+
+      —Señor, tengo en casa un criado que está en cama paralítico y sufre mucho.
+
+      Jesús le contestó:
+
+      —Voy yo a curarlo.
+
+      Pero el centurión le replicó:
+
+      —Señor, no soy quien para que entres bajo mi techo. Basta que lo digas de palabra, y mi criado quedará sano. Porque yo también vivo bajo disciplina y tengo soldados a mis órdenes: y le digo a uno «ve», y va; al otro, «ven», y viene; a mi criado, «haz esto», y lo hace.
+
+      Al oírlo Jesús quedó admirado y dijo a los que le seguían:
+
+      —Os aseguro que en Israel no he encontrado en nadie tanta fe.
+
+      Y al centurión le dijo:
+
+      —Vuelve a casa, que se cumpla lo que has creído.
+    opciones:
+      - id: lectura_jn_10_buen_pastor
+        referencia: "Jn 10, 14-18"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según San Juan. «El Buen Pastor da su vida por sus ovejas»."
+        texto: |
+          En aquel tiempo, dijo Jesús: «Yo soy el Buen Pastor: conozco a mis ovejas, y mis ovejas me conocen a mí —como el Padre me conoce a mí y como yo conozco al Padre— y doy mi vida por las ovejas. Tengo, además, otras ovejas que no son de este corral y a las que debo también conducir: ellas oirán mi voz, y así habrá un solo Rebaño y un solo Pastor. El Padre me ama porque yo doy mi vida para recobrarla. Nadie me la quita, sino que la doy por mí mismo. Tengo el poder de darla y de recobrarla; éste es el mandato que recibí de mi Padre».
+      - id: lectura_mc_2_paralitico
+        referencia: "Mc 2, 1-12"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según San Marcos. «Y al ver su fe, dijo: son perdonados tus pecados»."
+        texto: |
+          En aquel tiempo: Entró Jesús en Cafarnaún, después de algunos días, y se supo que estaba en casa. Y acudieron tantos que ni a la puerta cabían, y él les dirigía la palabra. Le trajeron un paralítico, llevado entre cuatro. Y no pudiendo presentárselo a causa de la multitud, levantaron la techumbre donde él estaba, hicieron un boquete, y descolgaron la camilla con el paralítico. Al ver Jesús su fe, dijo al paralítico: «Hijo, son perdonados tus pecados». Algunos de los escribas allí sentados criticaban entre sí, diciendo: «¿Cómo habla así éste? ¡Blasfema! ¿Quién puede perdonar los pecados, sino sólo Dios?». Al punto, conociendo Jesús en su espíritu lo que pensaban, les dijo: «¿Por qué pensáis eso en vuestros corazones? ¿Qué es más fácil decir al paralítico: Perdonados son tus pecados, o decirle: Levántate, carga con tu camilla y anda? Pues para que veáis que el Hijo del Hombre tiene poder para perdonar pecados sobre la tierra», dijo al paralítico: «Levántate, toma tu camilla y vete a tu casa». El paralítico se levantó y al punto, cargando con la camilla, salió a la vista de todos, de modo que todos se maravillaron, y glorificaban a Dios, diciendo: «Jamás hemos visto cosa igual».
+      - id: lectura_mt_8_leproso
+        referencia: "Mt 8, 1-4"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según San Mateo. «Señor, si quieres, puedes limpiarme»."
+        texto: |
+          Cuando Jesús bajó del monte, lo siguieron las multitudes. Y he aquí que se le acerca un leproso y se postra ante él, diciendo: «Señor, si quieres, puedes limpiarme». Tendiendo él la mano, lo tocó y dijo: «Quiero. Queda limpio». Y al instante quedó limpio de su lepra. Jesús le dice: «Mira, no se lo digas a nadie; pero ve, muéstrate al sacerdote y ofrece el don que ordenó Moisés, para que le sirva de testimonio».
+      - id: lectura_mt_8_suegra_pedro
+        referencia: "Mt 8, 14-17"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según San Mateo. «Él cargó sobre sí nuestras enfermedades»."
+        texto: |
+          En aquel tiempo: Cuando Jesús llegó a la casa de Pedro, encontró a la suegra de éste en cama con fiebre. Le tocó la mano y ella no tuvo más fiebre; y levantándose, se puso a servirlo. Al atardecer, le llevaron muchos endemoniados, y él, con su palabra, expulsó a los espíritus y curó a todos los que estaban enfermos. Así se cumplió el anuncio del profeta Isaías: «Él tomó nuestras debilidades y cargó sobre sí nuestras enfermedades».
+
+  - id: respuesta_palabra_del_senor_uncion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Palabra del Señor."
+
+  - id: rubrica_otra_lectura_260
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "U otra lectura apropiada, tomada, por ejemplo, de las que figuran en los nn. 260 ss. Si parece oportuno, puede hacerse una breve explicación de estos textos."
+
+  - id: rubrica_titulo_liturgia_sacramento
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Liturgia del Sacramento"
+
+  - id: rubrica_136_letania_momento
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "La letanía puede recitarse ahora o después de la Unción, o también en ambos momentos. El sacerdote puede abreviar o adaptar el formulario según aconsejen las circunstancias. A continuación se ofrecen tres formularios; el sacerdote elige uno."
+
+  - id: letania_por_el_enfermo
+    tipo: letania
+    actor: celebrante
+    obligatorio: false
+    opciones:
+      - id: formulario_136_primero
+        display_name: "Con humildad y confianza..."
+        elementos:
+          - id: monicion_letania_1
+            tipo: monicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Con humildad y confianza invoquemos al Señor en favor de N., nuestro hermano."
+          - id: letania_136_primera
+            tipo: letania
+            actor: celebrante
+            obligatorio: true
+            invocaciones:
+              - invocacion: "Dígnate visitarlo con tu misericordia y confortarlo con la santa Unción."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Líbralo, Señor, de todo mal."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Alivia el dolor de todos los enfermos (de esta casa)."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Asiste a los que se dedican al cuidado de los enfermos."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Libra a este enfermo del pecado y de toda tentación."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Da vida y salud a quien en tu nombre vamos a imponer las manos."
+                respuesta: "Te rogamos, óyenos."
+      - id: formulario_137_segundo
+        display_name: "Tú, que soportaste..."
+        elementos:
+          - id: letania_137_segunda
+            tipo: letania
+            actor: celebrante
+            obligatorio: true
+            invocaciones:
+              - invocacion: "Tú, que soportaste nuestros sufrimientos y aguantaste nuestros dolores, Señor, ten piedad."
+                respuesta: "Señor, ten piedad."
+              - invocacion: "Tú, que te compadeciste de la gente y pasaste haciendo el bien y curando a los enfermos, Cristo, ten piedad."
+                respuesta: "Cristo, ten piedad."
+              - invocacion: "Tú, que mandaste a los apóstoles imponer las manos sobre los enfermos, Señor, ten piedad."
+                respuesta: "Señor, ten piedad."
+      - id: formulario_138_tercero
+        display_name: "Oremos al Señor..."
+        elementos:
+          - id: monicion_letania_3
+            tipo: monicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Oremos al Señor por nuestro hermano enfermo y por todos los que lo cuidan y están a su servicio."
+          - id: letania_138_tercera
+            tipo: letania
+            actor: celebrante
+            obligatorio: true
+            invocaciones:
+              - invocacion: "Mira con amor a este enfermo."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Da nueva fuerza a su cuerpo."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Alivia sus angustias."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Líbralo del pecado y de toda tentación."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Ayuda con tu gracia a todos los enfermos."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Asiste con tu poder a los que se dedican a su cuidado."
+                respuesta: "Te rogamos, óyenos."
+              - invocacion: "Y da vida y salud a este enfermo, a quien en tu nombre vamos a imponer las manos."
+                respuesta: "Te rogamos, óyenos."
+
+  - id: gesto_imposicion_manos
+    tipo: gesto
+    actor: celebrante
+    obligatorio: true
+    texto: "Ahora el sacerdote, en silencio, impone las manos sobre la cabeza del enfermo."
+
+  - id: rubrica_titulo_bendicion_oleo
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Bendición del óleo"
+
+  - id: rubrica_140_si_bendice
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Según lo dicho en el n. 21: si el sacerdote ha de bendecir el óleo dentro del rito, procede con una de estas dos fórmulas; si el óleo ya está bendecido, dice en cambio sobre él una oración de acción de gracias."
+
+  - id: bendicion_del_oleo
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    opciones:
+      - id: bendicion_oleo_formula_unica
+        display_name: "Si se bendice el óleo — 1"
+        elementos:
+          - id: bendicion_oleo_140
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Señor Dios, Padre de todo consuelo, que has querido sanar las dolencias de los enfermos por medio de tu Hijo: escucha con amor la oración de nuestra fe y derrama desde el cielo tu Espíritu Santo Defensor sobre este óleo. Tú que has hecho que el leño verde del olivo produzca aceite abundante para vigor de nuestro cuerpo, enriquece con tu bendición ✠ este óleo, para que cuantos sean ungidos con él sientan en el cuerpo y en el alma tu divina protección y experimenten alivio en sus enfermedades y dolores. Que por tu acción, Señor, este aceite sea para nosotros óleo santo, en nombre de Jesucristo, nuestro Señor. Él, que vive y reina por los siglos de los siglos."
+          - id: respuesta_amen_bendicion_oleo_140
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+      - id: bendicion_oleo_preces
+        display_name: "Si se bendice el óleo — 2"
+        elementos:
+          - id: preces_oleo_141
+            tipo: preces
+            actor: celebrante
+            obligatorio: true
+            invitacion: ~
+            respuesta_fija: "Bendito seas por siempre, Señor."
+            invocaciones:
+              - invocacion: "Bendito seas, Dios, Padre todopoderoso, que por nosotros y por nuestra salvación enviaste tu Hijo al mundo."
+                respuesta: "Bendito seas por siempre, Señor."
+              - invocacion: "Bendito seas, Dios, Hijo unigénito, que te has rebajado haciéndote hombre como nosotros, para curar nuestras enfermedades."
+                respuesta: "Bendito seas por siempre, Señor."
+              - invocacion: "Bendito seas, Dios, Espíritu Santo Defensor, que con tu poder fortaleces la debilidad de nuestro cuerpo."
+                respuesta: "Bendito seas por siempre, Señor."
+          - id: oracion_oleo_141
+            tipo: oracion
+            actor: celebrante
+            obligatorio: true
+            texto: "Muéstrate propicio, Señor, y santifica con tu bendición este aceite, que va a servir de alivio en la enfermedad de tu hijo, y por la oración de nuestra fe libra de sus males a quien ungimos con el óleo. Por Jesucristo, nuestro Señor."
+          - id: respuesta_amen_bendicion_oleo_141
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+      - id: bendicion_oleo_ya_bendecido
+        display_name: "Si el óleo ya está bendecido"
+        elementos:
+          - id: rubrica_142_oleo_ya_bendecido
+            tipo: rubrica
+            actor: celebrante
+            obligatorio: false
+            texto: "Si el óleo está ya bendecido, dice sobre él una oración de acción de gracias:"
+          - id: preces_oleo_142
+            tipo: preces
+            actor: celebrante
+            obligatorio: true
+            invitacion: ~
+            respuesta_fija: "Bendito seas por siempre, Señor."
+            invocaciones:
+              - invocacion: "Bendito seas, Dios, Padre todopoderoso, que por nosotros y por nuestra salvación enviaste tu Hijo al mundo."
+                respuesta: "Bendito seas por siempre, Señor."
+              - invocacion: "Bendito seas, Dios, Hijo unigénito, que te has rebajado haciéndote hombre como nosotros, para curar nuestras enfermedades."
+                respuesta: "Bendito seas por siempre, Señor."
+              - invocacion: "Bendito seas, Dios, Espíritu Santo Defensor, que con tu poder fortaleces la debilidad de nuestro cuerpo."
+                respuesta: "Bendito seas por siempre, Señor."
+          - id: oracion_oleo_142
+            tipo: oracion
+            actor: celebrante
+            obligatorio: true
+            texto: "Mitiga, Señor, los dolores de este hijo tuyo, a quien ahora, llenos de fe, vamos a ungir con el óleo santo; haz que se sienta confortado en su enfermedad y aliviado en sus sufrimientos. Por Jesucristo, nuestro Señor."
+          - id: respuesta_amen_bendicion_oleo_142
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+
+  - id: rubrica_titulo_santa_uncion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Santa Unción"
+
+  - id: rubrica_143_toma_oleo
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "El sacerdote toma el santo óleo y unge al enfermo en la frente y en las manos, diciendo una sola vez:"
+
+  - id: formula_santa_uncion_frente
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Por esta santa Unción y por su bondadosa misericordia, te ayude el Señor con la gracia del Espíritu Santo."
+
+  - id: respuesta_amen_uncion_frente
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: formula_santa_uncion_manos
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Para que, libre de tus pecados, te conceda la salvación y te conforte en tu enfermedad."
+
+  - id: respuesta_amen_uncion_manos
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_144_oracion_despues_uncion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Después dice esta oración:"
+
+  - id: invitacion_oremos_144
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oremos."
+
+  - id: oracion_despues_uncion_144
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Te rogamos, Redentor nuestro, que por la gracia del Espíritu Santo, cures el dolor de este enfermo, sanes sus heridas, perdones sus pecados, ahuyentes todo sufrimiento de su cuerpo y de su alma y le devuelvas la salud espiritual y corporal, para que, restablecido por tu misericordia, se incorpore de nuevo a los quehaceres de su vida. Tú que vives y reinas por los siglos de los siglos."
+    opciones:
+      - id: oracion_145_redimir_hombres
+        display_name: "Señor Jesucristo, que para redimir..."
+        texto: "Señor Jesucristo, que para redimir a los hombres y sanar a los enfermos, quisiste asumir nuestra condición humana, mira con piedad a N., que está enfermo y necesita ser curado en el cuerpo y en el espíritu. Reconforta y consuela con tu poder a quien hemos ungido en tu nombre con el óleo santo, para que levante su ánimo y pueda superar todos sus males (y ya que has querido asociarlo a tu Pasión redentora, haz que confíe en la eficacia de su dolor para la salvación del mundo). Tú que vives y reinas por los siglos de los siglos."
+      - id: oracion_146_para_anciano
+        display_name: "Para un anciano"
+        texto: "Señor, mira con bondad a nuestro hermano que, sintiéndose débil por el peso de sus años, pide recibir la gracia de la santa Unción para bien de su cuerpo y de su alma; concédele que, confortado con el don del Espíritu Santo, permanezca en la fe y en la esperanza, dé a todos ejemplo de paciencia y así manifieste el consuelo de tu amor. Por Jesucristo, nuestro Señor."
+      - id: oracion_147_peligro_grave
+        display_name: "Para quien está en peligro grave"
+        texto: "Señor Jesucristo, Redentor de los hombres, que en tu Pasión quisiste soportar nuestros sufrimientos y aguantar nuestros dolores, te pedimos por nuestro hermano N., que está enfermo; tú, que lo has redimido, aviva en él la esperanza de su salvación y conforta su cuerpo y su alma. Tú que vives y reinas por los siglos de los siglos."
+      - id: oracion_148_uncion_y_viatico
+        display_name: "Unción y Viático"
+        texto: "Padre de misericordia y Dios de todo consuelo, mira con amor a tu hijo N., que en su angustia pone en ti toda su esperanza; alivíalo con la gracia de la santa Unción y reanímalo con el Cuerpo y la Sangre de tu Hijo, Viático para la vida eterna. Por Jesucristo, nuestro Señor."
+      - id: oracion_149_agonia
+        display_name: "Para quien está en agonía"
+        texto: "Padre misericordioso, tú que conoces hasta dónde llega la buena voluntad del hombre, tú que siempre estás dispuesto a olvidar nuestras culpas, tú que nunca niegas el perdón a los que acuden a ti, compadécete de tu hijo N., que se debate en la agonía. Te pedimos que, ungido con el óleo santo y ayudado por la oración de nuestra fe, se vea aliviado en su cuerpo y en su alma, obtenga el perdón de sus pecados y sienta la fortaleza de tu amor. Por Jesucristo, tu Hijo, que venció a la muerte y nos abrió las puertas de la vida y contigo vive y reina por los siglos de los siglos."
+
+  - id: respuesta_amen_oracion_despues_uncion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_150_padrenuestro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El sacerdote introduce la oración dominical con estas o parecidas palabras:"
+
+  - id: monicion_padrenuestro
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y ahora, todos juntos, invoquemos a Dios con la oración que el mismo Cristo nos enseñó:"
+
+  - id: oracion_padrenuestro
+    tipo: oracion
+    actor: todos
+    obligatorio: true
+    texto: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal."
+
+  - id: rubrica_comunion_remite
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Si ha de comulgar el enfermo, después de la oración dominical se procede como se indica en el rito de la comunión de enfermos (nn. 105-110)."
+
+  - id: rubrica_151_bendicion_final
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El rito se concluye con la bendición del sacerdote:"
+
+  - id: bendicion_final_151_padre
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Que Dios Padre te bendiga."
+
+  - id: respuesta_amen_151_padre
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: bendicion_final_151_salud
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Que el Hijo de Dios te devuelva la salud."
+
+  - id: respuesta_amen_151_salud
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: bendicion_final_151_ilumine
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Que el Espíritu Santo te ilumine."
+
+  - id: respuesta_amen_151_ilumine
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: bendicion_final_151_proteja
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Que el Señor proteja tu cuerpo y salve tu alma."
+
+  - id: respuesta_amen_151_proteja
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: bendicion_final_151_rostro
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Que haga brillar su rostro sobre ti y te lleve a la vida eterna."
+
+  - id: respuesta_amen_151_rostro
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: bendicion_final_151_presentes
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Y a todos vosotros, que estáis aquí presentes, os bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+
+  - id: respuesta_amen_151_presentes
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: rubrica_152_o_bien
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "O bien:"
+
+  - id: bendicion_final_152_defenderte
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Jesucristo, el Señor, esté siempre a tu lado para defenderte."
+
+  - id: respuesta_amen_152_defenderte
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: bendicion_final_152_guiarte
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Que él vaya delante de ti para guiarte y vaya tras de ti para guardarte."
+
+  - id: respuesta_amen_152_guiarte
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: bendicion_final_152_sostenga
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Que él vele por ti, te sostenga y te bendiga."
+
+  - id: respuesta_amen_152_sostenga
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: bendicion_final_152_presentes
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "Y a todos vosotros, que estáis aquí presentes, os bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+
+  - id: respuesta_amen_152_presentes
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: rubrica_153_o_bien
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "O bien:"
+
+  - id: bendicion_final_153
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: false
+    texto: "La bendición de Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo, descienda sobre vosotros y os acompañe siempre."
+
+  - id: respuesta_amen_153
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: false
+    texto: "Amén."
+
+  - id: rubrica_misal_final
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Puede emplearse también alguna de las fórmulas del Misal para el final de la Misa."

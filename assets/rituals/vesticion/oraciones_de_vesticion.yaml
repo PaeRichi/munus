@@ -1,0 +1,82 @@
+id: oraciones_de_vesticion
+
+metadata:
+  titulo: "Oraciones de vestición"
+  tipo: oracion
+  libro: "Misal Romano, forma extraordinaria"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  nota: "La Instrucción General del Misal Romano n. 45 refiere la preparación del sacerdote durante la vestición. Las fórmulas corresponden a la tradición del Misal Romano en su forma extraordinaria."
+  ministros: [sacerdote]
+  idioma: es
+  version: 1
+
+contenido:
+  - id: rubrica_vesticion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El sacerdote reza cada oración al revestirse con la vestidura correspondiente."
+
+  - id: rubrica_amito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: false
+    texto: "Amito"
+
+  - id: oracion_amito
+    tipo: oracion
+    actor: celebrante
+    obligatorio: false
+    texto: "Pon, Señor, sobre mi cabeza el casco de salvación, para rechazar los asaltos del enemigo."
+
+  - id: rubrica_alba
+    tipo: titulo
+    actor: celebrante
+    obligatorio: false
+    texto: "Alba"
+
+  - id: oracion_alba
+    tipo: oracion
+    actor: celebrante
+    obligatorio: false
+    texto: "Hazme puro Señor, y limpia mi corazón, para que, santificado por la Sangre del Cordero, pueda gozar de las delicias eternas."
+
+  - id: rubrica_cingulo
+    tipo: titulo
+    actor: celebrante
+    obligatorio: false
+    texto: "Cíngulo"
+
+  - id: oracion_cingulo
+    tipo: oracion
+    actor: celebrante
+    obligatorio: false
+    texto: "Cíñeme, Señor, con un cíngulo de pureza, y extingue en mi la llama de la pasión, para que permanezca en mí la virtud de la continencia y de la castidad."
+
+  - id: rubrica_estola
+    tipo: titulo
+    actor: celebrante
+    obligatorio: false
+    texto: "Estola"
+
+  - id: oracion_estola
+    tipo: oracion
+    actor: celebrante
+    obligatorio: false
+    texto: "Devuélveme, Señor, la túnica de la inmortalidad, que perdí por el pecado de los primeros padres; y, aunque me acerco a tus sagrados misterios indignamente, haz que merezca, no obstante, el gozo eterno."
+
+  - id: rubrica_casulla
+    tipo: titulo
+    actor: celebrante
+    obligatorio: false
+    texto: "Casulla"
+
+  - id: oracion_casulla
+    tipo: oracion
+    actor: celebrante
+    obligatorio: false
+    texto: "Señor, que dijiste: 'Mi yugo es suave y mi carga ligera': haz que lo lleve de tal manera que alcance tu gracia."

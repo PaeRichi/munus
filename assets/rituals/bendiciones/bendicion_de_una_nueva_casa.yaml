@@ -1,0 +1,273 @@
+id: bendicion_de_una_nueva_casa
+
+metadata:
+  titulo: "Bendición de una nueva casa"
+  tipo: bendicion
+  libro: "Bendicional"
+  parte: "Segunda"
+  capitulo: "X"
+  numeros:
+    inicio: 534
+    fin: 552
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+
+praenotanda: |
+  534. Cuando los cristianos desean inaugurar una nueva casa invocando la protección divina, el pastor de almas y sus cooperadores accederán de buen grado a este deseo, ya que con ello se les ofrece una magnífica ocasión de entrar en contacto con aquellos fieles. Así, juntos y con alegría, dan gracias a Dios, de quien procede todo bien, por el don de una nueva vivienda.
+
+  535. El rito que aquí se propone pueden utilizarlo el sacerdote, el diácono, y también el laico, con los ritos y fórmulas previstos para él.
+
+  536. Con el fin de acomodar la celebración a las circunstancias del lugar y de los que viven en la casa, pueden adaptarse algunos de los elementos de este rito, respetando siempre la estructura de la celebración y sus elementos principales.
+
+  537. No debe hacerse la bendición de la nueva casa sin la presencia de los que en ella viven.
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: rubrica_538
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "538. Reunidos en el lugar adecuado los miembros de la familia con sus parientes y amigos, el ministro dice:"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_538
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_539
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "539. El ministro, si es sacerdote o diácono, saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante_539
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "La paz del Señor a esta casa y a todos los aquí presentes."
+
+  - id: rubrica_otras_palabras_539
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "U otras palabras adecuadas, tomadas preferentemente de la sagrada Escritura."
+
+  - id: rubrica_todos_responden_539
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Todos responden:"
+
+  - id: respuesta_y_con_tu_espiritu_539
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_otro_modo_539
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "O de otro modo adecuado."
+
+  - id: rubrica_541
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "541. Luego dispone a los presentes para la celebración, con estas palabras u otras semejantes:"
+
+  - id: monicion_541
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Queridos hermanos, dirijamos nuestra ferviente oración a Cristo, que quiso nacer de la Virgen María y habitó entre nosotros, para que se digne entrar en esta casa y bendecirla con su presencia.\n\nCristo, el Señor, esté aquí, en medio de vosotros, fomente vuestra caridad fraterna, participe en vuestras alegrías, os consuele en vuestras tristezas, y vosotros, guiados por las enseñanzas y ejemplos de Cristo, procurad, ante todo, que esta nueva casa sea hogar de caridad, desde donde se difunda ampliamente la fragancia de Cristo."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: rubrica_542
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "542. Luego uno de los presentes o el mismo ministro, lee un texto de la Sagrada Escritura."
+
+  - id: lectura_evangelio
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    referencia: "Lc 10, 5-9"
+    encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Lucas. Lc 10, 5-9: Paz a esta casa"
+    texto: |
+      Dijo el Señor a sus discípulos:
+
+      —«Cuando entréis en una casa, decid primero: "Paz en esta casa." Y si allí hay gente de paz, descansará sobre ellos vuestra paz; si no, volverá a vosotros. Quedaos en la misma casa, comed y bebed de lo que tengan, porque el obrero merece su salario. No andéis cambiando de casa en casa. Si entráis en un pueblo y os reciben bien, comed lo que os pongan, curad a los enfermos que haya, y decid: "Está cerca de vosotros el reino de Dios."»
+    opciones:
+      - id: opcion_gn_18_1_10a
+        referencia: "Gn 18, l-10a"
+      - id: opcion_mc_1_29_30
+        referencia: "Mc 1, 29-30"
+      - id: opcion_lc_10_38_42
+        referencia: "Lc 10, 38-42"
+      - id: opcion_lc_19_1_9
+        referencia: "Lc 19, 1-9"
+      - id: opcion_lc_24_28_32
+        referencia: "Lc 24, 28-32"
+
+  - id: respuesta_palabra_del_senor
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Palabra del Señor."
+
+  - id: rubrica_544
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "544. Según las circunstancias, se puede decir o cantar un salmo responsorial u otro canto adecuado."
+
+  - id: salmo_responsorial_126
+    tipo: salmo
+    actor: lector
+    obligatorio: false
+    referencia: "Sal 126 (127), 1. 2. 3-4. 5 (R.: cf. 1)"
+    estribillo: "El Señor nos construya la casa."
+    estrofas:
+      - "Si el Señor no construye la casa, en vano se cansan los albañiles; si el Señor no guarda la ciudad, en vano vigilan los centinelas."
+      - "Es inútil que madruguéis, que veléis hasta muy tarde, que comáis el pan de vuestros sudores: ¡Dios lo da a sus amigos mientras duermen!"
+      - "La herencia que da el Señor son los hijos; su salario, el fruto del vientre: son saetas en mano de un guerrero los hijos de la juventud."
+      - "Dichoso el hombre que llena con ellas su aljaba: no quedará derrotado cuando litigue con su adversario en la plaza."
+    opciones:
+      - id: opcion_sal_111
+        referencia: "Sal 111 (112), 1-2. 3-4. 5-6. 7-8. 9"
+        estribillo: "Dichoso quien teme al Señor."
+      - id: opcion_sal_127
+        referencia: "Sal 127 (128), 1-2. 3. 4-6a"
+        estribillo: "Esta es la bendición del hombre que teme al Señor."
+
+  - id: rubrica_546
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "546. El ministro, según las circunstancias, exhorta brevemente a los presentes, explicándoles la lectura bíblica, para que perciban por la fe el significado de la celebración."
+
+  - id: rubrica_titulo_preces
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Preces"
+
+  - id: rubrica_547
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "547. Sigue la plegaria común. Entre las invocaciones que aquí se proponen, el ministro puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las circunstancias de los presentes o del lugar."
+
+  - id: preces_bendicion_casa
+    tipo: preces
+    actor: celebrante
+    obligatorio: true
+    invitacion: "Con ánimo agradecido y gozoso invoquemos al Hijo de Dios, Señor de cielo y tierra, que, hecho hombre, habitó entre nosotros, y digamos:"
+    respuesta_fija: "Quédate con nosotros, Señor."
+    invocaciones:
+      - invocacion: "Señor Jesucristo, que con María y José santificaste la vida doméstica, dígnate convivir con nosotros en esta casa, para que te reconozcamos como huésped y te honremos como cabeza."
+        respuesta: "Quédate con nosotros, Señor."
+      - invocacion: "Tú, por quien todo el edificio queda ensamblado, y se va levantando hasta formar un templo consagrado, haz que los habitantes de esta casa se vayan integrando en la construcción, para ser morada de Dios, por el Espíritu."
+        respuesta: "Quédate con nosotros, Señor."
+      - invocacion: "Tú que enseñaste a tus fieles a edificar su casa sobre piedra firme, haz que la vida de esta familia se apoye firmemente en tu palabra y, evitando toda división, te sirva con generosidad y de todo corazón."
+        respuesta: "Quédate con nosotros, Señor."
+      - invocacion: "Tú que, careciendo de morada propia, aceptaste con el gozo de la pobreza la hospitalidad de los amigos, haz que todos los que buscan vivienda encuentren, con nuestra ayuda, una casa digna de este nombre."
+        respuesta: "Quédate con nosotros, Señor."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: rubrica_548
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "548. El ministro, si es sacerdote o diácono, con las manos extendidas, de lo contrario, con las manos juntas, añade:"
+
+  - id: oracion_bendicion_casa
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Asiste, Señor, a estos servidores tuyos que, al inaugurar (hoy) esta vivienda, imploran humildemente tu bendición, para que, cuando vivan en ella, sientan tu presencia protectora, cuando salgan, gocen de tu compañía, cuando regresen, experimenten la alegría de tenerte como huésped, hasta que lleguen felizmente a la estancia preparada para ellos en la casa de tu Padre. Tú que vives y reinas por los siglos de los siglos."
+
+  - id: respuesta_amen_oracion_bendicion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_550
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "550. Después de la oración de bendición, el ministro rocía con agua bendita a los presentes y la casa, diciendo, según las circunstancias:"
+
+  - id: bendicion_aspersion_550
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que esta agua nos recuerde nuestro bautismo en Cristo, que nos redimió con su muerte y resurrección."
+
+  - id: respuesta_amen_550
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_551
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "551. El ministro concluye el rito, diciendo:"
+
+  - id: conclusion_551
+    tipo: conclusion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que la paz de Cristo actúe de arbitro en nuestro corazón, la palabra de Cristo habite entre nosotros en toda su riqueza, para que todo lo que de palabra o de obra realicemos, sea todo en Nombre del Señor."
+
+  - id: respuesta_amen_551
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_canto_final
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "552. Es aconsejable terminar el rito con un canto adecuado."

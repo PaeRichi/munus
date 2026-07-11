@@ -1,0 +1,51 @@
+id: letanias_de_desagravio
+
+metadata:
+  titulo: "Letanías de desagravio"
+  tipo: bendicion
+  libro: "Ritual del Culto Eucarístico fuera de la Misa"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: 199
+    fin: 199
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+
+contenido:
+  - id: letanias_desagravio
+    tipo: letania
+    actor: celebrante
+    obligatorio: true
+    invocaciones:
+      - invocacion: "Bendito sea Dios."
+        respuesta: "Bendito sea Dios."
+      - invocacion: "Bendito sea su Santo Nombre."
+        respuesta: "Bendito sea su Santo Nombre."
+      - invocacion: "Bendito sea Jesucristo verdadero Dios y verdadero hombre."
+        respuesta: "Bendito sea Jesucristo verdadero Dios y verdadero hombre."
+      - invocacion: "Bendito sea el Nombre de Jesús."
+        respuesta: "Bendito sea el Nombre de Jesús."
+      - invocacion: "Bendito sea su Sacratísimo Corazón."
+        respuesta: "Bendito sea su Sacratísimo Corazón."
+      - invocacion: "Bendita sea su Preciosísima Sangre."
+        respuesta: "Bendita sea su Preciosísima Sangre."
+      - invocacion: "Bendito sea Jesús en el Santísimo Sacramento del Altar."
+        respuesta: "Bendito sea Jesús en el Santísimo Sacramento del Altar."
+      - invocacion: "Bendito sea el Espíritu Santo Paráclito."
+        respuesta: "Bendito sea el Espíritu Santo Paráclito."
+      - invocacion: "Bendita sea María Santísima la excelsa Madre de Dios."
+        respuesta: "Bendita sea María Santísima la excelsa Madre de Dios."
+      - invocacion: "Bendita sea su Santa e Inmaculada Concepción."
+        respuesta: "Bendita sea su Santa e Inmaculada Concepción."
+      - invocacion: "Bendita sea su gloriosa Asunción."
+        respuesta: "Bendita sea su gloriosa Asunción."
+      - invocacion: "Bendito sea el nombre de María Virgen y Madre."
+        respuesta: "Bendito sea el nombre de María Virgen y Madre."
+      - invocacion: "Bendita sea María Santísima Madre de la Iglesia."
+        respuesta: "Bendita sea María Santísima Madre de la Iglesia."
+      - invocacion: "Bendito sea su castísimo esposo San José."
+        respuesta: "Bendito sea su castísimo esposo San José."
+      - invocacion: "Bendito sea Dios en sus Ángeles y en sus Santos."
+        respuesta: "Bendito sea Dios en sus Ángeles y en sus Santos."

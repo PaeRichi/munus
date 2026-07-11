@@ -1,0 +1,33 @@
+id: oracion_antes_de_la_bendicion_eucaristica
+
+metadata:
+  titulo: "Oración antes de la bendición eucarística"
+  tipo: bendicion
+  libro: "Ritual del Culto Eucarístico fuera de la Misa"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: 38
+    fin: 38
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+
+contenido:
+  - id: invitacion_oremos
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oremos."
+
+  - id: oracion_antes_bendicion
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oh Dios, que en este sacramento admirable nos dejaste el memorial de tu pasión, te pedimos nos concedas venerar de tal modo los sagrados misterios de tu Cuerpo y de tu Sangre, que experimentemos constantemente en nosotros el fruto de tu redención. Tú que vives y reinas por los siglos de los siglos."
+
+  - id: respuesta_amen
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."

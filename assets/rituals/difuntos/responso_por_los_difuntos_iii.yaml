@@ -1,0 +1,190 @@
+id: responso_por_los_difuntos_iii
+
+metadata:
+  titulo: "Responso por los difuntos III"
+  tipo: bendicion
+  libro: ~
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  advertencia: "Texto de uso pastoral extendido. Fuente litúrgica oficial no identificada."
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+
+contenido:
+  - id: rubrica_cita_apertura
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "«Yo soy la resurrección y la vida, quien cree en Mí, aunque haya muerto, vivirá; y todo el que vive y cree en Mí no morirá eternamente»."
+
+  - id: antifona_vengan_santos
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Vengan en su ayuda, Santos de Dios; salgan a su encuentro, Ángeles del Señor; reciban su alma, y preséntenla al Altísimo."
+
+  - id: versiculo_cristo_te_llamo
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Cristo que te llamó, te reciba y los Ángeles te conduzcan al regazo de Abraham."
+
+  - id: respuesta_reciban_su_alma_1
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Reciban su alma y preséntenla al Altísimo."
+
+  - id: versiculo_descanso_eterno
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Concédele, Señor, el descanso eterno y brille para él (ella) la luz eterna."
+
+  - id: respuesta_reciban_su_alma_2
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Reciban su alma y preséntenla al Altísimo."
+
+  - id: versiculo_kyrie
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Señor, ten piedad."
+
+  - id: respuesta_kyrie
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Cristo, ten piedad. Señor, ten piedad."
+
+  - id: rubrica_padre_nuestro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Padre Nuestro..."
+
+  - id: versiculo_libranos
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Y líbranos del mal."
+
+  - id: respuesta_amen_libranos
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: versiculo_libera_alma
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Libera, Señor, su alma."
+
+  - id: respuesta_penas_infierno
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "De las penas del infierno."
+
+  - id: versiculo_descanse_en_paz
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Descanse en paz."
+
+  - id: respuesta_amen_paz
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: versiculo_senor_escucha
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Señor, escucha nuestra oración."
+
+  - id: respuesta_llegue_clamor
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y llegue a Ti nuestro clamor."
+
+  - id: versiculo_el_senor_este
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor esté con ustedes."
+
+  - id: respuesta_y_con_tu_espiritu
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: invitacion_oremos
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oremos."
+
+  - id: oracion_final
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Oh, Dios, que concedes el perdón y quieres la salvación de los hombres: te rogamos que, por la intercesión de la Santísima Virgen María y de todos los Santos, concedas la bienaventuranza a tu hijo (a) N., a quien llamaste de este mundo.\n\nNo le abandones en las manos del enemigo, ni te olvides de él (ella) para siempre; sino recíbelo (a) con tus santos Ángeles y llévale al Cielo, su patria definitiva.\n\nY porque creyó y esperó en Ti, concédele para siempre las alegrías del Cielo. Por Cristo nuestro Señor."
+
+  - id: respuesta_amen_oracion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_cita_cierre
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "«Yo soy la resurrección y la vida; quien cree en Mí, aunque haya muerto, vivirá; y todo el que vive y cree en Mí no morirá eternamente»."
+
+  - id: versiculo_descanso_eterno_final
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Concédele, Señor, el descanso eterno."
+
+  - id: respuesta_luz_eterna
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y brille para él (ella) la luz eterna."
+
+  - id: versiculo_descanse_en_paz_final
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Descanse en paz."
+
+  - id: respuesta_amen_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: conclusion
+    tipo: conclusion
+    actor: celebrante
+    obligatorio: true
+    texto: "Por la misericordia de Dios, su alma y las almas de todos los fieles difuntos descansen en paz."
+
+  - id: respuesta_amen_conclusion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
