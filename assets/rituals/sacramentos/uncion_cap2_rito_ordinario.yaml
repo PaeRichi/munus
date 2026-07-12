@@ -12,7 +12,7 @@ metadata:
   ministros: [sacerdote]
   idioma: es
   version: 2
-  nota: "Actualizado a MUNUS YAML Spec v1.1: saludos iniciales (nn. 125-127), acto penitencial (nn. 131-134), letanía por el enfermo (nn. 136-138) y bendición del óleo (nn. 140-142) migrados a opciones con elementos (Regla 3.2), por tratarse de variantes estructuralmente distintas entre sí, no solo de contenido. Se retiraron las marcas literales 'V.'/'R.' de los textos de saludo y respuesta, redundantes con tipo/actor. Se agregaron display_name a las opciones con elementos y a las de texto largo. Se retiraron los números de cita del libro al inicio de rúbricas, títulos y el gesto de imposición de manos (se conservaron las referencias cruzadas a otros números dentro del texto, ej. 'n. 259', 'nn. 260 ss', 'n. 21', 'nn. 105-110')."
+  nota: "Actualizado a MUNUS YAML Spec v1.1: saludos iniciales (nn. 125-127), monición/oración antes de la Unción (nn. 129-130), acto penitencial (nn. 131-134), letanía por el enfermo (nn. 136-138), bendición del óleo (nn. 140-142) y bendición final (nn. 151-153) migrados a opciones con elementos (Regla 3.2), por tratarse de variantes estructuralmente distintas entre sí, no solo de contenido. Con esto la migración a v1.1 queda completa. Se retiraron las marcas literales 'V.'/'R.' de los textos de saludo y respuesta, redundantes con tipo/actor. Se agregaron display_name a las opciones con elementos y a las de texto largo. Se retiraron los números de cita del libro al inicio de rúbricas, títulos y el gesto de imposición de manos (se conservaron las referencias cruzadas a otros números dentro del texto, ej. 'n. 259', 'nn. 260 ss', 'n. 21', 'nn. 105-110')."
 
 contenido:
   - id: rubrica_preparativos
@@ -87,31 +87,27 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "Seguidamente se dirige a los presentes con estas o parecidas palabras:"
+    texto: "Seguidamente se dirige a los presentes con estas o parecidas palabras, o bien dice la siguiente oración:"
 
   - id: monicion_129_santiago
     tipo: monicion
     actor: celebrante
     obligatorio: true
     texto: "Queridos hermanos: En el Evangelio leemos que nuestro Señor Jesucristo curaba a los enfermos, que acudían a él en busca de salud. El mismo, que durante su vida sufrió tanto por los hombres, está ahora presente en medio de nosotros, reunidos en su nombre, y nos dice por medio del apóstol Santiago: «¿Está enfermo alguno de vosotros? Llame a los presbíteros de la Iglesia, y que recen sobre él, después de ungirlo con óleo, en nombre del Señor. Y la oración de fe salvará al enfermo, y el Señor lo curará, y, si ha cometido pecado, lo perdonará». Pongamos, pues, a nuestro hermano enfermo en manos de Cristo, que lo ama y puede curarlo, para que le conceda alivio y salud."
-
-  - id: rubrica_130_o_bien_oracion
-    tipo: rubrica
-    actor: celebrante
-    obligatorio: false
-    texto: "O bien puede decir la siguiente oración:"
-
-  - id: oracion_130_escucha
-    tipo: oracion
-    actor: celebrante
-    obligatorio: false
-    texto: "Señor, Dios nuestro, que por medio de tu apóstol Santiago nos has dicho: «¿Está enfermo alguno de vosotros? Llame a los presbíteros de la Iglesia, y que recen sobre él, después de ungirlo con óleo, en nombre del Señor. Y la oración de fe salvará al enfermo, y el Señor lo curará, y, si ha cometido pecado, lo perdonará». Escucha la oración de quienes nos hemos reunido en tu nombre y protege misericordiosamente a N., nuestro hermano enfermo (y a todos los otros enfermos de esta casa). Por Jesucristo, nuestro Señor."
-
-  - id: respuesta_amen_oracion_130
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
+    opciones:
+      - id: oracion_130_alternativa
+        display_name: "Señor, Dios nuestro..."
+        elementos:
+          - id: oracion_130_escucha
+            tipo: oracion
+            actor: celebrante
+            obligatorio: true
+            texto: "Señor, Dios nuestro, que por medio de tu apóstol Santiago nos has dicho: «¿Está enfermo alguno de vosotros? Llame a los presbíteros de la Iglesia, y que recen sobre él, después de ungirlo con óleo, en nombre del Señor. Y la oración de fe salvará al enfermo, y el Señor lo curará, y, si ha cometido pecado, lo perdonará». Escucha la oración de quienes nos hemos reunido en tu nombre y protege misericordiosamente a N., nuestro hermano enfermo (y a todos los otros enfermos de esta casa). Por Jesucristo, nuestro Señor."
+          - id: respuesta_amen_oracion_130
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
 
   - id: rubrica_titulo_acto_penitencial
     tipo: titulo
@@ -590,151 +586,132 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "El rito se concluye con la bendición del sacerdote:"
+    texto: "El rito se concluye con la bendición del sacerdote. A continuación se ofrecen tres fórmulas; el sacerdote elige una."
 
-  - id: bendicion_final_151_padre
+  - id: bendicion_final
     tipo: bendicion
     actor: celebrante
     obligatorio: false
-    texto: "Que Dios Padre te bendiga."
-
-  - id: respuesta_amen_151_padre
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
-
-  - id: bendicion_final_151_salud
-    tipo: bendicion
-    actor: celebrante
-    obligatorio: false
-    texto: "Que el Hijo de Dios te devuelva la salud."
-
-  - id: respuesta_amen_151_salud
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
-
-  - id: bendicion_final_151_ilumine
-    tipo: bendicion
-    actor: celebrante
-    obligatorio: false
-    texto: "Que el Espíritu Santo te ilumine."
-
-  - id: respuesta_amen_151_ilumine
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
-
-  - id: bendicion_final_151_proteja
-    tipo: bendicion
-    actor: celebrante
-    obligatorio: false
-    texto: "Que el Señor proteja tu cuerpo y salve tu alma."
-
-  - id: respuesta_amen_151_proteja
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
-
-  - id: bendicion_final_151_rostro
-    tipo: bendicion
-    actor: celebrante
-    obligatorio: false
-    texto: "Que haga brillar su rostro sobre ti y te lleve a la vida eterna."
-
-  - id: respuesta_amen_151_rostro
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
-
-  - id: bendicion_final_151_presentes
-    tipo: bendicion
-    actor: celebrante
-    obligatorio: false
-    texto: "Y a todos vosotros, que estáis aquí presentes, os bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
-
-  - id: respuesta_amen_151_presentes
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
-
-  - id: rubrica_152_o_bien
-    tipo: rubrica
-    actor: celebrante
-    obligatorio: false
-    texto: "O bien:"
-
-  - id: bendicion_final_152_defenderte
-    tipo: bendicion
-    actor: celebrante
-    obligatorio: false
-    texto: "Jesucristo, el Señor, esté siempre a tu lado para defenderte."
-
-  - id: respuesta_amen_152_defenderte
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
-
-  - id: bendicion_final_152_guiarte
-    tipo: bendicion
-    actor: celebrante
-    obligatorio: false
-    texto: "Que él vaya delante de ti para guiarte y vaya tras de ti para guardarte."
-
-  - id: respuesta_amen_152_guiarte
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
-
-  - id: bendicion_final_152_sostenga
-    tipo: bendicion
-    actor: celebrante
-    obligatorio: false
-    texto: "Que él vele por ti, te sostenga y te bendiga."
-
-  - id: respuesta_amen_152_sostenga
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
-
-  - id: bendicion_final_152_presentes
-    tipo: bendicion
-    actor: celebrante
-    obligatorio: false
-    texto: "Y a todos vosotros, que estáis aquí presentes, os bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
-
-  - id: respuesta_amen_152_presentes
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
-
-  - id: rubrica_153_o_bien
-    tipo: rubrica
-    actor: celebrante
-    obligatorio: false
-    texto: "O bien:"
-
-  - id: bendicion_final_153
-    tipo: bendicion
-    actor: celebrante
-    obligatorio: false
-    texto: "La bendición de Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo, descienda sobre vosotros y os acompañe siempre."
-
-  - id: respuesta_amen_153
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: false
-    texto: "Amén."
+    opciones:
+      - id: bendicion_final_formula_1
+        display_name: "Que Dios Padre te bendiga..."
+        elementos:
+          - id: bendicion_final_151_padre
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Que Dios Padre te bendiga."
+          - id: respuesta_amen_151_padre
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+          - id: bendicion_final_151_salud
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Que el Hijo de Dios te devuelva la salud."
+          - id: respuesta_amen_151_salud
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+          - id: bendicion_final_151_ilumine
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Que el Espíritu Santo te ilumine."
+          - id: respuesta_amen_151_ilumine
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+          - id: bendicion_final_151_proteja
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Que el Señor proteja tu cuerpo y salve tu alma."
+          - id: respuesta_amen_151_proteja
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+          - id: bendicion_final_151_rostro
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Que haga brillar su rostro sobre ti y te lleve a la vida eterna."
+          - id: respuesta_amen_151_rostro
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+          - id: bendicion_final_151_presentes
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Y a todos vosotros, que estáis aquí presentes, os bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+          - id: respuesta_amen_151_presentes
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+      - id: bendicion_final_formula_2
+        display_name: "Jesucristo, el Señor, esté..."
+        elementos:
+          - id: bendicion_final_152_defenderte
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Jesucristo, el Señor, esté siempre a tu lado para defenderte."
+          - id: respuesta_amen_152_defenderte
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+          - id: bendicion_final_152_guiarte
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Que él vaya delante de ti para guiarte y vaya tras de ti para guardarte."
+          - id: respuesta_amen_152_guiarte
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+          - id: bendicion_final_152_sostenga
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Que él vele por ti, te sostenga y te bendiga."
+          - id: respuesta_amen_152_sostenga
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+          - id: bendicion_final_152_presentes
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "Y a todos vosotros, que estáis aquí presentes, os bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+          - id: respuesta_amen_152_presentes
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+      - id: bendicion_final_formula_3
+        display_name: "La bendición de Dios todopoderoso..."
+        elementos:
+          - id: bendicion_final_153
+            tipo: bendicion
+            actor: celebrante
+            obligatorio: true
+            texto: "La bendición de Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo, descienda sobre vosotros y os acompañe siempre."
+          - id: respuesta_amen_153
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
 
   - id: rubrica_misal_final
     tipo: rubrica

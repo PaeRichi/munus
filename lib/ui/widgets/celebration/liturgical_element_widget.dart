@@ -20,14 +20,25 @@ class LiturgicalElementWidget extends StatelessWidget {
     this.hideOptionsButton = false,
   });
 
+  /// La opción activa. Devuelve null cuando corresponde mostrar la
+  /// fórmula "principal" del propio bloque padre (element.text), en vez
+  /// de una alternativa de `opciones`.
   LiturgicalOption? get _activeOption {
     if (element.options.isEmpty) return null;
     final chosenId = preferences[element.id];
     if (chosenId != null) {
+      // El sacerdote eligió explícitamente volver a la fórmula principal.
+      if (chosenId == element.id) return null;
       final chosen =
           element.options.where((o) => o.id == chosenId).firstOrNull;
       if (chosen != null) return chosen;
     }
+    // Sin elección guardada: si el bloque padre tiene su propia fórmula,
+    // esa es la que corresponde por defecto (spec: "el bloque padre lleva
+    // texto propio solo si existe una fórmula principal"). Si no tiene
+    // texto propio (todas las opciones son de igual rango), se usa la
+    // primera opción como default, como ya se hacía.
+    if (element.text != null) return null;
     return element.options.first;
   }
 
@@ -50,6 +61,40 @@ class LiturgicalElementWidget extends StatelessWidget {
 
   bool get _hasOptions => element.options.isNotEmpty;
 
+  static String _shortLabel(String text, {int maxLen = 70}) {
+    if (text.length <= maxLen) return text;
+    return '${text.substring(0, maxLen).trimRight()}…';
+  }
+
+  static Widget _optionRow({
+    required String label,
+    required bool isChosen,
+    required double fontSize,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(
+              isChosen ? Icons.circle : Icons.circle_outlined,
+              size: 14,
+              color:
+                  isChosen ? MunusColors.textRubric : MunusColors.textDiscrete,
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Text(label, style: MunusTextStyles.bodyText(fontSize)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   static void showOptionsSheet(
     BuildContext context, {
     required LiturgicalElement element,
@@ -64,8 +109,13 @@ class LiturgicalElementWidget extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
       builder: (_) {
+        final hasOwnFormula = element.text != null;
         final chosenId = preferences[element.id] ??
-            (element.options.isNotEmpty ? element.options.first.id : null);
+            (hasOwnFormula
+                ? element.id
+                : (element.options.isNotEmpty
+                    ? element.options.first.id
+                    : null));
         return SafeArea(
           child: ListView(
             shrinkWrap: true,
@@ -73,38 +123,30 @@ class LiturgicalElementWidget extends StatelessWidget {
             children: [
               Text('Opciones', style: MunusTextStyles.sectionTitle(fontSize)),
               const SizedBox(height: 16),
+              if (hasOwnFormula)
+                _optionRow(
+                  label: element.reference ?? _shortLabel(element.text!),
+                  isChosen: chosenId == element.id,
+                  fontSize: fontSize,
+                  onTap: () {
+                    onOptionSelected?.call(element.id, element.id);
+                    Navigator.pop(context);
+                  },
+                ),
               ...element.options.map((option) {
                 final isChosen = option.id == chosenId;
-                return GestureDetector(
+                final label = option.displayName ??
+                    option.reference ??
+                    (option.text != null ? _shortLabel(option.text!) : null) ??
+                    option.id;
+                return _optionRow(
+                  label: label,
+                  isChosen: isChosen,
+                  fontSize: fontSize,
                   onTap: () {
                     onOptionSelected?.call(element.id, option.id);
                     Navigator.pop(context);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Icon(
-                          isChosen ? Icons.circle : Icons.circle_outlined,
-                          size: 14,
-                          color: isChosen
-                              ? MunusColors.textRubric
-                              : MunusColors.textDiscrete,
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: Text(
-                            option.displayName ??
-                                option.reference ??
-                                option.text ??
-                                option.id,
-                            style: MunusTextStyles.bodyText(fontSize),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                 );
               }),
             ],
