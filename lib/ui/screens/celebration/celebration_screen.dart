@@ -71,7 +71,7 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
         addSpacer();
         widgets.add(_TitleWithOptionsButton(
           titleElement: el,
-          optionsElement: next!,
+          optionsElement: next,
           preferences: preferences,
           fontSize: fontSize,
           onOptionSelected: handleSelected,
