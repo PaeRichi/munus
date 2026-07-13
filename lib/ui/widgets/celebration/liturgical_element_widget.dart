@@ -345,9 +345,25 @@ class LiturgicalElementWidget extends StatelessWidget {
       children: [
         if (element.invitation != null)
           Padding(
-            padding: const EdgeInsets.only(bottom: 12),
+            padding: const EdgeInsets.only(bottom: 6),
             child: Text(element.invitation!,
                 style: MunusTextStyles.bodyText(fontSize)),
+          ),
+        if (element.invitation != null && element.fixedResponse != null)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                      text: 'R. ',
+                      style: MunusTextStyles.responseLabel(fontSize)),
+                  TextSpan(
+                      text: element.fixedResponse!,
+                      style: MunusTextStyles.response(fontSize)),
+                ],
+              ),
+            ),
           ),
         ...element.invocations.map((inv) {
           return Padding(

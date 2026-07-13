@@ -11,7 +11,8 @@ metadata:
     fin: 552
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
+  version: 2
+  nota: "Revisado contra MUNUS YAML Spec v1.1: no se encontraron casos de Regla 3.2 (todas las alternativas del archivo — lectura y salmo — son variantes de contenido simple, no de forma litúrgica), por lo que la estructura de opciones no cambió. Se retiraron los números de cita del libro al inicio de las rúbricas (se conservan en praenotanda, que reproduce el texto introductorio completo del libro). Se revisó obligatorio: solo queda true la rúbrica de la aspersión (acción física concreta sobre personas/lugar); las de postura (manos extendidas/juntas) pasan a false, criterio actualizado respecto de archivos anteriores. PENDIENTE: las 5 opciones de lectura_evangelio solo tienen referencia; falta agregar encabezado y texto en cada una (transcripción pendiente del Bendicional/Leccionario, a cargo de Ricardo por motivos de derechos de autor sobre la traducción)."
 
 praenotanda: |
   534. Cuando los cristianos desean inaugurar una nueva casa invocando la protección divina, el pastor de almas y sus cooperadores accederán de buen grado a este deseo, ya que con ello se les ofrece una magnífica ocasión de entrar en contacto con aquellos fieles. Así, juntos y con alegría, dan gracias a Dios, de quien procede todo bien, por el don de una nueva vivienda.
@@ -33,7 +34,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "538. Reunidos en el lugar adecuado los miembros de la familia con sus parientes y amigos, el ministro dice:"
+    texto: "Reunidos en el lugar adecuado los miembros de la familia con sus parientes y amigos, el ministro dice:"
 
   - id: saludo_inicial_trinitario
     tipo: saludo
@@ -44,7 +45,7 @@ contenido:
   - id: rubrica_signan_responden
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos se santiguan y responden:"
 
   - id: respuesta_amen_538
@@ -57,7 +58,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "539. El ministro, si es sacerdote o diácono, saluda a los presentes, diciendo:"
+    texto: "El ministro, si es sacerdote o diácono, saluda a los presentes, diciendo:"
 
   - id: saludo_celebrante_539
     tipo: saludo
@@ -74,7 +75,7 @@ contenido:
   - id: rubrica_todos_responden_539
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos responden:"
 
   - id: respuesta_y_con_tu_espiritu_539
@@ -93,7 +94,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "541. Luego dispone a los presentes para la celebración, con estas palabras u otras semejantes:"
+    texto: "Luego dispone a los presentes para la celebración, con estas palabras u otras semejantes:"
 
   - id: monicion_541
     tipo: monicion
@@ -111,7 +112,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "542. Luego uno de los presentes o el mismo ministro, lee un texto de la Sagrada Escritura."
+    texto: "Luego uno de los presentes o el mismo ministro, lee un texto de la Sagrada Escritura."
 
   - id: lectura_evangelio
     tipo: lectura
@@ -126,14 +127,19 @@ contenido:
     opciones:
       - id: opcion_gn_18_1_10a
         referencia: "Gn 18, l-10a"
+        # PENDIENTE: agregar encabezado y texto (transcripción del Bendicional / Leccionario)
       - id: opcion_mc_1_29_30
         referencia: "Mc 1, 29-30"
+        # PENDIENTE: agregar encabezado y texto
       - id: opcion_lc_10_38_42
         referencia: "Lc 10, 38-42"
+        # PENDIENTE: agregar encabezado y texto
       - id: opcion_lc_19_1_9
         referencia: "Lc 19, 1-9"
+        # PENDIENTE: agregar encabezado y texto
       - id: opcion_lc_24_28_32
         referencia: "Lc 24, 28-32"
+        # PENDIENTE: agregar encabezado y texto
 
   - id: respuesta_palabra_del_senor
     tipo: respuesta
@@ -145,7 +151,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "544. Según las circunstancias, se puede decir o cantar un salmo responsorial u otro canto adecuado."
+    texto: "Según las circunstancias, se puede decir o cantar un salmo responsorial u otro canto adecuado."
 
   - id: salmo_responsorial_126
     tipo: salmo
@@ -170,7 +176,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "546. El ministro, según las circunstancias, exhorta brevemente a los presentes, explicándoles la lectura bíblica, para que perciban por la fe el significado de la celebración."
+    texto: "El ministro, según las circunstancias, exhorta brevemente a los presentes, explicándoles la lectura bíblica, para que perciban por la fe el significado de la celebración."
 
   - id: rubrica_titulo_preces
     tipo: titulo
@@ -182,7 +188,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "547. Sigue la plegaria común. Entre las invocaciones que aquí se proponen, el ministro puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las circunstancias de los presentes o del lugar."
+    texto: "Sigue la plegaria común. Entre las invocaciones que aquí se proponen, el ministro puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las circunstancias de los presentes o del lugar."
 
   - id: preces_bendicion_casa
     tipo: preces
@@ -209,8 +215,8 @@ contenido:
   - id: rubrica_548
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
-    texto: "548. El ministro, si es sacerdote o diácono, con las manos extendidas, de lo contrario, con las manos juntas, añade:"
+    obligatorio: false
+    texto: "El ministro, si es sacerdote o diácono, con las manos extendidas, de lo contrario, con las manos juntas, añade:"
 
   - id: oracion_bendicion_casa
     tipo: oracion
@@ -228,7 +234,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: true
-    texto: "550. Después de la oración de bendición, el ministro rocía con agua bendita a los presentes y la casa, diciendo, según las circunstancias:"
+    texto: "Después de la oración de bendición, el ministro rocía con agua bendita a los presentes y la casa, diciendo, según las circunstancias:"
 
   - id: bendicion_aspersion_550
     tipo: bendicion
@@ -252,7 +258,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "551. El ministro concluye el rito, diciendo:"
+    texto: "El ministro concluye el rito, diciendo:"
 
   - id: conclusion_551
     tipo: conclusion
@@ -270,4 +276,4 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "552. Es aconsejable terminar el rito con un canto adecuado."
+    texto: "Es aconsejable terminar el rito con un canto adecuado."

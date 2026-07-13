@@ -11,7 +11,8 @@ metadata:
     fin: 1234
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
+  version: 2
+  nota: "Actualizado a MUNUS YAML Spec v1.1: la letanía (n. 1233) migró de bloque suelto a tercera opción de oracion_bendicion con elementos (Regla 3.2), por tratarse de una fórmula estructuralmente distinta (letanía vs. oración corrida). Se retiraron los números de cita del libro al inicio de las rúbricas. Se revisó obligatorio en las rúbricas: solo queda true la que describe la aspersión (acción física concreta); el resto pasan a false. Se quitó la rúbrica n. 1230 (listado de lecturas alternativas), redundante una vez que esas lecturas están modeladas como opciones. PENDIENTE: las 7 opciones de lectura_evangelio solo tienen referencia; falta agregar encabezado y texto en cada una (transcripción pendiente del Bendicional/Leccionario, a cargo de Ricardo por motivos de derechos de autor sobre la traducción)."
 
 praenotanda: |
   1223. Un elemento que gozó siempre de gran veneración en la Iglesia y constituye uno de los signos que con frecuencia usa para bendecir a los fieles es el agua. El agua ritualmente bendecida evoca en los fieles el recuerdo de Cristo, que representó para nosotros la culminación de las bendiciones divinas. Él, en efecto, que se dio a sí mismo el apelativo de «agua viva», instituyó para nosotros el bautismo, sacramento del agua, como signo de bendición salvadora.
@@ -31,7 +32,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1226. El celebrante empieza, diciendo:"
+    texto: "El celebrante empieza, diciendo:"
 
   - id: saludo_inicial_trinitario
     tipo: saludo
@@ -42,7 +43,7 @@ contenido:
   - id: rubrica_signan_responden
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos se santiguan y responden:"
 
   - id: respuesta_amen_1226
@@ -55,7 +56,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1227. Luego el celebrante saluda a los presentes, diciendo:"
+    texto: "Luego el celebrante saluda a los presentes, diciendo:"
 
   - id: saludo_celebrante_1227
     tipo: saludo
@@ -72,7 +73,7 @@ contenido:
   - id: rubrica_todos_responden_1227
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos responden:"
 
   - id: respuesta_y_con_tu_espiritu_1227
@@ -91,7 +92,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1228. El celebrante, según las circunstancias, dispone a los presentes para la celebración de la bendición, con estas palabras u otras semejantes:"
+    texto: "El celebrante, según las circunstancias, dispone a los presentes para la celebración de la bendición, con estas palabras u otras semejantes:"
 
   - id: monicion_1228
     tipo: monicion
@@ -109,7 +110,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1229. Luego uno de los presentes, o el mismo celebrante, hace una breve lectura de la sagrada Escritura."
+    texto: "Luego uno de los presentes, o el mismo celebrante, hace una breve lectura de la sagrada Escritura."
 
   - id: lectura_evangelio
     tipo: lectura
@@ -124,30 +125,31 @@ contenido:
     opciones:
       - id: opcion_is_12_1_6
         referencia: "Is 12, 1-6"
+        # PENDIENTE: agregar encabezado y texto (transcripción del Bendicional / Leccionario)
       - id: opcion_is_55_1_11
         referencia: "Is 55, 1-11"
+        # PENDIENTE: agregar encabezado y texto
       - id: opcion_si_15_1_6
         referencia: "Si 15, 1-6"
+        # PENDIENTE: agregar encabezado y texto
       - id: opcion_jn_5_1_6
         referencia: "Jn 5, 1-6"
+        # PENDIENTE: agregar encabezado y texto
       - id: opcion_ap_7_13_17
         referencia: "Ap 7, 13-17"
+        # PENDIENTE: agregar encabezado y texto
       - id: opcion_ap_22_1_5
         referencia: "Ap 22, 1-5"
+        # PENDIENTE: agregar encabezado y texto
       - id: opcion_jn_13_3_15
         referencia: "Jn 13, 3-15"
+        # PENDIENTE: agregar encabezado y texto
 
   - id: respuesta_palabra_del_senor
     tipo: respuesta
     actor: asamblea
     obligatorio: true
     texto: "Palabra del Señor."
-
-  - id: rubrica_1230
-    tipo: rubrica
-    actor: celebrante
-    obligatorio: false
-    texto: "1230. Pueden también leerse: Is 12, 1-6; Is 55, 1-11; Si 15, 1-6; Jn 5, 1-6; Ap 7, 13-17; Ap 22, 1-5; Jn 13, 3-15."
 
   - id: rubrica_titulo_oracion_bendicion
     tipo: titulo
@@ -159,7 +161,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1231. Luego el celebrante dice:"
+    texto: "Luego el celebrante dice:"
 
   - id: invitacion_oremos_1231
     tipo: monicion
@@ -170,7 +172,7 @@ contenido:
   - id: rubrica_1231_pausa_y_manos
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Después de una breve pausa de silencio, el celebrante, con las manos extendidas, dice la oración de bendición:"
 
   - id: oracion_bendicion
@@ -180,7 +182,22 @@ contenido:
     texto: "Bendito seas, Señor, Dios todopoderoso, que te has dignado bendecirnos y transformarnos interiormente en Cristo, agua viva de nuestra salvación; haz, te pedimos, que los que nos protegemos con la aspersión o el uso de esta agua sintamos, por la fuerza del Espíritu Santo, renovada la juventud de nuestra alma y andemos siempre en una vida nueva. Por Jesucristo, nuestro Señor."
     opciones:
       - id: alternativa_1232
+        display_name: "Señor, Padre santo, dirige tu mirada..."
         texto: "Señor, Padre santo, dirige tu mirada sobre nosotros, que, redimidos por tu Hijo, hemos nacido de nuevo del agua y del Espíritu Santo en la fuente bautismal; concédenos, te pedimos, que todos los que reciban la aspersión de esta agua queden renovados en el cuerpo y en el alma y te sirvan con limpieza de vida. Por Jesucristo, nuestro Señor."
+      - id: letania_bendicion_agua_1233_opcion
+        display_name: "Letanía: Oh, Dios, creador de todas las cosas..."
+        elementos:
+          - id: letania_bendicion_agua_1233
+            tipo: letania
+            actor: celebrante
+            obligatorio: true
+            invocaciones:
+              - invocacion: "Oh, Dios, creador de todas las cosas, que por el agua y el Espíritu diste forma y figura al hombre y al universo."
+                respuesta: "Bendice y purifica a tu Iglesia."
+              - invocacion: "Oh, Cristo, que de tu costado abierto en la cruz hiciste manar los sacramentos de salvación."
+                respuesta: "Bendice y purifica a tu Iglesia."
+              - invocacion: "Oh, Espíritu Santo, que, del seno bautismal de la Iglesia, nos haces renacer como nuevas criaturas."
+                respuesta: "Bendice y purifica a tu Iglesia."
 
   - id: respuesta_amen_oracion_bendicion
     tipo: respuesta
@@ -188,35 +205,11 @@ contenido:
     obligatorio: true
     texto: "Amén."
 
-  - id: rubrica_1232_o_bien
-    tipo: rubrica
-    actor: celebrante
-    obligatorio: false
-    texto: "1232. O bien:"
-
-  - id: rubrica_1233_o_bien_letania
-    tipo: rubrica
-    actor: celebrante
-    obligatorio: false
-    texto: "1233. O bien el celebrante dice:"
-
-  - id: letania_bendicion_agua_1233
-    tipo: letania
-    actor: celebrante
-    obligatorio: false
-    invocaciones:
-      - invocacion: "Oh, Dios, creador de todas las cosas, que por el agua y el Espíritu diste forma y figura al hombre y al universo."
-        respuesta: "Bendice y purifica a tu Iglesia."
-      - invocacion: "Oh, Cristo, que de tu costado abierto en la cruz hiciste manar los sacramentos de salvación."
-        respuesta: "Bendice y purifica a tu Iglesia."
-      - invocacion: "Oh, Espíritu Santo, que, del seno bautismal de la Iglesia, nos haces renacer como nuevas criaturas."
-        respuesta: "Bendice y purifica a tu Iglesia."
-
   - id: rubrica_1234_aspersion
     tipo: rubrica
     actor: celebrante
     obligatorio: true
-    texto: "1234. Después de la oración de bendición, el celebrante rocía con el agua bendecida a los presentes, diciendo, según las circunstancias:"
+    texto: "Después de la oración de bendición, el celebrante rocía con el agua bendecida a los presentes, diciendo, según las circunstancias:"
 
   - id: bendicion_aspersion_1234
     tipo: bendicion

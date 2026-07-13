@@ -11,7 +11,8 @@ metadata:
     fin: 1410
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
+  version: 2
+  nota: "Revisado contra MUNUS YAML Spec v1.1: no se encontraron casos de Regla 3.2 (ni la lectura ni la oración de bendición ni la fórmula de imposición tienen alternativas). Se separó bendicion_final, que traía tres 'R. Amén.' como texto corrido dentro del mismo bloque, en bloques de bendición y respuesta independientes, siguiendo el patrón usado en el resto de la biblioteca. Se retiraron los números de cita del libro al inicio de las rúbricas (se conservan en praenotanda). Se revisó obligatorio: quedan true solo las rúbricas 1405 y 1406 (indicación de la fórmula de imposición y su modo de uso); el resto —incluida la de la aspersión final (1408), que no lleva fórmula hablada— pasan a false, por indicación expresa de Ricardo para este archivo."
 
 praenotanda: |
   1394. La bendición e imposición del escapulario debe hacerse, siempre que sea posible, dentro de una celebración comunitaria. Cuando se trata de una imposición del escapulario por la que los fieles son admitidos a la cofradía de algún Instituto religioso, tal admisión debe hacerla un miembro o un ministro debidamente delegado por la autoridad competente del mismo Instituto.
@@ -31,7 +32,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1397. Reunido el pueblo, o por lo menos los miembros de la cofradía, el celebrante se dirige hacia ellos, mientras se canta oportunamente algún himno relacionado con la celebración. Terminado el canto, el celebrante dice:"
+    texto: "Reunido el pueblo, o por lo menos los miembros de la cofradía, el celebrante se dirige hacia ellos, mientras se canta oportunamente algún himno relacionado con la celebración. Terminado el canto, el celebrante dice:"
 
   - id: saludo_inicial_trinitario
     tipo: saludo
@@ -42,7 +43,7 @@ contenido:
   - id: rubrica_signan_responden
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos se santiguan y responden:"
 
   - id: respuesta_amen_1397
@@ -55,7 +56,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1398. Luego el celebrante saluda a los presentes, diciendo:"
+    texto: "Luego el celebrante saluda a los presentes, diciendo:"
 
   - id: saludo_celebrante_1398
     tipo: saludo
@@ -72,7 +73,7 @@ contenido:
   - id: rubrica_todos_responden_1398
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos responden:"
 
   - id: respuesta_y_con_tu_espiritu
@@ -91,7 +92,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1399. El celebrante dispone a los presentes para la celebración del rito, con estas palabras u otras semejantes:"
+    texto: "El celebrante dispone a los presentes para la celebración del rito, con estas palabras u otras semejantes:"
 
   - id: monicion_1399
     tipo: monicion
@@ -109,7 +110,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1400. Luego, el lector, uno de los presentes o el mismo celebrante, lee un texto de la Sagrada Escritura, seleccionado principalmente entre los que en el Leccionario tratan de la Santísima Trinidad, de los Misterios del Señor o de Santa María Virgen. Puede escogerse algún texto que tenga relación con el espíritu del Instituto religioso al que está adherida la cofradía."
+    texto: "Luego, el lector, uno de los presentes o el mismo celebrante, lee un texto de la Sagrada Escritura, seleccionado principalmente entre los que en el Leccionario tratan de la Santísima Trinidad, de los Misterios del Señor o de Santa María Virgen. Puede escogerse algún texto que tenga relación con el espíritu del Instituto religioso al que está adherida la cofradía."
 
   - id: lectura_2co_4_13_5_10
     tipo: lectura
@@ -134,7 +135,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1402. El celebrante hace la homilía, en la cual explica a los presentes el significado de la celebración."
+    texto: "El celebrante hace la homilía, en la cual explica a los presentes el significado de la celebración."
 
   - id: rubrica_titulo_preces
     tipo: titulo
@@ -146,7 +147,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1403. Sigue la plegaria común. Entre las intercesiones que aquí se proponen, el celebrante puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las peculiaridades de los fieles o las circunstancias del momento."
+    texto: "Sigue la plegaria común. Entre las intercesiones que aquí se proponen, el celebrante puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las peculiaridades de los fieles o las circunstancias del momento."
 
   - id: preces_escapulario
     tipo: preces
@@ -177,8 +178,8 @@ contenido:
   - id: rubrica_1404
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
-    texto: "1404. El celebrante, con las manos extendidas, añade:"
+    obligatorio: false
+    texto: "El celebrante, con las manos extendidas, añade:"
 
   - id: oracion_bendicion_escapulario
     tipo: oracion
@@ -202,7 +203,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: true
-    texto: "1405. Luego, el celebrante impone el escapulario a los candidatos, diciendo las siguientes palabras u otras semejantes del Ritual propio."
+    texto: "Luego, el celebrante impone el escapulario a los candidatos, diciendo las siguientes palabras u otras semejantes del Ritual propio."
 
   - id: imposicion_escapulario
     tipo: bendicion
@@ -216,11 +217,17 @@ contenido:
     obligatorio: true
     texto: "Amén."
 
-  - id: rubrica_1406_1407
+  - id: rubrica_1406
     tipo: rubrica
     actor: celebrante
     obligatorio: true
-    texto: "1406. Según las circunstancias, el celebrante pronuncia en voz alta la fórmula de imposición una sola vez para todos. Todos a la vez responden: Amén, y se acercan al celebrante para recibir el escapulario. 1407. El celebrante, vuelto hacia los nuevos cofrades, les dice:"
+    texto: "Según las circunstancias, el celebrante pronuncia en voz alta la fórmula de imposición una sola vez para todos. Todos a la vez responden: Amén, y se acercan al celebrante para recibir el escapulario."
+
+  - id: rubrica_1407
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El celebrante, vuelto hacia los nuevos cofrades, les dice:"
 
   - id: admision_cofradia
     tipo: monicion
@@ -231,8 +238,8 @@ contenido:
   - id: rubrica_1408
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
-    texto: "1408. El celebrante, después de haberlos instruido sobre los deberes y obligaciones de la cofradía, los rocía a todos con agua bendita, sin decir nada."
+    obligatorio: false
+    texto: "El celebrante, después de haberlos instruido sobre los deberes y obligaciones de la cofradía, los rocía a todos con agua bendita, sin decir nada."
 
   - id: rubrica_titulo_conclusion
     tipo: titulo
@@ -244,13 +251,49 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1409. El celebrante concluye el rito, diciendo:"
+    texto: "El celebrante concluye el rito, diciendo:"
 
-  - id: bendicion_final
+  - id: bendicion_final_1
     tipo: bendicion
     actor: celebrante
     obligatorio: true
-    texto: "El Dios todopoderoso os bendiga con su misericordia y os llene de la sabiduría eterna.\nR. Amén.\nÉl aumente en vosotros la fe y os dé la perseverancia en el bien obrar.\nR. Amén.\nAtraiga hacia sí vuestros pasos y os muestre el camino del amor y de la paz.\nR. Amén.\nY la bendición de Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo, descienda sobre vosotros."
+    texto: "El Dios todopoderoso os bendiga con su misericordia y os llene de la sabiduría eterna."
+
+  - id: respuesta_amen_final_1
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: bendicion_final_2
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Él aumente en vosotros la fe y os dé la perseverancia en el bien obrar."
+
+  - id: respuesta_amen_final_2
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: bendicion_final_3
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Atraiga hacia sí vuestros pasos y os muestre el camino del amor y de la paz."
+
+  - id: respuesta_amen_final_3
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: bendicion_final_trinitaria
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y la bendición de Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo, descienda sobre vosotros."
 
   - id: respuesta_amen_bendicion_final
     tipo: respuesta
@@ -268,4 +311,4 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "1410. Es aconsejable terminar el rito con un canto adecuado."
+    texto: "Es aconsejable terminar el rito con un canto adecuado."
