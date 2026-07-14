@@ -64,37 +64,37 @@ class HomeScreen extends ConsumerWidget {
 
             return ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 28),
-              itemCount: items.length + 1,
+              itemCount: items.length + 2,
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return Padding(
                     padding: const EdgeInsets.only(top: 56, bottom: 40),
-                    child: Stack(
-                      children: [
-                        Center(
-                          child: Text(
-                            'MUNUS',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: MunusFonts.display,
-                              fontSize: 52,
-                              fontWeight: FontWeight.w200,
-                              color: MunusColors.textMain,
-                              letterSpacing: 12,
-                            ),
-                          ),
+                    child: Text(
+                      'MUNUS',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: MunusFonts.display,
+                        fontSize: 52,
+                        fontWeight: FontWeight.w200,
+                        color: MunusColors.textMain,
+                        letterSpacing: 12,
+                      ),
+                    ),
+                  );
+                }
+
+                if (index == items.length + 1) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 32),
+                    child: Center(
+                      child: GestureDetector(
+                        onTap: () => context.push('/about'),
+                        child: Icon(
+                          Icons.info_outline,
+                          color: MunusColors.textDiscrete,
+                          size: 18,
                         ),
-                        Positioned(
-                          top: 0,
-                          right: 0,
-                          child: IconButton(
-                            icon: Icon(Icons.info_outline,
-                                color: MunusColors.textDiscrete, size: 22),
-                            tooltip: 'Acerca de Munus',
-                            onPressed: () => context.push('/about'),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   );
                 }

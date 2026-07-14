@@ -46,10 +46,20 @@ class AboutScreen extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 40),
-              Text(
-                'Munus nace para acompañar al sacerdote en el ejercicio del munus sanctificandi, brindando un acceso rápido y personalizable a los rituales de uso frecuente para facilitar la acción pastoral cotidiana.',
+              RichText(
                 textAlign: TextAlign.center,
-                style: MunusTextStyles.bodyText(16),
+                text: TextSpan(
+                  style: MunusTextStyles.bodyText(16),
+                  children: [
+                    const TextSpan(
+                        text: 'Munus nace para acompañar al sacerdote en el ejercicio del '),
+                    TextSpan(
+                        text: 'munus sanctificandi',
+                        style: const TextStyle(fontStyle: FontStyle.italic)),
+                    const TextSpan(
+                        text: ', brindando un acceso rápido y personalizable a los rituales de uso frecuente para colaborar en la acción pastoral cotidiana.'),
+                  ],
+                ),
               ),
             ],
           ),

@@ -12,11 +12,12 @@ metadata:
   advertencia: "Texto de uso pastoral extendido. Fuente litúrgica oficial no identificada."
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
+  version: 2
+  nota: "Revisado contra MUNUS YAML Spec v1.1: se resolvió el punto pendiente anotado en el documento de contexto — rubrica_cita_apertura y rubrica_cita_cierre (la cita de Jn 11,25-26) eran texto proclamado, no instrucción; se reclasificaron a tipo: saludo (mismo patrón que los demás versículos cortos del celebrante en este archivo) y se renombraron a cita_apertura / cita_cierre. Además, rubrica_padre_nuestro pasó de tipo: rubrica a tipo: oracion (id: oracion_padre_nuestro, actor: todos), con el texto íntegro del Padrenuestro — se evitó dejarlo en obligatorio: false porque eso lo volvería ocultable y la oración se dejaría de rezar; se completó el texto reutilizando la misma fórmula ya transcripta en uncion_cap2_rito_ordinario.yaml. Sin casos de Regla 3.2, sin números de cita, diálogos ya separados en bloques independientes."
 
 contenido:
-  - id: rubrica_cita_apertura
-    tipo: rubrica
+  - id: cita_apertura
+    tipo: saludo
     actor: celebrante
     obligatorio: true
     texto: "«Yo soy la resurrección y la vida, quien cree en Mí, aunque haya muerto, vivirá; y todo el que vive y cree en Mí no morirá eternamente»."
@@ -63,11 +64,11 @@ contenido:
     obligatorio: true
     texto: "Cristo, ten piedad. Señor, ten piedad."
 
-  - id: rubrica_padre_nuestro
-    tipo: rubrica
-    actor: celebrante
+  - id: oracion_padre_nuestro
+    tipo: oracion
+    actor: todos
     obligatorio: true
-    texto: "Padre Nuestro..."
+    texto: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal."
 
   - id: versiculo_libranos
     tipo: saludo
@@ -147,8 +148,8 @@ contenido:
     obligatorio: true
     texto: "Amén."
 
-  - id: rubrica_cita_cierre
-    tipo: rubrica
+  - id: cita_cierre
+    tipo: saludo
     actor: celebrante
     obligatorio: true
     texto: "«Yo soy la resurrección y la vida; quien cree en Mí, aunque haya muerto, vivirá; y todo el que vive y cree en Mí no morirá eternamente»."
