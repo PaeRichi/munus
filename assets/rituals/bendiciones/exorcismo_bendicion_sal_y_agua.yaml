@@ -11,7 +11,8 @@ metadata:
     fin: ~
   ministros: [sacerdote]
   idioma: es
-  version: 1
+  version: 2
+  nota: "Revisado contra MUNUS YAML Spec v1.1: sin casos de Regla 3.2 (no hay opciones en el archivo). Sin números de cita. Diálogos V./R. ya estaban correctamente separados en bloques independientes. No hay bloques tipo: rubrica en todo el archivo, por lo que no hubo nada que ajustar en el criterio de obligatorio. Sin cambios de contenido."
 
 contenido:
   - id: rubrica_titulo_sal

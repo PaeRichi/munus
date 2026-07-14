@@ -11,7 +11,8 @@ metadata:
     fin: 199
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
+  version: 2
+  nota: "Revisado contra MUNUS YAML Spec v1.1: archivo mínimo, un solo bloque tipo: letania con invocación = respuesta (patrón correcto para letanías de desagravio, ya documentado en el spec). Sin opciones, sin rúbricas, sin números de cita. Sin cambios de contenido."
 
 contenido:
   - id: letanias_desagravio

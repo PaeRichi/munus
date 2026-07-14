@@ -224,6 +224,16 @@ class LiturgicalElementWidget extends StatelessWidget {
         return _buildBodyText(context);
     }
   }
+ List<Widget> _buildParagraphs(String text, TextStyle style) {
+    final paragraphs =
+        text.split('\n\n').where((p) => p.trim().isNotEmpty).toList();
+    final widgets = <Widget>[];
+    for (var i = 0; i < paragraphs.length; i++) {
+      if (i > 0) widgets.add(const SizedBox(height: 12));
+      widgets.add(Text(paragraphs[i].trim(), style: style));
+    }
+    return widgets;
+  }
 
   Widget _buildRubric() {
     return Text(element.text ?? '', style: MunusTextStyles.rubric(fontSize));
@@ -267,7 +277,8 @@ class LiturgicalElementWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (_hasOptions && !hideOptionsButton) _buildOptionsButton(context),
-        Text(_activeOptionText, style: MunusTextStyles.bodyText(fontSize)),
+        ..._buildParagraphs(
+            _activeOptionText, MunusTextStyles.bodyText(fontSize)),
       ],
     );
   }
@@ -304,7 +315,8 @@ class LiturgicalElementWidget extends StatelessWidget {
                 style: MunusTextStyles.rubric(fontSize)),
           ),
         if (_activeOptionText.isNotEmpty)
-          Text(_activeOptionText, style: MunusTextStyles.bodyText(fontSize)),
+          ..._buildParagraphs(
+              _activeOptionText, MunusTextStyles.bodyText(fontSize)),
       ],
     );
   }

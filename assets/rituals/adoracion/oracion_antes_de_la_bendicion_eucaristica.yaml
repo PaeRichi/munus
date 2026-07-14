@@ -11,7 +11,8 @@ metadata:
     fin: 38
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
+  version: 2
+  nota: "Revisado contra MUNUS YAML Spec v1.1: archivo mínimo de 3 bloques. Sin opciones, sin rúbricas, sin números de cita. Sin cambios de contenido."
 
 contenido:
   - id: invitacion_oremos

@@ -9,10 +9,10 @@ metadata:
   numeros:
     inicio: ~
     fin: ~
-  nota: "La Instrucción General del Misal Romano n. 45 refiere la preparación del sacerdote durante la vestición. Las fórmulas corresponden a la tradición del Misal Romano en su forma extraordinaria."
+  nota: "La Instrucción General del Misal Romano n. 45 refiere la preparación del sacerdote durante la vestición. Las fórmulas corresponden a la tradición del Misal Romano en su forma extraordinaria. v2: se uniformó el estilo de comillas en oracion_casulla (comillas simples rectas → « », consistente con el resto de la biblioteca). Revisado contra MUNUS YAML Spec v1.1: sin opciones, sin números de cita, sin más cambios."
   ministros: [sacerdote]
   idioma: es
-  version: 1
+  version: 2
 
 contenido:
   - id: rubrica_vesticion
@@ -79,4 +79,4 @@ contenido:
     tipo: oracion
     actor: celebrante
     obligatorio: false
-    texto: "Señor, que dijiste: 'Mi yugo es suave y mi carga ligera': haz que lo lleve de tal manera que alcance tu gracia."
+    texto: "Señor, que dijiste: «Mi yugo es suave y mi carga ligera»: haz que lo lleve de tal manera que alcance tu gracia."

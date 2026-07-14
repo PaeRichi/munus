@@ -12,7 +12,8 @@ metadata:
   advertencia: "Fuente litúrgica exacta no identificada. Texto de uso pastoral extendido."
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
+  version: 2
+  nota: "Revisado contra MUNUS YAML Spec v1.1: sin casos de Regla 3.2 (no hay opciones). Sin números de cita. Diálogos V./R. ya estaban correctamente separados en bloques independientes. Se evaluó bajar obligatorio de rubrica_silencio a false (sin acción física, sin fórmula hablada que introduzca — mismo patrón que otras rúbricas de silencio en la biblioteca), pero por indicación explícita de Ricardo se mantiene en true. Sin cambios de contenido."
 
 contenido:
   - id: monicion_inicial

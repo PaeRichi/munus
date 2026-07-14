@@ -13,7 +13,8 @@ metadata:
   advertencia: "La fuente no es un libro litúrgico oficial verificado. Texto circulante en la tradición benedictina, autorizado para cualquier sacerdote por instrucción de la Iglesia de Roma del 26 de septiembre de 1964."
   ministros: [sacerdote]
   idioma: es
-  version: 1
+  version: 2
+  nota: "Revisado contra MUNUS YAML Spec v1.1: sin casos de Regla 3.2 (no hay opciones en el archivo). Sin números de cita al inicio de rúbricas o títulos. Diálogos V./R. ya estaban correctamente separados en bloques independientes. Se evaluó bajar obligatorio de rubrica_aspersion_final a false (aspersión sin fórmula hablada que la acompañe, mismo patrón que el escapulario), pero por indicación explícita de Ricardo se mantiene en true para este archivo."
 
 contenido:
   - id: rubrica_titulo_exorcismo
