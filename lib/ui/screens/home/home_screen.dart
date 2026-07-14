@@ -69,16 +69,32 @@ class HomeScreen extends ConsumerWidget {
                 if (index == 0) {
                   return Padding(
                     padding: const EdgeInsets.only(top: 56, bottom: 40),
-                    child: Text(
-                      'MUNUS',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: MunusFonts.display,
-                        fontSize: 52,
-                        fontWeight: FontWeight.w200,
-                        color: MunusColors.textMain,
-                        letterSpacing: 12,
-                      ),
+                    child: Stack(
+                      children: [
+                        Center(
+                          child: Text(
+                            'MUNUS',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: MunusFonts.display,
+                              fontSize: 52,
+                              fontWeight: FontWeight.w200,
+                              color: MunusColors.textMain,
+                              letterSpacing: 12,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                          child: IconButton(
+                            icon: Icon(Icons.info_outline,
+                                color: MunusColors.textDiscrete, size: 22),
+                            tooltip: 'Acerca de Munus',
+                            onPressed: () => context.push('/about'),
+                          ),
+                        ),
+                      ],
                     ),
                   );
                 }

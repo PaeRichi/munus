@@ -5,6 +5,7 @@ import '../../ui/screens/splash/splash_screen.dart';
 import '../../ui/screens/celebration_list/celebration_list_screen.dart';
 import '../../ui/screens/celebration/celebration_screen.dart';
 import '../../ui/screens/qr/assembly_qr_screen.dart';
+import '../../ui/screens/about/about_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
@@ -54,6 +55,10 @@ final appRouter = GoRouter(
           celebrationTitle: extra['title']!,
         );
       },
+    ),
+    GoRoute(
+      path: '/about',
+      builder: (context, state) => const AboutScreen(),
     ),
   ],
 );
