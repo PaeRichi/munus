@@ -11,8 +11,8 @@ metadata:
     fin: 1234
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 2
-  nota: "Actualizado a MUNUS YAML Spec v1.1: la letanía (n. 1233) migró de bloque suelto a tercera opción de oracion_bendicion con elementos (Regla 3.2), por tratarse de una fórmula estructuralmente distinta (letanía vs. oración corrida). Se retiraron los números de cita del libro al inicio de las rúbricas. Se revisó obligatorio en las rúbricas: solo queda true la que describe la aspersión (acción física concreta); el resto pasan a false. Se quitó la rúbrica n. 1230 (listado de lecturas alternativas), redundante una vez que esas lecturas están modeladas como opciones. PENDIENTE: las 7 opciones de lectura_evangelio solo tienen referencia; falta agregar encabezado y texto en cada una (transcripción pendiente del Bendicional/Leccionario, a cargo de Ricardo por motivos de derechos de autor sobre la traducción)."
+  version: 3
+  nota: "v3: se completaron las 7 lecturas alternativas de lectura_evangelio (Is 12,1-6 / Is 55,1-11 / Si 15,1-6 / Jn 5,1-6 / Ap 7,13-17 / Ap 22,1-5 / Jn 13,3-15), transcriptas por Ricardo desde el Bendicional/Leccionario. Cada opción quedó con encabezado y texto completos; se retiraron los comentarios # PENDIENTE. En Jn 5,1-6 se conservó entre corchetes el v. 3b-4 (mención del ángel que agita el agua), tal como lo marca el Leccionario como variante textual opcional en la proclamación. v2 (migración a v1.1): la letanía (n. 1233) migró de bloque suelto a tercera opción de oracion_bendicion con elementos (Regla 3.2), por tratarse de una fórmula estructuralmente distinta (letanía vs. oración corrida). Se retiraron los números de cita del libro al inicio de las rúbricas. Se revisó obligatorio en las rúbricas: solo queda true la que describe la aspersión (acción física concreta); el resto pasan a false. Se quitó la rúbrica n. 1230 (listado de lecturas alternativas), redundante una vez que esas lecturas están modeladas como opciones."
 
 praenotanda: |
   1223. Un elemento que gozó siempre de gran veneración en la Iglesia y constituye uno de los signos que con frecuencia usa para bendecir a los fieles es el agua. El agua ritualmente bendecida evoca en los fieles el recuerdo de Cristo, que representó para nosotros la culminación de las bendiciones divinas. Él, en efecto, que se dio a sí mismo el apelativo de «agua viva», instituyó para nosotros el bautismo, sacramento del agua, como signo de bendición salvadora.
@@ -125,25 +125,147 @@ contenido:
     opciones:
       - id: opcion_is_12_1_6
         referencia: "Is 12, 1-6"
-        # PENDIENTE: agregar encabezado y texto (transcripción del Bendicional / Leccionario)
+        encabezado: "Escuchad ahora, hermanos, las palabras del libro de Isaías. «Sacaréis aguas con gozo de las fuentes de la salvación»."
+        texto: |
+          Aquel día dirás:
+
+          «Te doy gracias, Señor, porque estabas airado contra mí, pero ha cesado tu ira y me has consolado.
+
+          Él es mi Dios y Salvador: confiaré y no temeré, porque mi fuerza y mi poder es el Señor, él fue mi salvación».
+
+          Y sacaréis aguas con gozo de las fuentes de la salvación.
+
+          Aquel día diréis:
+
+          «Dad gracias al Señor, invocad su nombre, contad a los pueblos sus hazañas, proclamad que su nombre es excelso».
+
+          Tañed para el Señor, que hizo proezas, anunciadlas a toda la tierra;
+
+          gritad jubilosos, habitantes de Sión, porque es grande en medio de ti el Santo de Israel.
+
       - id: opcion_is_55_1_11
         referencia: "Is 55, 1-11"
-        # PENDIENTE: agregar encabezado y texto
+        encabezado: "Escuchad ahora, hermanos, las palabras del libro de Isaías. «Oíd, sedientos todos, acudid por agua»."
+        texto: |
+          Esto dice el Señor:
+
+          «Oíd, sedientos todos, acudid por agua; venid, también los que no tenéis dinero: comprad trigo y comed, venid y comprad, sin dinero y de balde, vino y leche.
+
+          ¿Por qué gastar dinero en lo que no alimenta y el salario en lo que no da hartura? Escuchadme atentos y comeréis bien, saborearéis platos sustanciosos.
+
+          Inclinad vuestro oído, venid a mí: escuchadme y viviréis. Sellaré con vosotros una alianza perpetua, las misericordias firmes hechas a David: lo hice mi testigo para los pueblos, guía y soberano de naciones.
+
+          Tú llamarás a un pueblo desconocido, un pueblo que no te conocía correrá hacia ti; porque el Señor tu Dios, el Santo de Israel te glorifica.
+
+          Buscad al Señor mientras se deja encontrar, invocadlo mientras está cerca. Que el malvado abandone su camino, y el malhechor sus planes; que se convierta al Señor, y él tendrá piedad, a nuestro Dios, que es rico en perdón.
+
+          Porque mis planes no son vuestros planes, vuestros caminos no son mis caminos —oráculo del Señor—. Cuanto dista el cielo de la tierra, así distan mis caminos de los vuestros, y mis planes de vuestros planes.
+
+          Como bajan la lluvia y la nieve desde el cielo, y no vuelven allá sino después de empapar la tierra, de fecundarla y hacerla germinar, para que dé semilla al sembrador y pan al que come, así será mi palabra que sale de mi boca: no volverá a mí vacía, sino que cumplirá mi deseo y llevará a cabo mi encargo».
+
       - id: opcion_si_15_1_6
         referencia: "Si 15, 1-6"
-        # PENDIENTE: agregar encabezado y texto
+        encabezado: "Escuchad ahora, hermanos, las palabras del libro del Eclesiástico. «Lo alimenta con pan de inteligencia y le da a beber agua de sabiduría»."
+        texto: |
+          Así obra el que teme al Señor, el que observa la ley alcanza la sabiduría.
+
+          Ella le sale al encuentro como una madre y lo acoge como una joven esposa.
+
+          Lo alimenta con pan de inteligencia y le da a beber agua de sabiduría.
+
+          Si se apoya en ella, no vacilará, si se aferra a ella, no quedará defraudado.
+
+          Ella lo ensalzará sobre sus compañeros y en medio de la asamblea le abrirá la boca.
+
+          Encontrará gozo y corona de júbilo, y un nombre eterno recibirá en herencia.
+
       - id: opcion_jn_5_1_6
         referencia: "Jn 5, 1-6"
-        # PENDIENTE: agregar encabezado y texto
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Juan. «¿Quieres quedar sano?»."
+        texto: |
+          Después de esto, se celebraba una fiesta de los judíos, y Jesús subió a Jerusalén.
+
+          Hay en Jerusalén, junto a la Puerta de las Ovejas, una piscina que llaman en hebreo Betesda. Esta tiene cinco soportales, y allí estaban echados muchos enfermos, ciegos, cojos, paralíticos.
+
+          [«que esperaban el movimiento de las aguas; pues el ángel del Señor bajaba de tiempo en tiempo a la piscina y se movía el agua y el primero que descendía a la piscina tras el movimiento de agua quedaba sano de cualquier enfermedad que tuviera».]
+
+          Estaba también allí un hombre que llevaba treinta y ocho años enfermo.
+
+          Jesús, al verlo echado, y sabiendo que ya llevaba mucho tiempo, le dice:
+
+          —«¿Quieres quedar sano?».
+
       - id: opcion_ap_7_13_17
         referencia: "Ap 7, 13-17"
-        # PENDIENTE: agregar encabezado y texto
+        encabezado: "Escuchad ahora, hermanos, las palabras del libro del Apocalipsis. «El Cordero los conducirá hacia fuentes de aguas vivas»."
+        texto: |
+          Yo, Juan, oí que uno de los ancianos me decía:
+
+          —«Esos que están vestidos con vestiduras blancas, ¿quiénes son y de dónde han venido?».
+
+          Yo le respondí:
+
+          —«Señor mío, tú lo sabrás».
+
+          Él me respondió:
+
+          —«Esos son los que vienen de la gran tribulación: han lavado y blanqueado sus vestiduras en la sangre del Cordero.
+
+          Por eso están ante el trono de Dios, dándole culto día y noche en su templo.
+
+          Y el que se sienta en el trono acampará entre ellos.
+
+          Ya no pasarán hambre ni sed, no les hará daño el sol ni el bochorno, porque el Cordero que está delante del trono los apacentará y los conducirá hacia fuentes de aguas vivas. Y Dios enjugará toda lágrima de sus ojos».
+
       - id: opcion_ap_22_1_5
         referencia: "Ap 22, 1-5"
-        # PENDIENTE: agregar encabezado y texto
+        encabezado: "Escuchad ahora, hermanos, las palabras del libro del Apocalipsis. «Me mostró un río de agua de vida»."
+        texto: |
+          Yo, Juan, el ángel me mostró un río de agua de vida, reluciente como el cristal, que brotaba del trono de Dios y del Cordero.
+
+          En medio de su plaza, a un lado y otro del río, hay un árbol de vida que da doce frutos, uno cada mes. Y las hojas del árbol sirven para la curación de las naciones.
+
+          Y no habrá maldición alguna. Y el trono de Dios y del Cordero estará en ella, y sus siervos le darán culto.
+
+          Y verán su rostro, y su nombre está sobre sus frentes.
+
+          Y ya no habrá más noche, y no tienen necesidad de luz de lámpara ni de luz de sol, porque el Señor Dios los iluminará y reinarán por los siglos de los siglos.
+
       - id: opcion_jn_13_3_15
         referencia: "Jn 13, 3-15"
-        # PENDIENTE: agregar encabezado y texto
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Juan. «Os he dado ejemplo para que lo que yo he hecho con vosotros, vosotros también lo hagáis»."
+        texto: |
+          En aquel tiempo, Jesús, sabiendo que el Padre había puesto todo en sus manos, que venía de Dios y a Dios volvía, se levanta de la cena, se quita el manto y, tomando una toalla, se la ciñe; luego echa agua en la jofaina y se pone a lavarles los pies a los discípulos, secándoselos con la toalla que se había ceñido.
+
+          Llegó a Simón Pedro y este le dice:
+
+          —«Señor, ¿lavarme los pies tú a mí?».
+
+          Jesús le replicó:
+
+          —«Lo que yo hago, tú no lo entiendes ahora, pero lo comprenderás más tarde».
+
+          Pedro le dice:
+
+          —«No me lavarás los pies jamás».
+
+          Jesús le contestó:
+
+          —«Si no te lavo, no tienes parte conmigo».
+
+          Simón Pedro le dice:
+
+          —«Señor, no solo los pies, sino también las manos y la cabeza».
+
+          Jesús le dice:
+
+          —«Uno que se ha bañado no necesita lavarse más que los pies, porque todo él está limpio. También vosotros estáis limpios, aunque no todos».
+
+          Porque sabía quién lo iba a entregar; por eso dijo: «No todos estáis limpios».
+
+          Cuando acabó de lavarles los pies, tomó el manto, se lo puso otra vez y les dijo:
+
+          —«¿Comprendéis lo que he hecho con vosotros? Vosotros me llamáis "el Maestro" y "el Señor", y decís bien, porque lo soy. Pues si yo, el Maestro y el Señor, os he lavado los pies, también vosotros debéis lavaros los pies unos a otros: os he dado ejemplo para que lo que yo he hecho con vosotros, vosotros también lo hagáis».
 
   - id: respuesta_palabra_del_senor
     tipo: respuesta

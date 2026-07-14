@@ -11,8 +11,8 @@ metadata:
     fin: 552
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 2
-  nota: "Revisado contra MUNUS YAML Spec v1.1: no se encontraron casos de Regla 3.2 (todas las alternativas del archivo — lectura y salmo — son variantes de contenido simple, no de forma litúrgica), por lo que la estructura de opciones no cambió. Se retiraron los números de cita del libro al inicio de las rúbricas (se conservan en praenotanda, que reproduce el texto introductorio completo del libro). Se revisó obligatorio: solo queda true la rúbrica de la aspersión (acción física concreta sobre personas/lugar); las de postura (manos extendidas/juntas) pasan a false, criterio actualizado respecto de archivos anteriores. PENDIENTE: las 5 opciones de lectura_evangelio solo tienen referencia; falta agregar encabezado y texto en cada una (transcripción pendiente del Bendicional/Leccionario, a cargo de Ricardo por motivos de derechos de autor sobre la traducción)."
+  version: 3
+  nota: "v3: se completaron las 5 lecturas alternativas de lectura_evangelio (Gn 18,1-10a / Mc 1,29-31 / Lc 10,38-42 / Lc 19,1-9 / Lc 24,28-32), transcriptas por Ricardo desde el Bendicional/Leccionario. Cada opción quedó con encabezado y texto completos; se retiraron los comentarios # PENDIENTE. Se corrigió la referencia de la segunda opción de Mc 1,29-30 a Mc 1,29-31 (el texto transcripto llega hasta el v. 31, 'y la levantó... se puso a servirles'). v2 (migración a v1.1): no se encontraron casos de Regla 3.2 (todas las alternativas del archivo — lectura y salmo — son variantes de contenido simple, no de forma litúrgica), por lo que la estructura de opciones no cambió. Se retiraron los números de cita del libro al inicio de las rúbricas (se conservan en praenotanda, que reproduce el texto introductorio completo del libro). Se revisó obligatorio: solo queda true la rúbrica de la aspersión (acción física concreta sobre personas/lugar); las de postura (manos extendidas/juntas) pasan a false."
 
 praenotanda: |
   534. Cuando los cristianos desean inaugurar una nueva casa invocando la protección divina, el pastor de almas y sus cooperadores accederán de buen grado a este deseo, ya que con ello se les ofrece una magnífica ocasión de entrar en contacto con aquellos fieles. Así, juntos y con alegría, dan gracias a Dios, de quien procede todo bien, por el don de una nueva vivienda.
@@ -126,20 +126,106 @@ contenido:
       —«Cuando entréis en una casa, decid primero: "Paz en esta casa." Y si allí hay gente de paz, descansará sobre ellos vuestra paz; si no, volverá a vosotros. Quedaos en la misma casa, comed y bebed de lo que tengan, porque el obrero merece su salario. No andéis cambiando de casa en casa. Si entráis en un pueblo y os reciben bien, comed lo que os pongan, curad a los enfermos que haya, y decid: "Está cerca de vosotros el reino de Dios."»
     opciones:
       - id: opcion_gn_18_1_10a
-        referencia: "Gn 18, l-10a"
-        # PENDIENTE: agregar encabezado y texto (transcripción del Bendicional / Leccionario)
-      - id: opcion_mc_1_29_30
-        referencia: "Mc 1, 29-30"
-        # PENDIENTE: agregar encabezado y texto
+        referencia: "Gn 18, 1-10a"
+        encabezado: "Lectura del libro del Génesis. «Señor, no pases de largo junto a tu siervo»."
+        texto: |
+          En aquellos días, el Señor se apareció a Abrahán junto a la encina de Mambré, mientras él estaba sentado a la puerta de la tienda, en lo más caluroso del día. Alzó la vista y vio tres hombres frente a él. Al verlos, corrió a su encuentro desde la puerta de la tienda, se postró en tierra y dijo:
+
+          «Señor mío, si he alcanzado tu favor, no pases de largo junto a tu siervo. Haré que traigan agua para que os lavéis los pies y descanséis junto al árbol. Mientras, traeré un bocado de pan para que recobréis fuerzas antes de seguir, ya que habéis pasado junto a la casa de vuestro siervo».
+
+          Contestaron:
+
+          «Bien, haz lo que dices».
+
+          Abrahán entró corriendo en la tienda donde estaba Sara y le dijo:
+
+          «Aprisa, prepara tres cuartillos de flor de harina, amásalos y haz unas tortas».
+
+          Abrahán corrió enseguida a la vacada, escogió un ternero hermoso y se lo dio a un criado para que lo guisase de inmediato. Tomó también cuajada, leche y el ternero guisado y se lo sirvió. Mientras él estaba bajo el árbol, ellos comían.
+
+          Después le dijeron:
+
+          «¿Dónde está Sara, tu mujer?».
+
+          Contestó:
+
+          «Aquí, en la tienda».
+
+          Y uno añadió:
+
+          «Cuando yo vuelva a verte, dentro del tiempo de costumbre, Sara habrá tenido un hijo».
+
+      - id: opcion_mc_1_29_31
+        referencia: "Mc 1, 29-31"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Marcos. «Él se acercó, la cogió de la mano y la levantó»."
+        texto: |
+          Y enseguida, al salir ellos de la sinagoga, fue con Santiago y Juan a la casa de Simón y Andrés. La suegra de Simón estaba en cama con fiebre, e inmediatamente le hablaron de ella. Él se acercó, la cogió de la mano y la levantó. Se le pasó la fiebre y se puso a servirles. Al anochecer, cuando se puso el sol, le llevaron todos los enfermos y endemoniados. La población entera se agolpaba a la puerta.
+
       - id: opcion_lc_10_38_42
         referencia: "Lc 10, 38-42"
-        # PENDIENTE: agregar encabezado y texto
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Marta lo recibió en su casa»."
+        texto: |
+          En aquel tiempo, entró Jesús en una aldea, y una mujer llamada Marta lo recibió en su casa.
+
+          Esta tenía una hermana llamada María, que, sentada a los pies del Señor, escuchaba su palabra.
+
+          Marta, en cambio, se multiplicaba para dar abasto con el servicio; hasta que se paró y dijo:
+
+          —«Señor, ¿no te importa que mi hermana me haya dejado sola con el servicio? Dile que me eche una mano».
+
+          Pero el Señor le contestó:
+
+          —«Marta, Marta, andas inquieta y preocupada con muchas cosas; solo una es necesaria. María, pues, ha escogido la parte mejor, y no le será quitada».
+
       - id: opcion_lc_19_1_9
         referencia: "Lc 19, 1-9"
-        # PENDIENTE: agregar encabezado y texto
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Hoy ha sido la salvación de esta casa»."
+        texto: |
+          En aquel tiempo, Jesús entró en Jericó e iba atravesando la ciudad.
+
+          En esto, un hombre llamado Zaqueo, jefe de publicanos y rico, trataba de distinguir quién era Jesús, pero la gente se lo impedía, porque era bajo de estatura.
+
+          Corrió más adelante y se subió a una higuera para verlo, porque tenía que pasar por allí.
+
+          Jesús, al llegar a aquel sitio, levantó los ojos y le dijo:
+
+          —«Zaqueo, baja en seguida, porque hoy tengo que alojarme en tu casa».
+
+          Él bajó en seguida y lo recibió muy contento.
+
+          Al ver esto, todos murmuraban diciendo:
+
+          —«Ha entrado a hospedarse en casa de un pecador».
+
+          Pero Zaqueo, de pie, dijo al Señor:
+
+          —«Mira, la mitad de mis bienes, Señor, se la doy a los pobres; y si he defraudado a alguno, le restituyo cuatro veces más».
+
+          Jesús le dijo:
+
+          —«Hoy ha sido la salvación de esta casa, pues también este es hijo de Abrahán».
+
       - id: opcion_lc_24_28_32
         referencia: "Lc 24, 28-32"
-        # PENDIENTE: agregar encabezado y texto
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Quédate con nosotros»."
+        texto: |
+          Cerca ya de la aldea donde iban, Jesús hizo ademán de seguir adelante.
+
+          Pero ellos le apremiaron, diciendo:
+
+          —«Quédate con nosotros, porque atardece y el día va de caída».
+
+          Y entró para quedarse con ellos.
+
+          Sentado a la mesa con ellos, tomó el pan, pronunció la bendición, lo partió y se lo iba dando.
+
+          A ellos se les abrieron los ojos y lo reconocieron.
+
+          Pero él desapareció de su vista.
+
+          Y se dijeron el uno al otro:
+
+          —«¿No ardía nuestro corazón mientras nos hablaba por el camino y nos explicaba las Escrituras?».
 
   - id: respuesta_palabra_del_senor
     tipo: respuesta
