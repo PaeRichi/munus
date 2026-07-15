@@ -11,7 +11,8 @@ metadata:
     fin: 683
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
+  version: 2
+  nota: "v2: se completaron las 6 lecturas alternativas de lectura_gn_1_27_31 que faltaban (opcion_mc_6_1_3 ya estaba completa y no se tocó). Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente la sección — mismo ajuste aplicado a bendicion_objetos_piadosos.yaml y bendicion_vehiculo_y_barca.yaml. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). Sin casos de Regla 3.2. obligatorio no se revisó en esta ronda."
 
 praenotanda: |
   665. El hombre, con el trabajo asiduo de sus manos, y el desempeño de su cometido, cuida incesantemente de la creación. Por otra parte, «el progreso de las técnicas de producción y la mejor organización del comercio y de los servicios han convertido la economía en un instrumento capaz de satisfacer las nuevas necesidades de la familia humana que no dejan de acrecentarse». Existe, pues, motivo más que suficiente para bendecir aquellos lugares donde el hombre trabaja con empeño en beneficio propio y en provecho de sus semejantes.
@@ -33,7 +34,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "669. Reunida la comunidad en el lugar adecuado, después de un canto conveniente el celebrante dice:"
+    texto: "Reunida la comunidad en el lugar adecuado, después de un canto conveniente el celebrante dice:"
 
   - id: saludo_inicial_trinitario
     tipo: saludo
@@ -57,7 +58,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "670. Luego el celebrante saluda a los presentes, diciendo:"
+    texto: "Luego el celebrante saluda a los presentes, diciendo:"
 
   - id: saludo_celebrante_670
     tipo: saludo
@@ -93,7 +94,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "671. El celebrante dispone a los presentes a recibir la bendición, con estas palabras u otras semejantes:"
+    texto: "El celebrante dispone a los presentes a recibir la bendición, con estas palabras u otras semejantes:"
 
   - id: monicion_671
     tipo: monicion
@@ -111,7 +112,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "672. Luego el lector, uno de los presentes o el mismo celebrante, lee un texto de la Sagrada Escritura."
+    texto: "Luego el lector, uno de los presentes o el mismo celebrante, lee un texto de la Sagrada Escritura."
 
   - id: lectura_gn_1_27_31
     tipo: lectura
@@ -129,16 +130,133 @@ contenido:
           En aquel tiempo, se marchó Jesús de allí y fue a su pueblo en compañía de sus discípulos. Cuando llegó el sábado, empezó a enseñar en la sinagoga; la multitud que lo oía se preguntaba asombrada: «¿De dónde saca todo eso? ¿Qué sabiduría es ésa que le han enseñado? ¿Y esos milagros de sus manos? ¿No es éste el carpintero, el hijo de María, hermano de Santiago y José y Judas y Simón? Y sus hermanas ¿no viven con nosotros aquí?». Y esto les resultaba escandaloso.
       - id: opcion_si_38_24_34
         referencia: "Si 38, 24-34"
+        encabezado: "Escuchad ahora, hermanos, las palabras del libro del Eclesiástico. «La destreza del artesano sostiene la creación»."
+        texto: |
+          La sabiduría del escriba se adquiere en el sosiego; el que tiene pocas ocupaciones llegará a ser sabio.
+
+          ¿Cómo podrá hacerse sabio el que empuña el arado y se gloría de manejar la aguijada, el que guía los bueyes, se ocupa de sus faenas y solo habla de novillos?
+
+          Pone todo su empeño en abrir surcos y desvela sus cuidados por cebar terneras.
+
+          Lo mismo el artesano y el herrero, que trabajan día y noche; los que graban sellos, se afanan por variar los dibujos y ponen su corazón en reproducir fielmente el modelo; también ellos velan para terminar bien su obra.
+
+          Lo mismo el herrero sentado junto al yunque, atento al trabajo del hierro; el vapor del fuego consume sus carnes y lucha con el calor del horno; el estruendo del martillo ensordece sus oídos y sus ojos están fijos en el modelo del objeto; pone su corazón en acabar perfectamente la obra y vela para adornarla.
+
+          Lo mismo el alfarero sentado en su trabajo, haciendo girar la rueda con los pies; siempre está preocupado por su tarea y cuenta cuidadosamente todas sus piezas. Con su brazo da forma al barro y con sus pies lo amasa; pone su corazón en acabar el barniz y vela por limpiar el horno.
+
+          Todos ellos confían en sus manos y cada uno es hábil en su oficio. Sin ellos no se construiría una ciudad, ni se habitaría ni se recorrería.
+
+          Pero no son buscados para el consejo del pueblo ni sobresalen en la asamblea; no se sientan en la cátedra del juez ni entienden de sentencias. No brillan por su instrucción ni por sus juicios, ni se distinguen por las máximas sapienciales.
+
+          Ellos, en cambio, sostienen la creación eterna, y su oración se refiere al trabajo de su oficio.
+
       - id: opcion_1ts_4_9_12
         referencia: "1 Ts 4, 9-12"
+        encabezado: "Escuchad ahora, hermanos, las palabras de la primera carta del apóstol san Pablo a los Tesalonicenses. «Trabajad con vuestras propias manos»."
+        texto: |
+          Hermanos:
+
+          Acerca del amor fraterno no necesitáis que os escriba, porque vosotros mismos habéis aprendido de Dios a amaros unos a otros; y así lo practicáis con todos los hermanos de Macedonia.
+
+          Pero os exhortamos, hermanos, a que progreséis más y más. Procurad vivir en paz, ocupaos de vuestros propios asuntos y trabajad con vuestras propias manos, como os lo tenemos mandado; así llevaréis una vida honrada a los ojos de los de fuera y no dependeréis de nadie.
+
       - id: opcion_2ts_3_6_13
         referencia: "2 Ts 3, 6-13"
+        encabezado: "Escuchad ahora, hermanos, las palabras de la segunda carta del apóstol san Pablo a los Tesalonicenses. «El que no quiera trabajar, que no coma»."
+        texto: |
+          Hermanos:
+
+          Os ordenamos, en nombre del Señor Jesucristo, que os apartéis de todo hermano que viva desordenadamente y no según la tradición que recibió de nosotros.
+
+          Ya sabéis cómo debéis imitar nuestro ejemplo: no vivimos entre vosotros sin trabajar, ni comimos de balde el pan de nadie; al contrario, trabajamos con esfuerzo y fatiga día y noche para no ser gravosos a ninguno de vosotros.
+
+          Y no porque no tuviéramos derecho, sino para daros en nosotros un modelo que imitar.
+
+          Porque, cuando estábamos entre vosotros, os mandábamos esto: «El que no quiera trabajar, que no coma».
+
+          Porque nos hemos enterado de que algunos viven desordenadamente, sin trabajar, ocupándose en cosas que no les corresponden.
+
+          A esos les mandamos y exhortamos, por el Señor Jesucristo, que trabajen con tranquilidad para ganarse el pan que comen.
+
+          Y vosotros, hermanos, no os canséis de hacer el bien.
+
       - id: opcion_mt_6_25_34
         referencia: "Mt 6, 25-34"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Mateo. «Buscad primero el reino de Dios y su justicia»."
+        texto: |
+          En aquel tiempo, dijo Jesús a sus discípulos:
+
+          «Por eso os digo: no estéis agobiados por la vida pensando qué vais a comer o beber, ni por el cuerpo pensando con qué os vais a vestir. ¿No vale más la vida que el alimento y el cuerpo que el vestido?
+
+          Mirad los pájaros del cielo: no siembran ni siegan, ni almacenan en graneros, y, sin embargo, vuestro Padre celestial los alimenta. ¿No valéis vosotros más que ellos?
+
+          ¿Quién de vosotros, a fuerza de agobiarse, podrá añadir una sola hora al tiempo de su vida?
+
+          ¿Y por el vestido, por qué os preocupáis? Fijaos cómo crecen los lirios del campo: ni trabajan ni hilan; y os digo que ni Salomón, en todo su esplendor, se vistió como uno de ellos.
+
+          Pues si a la hierba del campo, que hoy es y mañana se echa al horno, Dios la viste así, ¿no hará mucho más por vosotros, hombres de poca fe?
+
+          No andéis agobiados pensando qué vais a comer, o qué vais a beber, o con qué os vais a vestir. Los gentiles se afanan por todas esas cosas. Ya sabe vuestro Padre celestial que tenéis necesidad de todo eso.
+
+          Buscad primero el reino de Dios y su justicia, y todo lo demás se os dará por añadidura.
+
+          Por tanto, no os agobiéis por el mañana, porque el mañana traerá su propio agobio. A cada día le basta su desgracia».
+
       - id: opcion_mt_25_14_29
         referencia: "Mt 25, 14-29"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Mateo. «Has sido fiel en lo poco; pasa al banquete de tu señor»."
+        texto: |
+          En aquel tiempo, dijo Jesús a sus discípulos esta parábola:
+
+          «Un hombre, al irse de viaje, llamó a sus siervos y les dejó encargados de sus bienes.
+
+          A uno le dejó cinco talentos, a otro dos, a otro uno; a cada cual según su capacidad. Luego se marchó.
+
+          El que recibió cinco talentos fue enseguida a negociar con ellos y ganó otros cinco. El que recibió dos hizo lo mismo y ganó otros dos. En cambio, el que recibió uno hizo un hoyo en la tierra y escondió el dinero de su señor.
+
+          Al cabo de mucho tiempo volvió el señor de aquellos siervos y se puso a ajustar las cuentas con ellos.
+
+          Se acercó el que había recibido cinco talentos y presentó otros cinco, diciendo:
+
+          —"Señor, cinco talentos me dejaste; mira, he ganado otros cinco".
+
+          Su señor le dijo:
+
+          —"Muy bien, siervo bueno y fiel; has sido fiel en lo poco, te confiaré mucho más; entra en el gozo de tu señor".
+
+          Se acercó luego el de los dos talentos y dijo:
+
+          —"Señor, dos talentos me dejaste; mira, he ganado otros dos".
+
+          Su señor le dijo:
+
+          —"Muy bien, siervo bueno y fiel; has sido fiel en lo poco, te confiaré mucho más; entra en el gozo de tu señor".
+
+          Finalmente se acercó el que había recibido un talento y dijo:
+
+          —"Señor, sabía que eres exigente, que siegas donde no sembraste y recoges donde no esparciste; por eso tuve miedo y fui a esconder tu talento bajo tierra. Aquí tienes lo tuyo".
+
+          El señor le respondió:
+
+          —"Siervo malo y perezoso. ¿Sabías que siego donde no sembré y recojo donde no esparcí? Pues debías haber puesto mi dinero en el banco, para que al volver yo recuperase lo mío con los intereses.
+
+          Quitadle el talento y dádselo al que tiene diez.
+
+          Porque al que tiene se le dará y le sobrará; pero al que no tiene, aun lo que tiene se le quitará".
+
       - id: opcion_lc_16_9_12
         referencia: "Lc 16, 9-12"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Lucas. «El que es de fiar en lo menudo también en lo importante es de fiar»."
+        texto: |
+          En aquel tiempo, dijo Jesús a sus discípulos:
+
+          «Ganaos amigos con el dinero injusto, para que, cuando os falte, os reciban en las moradas eternas.
+
+          El que es de fiar en lo menudo también en lo importante es de fiar; y el que no es honrado en lo menudo tampoco en lo importante es honrado.
+
+          Si no fuisteis de fiar en el injusto dinero, ¿quién os confiará el verdadero bien?
+
+          Y si no fuisteis de fiar en lo ajeno, ¿lo vuestro quién os lo dará?».
 
   - id: respuesta_palabra_de_dios
     tipo: respuesta
@@ -150,7 +268,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "675. Según las circunstancias, se puede decir o cantar un salmo responsorial u otro canto adecuado."
+    texto: "Según las circunstancias, se puede decir o cantar un salmo responsorial u otro canto adecuado."
 
   - id: salmo_89_90
     tipo: salmo
@@ -172,7 +290,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "677. El celebrante, según las circunstancias, exhorta brevemente a los presentes, explicándoles la lectura bíblica, para que perciban por la fe el significado de la celebración."
+    texto: "El celebrante, según las circunstancias, exhorta brevemente a los presentes, explicándoles la lectura bíblica, para que perciban por la fe el significado de la celebración."
 
   - id: rubrica_titulo_preces
     tipo: titulo
@@ -184,7 +302,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "678. Si se estima oportuno, antes de la oración de bendición puede hacerse la plegaria común. Entre las invocaciones que aquí se proponen, el celebrante puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las circunstancias del momento."
+    texto: "Si se estima oportuno, antes de la oración de bendición puede hacerse la plegaria común. Entre las invocaciones que aquí se proponen, el celebrante puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las circunstancias del momento."
 
   - id: preces_obras_de_nuestras_manos
     tipo: preces
@@ -206,11 +324,17 @@ contenido:
       - invocacion: "Bendito seas, Señor, que elevas a la sublime dignidad de la Eucaristía el pan y el vino, fruto de nuestro trabajo."
         respuesta: "Guía, Señor, las obras de nuestras manos."
 
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
   - id: rubrica_679_sin_preces
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "679. Cuando no se dicen las preces, antes de la oración de bendición, el celebrante invita a todos a orar, para que imploren la ayuda divina, diciendo:"
+    texto: "Cuando no se dicen las preces, antes de la oración de bendición, el celebrante invita a todos a orar, para que imploren la ayuda divina, diciendo:"
 
   - id: invitacion_oremos_679
     tipo: monicion
@@ -224,17 +348,11 @@ contenido:
     obligatorio: false
     texto: "Y, según las circunstancias, todos oran durante algún tiempo en silencio."
 
-  - id: rubrica_titulo_oracion_bendicion
-    tipo: titulo
-    actor: celebrante
-    obligatorio: true
-    texto: "Oración de bendición"
-
   - id: rubrica_680
     tipo: rubrica
     actor: celebrante
     obligatorio: true
-    texto: "680. El celebrante, con las manos extendidas, dice la oración de bendición correspondiente al tipo de local:"
+    texto: "El celebrante, con las manos extendidas, dice la oración de bendición correspondiente al tipo de local:"
 
   - id: bendicion_lugar_de_trabajo
     tipo: bendicion
@@ -261,7 +379,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: true
-    texto: "681. Después de la oración de bendición, el celebrante rocía con agua bendita a los presentes y el local, mientras se interpreta un canto adecuado."
+    texto: "Después de la oración de bendición, el celebrante rocía con agua bendita a los presentes y el local, mientras se interpreta un canto adecuado."
 
   - id: rubrica_titulo_conclusion
     tipo: titulo
@@ -273,7 +391,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: true
-    texto: "682. El celebrante concluye el rito, diciendo, con las manos extendidas sobre los presentes:"
+    texto: "El celebrante concluye el rito, diciendo, con las manos extendidas sobre los presentes:"
 
   - id: conclusion_mirada_bondadosa
     tipo: conclusion
@@ -309,4 +427,4 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "683. Es aconsejable terminar el rito con un canto adecuado."
+    texto: "Es aconsejable terminar el rito con un canto adecuado."

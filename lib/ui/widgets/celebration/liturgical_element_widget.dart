@@ -407,37 +407,53 @@ class LiturgicalElementWidget extends StatelessWidget {
   }
 
   Widget _buildPsalm() {
+    final children = <Widget>[];
+
+    if (element.reference != null) {
+      children.add(Padding(
+        padding: const EdgeInsets.only(bottom: 8),
+        child: Text(element.reference!,
+            style: MunusTextStyles.reference(fontSize)),
+      ));
+    }
+
+    Widget refrainWidget() {
+      return RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+                text: 'R. ', style: MunusTextStyles.responseLabel(fontSize)),
+            TextSpan(
+                text: element.refrain!,
+                style: MunusTextStyles.response(fontSize)),
+          ],
+        ),
+      );
+    }
+
+    if (element.refrain != null) {
+      children.add(Padding(
+        padding: const EdgeInsets.only(bottom: 12),
+        child: refrainWidget(),
+      ));
+    }
+
+    for (final strophe in element.strophes) {
+      children.add(Padding(
+        padding: const EdgeInsets.only(bottom: 12),
+        child: Text(strophe, style: MunusTextStyles.bodyText(fontSize)),
+      ));
+      if (element.refrain != null) {
+        children.add(Padding(
+          padding: const EdgeInsets.only(bottom: 12),
+          child: refrainWidget(),
+        ));
+      }
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if (element.reference != null)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: Text(element.reference!,
-                style: MunusTextStyles.reference(fontSize)),
-          ),
-        if (element.refrain != null) ...[
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                    text: 'R. ',
-                    style: MunusTextStyles.responseLabel(fontSize)),
-                TextSpan(
-                    text: element.refrain!,
-                    style: MunusTextStyles.response(fontSize)),
-              ],
-            ),
-          ),
-          const SizedBox(height: 12),
-        ],
-        ...element.strophes.map((strophe) {
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Text(strophe, style: MunusTextStyles.bodyText(fontSize)),
-          );
-        }),
-      ],
+      children: children,
     );
   }
 }

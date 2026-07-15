@@ -11,8 +11,8 @@ metadata:
     fin: 742
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
-  nota: "El capítulo XIX del Bendicional ofrece cinco tipos de bendición según el medio (puente/calle/plaza/vía férrea/puerto/aeropuerto, vehículo, avión, barca, nave); aquí se transcriben únicamente vehículo y barca. El capítulo también prevé un ministro laico con fórmulas propias (nn. 728 y 741); siguiendo el principio editorial de la biblioteca, esas ramas se omiten y solo se modelan las fórmulas para sacerdote o diácono. Se omite asimismo el Rito breve (nn. 743-747) como estructura aparte: sus oraciones de bendición para vehículo (n. 745) y barca (n. 746) son literalmente idénticas a las del n. 738 b) y d) aquí incluidas."
+  version: 2
+  nota: "v2: se completaron las 6 lecturas alternativas de lectura_jn_14_6_7 que faltaban (opcion_hch_17_22_28 ya estaba completa y no se tocó). Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces — mismo ajuste aplicado a bendicion_objetos_piadosos.yaml y bendicion_laboratorio_taller_tienda.yaml. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). Sin casos de Regla 3.2. obligatorio no se revisó en esta ronda."
 
 praenotanda: |
   720. La vida humana encuentra una eficaz ayuda en el uso de aquellos medios o instrumentos que sirven para acortar las distancias y hacer posible el encuentro, la unión y la mutua comunicación entre los hombres, y que pueden designarse, de un modo genérico, como medios relacionados con los desplazamientos humanos. Entre estas realidades cabe enumerar, por ejemplo, una calle o carretera, una plaza, un puente, una vía férrea, un puerto, un vehículo cualquiera, una nave y un avión. Puesto que en el uso de dichos medios se aviva y fomenta la conciencia de las mutuas obligaciones, ello nos ofrece una buena ocasión de bendecir a Dios y de orar al mismo tiempo por las personas que los utilizarán en lo sucesivo.
@@ -38,7 +38,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "726. Reunida la comunidad, puede entonarse un canto adecuado, terminado el cual, el ministro dice:"
+    texto: "Reunida la comunidad, puede entonarse un canto adecuado, terminado el cual, el ministro dice:"
 
   - id: saludo_inicial_trinitario
     tipo: saludo
@@ -62,7 +62,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "727. Luego el ministro, si es sacerdote o diácono, saluda a los presentes, diciendo:"
+    texto: "Luego el ministro, si es sacerdote o diácono, saluda a los presentes, diciendo:"
 
   - id: saludo_celebrante_727
     tipo: saludo
@@ -98,7 +98,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "729. El ministro dispone a los presentes a recibir la bendición, con estas palabras u otras semejantes:"
+    texto: "El ministro dispone a los presentes a recibir la bendición, con estas palabras u otras semejantes:"
 
   - id: monicion_729
     tipo: monicion
@@ -116,7 +116,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "730. Luego el lector, uno de los presentes o el mismo celebrante, lee un texto de la Sagrada Escritura, elegido de manera que esté relacionado con las circunstancias concretas del caso."
+    texto: "Luego el lector, uno de los presentes o el mismo celebrante, lee un texto de la Sagrada Escritura, elegido de manera que esté relacionado con las circunstancias concretas del caso."
 
   - id: lectura_jn_14_6_7
     tipo: lectura
@@ -134,16 +134,159 @@ contenido:
           Pablo, de pie en medio del Areópago, dijo: «Atenienses, veo que sois casi nimios en lo que toca a religión. Porque, paseándome por ahí y fijándome en vuestros monumentos sagrados, me encontré un altar con esta inscripción: "Al Dios desconocido". Pues eso que veneráis sin conocerlo, os lo anuncio yo. El Dios que hizo el mundo y lo que contiene, él es Señor de cielo y tierra y no habita en templos construidos por hombres, ni lo sirven manos humanas; como si necesitara de alguien, él que a todos da la vida y el aliento, y todo. De un solo hombre sacó todo el género humano para que habitara la tierra entera, determinando las épocas de su historia y las fronteras de sus territorios. Quería que lo buscasen a él, a ver si, al menos a tientas, lo encontraban; aunque no está lejos de ninguno de nosotros, pues en él vivimos, nos movemos y existimos; así lo dicen incluso algunos de vuestros poetas: "Somos estirpe suya"».
       - id: opcion_is_40_1_5
         referencia: "Is 40, 1a.3-5"
+        encabezado: "Escuchad ahora, hermanos, las palabras del libro de Isaías. «Preparadle un camino al Señor»."
+        texto: |
+          Esto dice el Señor:
+
+          «Consolad, consolad a mi pueblo.
+
+          Una voz grita:
+
+          "En el desierto preparadle un camino al Señor; allanad en la estepa una calzada para nuestro Dios;
+
+          que los valles se levanten, que montes y colinas se abajen, que lo torcido se enderece y lo escabroso se iguale.
+
+          Se revelará la gloria del Señor, y la verán todos juntos —ha hablado la boca del Señor—»".
+
       - id: opcion_hch_8_27_39
         referencia: "Hch 8, 27-39"
+        encabezado: "Escuchad ahora, hermanos, las palabras del libro de los Hechos de los apóstoles. «Aquí hay agua; ¿qué impide que me bautice?»."
+        texto: |
+          En aquellos días, Felipe se levantó y se puso en camino. Y de pronto vio venir a un etíope; era un eunuco, ministro de Candaces, reina de Etiopía e intendente del tesoro, que había ido a Jerusalén para adorar.
+
+          Iba de vuelta, sentado en su carroza, leyendo al profeta Isaías.
+
+          El Espíritu dijo a Felipe:
+
+          —«Acércate y pégate a la carroza».
+
+          Felipe se acercó corriendo, le oyó leer el profeta Isaías y le preguntó:
+
+          —«¿Entiendes lo que estás leyendo?».
+
+          Contestó:
+
+          —«¿Y cómo voy a entenderlo si nadie me guía?».
+
+          E invitó a Felipe a subir y a sentarse con él.
+
+          El pasaje de la Escritura que estaba leyendo era este:
+
+          «Como cordero fue llevado al matadero, como oveja muda ante el esquilador, así no abre su boca.
+
+          En su humillación no se le hizo justicia. ¿Quién podrá hablar de su descendencia? Pues su vida ha sido arrancada de la tierra».
+
+          El eunuco preguntó a Felipe:
+
+          —«Te ruego que me expliques: ¿de quién dice esto el profeta?, ¿de sí mismo o de otro?».
+
+          Felipe se puso a hablarle y, tomando pie de esta Escritura, le anunció la Buena Nueva de Jesús.
+
+          Siguiendo el camino, llegaron a un sitio donde había agua, y dijo el eunuco:
+
+          —«Aquí hay agua; ¿qué impide que me bautice?».
+
+          Mandó parar la carroza, bajaron ambos al agua, Felipe y el eunuco, y lo bautizó.
+
+          Cuando salieron del agua, el Espíritu del Señor arrebató a Felipe. El eunuco no volvió a verlo, pero siguió su camino lleno de alegría.
+
       - id: opcion_mc_4_35_41
         referencia: "Mc 4, 35-41"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Marcos. «¿Quién es este? ¡Hasta el viento y el mar lo obedecen!»."
+        texto: |
+          Al atardecer de aquel día, Jesús dijo a sus discípulos:
+
+          —«Vamos a la otra orilla».
+
+          Dejando a la gente, lo llevaron en la barca, como estaba; otras barcas lo acompañaban.
+
+          Se levantó una fuerte tempestad y las olas rompían contra la barca hasta casi llenarla de agua.
+
+          Él estaba en la popa, dormido sobre un cabezal.
+
+          Lo despertaron, diciéndole:
+
+          —«Maestro, ¿no te importa que perezcamos?».
+
+          Se puso en pie, increpó al viento y dijo al mar:
+
+          —«¡Silencio, cállate!».
+
+          El viento cesó y sobrevino una gran calma.
+
+          Él les dijo:
+
+          —«¿Por qué tenéis miedo? ¿Aún no tenéis fe?».
+
+          Se llenaron de miedo y se decían unos a otros:
+
+          —«¿Quién es este? ¡Hasta el viento y el mar lo obedecen!».
+
       - id: opcion_lc_3_3_6
         referencia: "Lc 3, 3-6"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Todo el mundo verá la salvación de Dios»."
+        texto: |
+          En aquel tiempo, Juan recorrió toda la comarca del Jordán, proclamando un bautismo de conversión para perdón de los pecados, como está escrito en el libro de los oráculos del profeta Isaías:
+
+          «Voz del que grita en el desierto:
+
+          Preparad el camino del Señor, allanad sus senderos;
+
+          los valles serán rellenados, los montes y colinas serán rebajados;
+
+          lo tortuoso se hará derecho y los caminos ásperos serán allanados;
+
+          y toda carne verá la salvación de Dios».
+
       - id: opcion_jn_1_47_51
         referencia: "Jn 1, 47-51"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Juan. «Veréis el cielo abierto y a los ángeles de Dios subir y bajar sobre el Hijo del hombre»."
+        texto: |
+          En aquel tiempo, vio Jesús que se acercaba Natanael y dijo de él:
+
+          —«Ahí tenéis a un israelita de verdad, en quien no hay engaño».
+
+          Natanael le contesta:
+
+          —«¿De qué me conoces?».
+
+          Jesús le responde:
+
+          —«Antes de que Felipe te llamara, cuando estabas debajo de la higuera, te vi».
+
+          Natanael respondió:
+
+          —«Rabí, tú eres el Hijo de Dios, tú eres el Rey de Israel».
+
+          Jesús le contestó:
+
+          —«¿Por haberte dicho que te vi debajo de la higuera crees? Has de ver cosas mayores».
+
+          Y le añadió:
+
+          —«En verdad, en verdad os digo: veréis el cielo abierto y a los ángeles de Dios subir y bajar sobre el Hijo del hombre».
+
       - id: opcion_jn_14_1_7
         referencia: "Jn 14, 1-7"
+        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Juan. «Yo soy el camino, la verdad y la vida»."
+        texto: |
+          En aquel tiempo, dijo Jesús a sus discípulos:
+
+          —«No se turbe vuestro corazón; creed en Dios y creed también en mí.
+
+          En la casa de mi Padre hay muchas moradas; si no, os lo habría dicho, porque me voy a prepararos un lugar.
+
+          Cuando vaya y os prepare un lugar, volveré y os llevaré conmigo, para que donde estoy yo estéis también vosotros.
+
+          Y adonde yo voy, ya sabéis el camino».
+
+          Tomás le dice:
+
+          —«Señor, no sabemos adónde vas, ¿cómo podemos saber el camino?».
+
+          Jesús le responde:
+
+          —«Yo soy el camino, y la verdad, y la vida. Nadie va al Padre sino por mí. Si me conocierais a mí, conoceríais también a mi Padre. Ahora ya lo conocéis y lo habéis visto».
 
   - id: respuesta_palabra_del_senor_vehiculo
     tipo: respuesta
@@ -155,7 +298,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "733. Según las circunstancias, se puede decir o cantar un salmo responsorial u otro canto adecuado."
+    texto: "Según las circunstancias, se puede decir o cantar un salmo responsorial u otro canto adecuado."
 
   - id: salmo_24_25
     tipo: salmo
@@ -179,7 +322,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "735. El ministro, según las circunstancias, exhorta brevemente a los presentes, explicándoles la lectura bíblica, para que perciban por la fe el significado de la celebración."
+    texto: "El ministro, según las circunstancias, exhorta brevemente a los presentes, explicándoles la lectura bíblica, para que perciban por la fe el significado de la celebración."
 
   - id: rubrica_titulo_preces
     tipo: titulo
@@ -191,7 +334,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "736. Si se estima oportuno, antes de la oración de bendición puede hacerse la plegaria común. Entre las invocaciones que aquí se proponen, el ministro puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las circunstancias del momento."
+    texto: "Si se estima oportuno, antes de la oración de bendición puede hacerse la plegaria común. Entre las invocaciones que aquí se proponen, el ministro puede seleccionar las que le parezcan más adecuadas o añadir otras más directamente relacionadas con las circunstancias del momento."
 
   - id: preces_guia_nuestros_pasos
     tipo: preces
@@ -213,11 +356,17 @@ contenido:
       - invocacion: "Jesús, Señor, que nos encomendaste como hijos a María, tu madre, danos, por su intercesión, seguridad en nuestros viajes, para que un día podamos contemplarte y alegrarnos contigo para siempre."
         respuesta: "Guía, Señor, nuestros pasos por tu camino."
 
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
   - id: rubrica_737_sin_preces
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "737. Cuando no se dicen las preces, antes de la oración de bendición el ministro dice:"
+    texto: "Cuando no se dicen las preces, antes de la oración de bendición el ministro dice:"
 
   - id: invitacion_oremos_737
     tipo: monicion
@@ -231,17 +380,11 @@ contenido:
     obligatorio: false
     texto: "Y, según las circunstancias, todos oran durante algún tiempo en silencio. Luego dice la oración de bendición."
 
-  - id: rubrica_titulo_oracion_bendicion
-    tipo: titulo
-    actor: celebrante
-    obligatorio: true
-    texto: "Oración de bendición"
-
   - id: rubrica_738
     tipo: rubrica
     actor: celebrante
     obligatorio: true
-    texto: "738. El ministro, si es sacerdote o diácono, con las manos extendidas, dice la oración de bendición correspondiente:"
+    texto: "El ministro, si es sacerdote o diácono, con las manos extendidas, dice la oración de bendición correspondiente:"
 
   - id: bendicion_vehiculo_o_barca
     tipo: bendicion
@@ -265,7 +408,7 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "739. Después de la oración de bendición, según las circunstancias, el ministro rocía con agua bendita los locales, los vehículos y a los asistentes, mientras se entona un canto adecuado."
+    texto: "Después de la oración de bendición, según las circunstancias, el ministro rocía con agua bendita los locales, los vehículos y a los asistentes, mientras se entona un canto adecuado."
 
   - id: rubrica_titulo_conclusion
     tipo: titulo
@@ -276,8 +419,8 @@ contenido:
   - id: rubrica_740
     tipo: rubrica
     actor: celebrante
-    obligatorio: false
-    texto: "740. El ministro, si es sacerdote o diácono, concluye el rito, diciendo:"
+    obligatorio: true
+    texto: "El ministro, si es sacerdote o diácono, concluye el rito, diciendo:"
 
   - id: conclusion_el_senor_os_guie
     tipo: conclusion
@@ -313,4 +456,4 @@ contenido:
     tipo: rubrica
     actor: celebrante
     obligatorio: false
-    texto: "742. Es aconsejable terminar el rito con un canto adecuado."
+    texto: "Es aconsejable terminar el rito con un canto adecuado."
