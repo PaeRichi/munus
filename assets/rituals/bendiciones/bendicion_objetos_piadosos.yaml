@@ -11,8 +11,8 @@ metadata:
     fin: 1361
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 2
-  nota: "v2: se completaron las 9 lecturas alternativas de lectura_2co_3_4 (transcriptas por Ricardo). Se agregó el título 'Preces' (tipo: titulo, obligatorio: false) antes de preces_espiritu_piedad, que faltaba. Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente toda la sección bajo el título — mismo ajuste aplicado a bendicion_laboratorio_taller_tienda.yaml y bendicion_vehiculo_y_barca.yaml. Se separó conclusion_rito_objetos, que traía 'R. Amén.' y la bendición final trinitaria embebidos como texto corrido, en bloques independientes (conclusión, respuesta, rúbrica de transición 'Luego dice:', bendición final, respuesta), agregando la rúbrica de transición que faltaba — mismo patrón que bendicion_laboratorio_taller_tienda.yaml y bendicion_vehiculo_y_barca.yaml. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). La opción oracion_bendicion_rito_breve_1366 en oracion_bendicion_objetos se confirmó con Ricardo como variante oficial legítima (Regla 3.1, fórmula del Rito breve n. 1366) y se mantiene. obligatorio no se revisó en esta ronda salvo en los bloques nuevos creados por la separación de la conclusión, que replican el criterio ya usado en archivos análogos."
+  version: 4
+  nota: "v4: se bajó a obligatorio: false rubrica_1360 ('El celebrante, con las manos extendidas, dice:'), rúbrica de postura sin acción física sobre personas/lugar — mismo criterio ya aplicado en bendicion_del_agua_fuera_de_la_misa.yaml, bendicion_de_una_nueva_casa.yaml y bendicion_e_imposicion_del_escapulario.yaml. v3: se bajaron a obligatorio: false rubrica_signan_responden ('Todos se santiguan y responden:') y rubrica_todos_responden_1351 ('Todos responden:'), rúbricas de cue funcional que no aportan valor pastoral al quedar siempre visibles — mismo ajuste aplicado a bendicion_laboratorio_taller_tienda.yaml y bendicion_vehiculo_y_barca.yaml. Se mantiene en true la rúbrica que introduce una aspersión con fórmula hablada, criterio ya establecido. v2: se completaron las 9 lecturas alternativas de lectura_2co_3_4 (transcriptas por Ricardo). Se agregó el título 'Preces' (tipo: titulo, obligatorio: false) antes de preces_espiritu_piedad, que faltaba. Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente toda la sección bajo el título. Se separó conclusion_rito_objetos, que traía 'R. Amén.' y la bendición final trinitaria embebidos como texto corrido, en bloques independientes (conclusión, respuesta, rúbrica de transición 'Luego dice:', bendición final, respuesta), agregando la rúbrica de transición que faltaba. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). La opción oracion_bendicion_rito_breve_1366 en oracion_bendicion_objetos se confirmó con Ricardo como variante oficial legítima (Regla 3.1, fórmula del Rito breve n. 1366) y se mantiene."
 
 praenotanda: |
   1346. El presente rito debe utilizarse en la bendición de medallas, pequeñas cruces, imágenes religiosas que no se han de exponer en lugares sagrados, escapularios, coronas y objetos similares que se usan para la práctica de ejercicios piadosos.
@@ -43,7 +43,7 @@ contenido:
   - id: rubrica_signan_responden
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos se santiguan y responden:"
 
   - id: respuesta_amen_1350
@@ -73,7 +73,7 @@ contenido:
   - id: rubrica_todos_responden_1351
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos responden:"
 
   - id: respuesta_y_con_tu_espiritu_1351
@@ -356,7 +356,7 @@ contenido:
   - id: rubrica_1360
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "El celebrante, con las manos extendidas, dice:"
 
   - id: oracion_bendicion_objetos
