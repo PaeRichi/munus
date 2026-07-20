@@ -11,8 +11,8 @@ metadata:
     fin: 742
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 2
-  nota: "v2: se completaron las 6 lecturas alternativas de lectura_jn_14_6_7 que faltaban (opcion_hch_17_22_28 ya estaba completa y no se tocó). Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces — mismo ajuste aplicado a bendicion_objetos_piadosos.yaml y bendicion_laboratorio_taller_tienda.yaml. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). Sin casos de Regla 3.2. obligatorio no se revisó en esta ronda."
+  version: 4
+  nota: "v4: se bajaron a obligatorio: false rubrica_738 ('El ministro... con las manos extendidas, dice la oración de bendición correspondiente:', rúbrica de postura) y rubrica_740 ('El ministro... concluye el rito, diciendo:', transición genérica) — mismo criterio ya aplicado en bendicion_del_agua_fuera_de_la_misa.yaml, bendicion_de_una_nueva_casa.yaml y bendicion_e_imposicion_del_escapulario.yaml. v3: se bajaron a obligatorio: false rubrica_signan_responden ('Todos se santiguan y responden:') y rubrica_todos_responden_727 ('Todos responden:'), rúbricas de cue funcional que no aportan valor pastoral al quedar siempre visibles — mismo ajuste aplicado a bendicion_objetos_piadosos.yaml y bendicion_laboratorio_taller_tienda.yaml. Se mantiene sin cambios rubrica_739_aspersion (ya estaba en false, sin fórmula hablada que introduzca). v2: se completaron las 6 lecturas alternativas de lectura_jn_14_6_7 que faltaban (opcion_hch_17_22_28 ya estaba completa y no se tocó). Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). Sin casos de Regla 3.2."
 
 praenotanda: |
   720. La vida humana encuentra una eficaz ayuda en el uso de aquellos medios o instrumentos que sirven para acortar las distancias y hacer posible el encuentro, la unión y la mutua comunicación entre los hombres, y que pueden designarse, de un modo genérico, como medios relacionados con los desplazamientos humanos. Entre estas realidades cabe enumerar, por ejemplo, una calle o carretera, una plaza, un puente, una vía férrea, un puerto, un vehículo cualquiera, una nave y un avión. Puesto que en el uso de dichos medios se aviva y fomenta la conciencia de las mutuas obligaciones, ello nos ofrece una buena ocasión de bendecir a Dios y de orar al mismo tiempo por las personas que los utilizarán en lo sucesivo.
@@ -49,7 +49,7 @@ contenido:
   - id: rubrica_signan_responden
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos se santiguan y responden:"
 
   - id: respuesta_amen_726
@@ -79,7 +79,7 @@ contenido:
   - id: rubrica_todos_responden_727
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos responden:"
 
   - id: respuesta_y_con_tu_espiritu_727
@@ -383,7 +383,7 @@ contenido:
   - id: rubrica_738
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "El ministro, si es sacerdote o diácono, con las manos extendidas, dice la oración de bendición correspondiente:"
 
   - id: bendicion_vehiculo_o_barca
@@ -419,7 +419,7 @@ contenido:
   - id: rubrica_740
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "El ministro, si es sacerdote o diácono, concluye el rito, diciendo:"
 
   - id: conclusion_el_senor_os_guie

@@ -11,8 +11,8 @@ metadata:
     fin: 683
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 2
-  nota: "v2: se completaron las 6 lecturas alternativas de lectura_gn_1_27_31 que faltaban (opcion_mc_6_1_3 ya estaba completa y no se tocó). Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente la sección — mismo ajuste aplicado a bendicion_objetos_piadosos.yaml y bendicion_vehiculo_y_barca.yaml. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). Sin casos de Regla 3.2. obligatorio no se revisó en esta ronda."
+  version: 4
+  nota: "v4: se bajaron a obligatorio: false rubrica_680 ('El celebrante, con las manos extendidas, dice la oración de bendición correspondiente al tipo de local:', rúbrica de postura), rubrica_681_aspersion (rocía sin fórmula hablada que la acompañe — solo dice 'mientras se interpreta un canto', sin 'diciendo:') y rubrica_682 ('El celebrante concluye el rito, diciendo, con las manos extendidas...', transición genérica) — mismo criterio ya aplicado en bendicion_del_agua_fuera_de_la_misa.yaml, bendicion_de_una_nueva_casa.yaml y bendicion_e_imposicion_del_escapulario.yaml. v3: se bajaron a obligatorio: false rubrica_signan_responden ('Todos se santiguan y responden:') y rubrica_todos_responden_670 ('Todos responden:'), rúbricas de cue funcional que no aportan valor pastoral al quedar siempre visibles — mismo ajuste aplicado a bendicion_objetos_piadosos.yaml y bendicion_vehiculo_y_barca.yaml. v2: se completaron las 6 lecturas alternativas de lectura_gn_1_27_31 que faltaban (opcion_mc_6_1_3 ya estaba completa y no se tocó). Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente la sección. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). Sin casos de Regla 3.2."
 
 praenotanda: |
   665. El hombre, con el trabajo asiduo de sus manos, y el desempeño de su cometido, cuida incesantemente de la creación. Por otra parte, «el progreso de las técnicas de producción y la mejor organización del comercio y de los servicios han convertido la economía en un instrumento capaz de satisfacer las nuevas necesidades de la familia humana que no dejan de acrecentarse». Existe, pues, motivo más que suficiente para bendecir aquellos lugares donde el hombre trabaja con empeño en beneficio propio y en provecho de sus semejantes.
@@ -45,7 +45,7 @@ contenido:
   - id: rubrica_signan_responden
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos se santiguan y responden:"
 
   - id: respuesta_amen_669
@@ -75,7 +75,7 @@ contenido:
   - id: rubrica_todos_responden_670
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Todos responden:"
 
   - id: respuesta_y_con_tu_espiritu_670
@@ -351,7 +351,7 @@ contenido:
   - id: rubrica_680
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "El celebrante, con las manos extendidas, dice la oración de bendición correspondiente al tipo de local:"
 
   - id: bendicion_lugar_de_trabajo
@@ -378,7 +378,7 @@ contenido:
   - id: rubrica_681_aspersion
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Después de la oración de bendición, el celebrante rocía con agua bendita a los presentes y el local, mientras se interpreta un canto adecuado."
 
   - id: rubrica_titulo_conclusion
@@ -390,7 +390,7 @@ contenido:
   - id: rubrica_682
     tipo: rubrica
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "El celebrante concluye el rito, diciendo, con las manos extendidas sobre los presentes:"
 
   - id: conclusion_mirada_bondadosa
