@@ -100,7 +100,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
 flutter_launcher_icons:
   android: true
-  ios: true
+  ios: false
   image_path: "assets/images/Munus_icon.png"
   adaptive_icon_background: "#F8F6F1"
   adaptive_icon_foreground: "assets/images/Munus_icon.png"
