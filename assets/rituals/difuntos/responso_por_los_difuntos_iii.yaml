@@ -92,7 +92,7 @@ contenido:
     tipo: respuesta
     actor: asamblea
     obligatorio: false
-    texto: "De las penas del infierno."
+    texto: "De las penas eternas."
 
   - id: versiculo_descanse_en_paz
     tipo: saludo
