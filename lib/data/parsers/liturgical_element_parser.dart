@@ -91,6 +91,7 @@ LiturgicalElement parseLiturgicalElement(YamlMap map) {
     text: map['texto'] as String?,
     reference: map['referencia'] as String?,
     heading: map['encabezado'] as String?,
+    displayName: map['display_name'] as String?,
     response: map['respuesta'] as String?,
     options: options,
     invocations: invocations,

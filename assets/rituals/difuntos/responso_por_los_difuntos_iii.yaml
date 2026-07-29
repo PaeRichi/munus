@@ -85,13 +85,13 @@ contenido:
   - id: versiculo_libera_alma
     tipo: saludo
     actor: celebrante
-    obligatorio: true
+    obligatorio: false
     texto: "Libera, Señor, su alma."
 
   - id: respuesta_penas_infierno
     tipo: respuesta
     actor: asamblea
-    obligatorio: true
+    obligatorio: false
     texto: "De las penas del infierno."
 
   - id: versiculo_descanse_en_paz

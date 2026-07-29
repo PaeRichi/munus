@@ -125,7 +125,10 @@ class LiturgicalElementWidget extends StatelessWidget {
               const SizedBox(height: 16),
               if (hasOwnFormula)
                 _optionRow(
-                  label: element.reference ?? _shortLabel(element.text!),
+                    label: element.displayName ??
+                      element.reference ??
+                      element.heading ??
+                      _shortLabel(element.text!),
                   isChosen: chosenId == element.id,
                   fontSize: fontSize,
                   onTap: () {
@@ -137,6 +140,7 @@ class LiturgicalElementWidget extends StatelessWidget {
                 final isChosen = option.id == chosenId;
                 final label = option.displayName ??
                     option.reference ??
+                    option.heading ??
                     (option.text != null ? _shortLabel(option.text!) : null) ??
                     option.id;
                 return _optionRow(

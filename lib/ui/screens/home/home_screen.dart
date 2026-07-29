@@ -44,14 +44,20 @@ class HomeScreen extends ConsumerWidget {
             }
 
             // Secciones por categoría
-            for (final category in categories) {
+             for (final category in categories) {
+              final celebrations =
+                  repository.getCelebrationsByCategory(category.id);
+              final nonFavoriteCelebrations = celebrations
+                  .where((c) => !favorites.contains(c['id']))
+                  .toList();
+
+              if (nonFavoriteCelebrations.isEmpty) continue;
+
               items.add({
                 'type': 'header',
                 'title': category.title.toUpperCase(),
               });
-              final celebrations =
-                  repository.getCelebrationsByCategory(category.id);
-              for (final celebration in celebrations) {
+              for (final celebration in nonFavoriteCelebrations) {
                 items.add({
                   'type': 'celebration',
                   'title': celebration['title'],

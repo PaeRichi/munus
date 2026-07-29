@@ -58,6 +58,7 @@ class LiturgicalElement {
   final String? text;
   final String? reference;
   final String? heading;
+  final String? displayName;
   final String? response;
   final List<LiturgicalOption> options;
   final List<LiturgicalInvocation> invocations;
@@ -74,6 +75,7 @@ class LiturgicalElement {
     this.text,
     this.reference,
     this.heading,
+    this.displayName,
     this.response,
     this.options = const [],
     this.invocations = const [],

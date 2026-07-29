@@ -11,8 +11,8 @@ metadata:
     fin: 153
   ministros: [sacerdote]
   idioma: es
-  version: 2
-  nota: "Actualizado a MUNUS YAML Spec v1.1: saludos iniciales (nn. 125-127), monición/oración antes de la Unción (nn. 129-130), acto penitencial (nn. 131-134), letanía por el enfermo (nn. 136-138), bendición del óleo (nn. 140-142) y bendición final (nn. 151-153) migrados a opciones con elementos (Regla 3.2), por tratarse de variantes estructuralmente distintas entre sí, no solo de contenido. Con esto la migración a v1.1 queda completa. Se retiraron las marcas literales 'V.'/'R.' de los textos de saludo y respuesta, redundantes con tipo/actor. Se agregaron display_name a las opciones con elementos y a las de texto largo. Se retiraron los números de cita del libro al inicio de rúbricas, títulos y el gesto de imposición de manos (se conservaron las referencias cruzadas a otros números dentro del texto, ej. 'n. 259', 'nn. 260 ss', 'n. 21', 'nn. 105-110')."
+  version: 4
+  nota: "v4: se agregó display_name al bloque padre oracion_despues_uncion_144 ('Para cualquier enfermo — 1') ahora que Programming habilitó el campo también a nivel del bloque padre (antes solo existía dentro de opciones); se renombró oracion_145_redimir_hombres a 'Para cualquier enfermo — 2' para que ambas fórmulas genéricas queden distinguibles entre sí, siguiendo el mismo patrón de numeración ya usado en el archivo para las fórmulas del óleo. v3: se cambió el display_name de oracion_145_redimir_hombres de 'Señor Jesucristo, que para redimir...' (estilo texto largo) a 'Para cualquier enfermo', para distinguirla claramente de las otras oraciones alternativas que sí están etiquetadas por circunstancia específica (anciano, peligro grave, viático, agonía). v2: Actualizado a MUNUS YAML Spec v1.1: saludos iniciales (nn. 125-127), monición/oración antes de la Unción (nn. 129-130), acto penitencial (nn. 131-134), letanía por el enfermo (nn. 136-138), bendición del óleo (nn. 140-142) y bendición final (nn. 151-153) migrados a opciones con elementos (Regla 3.2), por tratarse de variantes estructuralmente distintas entre sí, no solo de contenido. Se retiraron las marcas literales 'V.'/'R.' de los textos de saludo y respuesta, redundantes con tipo/actor. Se agregaron display_name a las opciones con elementos y a las de texto largo. Se retiraron los números de cita del libro al inicio de rúbricas, títulos y el gesto de imposición de manos (se conservaron las referencias cruzadas a otros números dentro del texto, ej. 'n. 259', 'nn. 260 ss', 'n. 21', 'nn. 105-110')."
 
 contenido:
   - id: rubrica_preparativos
@@ -528,10 +528,11 @@ contenido:
     tipo: oracion
     actor: celebrante
     obligatorio: true
+    display_name: "Para cualquier enfermo — 1"
     texto: "Te rogamos, Redentor nuestro, que por la gracia del Espíritu Santo, cures el dolor de este enfermo, sanes sus heridas, perdones sus pecados, ahuyentes todo sufrimiento de su cuerpo y de su alma y le devuelvas la salud espiritual y corporal, para que, restablecido por tu misericordia, se incorpore de nuevo a los quehaceres de su vida. Tú que vives y reinas por los siglos de los siglos."
     opciones:
       - id: oracion_145_redimir_hombres
-        display_name: "Señor Jesucristo, que para redimir..."
+        display_name: "Para cualquier enfermo — 2"
         texto: "Señor Jesucristo, que para redimir a los hombres y sanar a los enfermos, quisiste asumir nuestra condición humana, mira con piedad a N., que está enfermo y necesita ser curado en el cuerpo y en el espíritu. Reconforta y consuela con tu poder a quien hemos ungido en tu nombre con el óleo santo, para que levante su ánimo y pueda superar todos sus males (y ya que has querido asociarlo a tu Pasión redentora, haz que confíe en la eficacia de su dolor para la salvación del mundo). Tú que vives y reinas por los siglos de los siglos."
       - id: oracion_146_para_anciano
         display_name: "Para un anciano"
