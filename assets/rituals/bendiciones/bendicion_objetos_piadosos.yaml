@@ -11,8 +11,8 @@ metadata:
     fin: 1361
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 5
-  nota: "v5: se agregó display_name al bloque padre oracion_bendicion_objetos ('Fórmula principal') y a su opción oracion_bendicion_rito_breve_1366 ('Fórmula del Rito breve'), ahora que Programming habilitó el campo display_name también a nivel del bloque padre (antes solo existía dentro de opciones). v4: se bajó a obligatorio: false rubrica_1360 ('El celebrante, con las manos extendidas, dice:'), rúbrica de postura sin acción física sobre personas/lugar — mismo criterio ya aplicado en bendicion_del_agua_fuera_de_la_misa.yaml, bendicion_de_una_nueva_casa.yaml y bendicion_e_imposicion_del_escapulario.yaml. v3: se bajaron a obligatorio: false rubrica_signan_responden ('Todos se santiguan y responden:') y rubrica_todos_responden_1351 ('Todos responden:'), rúbricas de cue funcional que no aportan valor pastoral al quedar siempre visibles — mismo ajuste aplicado a bendicion_laboratorio_taller_tienda.yaml y bendicion_vehiculo_y_barca.yaml. Se mantiene en true la rúbrica que introduce una aspersión con fórmula hablada, criterio ya establecido. v2: se completaron las 9 lecturas alternativas de lectura_2co_3_4 (transcriptas por Ricardo). Se agregó el título 'Preces' (tipo: titulo, obligatorio: false) antes de preces_espiritu_piedad, que faltaba. Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente toda la sección bajo el título. Se separó conclusion_rito_objetos, que traía 'R. Amén.' y la bendición final trinitaria embebidos como texto corrido, en bloques independientes (conclusión, respuesta, rúbrica de transición 'Luego dice:', bendición final, respuesta), agregando la rúbrica de transición que faltaba. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). La opción oracion_bendicion_rito_breve_1366 en oracion_bendicion_objetos se confirmó con Ricardo como variante oficial legítima (Regla 3.1, fórmula del Rito breve n. 1366) y se mantiene."
+  version: 6
+  nota: "v6: lectura_2co_3_4 se reestructuró con Regla 3.2 para corregir la aclamación tras la lectura, que dependía del género de la lectura elegida. Las 9 lecturas (la que era 'principal', 2 Co 3,17b—4,2, más las 8 alternativas) pasaron a ser 9 opciones de igual rango, cada una con su propio elementos agrupando lectura + proclamación (tipo: saludo, actor: lector) + respuesta (tipo: respuesta, actor: asamblea). 7 de las 9 son epístolas ('Palabra de Dios.' / 'Te alabamos, Señor.'); Lc 11,5-13 y Lc 18,1-8 son evangélicas ('Palabra del Señor.' / 'Gloria a ti, Señor Jesús.'). Se eliminó el bloque suelto respuesta_palabra_de_dios, que antes traía mal el actor (asamblea en vez de lector) y no distinguía género de lectura. El bloque padre lectura_2co_3_4 quedó sin texto propio, como corresponde cuando todas las opciones son de igual rango. v5: se agregó display_name al bloque padre oracion_bendicion_objetos ('Fórmula principal') y a su opción oracion_bendicion_rito_breve_1366 ('Fórmula del Rito breve'), ahora que Programming habilitó el campo display_name también a nivel del bloque padre (antes solo existía dentro de opciones). v4: se bajó a obligatorio: false rubrica_1360 ('El celebrante, con las manos extendidas, dice:'), rúbrica de postura sin acción física sobre personas/lugar — mismo criterio ya aplicado en bendicion_del_agua_fuera_de_la_misa.yaml, bendicion_de_una_nueva_casa.yaml y bendicion_e_imposicion_del_escapulario.yaml. v3: se bajaron a obligatorio: false rubrica_signan_responden ('Todos se santiguan y responden:') y rubrica_todos_responden_1351 ('Todos responden:'), rúbricas de cue funcional que no aportan valor pastoral al quedar siempre visibles — mismo ajuste aplicado a bendicion_laboratorio_taller_tienda.yaml y bendicion_vehiculo_y_barca.yaml. Se mantiene en true la rúbrica que introduce una aspersión con fórmula hablada, criterio ya establecido. v2: se completaron las 9 lecturas alternativas de lectura_2co_3_4 (transcriptas por Ricardo). Se agregó el título 'Preces' (tipo: titulo, obligatorio: false) antes de preces_espiritu_piedad, que faltaba. Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente toda la sección bajo el título. Se separó conclusion_rito_objetos, que traía 'R. Amén.' y la bendición final trinitaria embebidos como texto corrido, en bloques independientes (conclusión, respuesta, rúbrica de transición 'Luego dice:', bendición final, respuesta), agregando la rúbrica de transición que faltaba. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). La opción oracion_bendicion_rito_breve_1366 en oracion_bendicion_objetos se confirmó con Ricardo como variante oficial legítima (Regla 3.1, fórmula del Rito breve n. 1366) y se mantiene."
 
 praenotanda: |
   1346. El presente rito debe utilizarse en la bendición de medallas, pequeñas cruces, imágenes religiosas que no se han de exponer en lugares sagrados, escapularios, coronas y objetos similares que se usan para la práctica de ejercicios piadosos.
@@ -116,156 +116,312 @@ contenido:
     tipo: lectura
     actor: lector
     obligatorio: true
-    referencia: "2 Co 3, 17b—4, 2"
-    encabezado: "Escuchad ahora, hermanos, las palabras del apóstol san Pablo a los Corintios. «Reflejamos la gloria del Señor y nos vamos transformando en su imagen»."
-    texto: |
-      Donde está el Espíritu del Señor hay libertad. Y nosotros todos, que llevamos la cara descubierta, reflejamos la gloria del Señor y nos vamos transformando en su imagen con resplandor creciente; así es como actúa el Señor, que es Espíritu. Por eso, encargados de este ministerio por misericordia de Dios, no nos acobardamos; al contrario, hemos renunciado a la clandestinidad vergonzante, dejándonos de intrigas y no adulterando la Palabra de Dios; sino que, mostrando nuestra sinceridad, nos recomendamos a la conciencia de todo hombre delante de Dios.
     opciones:
+      - id: opcion_2co_3_17b_4_2
+        display_name: "Reflejamos la gloria del Señor..."
+        elementos:
+          - id: lectura_2co_3_17b_4_2_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "2 Co 3, 17b—4, 2"
+            encabezado: "Escuchad ahora, hermanos, las palabras del apóstol san Pablo a los Corintios. «Reflejamos la gloria del Señor y nos vamos transformando en su imagen»."
+            texto: |
+              Donde está el Espíritu del Señor hay libertad. Y nosotros todos, que llevamos la cara descubierta, reflejamos la gloria del Señor y nos vamos transformando en su imagen con resplandor creciente; así es como actúa el Señor, que es Espíritu. Por eso, encargados de este ministerio por misericordia de Dios, no nos acobardamos; al contrario, hemos renunciado a la clandestinidad vergonzante, dejándonos de intrigas y no adulterando la Palabra de Dios; sino que, mostrando nuestra sinceridad, nos recomendamos a la conciencia de todo hombre delante de Dios.
+          - id: proclamacion_2co_3_17b_4_2
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra de Dios."
+          - id: respuesta_2co_3_17b_4_2
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Te alabamos, Señor."
+
       - id: opcion_rm_8_26_31
-        referencia: "Rm 8, 26-31"
-        encabezado: "Escuchad ahora, hermanos, las palabras de la carta del apóstol san Pablo a los Romanos. «El Espíritu viene en ayuda de nuestra debilidad»."
-        texto: |
-          Hermanos:
+        display_name: "El Espíritu viene en ayuda de nuestra debilidad"
+        elementos:
+          - id: lectura_rm_8_26_31_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Rm 8, 26-31"
+            encabezado: "Escuchad ahora, hermanos, las palabras de la carta del apóstol san Pablo a los Romanos. «El Espíritu viene en ayuda de nuestra debilidad»."
+            texto: |
+              Hermanos:
 
-          El Espíritu viene en ayuda de nuestra debilidad, porque nosotros no sabemos pedir lo que nos conviene; pero el Espíritu mismo intercede por nosotros con gemidos inefables.
+              El Espíritu viene en ayuda de nuestra debilidad, porque nosotros no sabemos pedir lo que nos conviene; pero el Espíritu mismo intercede por nosotros con gemidos inefables.
 
-          Y el que escruta los corazones sabe cuál es el deseo del Espíritu, y que su intercesión por los santos es según Dios.
+              Y el que escruta los corazones sabe cuál es el deseo del Espíritu, y que su intercesión por los santos es según Dios.
 
-          Sabemos, además, que a los que aman a Dios todo les sirve para el bien, a los que han sido llamados según su designio.
+              Sabemos, además, que a los que aman a Dios todo les sirve para el bien, a los que han sido llamados según su designio.
 
-          Porque a los que había conocido de antemano también los predestinó a reproducir la imagen de su Hijo, para que él fuera el primogénito entre muchos hermanos.
+              Porque a los que había conocido de antemano también los predestinó a reproducir la imagen de su Hijo, para que él fuera el primogénito entre muchos hermanos.
 
-          Y a los que predestinó, los llamó; a los que llamó, los justificó; y a los que justificó, los glorificó.
+              Y a los que predestinó, los llamó; a los que llamó, los justificó; y a los que justificó, los glorificó.
 
-          ¿Qué diremos después de esto? Si Dios está con nosotros, ¿quién estará contra nosotros?
+              ¿Qué diremos después de esto? Si Dios está con nosotros, ¿quién estará contra nosotros?
+          - id: proclamacion_rm_8_26_31
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra de Dios."
+          - id: respuesta_rm_8_26_31
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Te alabamos, Señor."
 
       - id: opcion_1co_13_8_13
-        referencia: "1 Co 13, 8-13"
-        encabezado: "Escuchad ahora, hermanos, las palabras de la primera carta del apóstol san Pablo a los Corintios. «Ahora permanecen la fe, la esperanza y el amor; la más grande es el amor»."
-        texto: |
-          Hermanos:
+        display_name: "La más grande es el amor"
+        elementos:
+          - id: lectura_1co_13_8_13_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "1 Co 13, 8-13"
+            encabezado: "Escuchad ahora, hermanos, las palabras de la primera carta del apóstol san Pablo a los Corintios. «Ahora permanecen la fe, la esperanza y el amor; la más grande es el amor»."
+            texto: |
+              Hermanos:
 
-          El amor no pasa nunca. Las profecías desaparecerán, las lenguas cesarán y el conocimiento desaparecerá.
+              El amor no pasa nunca. Las profecías desaparecerán, las lenguas cesarán y el conocimiento desaparecerá.
 
-          Porque conocemos imperfectamente y profetizamos imperfectamente; pero, cuando venga lo perfecto, desaparecerá lo imperfecto.
+              Porque conocemos imperfectamente y profetizamos imperfectamente; pero, cuando venga lo perfecto, desaparecerá lo imperfecto.
 
-          Cuando yo era niño, hablaba como un niño, sentía como un niño, razonaba como un niño; cuando me hice hombre, acabé con las cosas de niño.
+              Cuando yo era niño, hablaba como un niño, sentía como un niño, razonaba como un niño; cuando me hice hombre, acabé con las cosas de niño.
 
-          Ahora vemos como en un espejo, confusamente; entonces veremos cara a cara. Ahora conozco de un modo imperfecto, entonces conoceré como soy conocido.
+              Ahora vemos como en un espejo, confusamente; entonces veremos cara a cara. Ahora conozco de un modo imperfecto, entonces conoceré como soy conocido.
 
-          Ahora permanecen la fe, la esperanza y el amor, estos tres; pero el mayor de ellos es el amor.
+              Ahora permanecen la fe, la esperanza y el amor, estos tres; pero el mayor de ellos es el amor.
+          - id: proclamacion_1co_13_8_13
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra de Dios."
+          - id: respuesta_1co_13_8_13
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Te alabamos, Señor."
 
       - id: opcion_1co_15_45_50
-        referencia: "1 Co 15, 45-50"
-        encabezado: "Escuchad ahora, hermanos, las palabras de la primera carta del apóstol san Pablo a los Corintios. «El primer hombre fue terreno; el segundo hombre es del cielo»."
-        texto: |
-          Hermanos:
+        display_name: "El segundo hombre es del cielo"
+        elementos:
+          - id: lectura_1co_15_45_50_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "1 Co 15, 45-50"
+            encabezado: "Escuchad ahora, hermanos, las palabras de la primera carta del apóstol san Pablo a los Corintios. «El primer hombre fue terreno; el segundo hombre es del cielo»."
+            texto: |
+              Hermanos:
 
-          Así está escrito: «El primer hombre, Adán, fue un ser viviente»; el último Adán, un espíritu que da vida.
+              Así está escrito: «El primer hombre, Adán, fue un ser viviente»; el último Adán, un espíritu que da vida.
 
-          Pero no fue primero lo espiritual, sino lo natural; después lo espiritual.
+              Pero no fue primero lo espiritual, sino lo natural; después lo espiritual.
 
-          El primer hombre, sacado de la tierra, es terreno; el segundo hombre es del cielo.
+              El primer hombre, sacado de la tierra, es terreno; el segundo hombre es del cielo.
 
-          Como fue el hombre terreno, así son los hombres terrenos; como es el celestial, así serán los celestiales.
+              Como fue el hombre terreno, así son los hombres terrenos; como es el celestial, así serán los celestiales.
 
-          Y lo mismo que hemos llevado la imagen del hombre terreno, llevaremos también la imagen del celestial.
+              Y lo mismo que hemos llevado la imagen del hombre terreno, llevaremos también la imagen del celestial.
 
-          Os digo esto, hermanos: que la carne y la sangre no pueden heredar el reino de Dios, ni la corrupción hereda la incorruptibilidad.
+              Os digo esto, hermanos: que la carne y la sangre no pueden heredar el reino de Dios, ni la corrupción hereda la incorruptibilidad.
+          - id: proclamacion_1co_15_45_50
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra de Dios."
+          - id: respuesta_1co_15_45_50
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Te alabamos, Señor."
 
       - id: opcion_2co_4_1_7
-        referencia: "2 Co 4, 1-7"
-        encabezado: "Escuchad ahora, hermanos, las palabras de la segunda carta del apóstol san Pablo a los Corintios. «Llevamos este tesoro en vasijas de barro»."
-        texto: |
-          Hermanos:
+        display_name: "Llevamos este tesoro en vasijas de barro"
+        elementos:
+          - id: lectura_2co_4_1_7_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "2 Co 4, 1-7"
+            encabezado: "Escuchad ahora, hermanos, las palabras de la segunda carta del apóstol san Pablo a los Corintios. «Llevamos este tesoro en vasijas de barro»."
+            texto: |
+              Hermanos:
 
-          Como, por la misericordia de Dios, desempeñamos este ministerio, no nos desanimamos.
+              Como, por la misericordia de Dios, desempeñamos este ministerio, no nos desanimamos.
 
-          Antes bien, renunciamos a ocultamientos vergonzosos; no procedemos con astucia ni falseamos la palabra de Dios, sino que manifestamos la verdad y nos recomendamos a toda conciencia humana delante de Dios.
+              Antes bien, renunciamos a ocultamientos vergonzosos; no procedemos con astucia ni falseamos la palabra de Dios, sino que manifestamos la verdad y nos recomendamos a toda conciencia humana delante de Dios.
 
-          Y si nuestro Evangelio permanece velado, lo está para los que se pierden, para los incrédulos, cuyo entendimiento cegó el dios de este mundo, para impedir que vean el resplandor del Evangelio de la gloria de Cristo, que es imagen de Dios.
+              Y si nuestro Evangelio permanece velado, lo está para los que se pierden, para los incrédulos, cuyo entendimiento cegó el dios de este mundo, para impedir que vean el resplandor del Evangelio de la gloria de Cristo, que es imagen de Dios.
 
-          Porque no nos predicamos a nosotros mismos, sino a Jesucristo como Señor; y a nosotros como servidores vuestros por Jesús.
+              Porque no nos predicamos a nosotros mismos, sino a Jesucristo como Señor; y a nosotros como servidores vuestros por Jesús.
 
-          Pues el mismo Dios que dijo: «Brille la luz del seno de las tinieblas», ha brillado en nuestros corazones, para irradiar el conocimiento de la gloria de Dios que está en el rostro de Cristo.
+              Pues el mismo Dios que dijo: «Brille la luz del seno de las tinieblas», ha brillado en nuestros corazones, para irradiar el conocimiento de la gloria de Dios que está en el rostro de Cristo.
 
-          Pero llevamos este tesoro en vasijas de barro, para que se vea que una fuerza tan extraordinaria es de Dios y no proviene de nosotros.
+              Pero llevamos este tesoro en vasijas de barro, para que se vea que una fuerza tan extraordinaria es de Dios y no proviene de nosotros.
+          - id: proclamacion_2co_4_1_7
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra de Dios."
+          - id: respuesta_2co_4_1_7
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Te alabamos, Señor."
 
       - id: opcion_ga_1_2
-        referencia: "Ga 1, 1.3-5; 2, 19b-20"
-        encabezado: "Escuchad ahora, hermanos, las palabras de la carta del apóstol san Pablo a los Gálatas. «Ya no soy yo quien vive, es Cristo quien vive en mí»."
-        texto: |
-          Pablo, apóstol, no de parte de hombres ni por mediación de hombre alguno, sino por Jesucristo y Dios Padre, que lo resucitó de entre los muertos.
+        display_name: "Ya no soy yo quien vive..."
+        elementos:
+          - id: lectura_ga_1_2_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Ga 1, 1.3-5; 2, 19b-20"
+            encabezado: "Escuchad ahora, hermanos, las palabras de la carta del apóstol san Pablo a los Gálatas. «Ya no soy yo quien vive, es Cristo quien vive en mí»."
+            texto: |
+              Pablo, apóstol, no de parte de hombres ni por mediación de hombre alguno, sino por Jesucristo y Dios Padre, que lo resucitó de entre los muertos.
 
-          Gracia y paz a vosotros de parte de Dios, nuestro Padre, y del Señor Jesucristo, que se entregó por nuestros pecados para librarnos del presente mundo malo, según la voluntad de nuestro Dios y Padre, a quien sea la gloria por los siglos de los siglos. Amén.
+              Gracia y paz a vosotros de parte de Dios, nuestro Padre, y del Señor Jesucristo, que se entregó por nuestros pecados para librarnos del presente mundo malo, según la voluntad de nuestro Dios y Padre, a quien sea la gloria por los siglos de los siglos. Amén.
 
-          Con Cristo estoy crucificado; y ya no soy yo quien vive, sino que es Cristo quien vive en mí.
+              Con Cristo estoy crucificado; y ya no soy yo quien vive, sino que es Cristo quien vive en mí.
 
-          Y la vida que ahora vivo en la carne la vivo en la fe del Hijo de Dios, que me amó y se entregó por mí.
+              Y la vida que ahora vivo en la carne la vivo en la fe del Hijo de Dios, que me amó y se entregó por mí.
+          - id: proclamacion_ga_1_2
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra de Dios."
+          - id: respuesta_ga_1_2
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Te alabamos, Señor."
 
       - id: opcion_ef_3_14_21
-        referencia: "Ef 3, 14-21"
-        encabezado: "Escuchad ahora, hermanos, las palabras de la carta del apóstol san Pablo a los Efesios. «Que Cristo habite por la fe en vuestros corazones»."
-        texto: |
-          Hermanos:
+        display_name: "Que Cristo habite por la fe en vuestros corazones"
+        elementos:
+          - id: lectura_ef_3_14_21_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Ef 3, 14-21"
+            encabezado: "Escuchad ahora, hermanos, las palabras de la carta del apóstol san Pablo a los Efesios. «Que Cristo habite por la fe en vuestros corazones»."
+            texto: |
+              Hermanos:
 
-          Doblo las rodillas ante el Padre, de quien toma nombre toda familia en el cielo y en la tierra, para que, según la riqueza de su gloria, os conceda ser fortalecidos por la acción de su Espíritu en el hombre interior.
+              Doblo las rodillas ante el Padre, de quien toma nombre toda familia en el cielo y en la tierra, para que, según la riqueza de su gloria, os conceda ser fortalecidos por la acción de su Espíritu en el hombre interior.
 
-          Que Cristo habite por la fe en vuestros corazones, para que, arraigados y cimentados en el amor, podáis comprender, con todos los santos, cuál es la anchura y la longitud, la altura y la profundidad, y conocer el amor de Cristo, que excede todo conocimiento, para que os vayáis llenando hasta la total Plenitud de Dios.
+              Que Cristo habite por la fe en vuestros corazones, para que, arraigados y cimentados en el amor, podáis comprender, con todos los santos, cuál es la anchura y la longitud, la altura y la profundidad, y conocer el amor de Cristo, que excede todo conocimiento, para que os vayáis llenando hasta la total Plenitud de Dios.
 
-          Al que puede hacer muchísimo más de lo que pedimos o pensamos, según el poder que actúa en nosotros, a él la gloria en la Iglesia y en Cristo Jesús por todas las generaciones de los siglos. Amén.
+              Al que puede hacer muchísimo más de lo que pedimos o pensamos, según el poder que actúa en nosotros, a él la gloria en la Iglesia y en Cristo Jesús por todas las generaciones de los siglos. Amén.
+          - id: proclamacion_ef_3_14_21
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra de Dios."
+          - id: respuesta_ef_3_14_21
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Te alabamos, Señor."
 
       - id: opcion_col_3_14_17
-        referencia: "Col 3, 14-17"
-        encabezado: "Escuchad ahora, hermanos, las palabras de la carta del apóstol san Pablo a los Colosenses. «Todo lo que hagáis, hacedlo en el nombre del Señor Jesús»."
-        texto: |
-          Hermanos:
+        display_name: "Todo lo que hagáis, hacedlo en el nombre del Señor Jesús"
+        elementos:
+          - id: lectura_col_3_14_17_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Col 3, 14-17"
+            encabezado: "Escuchad ahora, hermanos, las palabras de la carta del apóstol san Pablo a los Colosenses. «Todo lo que hagáis, hacedlo en el nombre del Señor Jesús»."
+            texto: |
+              Hermanos:
 
-          Por encima de todo, revestíos del amor, que es el vínculo de la perfección.
+              Por encima de todo, revestíos del amor, que es el vínculo de la perfección.
 
-          Que la paz de Cristo reine en vuestros corazones; a ella habéis sido convocados en un solo cuerpo. Y sed agradecidos.
+              Que la paz de Cristo reine en vuestros corazones; a ella habéis sido convocados en un solo cuerpo. Y sed agradecidos.
 
-          Que la palabra de Cristo habite entre vosotros en toda su riqueza; enseñaos unos a otros con toda sabiduría; cantad a Dios, dando gracias de corazón, con salmos, himnos y cánticos inspirados.
+              Que la palabra de Cristo habite entre vosotros en toda su riqueza; enseñaos unos a otros con toda sabiduría; cantad a Dios, dando gracias de corazón, con salmos, himnos y cánticos inspirados.
 
-          Y todo lo que de palabra o de obra realicéis, sea todo en nombre del Señor Jesús, dando gracias a Dios Padre por medio de él.
+              Y todo lo que de palabra o de obra realicéis, sea todo en nombre del Señor Jesús, dando gracias a Dios Padre por medio de él.
+          - id: proclamacion_col_3_14_17
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra de Dios."
+          - id: respuesta_col_3_14_17
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Te alabamos, Señor."
 
       - id: opcion_lc_11_5_13
-        referencia: "Lc 11, 5-13"
-        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Pedid y se os dará»."
-        texto: |
-          En aquel tiempo, dijo Jesús a sus discípulos:
+        display_name: "Pedid y se os dará"
+        elementos:
+          - id: lectura_lc_11_5_13_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Lc 11, 5-13"
+            encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Pedid y se os dará»."
+            texto: |
+              En aquel tiempo, dijo Jesús a sus discípulos:
 
-          «Si alguno de vosotros tiene un amigo, y viene durante la medianoche para decirle: "Amigo, préstame tres panes, pues uno de mis amigos ha venido de viaje y no tengo nada que ofrecerle"; y, desde dentro, el otro le responde: "No me molestes; la puerta está cerrada y mis niños y yo estamos acostados; no puedo levantarme para dártelos"; si el otro sigue llamando, os digo que, si no se levanta a dárselos por ser amigo suyo, al menos por su insistencia se levantará y le dará cuanto necesite.
+              «Si alguno de vosotros tiene un amigo, y viene durante la medianoche para decirle: "Amigo, préstame tres panes, pues uno de mis amigos ha venido de viaje y no tengo nada que ofrecerle"; y, desde dentro, el otro le responde: "No me molestes; la puerta está cerrada y mis niños y yo estamos acostados; no puedo levantarme para dártelos"; si el otro sigue llamando, os digo que, si no se levanta a dárselos por ser amigo suyo, al menos por su insistencia se levantará y le dará cuanto necesite.
 
-          Pues yo os digo: pedid y se os dará; buscad y hallaréis; llamad y se os abrirá.
+              Pues yo os digo: pedid y se os dará; buscad y hallaréis; llamad y se os abrirá.
 
-          Porque todo el que pide recibe; el que busca halla; y al que llama se le abre.
+              Porque todo el que pide recibe; el que busca halla; y al que llama se le abre.
 
-          ¿Qué padre entre vosotros, si su hijo le pide un pez, le dará una serpiente en lugar del pez? ¿O si le pide un huevo, le dará un escorpión?
+              ¿Qué padre entre vosotros, si su hijo le pide un pez, le dará una serpiente en lugar del pez? ¿O si le pide un huevo, le dará un escorpión?
 
-          Pues si vosotros, que sois malos, sabéis dar cosas buenas a vuestros hijos, ¡cuánto más el Padre del cielo dará el Espíritu Santo a los que se lo piden!».
+              Pues si vosotros, que sois malos, sabéis dar cosas buenas a vuestros hijos, ¡cuánto más el Padre del cielo dará el Espíritu Santo a los que se lo piden!».
+          - id: proclamacion_lc_11_5_13
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra del Señor."
+          - id: respuesta_lc_11_5_13
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Gloria a ti, Señor Jesús."
 
       - id: opcion_lc_18_1_8
-        referencia: "Lc 18, 1-8"
-        encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Es necesario orar siempre sin desanimarse»."
-        texto: |
-          En aquel tiempo, Jesús les proponía una parábola para enseñarles que es necesario orar siempre, sin desanimarse.
+        display_name: "Es necesario orar siempre sin desanimarse"
+        elementos:
+          - id: lectura_lc_18_1_8_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Lc 18, 1-8"
+            encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Es necesario orar siempre sin desanimarse»."
+            texto: |
+              En aquel tiempo, Jesús les proponía una parábola para enseñarles que es necesario orar siempre, sin desanimarse.
 
-          «Había un juez en una ciudad que ni temía a Dios ni le importaban los hombres. En la misma ciudad había una viuda que solía ir a decirle: "Hazme justicia frente a mi adversario".
+              «Había un juez en una ciudad que ni temía a Dios ni le importaban los hombres. En la misma ciudad había una viuda que solía ir a decirle: "Hazme justicia frente a mi adversario".
 
-          Por algún tiempo se negó; pero después se dijo: "Aunque ni temo a Dios ni me importan los hombres, como esta viuda me está molestando, le haré justicia, no sea que siga viniendo continuamente a importunarme"».
+              Por algún tiempo se negó; pero después se dijo: "Aunque ni temo a Dios ni me importan los hombres, como esta viuda me está molestando, le haré justicia, no sea que siga viniendo continuamente a importunarme"».
 
-          Y el Señor añadió:
+              Y el Señor añadió:
 
-          «Fijaos en lo que dice el juez injusto. Pues Dios, ¿no hará justicia a sus elegidos, que claman a él día y noche? ¿O les dará largas?
+              «Fijaos en lo que dice el juez injusto. Pues Dios, ¿no hará justicia a sus elegidos, que claman a él día y noche? ¿O les dará largas?
 
-          Os digo que les hará justicia sin tardar. Pero, cuando venga el Hijo del hombre, ¿encontrará esta fe en la tierra?».
-
-  - id: respuesta_palabra_de_dios
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: true
-    texto: "Palabra de Dios."
+              Os digo que les hará justicia sin tardar. Pero, cuando venga el Hijo del hombre, ¿encontrará esta fe en la tierra?».
+          - id: proclamacion_lc_18_1_8
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra del Señor."
+          - id: respuesta_lc_18_1_8
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Gloria a ti, Señor Jesús."
 
   - id: rubrica_1355_salmo
     tipo: rubrica
