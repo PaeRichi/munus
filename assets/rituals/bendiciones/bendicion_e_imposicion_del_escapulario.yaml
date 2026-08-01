@@ -11,8 +11,8 @@ metadata:
     fin: 1410
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 2
-  nota: "Revisado contra MUNUS YAML Spec v1.1: no se encontraron casos de Regla 3.2 (ni la lectura ni la oración de bendición ni la fórmula de imposición tienen alternativas). Se separó bendicion_final, que traía tres 'R. Amén.' como texto corrido dentro del mismo bloque, en bloques de bendición y respuesta independientes, siguiendo el patrón usado en el resto de la biblioteca. Se retiraron los números de cita del libro al inicio de las rúbricas (se conservan en praenotanda). Se revisó obligatorio: quedan true solo las rúbricas 1405 y 1406 (indicación de la fórmula de imposición y su modo de uso); el resto —incluida la de la aspersión final (1408), que no lleva fórmula hablada— pasan a false, por indicación expresa de Ricardo para este archivo."
+  version: 3
+  nota: "v3: se separó respuesta_palabra_de_dios (mal modelada como tipo: respuesta / actor: asamblea con texto 'Palabra de Dios') en dos bloques: proclamacion_palabra_de_dios (tipo: saludo, actor: lector) y respuesta_te_alabamos_senor (tipo: respuesta, actor: asamblea, texto 'Te alabamos, Señor'). Lectura única (2 Co 4,13—5,10), sin alternativas, por lo que no hizo falta Regla 3.2. v2: Revisado contra MUNUS YAML Spec v1.1: no se encontraron casos de Regla 3.2 (ni la lectura ni la oración de bendición ni la fórmula de imposición tienen alternativas). Se separó bendicion_final, que traía tres 'R. Amén.' como texto corrido dentro del mismo bloque, en bloques de bendición y respuesta independientes, siguiendo el patrón usado en el resto de la biblioteca. Se retiraron los números de cita del libro al inicio de las rúbricas (se conservan en praenotanda). Se revisó obligatorio: quedan true solo las rúbricas 1405 y 1406 (indicación de la fórmula de imposición y su modo de uso); el resto —incluida la de la aspersión final (1408), que no lleva fórmula hablada— pasan a false, por indicación expresa de Ricardo para este archivo."
 
 praenotanda: |
   1394. La bendición e imposición del escapulario debe hacerse, siempre que sea posible, dentro de una celebración comunitaria. Cuando se trata de una imposición del escapulario por la que los fieles son admitidos a la cofradía de algún Instituto religioso, tal admisión debe hacerla un miembro o un ministro debidamente delegado por la autoridad competente del mismo Instituto.
@@ -125,11 +125,17 @@ contenido:
 
       Es cosa que ya sabemos: Si se destruye este nuestro tabernáculo terreno, tenemos un sólido edificio construido por Dios, una casa que no ha sido levantada por mano de hombre y que tiene una duración eterna en los cielos; y, de hecho, por eso suspiramos, por el anhelo de vestirnos encima la morada que viene del cielo, suponiendo que nos encuentre aún vestidos, no desnudos. Los que vivimos en tiendas suspiramos bajo ese peso, porque no querríamos desnudarnos del cuerpo, sino ponernos encima el otro, y que lo mortal quedara absorbido por la vida. Dios mismo nos creó para eso y como garantía nos dio el Espíritu. En consecuencia, siempre tenemos confianza, aunque sabemos que, mientras sea el cuerpo nuestro domicilio, estamos desterrados lejos del Señor. Caminamos sin verlo, guiados por la fe. Y es tal nuestra confianza, que preferimos desterrarnos del cuerpo y vivir junto al Señor. Por lo cual, en destierro o en patria, nos esforzamos en agradarle. Porque todos tendremos que comparecer ante el tribunal de Cristo para recibir premio o castigo por lo que hayamos hecho mientras teníamos este cuerpo.
 
-  - id: respuesta_palabra_de_dios
+  - id: proclamacion_palabra_de_dios
+    tipo: saludo
+    actor: lector
+    obligatorio: true
+    texto: "Palabra de Dios."
+
+  - id: respuesta_te_alabamos_senor
     tipo: respuesta
     actor: asamblea
     obligatorio: true
-    texto: "Palabra de Dios."
+    texto: "Te alabamos, Señor."
 
   - id: rubrica_1402
     tipo: rubrica
