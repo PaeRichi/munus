@@ -11,8 +11,8 @@ metadata:
     fin: 153
   ministros: [sacerdote]
   idioma: es
-  version: 4
-  nota: "v4: se agregó display_name al bloque padre oracion_despues_uncion_144 ('Para cualquier enfermo — 1') ahora que Programming habilitó el campo también a nivel del bloque padre (antes solo existía dentro de opciones); se renombró oracion_145_redimir_hombres a 'Para cualquier enfermo — 2' para que ambas fórmulas genéricas queden distinguibles entre sí, siguiendo el mismo patrón de numeración ya usado en el archivo para las fórmulas del óleo. v3: se cambió el display_name de oracion_145_redimir_hombres de 'Señor Jesucristo, que para redimir...' (estilo texto largo) a 'Para cualquier enfermo', para distinguirla claramente de las otras oraciones alternativas que sí están etiquetadas por circunstancia específica (anciano, peligro grave, viático, agonía). v2: Actualizado a MUNUS YAML Spec v1.1: saludos iniciales (nn. 125-127), monición/oración antes de la Unción (nn. 129-130), acto penitencial (nn. 131-134), letanía por el enfermo (nn. 136-138), bendición del óleo (nn. 140-142) y bendición final (nn. 151-153) migrados a opciones con elementos (Regla 3.2), por tratarse de variantes estructuralmente distintas entre sí, no solo de contenido. Se retiraron las marcas literales 'V.'/'R.' de los textos de saludo y respuesta, redundantes con tipo/actor. Se agregaron display_name a las opciones con elementos y a las de texto largo. Se retiraron los números de cita del libro al inicio de rúbricas, títulos y el gesto de imposición de manos (se conservaron las referencias cruzadas a otros números dentro del texto, ej. 'n. 259', 'nn. 260 ss', 'n. 21', 'nn. 105-110')."
+  version: 5
+  nota: "v5: se separó respuesta_palabra_del_senor_uncion (mal modelada como tipo: respuesta / actor: asamblea con texto 'Palabra del Señor') en dos bloques: proclamacion_palabra_del_senor_uncion (tipo: saludo, actor: lector) y respuesta_gloria_a_ti_uncion (tipo: respuesta, actor: asamblea, texto 'Gloria a ti, Señor Jesús'). Las 5 lecturas del archivo (principal + 4 opciones) son todas evangélicas, por lo que no hizo falta Regla 3.2 — la aclamación es fija para todo el bloque. v4: se agregó display_name al bloque padre oracion_despues_uncion_144 ('Para cualquier enfermo — 1') ahora que Programming habilitó el campo también a nivel del bloque padre (antes solo existía dentro de opciones); se renombró oracion_145_redimir_hombres a 'Para cualquier enfermo — 2' para que ambas fórmulas genéricas queden distinguibles entre sí, siguiendo el mismo patrón de numeración ya usado en el archivo para las fórmulas del óleo. v3: se cambió el display_name de oracion_145_redimir_hombres de 'Señor Jesucristo, que para redimir...' (estilo texto largo) a 'Para cualquier enfermo', para distinguirla claramente de las otras oraciones alternativas que sí están etiquetadas por circunstancia específica (anciano, peligro grave, viático, agonía). v2: Actualizado a MUNUS YAML Spec v1.1: saludos iniciales (nn. 125-127), monición/oración antes de la Unción (nn. 129-130), acto penitencial (nn. 131-134), letanía por el enfermo (nn. 136-138), bendición del óleo (nn. 140-142) y bendición final (nn. 151-153) migrados a opciones con elementos (Regla 3.2), por tratarse de variantes estructuralmente distintas entre sí, no solo de contenido. Se retiraron las marcas literales 'V.'/'R.' de los textos de saludo y respuesta, redundantes con tipo/actor. Se agregaron display_name a las opciones con elementos y a las de texto largo. Se retiraron los números de cita del libro al inicio de rúbricas, títulos y el gesto de imposición de manos (se conservaron las referencias cruzadas a otros números dentro del texto, ej. 'n. 259', 'nn. 260 ss', 'n. 21', 'nn. 105-110')."
 
 contenido:
   - id: rubrica_preparativos
@@ -286,11 +286,17 @@ contenido:
         texto: |
           En aquel tiempo: Cuando Jesús llegó a la casa de Pedro, encontró a la suegra de éste en cama con fiebre. Le tocó la mano y ella no tuvo más fiebre; y levantándose, se puso a servirlo. Al atardecer, le llevaron muchos endemoniados, y él, con su palabra, expulsó a los espíritus y curó a todos los que estaban enfermos. Así se cumplió el anuncio del profeta Isaías: «Él tomó nuestras debilidades y cargó sobre sí nuestras enfermedades».
 
-  - id: respuesta_palabra_del_senor_uncion
+  - id: proclamacion_palabra_del_senor_uncion
+    tipo: saludo
+    actor: lector
+    obligatorio: true
+    texto: "Palabra del Señor."
+
+  - id: respuesta_gloria_a_ti_uncion
     tipo: respuesta
     actor: asamblea
     obligatorio: true
-    texto: "Palabra del Señor."
+    texto: "Gloria a ti, Señor Jesús."
 
   - id: rubrica_otra_lectura_260
     tipo: rubrica
