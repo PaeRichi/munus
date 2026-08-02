@@ -20,24 +20,15 @@ class LiturgicalElementWidget extends StatelessWidget {
     this.hideOptionsButton = false,
   });
 
-  /// La opción activa. Devuelve null cuando corresponde mostrar la
-  /// fórmula "principal" del propio bloque padre (element.text), en vez
-  /// de una alternativa de `opciones`.
   LiturgicalOption? get _activeOption {
     if (element.options.isEmpty) return null;
     final chosenId = preferences[element.id];
     if (chosenId != null) {
-      // El sacerdote eligió explícitamente volver a la fórmula principal.
       if (chosenId == element.id) return null;
       final chosen =
           element.options.where((o) => o.id == chosenId).firstOrNull;
       if (chosen != null) return chosen;
     }
-    // Sin elección guardada: si el bloque padre tiene su propia fórmula,
-    // esa es la que corresponde por defecto (spec: "el bloque padre lleva
-    // texto propio solo si existe una fórmula principal"). Si no tiene
-    // texto propio (todas las opciones son de igual rango), se usa la
-    // primera opción como default, como ya se hacía.
     if (element.text != null) return null;
     return element.options.first;
   }
@@ -79,11 +70,16 @@ class LiturgicalElementWidget extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(
-              isChosen ? Icons.circle : Icons.circle_outlined,
-              size: 14,
-              color:
-                  isChosen ? MunusColors.textRubric : MunusColors.textDiscrete,
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 150),
+              child: Icon(
+                isChosen ? Icons.circle : Icons.circle_outlined,
+                key: ValueKey(isChosen),
+                size: 14,
+                color: isChosen
+                    ? MunusColors.textRubric
+                    : MunusColors.textDiscrete,
+              ),
             ),
             const SizedBox(width: 12),
             Expanded(
@@ -108,53 +104,69 @@ class LiturgicalElementWidget extends StatelessWidget {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
-      builder: (_) {
+      builder: (sheetContext) {
         final hasOwnFormula = element.text != null;
-        final chosenId = preferences[element.id] ??
+        // Se declara afuera del StatefulBuilder para que conserve su
+        // valor entre re-renders provocados por setState.
+        String? chosenId = preferences[element.id] ??
             (hasOwnFormula
                 ? element.id
                 : (element.options.isNotEmpty
                     ? element.options.first.id
                     : null));
-        return SafeArea(
-          child: ListView(
-            shrinkWrap: true,
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
-            children: [
-              Text('Opciones', style: MunusTextStyles.sectionTitle(fontSize)),
-              const SizedBox(height: 16),
-              if (hasOwnFormula)
-                _optionRow(
-                    label: element.displayName ??
-                      element.reference ??
-                      element.heading ??
-                      _shortLabel(element.text!),
-                  isChosen: chosenId == element.id,
-                  fontSize: fontSize,
-                  onTap: () {
-                    onOptionSelected?.call(element.id, element.id);
-                    Navigator.pop(context);
-                  },
-                ),
-              ...element.options.map((option) {
-                final isChosen = option.id == chosenId;
-                final label = option.displayName ??
-                    option.reference ??
-                    option.heading ??
-                    (option.text != null ? _shortLabel(option.text!) : null) ??
-                    option.id;
-                return _optionRow(
-                  label: label,
-                  isChosen: isChosen,
-                  fontSize: fontSize,
-                  onTap: () {
-                    onOptionSelected?.call(element.id, option.id);
-                    Navigator.pop(context);
-                  },
-                );
-              }),
-            ],
-          ),
+
+        return StatefulBuilder(
+          builder: (context, setState) {
+            Future<void> selectAndClose(String optionId) async {
+              // Primero se muestra visualmente la opción elegida...
+              setState(() => chosenId = optionId);
+              // ...y recién después de una breve pausa se confirma la
+              // elección y se cierra el menú, para que el sacerdote
+              // alcance a ver el círculo encendido antes de que se cierre.
+              await Future.delayed(const Duration(milliseconds: 220));
+              onOptionSelected?.call(element.id, optionId);
+              if (context.mounted) Navigator.pop(context);
+            }
+
+            return SafeArea(
+              child: ListView(
+                shrinkWrap: true,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                children: [
+                  Text('Opciones',
+                      style: MunusTextStyles.sectionTitle(fontSize)),
+                  const SizedBox(height: 16),
+                  if (hasOwnFormula)
+                    _optionRow(
+                      label: element.displayName ??
+                          element.reference ??
+                          element.heading ??
+                          _shortLabel(element.text!),
+                      isChosen: chosenId == element.id,
+                      fontSize: fontSize,
+                      onTap: () => selectAndClose(element.id),
+                    ),
+                  ...element.options.map((option) {
+                    final isChosen = option.id == chosenId;
+                    final label = option.displayName ??
+                        option.reference ??
+                        option.heading ??
+                        (option.text != null
+                            ? _shortLabel(option.text!)
+                            : null) ??
+                        option.id;
+                    return _optionRow(
+                      label: label,
+                      isChosen: isChosen,
+                      fontSize: fontSize,
+                      onTap: () => selectAndClose(option.id),
+                    );
+                  }),
+                ],
+              ),
+            );
+          },
         );
       },
     );
@@ -228,16 +240,6 @@ class LiturgicalElementWidget extends StatelessWidget {
         return _buildBodyText(context);
     }
   }
- List<Widget> _buildParagraphs(String text, TextStyle style) {
-    final paragraphs =
-        text.split('\n\n').where((p) => p.trim().isNotEmpty).toList();
-    final widgets = <Widget>[];
-    for (var i = 0; i < paragraphs.length; i++) {
-      if (i > 0) widgets.add(const SizedBox(height: 12));
-      widgets.add(Text(paragraphs[i].trim(), style: style));
-    }
-    return widgets;
-  }
 
   Widget _buildRubric() {
     return Text(element.text ?? '', style: MunusTextStyles.rubric(fontSize));
@@ -249,6 +251,17 @@ class LiturgicalElementWidget extends StatelessWidget {
       child: Text(element.text ?? '',
           style: MunusTextStyles.sectionTitle(fontSize)),
     );
+  }
+
+  List<Widget> _buildParagraphs(String text, TextStyle style) {
+    final paragraphs =
+        text.split('\n\n').where((p) => p.trim().isNotEmpty).toList();
+    final widgets = <Widget>[];
+    for (var i = 0; i < paragraphs.length; i++) {
+      if (i > 0) widgets.add(const SizedBox(height: 12));
+      widgets.add(Text(paragraphs[i].trim(), style: style));
+    }
+    return widgets;
   }
 
   List<Widget> _buildElementsList(
