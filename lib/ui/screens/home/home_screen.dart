@@ -125,9 +125,16 @@ class HomeScreen extends ConsumerWidget {
                     style: MunusTextStyles.bodyText(FontSizeService.defaultSize),
                   ),
                   trailing: isFavorite
-                      ? Image.asset(
-                          'assets/images/tirita_sola.png',
-                          height: 42,
+                      ? GestureDetector(
+                          onTap: () async {
+                            final service = ref.read(favoritesServiceProvider);
+                            await service.toggleFavorite(item['id']!);
+                            ref.invalidate(favoritesProvider);
+                          },
+                          child: Image.asset(
+                            'assets/images/tirita_sola.png',
+                            height: 42,
+                          ),
                         )
                       : Icon(
                           Icons.chevron_right,
