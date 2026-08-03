@@ -108,6 +108,7 @@ class HomeScreen extends ConsumerWidget {
                 final item = items[index - 1];
                 if (item['type'] == 'header') {
                   return Padding(
+                    key: ValueKey(item['title']),
                     padding: const EdgeInsets.only(top: 32, bottom: 8),
                     child: Text(
                       item['title']!,
@@ -119,6 +120,7 @@ class HomeScreen extends ConsumerWidget {
 
                 final isFavorite = favorites.contains(item['id']);
                 return ListTile(
+                  key: ValueKey(item['id']),
                   contentPadding: EdgeInsets.zero,
                   title: Text(
                     item['title']!,
