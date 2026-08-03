@@ -125,16 +125,12 @@ class HomeScreen extends ConsumerWidget {
                     style: MunusTextStyles.bodyText(FontSizeService.defaultSize),
                   ),
                   trailing: isFavorite
-                      ? GestureDetector(
-                          onTap: () async {
+                      ? _FavoriteRibbon(
+                          onRemove: () async {
                             final service = ref.read(favoritesServiceProvider);
                             await service.toggleFavorite(item['id']!);
                             ref.invalidate(favoritesProvider);
                           },
-                          child: Image.asset(
-                            'assets/images/tirita_sola.png',
-                            height: 42,
-                          ),
                         )
                       : Icon(
                           Icons.chevron_right,
@@ -153,6 +149,41 @@ class HomeScreen extends ConsumerWidget {
               },
             );
           },
+        ),
+      ),
+    );
+  }
+}
+class _FavoriteRibbon extends StatefulWidget {
+  final VoidCallback onRemove;
+
+  const _FavoriteRibbon({required this.onRemove});
+
+  @override
+  State<_FavoriteRibbon> createState() => _FavoriteRibbonState();
+}
+
+class _FavoriteRibbonState extends State<_FavoriteRibbon> {
+  bool _removing = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: _removing
+          ? null
+          : () {
+              setState(() => _removing = true);
+              Future.delayed(const Duration(milliseconds: 220), () {
+                widget.onRemove();
+              });
+            },
+      child: AnimatedScale(
+        scale: _removing ? 0.0 : 1.0,
+        duration: const Duration(milliseconds: 220),
+        curve: Curves.easeIn,
+        child: Image.asset(
+          'assets/images/tirita_sola.png',
+          height: 42,
         ),
       ),
     );

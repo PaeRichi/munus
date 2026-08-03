@@ -127,11 +127,21 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
         orElse: () => false,
       );
       return IconButton(
-        icon: Opacity(
-          opacity: isFavorite ? 1.0 : 0.35,
-          child: Image.asset(
-            'assets/images/tirita_sola.png',
-            height: 30,
+        icon: TweenAnimationBuilder<double>(
+          key: ValueKey(isFavorite),
+          tween: Tween(begin: 1.5, end: 1.0),
+          duration: const Duration(milliseconds: 280),
+          curve: Curves.easeOutBack,
+          builder: (context, scale, child) => Transform.scale(
+            scale: scale,
+            child: child,
+          ),
+          child: Opacity(
+            opacity: isFavorite ? 1.0 : 0.35,
+            child: Image.asset(
+              'assets/images/tirita_sola.png',
+              height: 30,
+            ),
           ),
         ),
         tooltip: isFavorite
