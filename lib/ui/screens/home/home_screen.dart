@@ -127,7 +127,7 @@ class HomeScreen extends ConsumerWidget {
                   trailing: isFavorite
                       ? Image.asset(
                           'assets/images/tirita_sola.png',
-                          height: 32,
+                          height: 42,
                         )
                       : Icon(
                           Icons.chevron_right,
