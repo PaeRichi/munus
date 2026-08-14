@@ -78,6 +78,7 @@ flutter:
     - assets/rituals/sacramentos/uncion_cap2_rito_ordinario.yaml
     - assets/rituals/difuntos/ultimo_adios_al_cuerpo_del_difunto.yaml
     - assets/rituals_ar/bendiciones/bendicion_del_agua_fuera_de_la_misa.yaml
+    - assets/rituals_ar/bendiciones/bendicion_de_una_nueva_casa.yaml
     - assets/images/tiritas.png
     - assets/images/tirita_sola.png
 

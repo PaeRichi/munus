@@ -1,0 +1,261 @@
+id: bendicion_de_una_nueva_casa
+
+metadata:
+  titulo: "Bendición de una vivienda"
+  tipo: bendicion
+  libro: "Bendiciones"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  fuente: "Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina. Transcripción asistida por curas.com.ar/Bendiciones/Bendicionesplus.htm, ítem 12, cotejada por Ricardo contra la edición impresa."
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+  nota: |
+    Segundo archivo de la variante regional argentina. Mismo id que la versión española bendicion_de_una_nueva_casa.yaml, carpeta paralela.
+
+    Caso "mixto" (Regla 3.2), igual criterio que los 5 archivos españoles ya restructurados: las tres lecturas de la fuente (Mt 7,24-27 y Jn 15,12-17, ambas evangélicas; Ef 2,19-22, epístola) pasaron a ser 3 opciones de igual rango bajo lectura_evangelio, cada una con su propio elementos agrupando lectura + proclamación (tipo: saludo, actor: lector) + respuesta (tipo: respuesta, actor: asamblea) — "Palabra del Señor." / "Gloria a ti, Señor Jesús." para las evangélicas, "Palabra de Dios." / "Te alabamos, Señor." para la epístola. El bloque padre lectura_evangelio quedó sin texto propio, como corresponde cuando todas las opciones son de igual rango. Esto implica que este archivo puede toparse con el mismo bug de selector vacío ya reportado a Programming — Ricardo cree que se corrigió, pendiente de confirmar con este archivo en particular, que sí lo ejercita.
+
+    Preces: las invocaciones de la fuente web venían con "Oremos" al principio de cada una ("Oremos para que quienes viven en esta casa..."). Ricardo confirmó contra el libro físico que el patrón correcto es "Para que... Oremos." (Oremos al final, como en agua) — se adaptaron las 5 invocaciones a ese formato.
+
+    Oración de bendición: el libro físico tiene una sola fórmula (confirmado por Ricardo), a diferencia de agua que tenía dos — no se agregó ninguna opción.
+
+    Aspersión: la fuente argentina no trae fórmula hablada ("Padrenuestro (aspersión a los presentes y a la casa)" como renglón suelto). Se reutilizó la misma fórmula ya usada en bendicion_del_agua_ar.yaml y en la versión española de este mismo rito (bendicion_de_una_nueva_casa.yaml, bloque bendicion_aspersion_550) — "Que esta agua nos recuerde nuestro bautismo en Cristo, que nos redimió con su muerte y resurrección." — coincide en ambas fuentes, no hay conflicto de criterio.
+
+    Padrenuestro reubicado al final del rito, antes del saludo y bendición final, mismo criterio que agua.
+
+    Se usa "✠" en vez de "+" para la señal de la cruz, mismo criterio que el resto de la biblioteca.
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_inicial
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_saludo_celebrante
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Luego el celebrante saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Que la gracia de nuestro Señor Jesucristo y el amor de Dios nuestro Padre esté con todos ustedes."
+
+  - id: respuesta_y_con_tu_espiritu
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: lectura_evangelio
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    opciones:
+      - id: opcion_mt_7_24_27
+        display_name: "Edificó su casa sobre roca"
+        elementos:
+          - id: lectura_mt_7_24_27_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Mt 7, 24-27"
+            encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Mateo. «Edificó su casa sobre roca»."
+            texto: |
+              En aquel tiempo dijo Jesús:
+
+              —«Todo el que escucha mis palabras y las pone en práctica, puede compararse a un hombre sensato que edificó su casa sobre roca. Cayeron las lluvias, se precipitaron los torrentes, soplaron los vientos y sacudieron la casa; pero esta no se derrumbó porque estaba construida sobre roca. Al contrario, el que escucha mis palabras y no las practica, puede compararse a un hombre insensato, que edificó su casa sobre arena. Cayeron las lluvias, se precipitaron los torrentes, soplaron los vientos y sacudieron la casa: esta se derrumbó y su ruina fue grande».
+          - id: proclamacion_mt_7_24_27
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra del Señor."
+          - id: respuesta_mt_7_24_27
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Gloria a ti, Señor Jesús."
+
+      - id: opcion_jn_15_12_17
+        display_name: "Ya no los llamo servidores, sino amigos"
+        elementos:
+          - id: lectura_jn_15_12_17_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Jn 15, 12-17"
+            encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Juan. «Ya no los llamo servidores, sino amigos»."
+            texto: |
+              En aquel tiempo dijo Jesús:
+
+              —«Este es mi mandamiento: ámense los unos a los otros, como yo los he amado. No hay amor más grande que dar la vida por los amigos. Ustedes son mis amigos si hacen lo que yo les mando. Ya no los llamo servidores, porque el servidor ignora lo que hace su señor; yo los llamo amigos, porque les he dado a conocer todo lo que oí de mi Padre. No son ustedes los que me eligieron a mí, sino yo el que los elegí a ustedes, y los destiné para que vayan y den fruto, y ese fruto sea duradero. Así, todo lo que pidan al Padre en mi Nombre, él se lo concederá».
+          - id: proclamacion_jn_15_12_17
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra del Señor."
+          - id: respuesta_jn_15_12_17
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Gloria a ti, Señor Jesús."
+
+      - id: opcion_ef_2_19_22
+        display_name: "Miembros de la familia de Dios"
+        elementos:
+          - id: lectura_ef_2_19_22_texto
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Ef 2, 19-22"
+            encabezado: "Lectura de la carta del apóstol san Pablo a los cristianos de Éfeso. «Ustedes son edificados sobre los apóstoles y los profetas»."
+            texto: |
+              Ustedes ya no son extranjeros ni huéspedes, sino conciudadanos de los santos y miembros de la familia de Dios. Ustedes están edificados sobre los apóstoles y los profetas, que son los cimientos, mientras que la piedra angular es el mismo Jesucristo. En él, todo el edificio, bien trabado, va creciendo para constituir un templo santo en el Señor. En él, también ustedes son incorporados al edificio, para llegar a ser una morada de Dios en el Espíritu.
+          - id: proclamacion_ef_2_19_22
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra de Dios."
+          - id: respuesta_ef_2_19_22
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Te alabamos, Señor."
+
+  - id: rubrica_titulo_preces
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Preces"
+
+  - id: preces_bendicion_vivienda
+    tipo: preces
+    actor: celebrante
+    obligatorio: true
+    invitacion: "Unidos a Cristo Resucitado, dirijamos a Dios Padre nuestra confiada oración y digámosle:"
+    respuesta_fija: "Bendice, Señor, a esta familia tuya."
+    invocaciones:
+      - invocacion: "Para que quienes viven en esta casa permanezcan unidos en el amor y en la paz y constituyan un verdadero hogar. Oremos."
+        respuesta: "Bendice, Señor, a esta familia tuya."
+      - invocacion: "Para que no falte a esta familia la serenidad y los bienes para vivir dignamente. Oremos."
+        respuesta: "Bendice, Señor, a esta familia tuya."
+      - invocacion: "Para que quienes viven aquí experimenten la presencia viva de Jesús resucitado. Oremos."
+        respuesta: "Bendice, Señor, a esta familia tuya."
+      - invocacion: "Para que padres e hijos vivan en sincera comprensión y caridad. Oremos."
+        respuesta: "Bendice, Señor, a esta familia tuya."
+      - invocacion: "Para que los familiares difuntos de esta familia obtengan el premio de la vida eterna. Oremos."
+        respuesta: "Bendice, Señor, a esta familia tuya."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: oracion_bendicion_vivienda
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Bendito seas, Dios y Padre nuestro, por esta familia tuya (por estos hijos tuyos), aquí reunida (reunidos). Concede tu bendición ✠ a esta casa, para que este lugar sea protegido por tu Providencia paternal. Haz que quienes viven aquí experimenten siempre la presencia del Espíritu Santo, que es la fuente de tu consuelo e inspiración, y así sean fieles al Evangelio de tu Hijo Jesucristo. Dales a estos hijos tuyos tu paz y tu alegría. Te lo pedimos por el mismo Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion_bendicion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_aspersion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Después de la oración de bendición, el celebrante rocía con el agua bendecida a los presentes y a la casa, diciendo, según las circunstancias:"
+
+  - id: bendicion_aspersion
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que esta agua nos recuerde nuestro bautismo en Cristo, que nos redimió con su muerte y resurrección."
+
+  - id: respuesta_amen_aspersion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_padrenuestro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El celebrante introduce la oración dominical con estas o parecidas palabras:"
+
+  - id: monicion_padrenuestro
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y ahora, todos juntos, invoquemos a Dios con la oración que el mismo Cristo nos enseñó:"
+
+  - id: oracion_padrenuestro
+    tipo: oracion
+    actor: todos
+    obligatorio: true
+    texto: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal."
+
+  - id: saludo_final
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor esté con ustedes."
+
+  - id: respuesta_y_con_tu_espiritu_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: bendicion_final
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Los bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+
+  - id: respuesta_amen_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
