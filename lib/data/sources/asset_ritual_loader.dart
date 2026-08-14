@@ -6,4 +6,13 @@ class AssetRitualLoader {
     final content = await rootBundle.loadString(assetPath);
     return loadYaml(content) as YamlMap;
   }
+
+  Future<bool> assetExists(String assetPath) async {
+    try {
+      await rootBundle.loadString(assetPath);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
 }

@@ -26,15 +26,24 @@ class CelebrationScreen extends ConsumerStatefulWidget {
 class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
   bool showOptional = false;
   late final Future<Celebration> _celebrationFuture;
+  late final Future<String> _resolvedAssetPathFuture;
 
   @override
   void initState() {
     super.initState();
     WakelockPlus.enable();
-    _celebrationFuture = ref.read(celebrationRepositoryProvider).getCelebration(
-          assetPath: widget.celebrationMeta['assetPath']!,
-          categoryId: widget.categoryId,
-        );
+    final repository = ref.read(celebrationRepositoryProvider);
+    final variant = ref.read(regionalVariantProvider);
+    _resolvedAssetPathFuture = repository.resolveAssetPath(
+      widget.celebrationMeta['assetPath']!,
+      variant,
+    );
+    _celebrationFuture = _resolvedAssetPathFuture.then(
+      (assetPath) => repository.getCelebration(
+        assetPath: assetPath,
+        categoryId: widget.categoryId,
+      ),
+    );
   }
 
   @override
@@ -163,7 +172,7 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
     final service = ref.read(assemblyUrlServiceProvider);
     final prefsService = ref.read(celebrationPreferencesServiceProvider);
     final preferences = await prefsService.getPreferences(celebrationId);
-    final assetPath = widget.celebrationMeta['assetPath']!;
+    final assetPath = await _resolvedAssetPathFuture;
     final url = service.generateUrl(assetPath, preferences);
     if (context.mounted) {
       context.push('/qr', extra: {

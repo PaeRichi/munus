@@ -3,6 +3,7 @@ import '../../data/repositories/celebration_repository.dart';
 import '../../domain/favorites/favorites_service.dart';
 import '../../domain/preferences/celebration_preferences_service.dart';
 import '../../domain/preferences/font_size_service.dart';
+import '../../domain/preferences/regional_variant_service.dart';
 import '../../domain/qr/assembly_url_service.dart';
 
 final assemblyUrlServiceProvider = Provider<AssemblyUrlService>((ref) {
@@ -67,5 +68,33 @@ class FontSizeNotifier extends Notifier<double> {
         (state - 1).clamp(FontSizeService.minSize, FontSizeService.maxSize);
     state = newSize;
     await service.setFontSize(newSize);
+  }
+}
+
+final regionalVariantServiceProvider = Provider<RegionalVariantService>((ref) {
+  return RegionalVariantService();
+});
+
+final regionalVariantProvider =
+    NotifierProvider<RegionalVariantNotifier, RegionalVariant>(
+        RegionalVariantNotifier.new);
+
+class RegionalVariantNotifier extends Notifier<RegionalVariant> {
+  @override
+  RegionalVariant build() {
+    _load();
+    return RegionalVariantService.defaultVariant;
+  }
+
+  Future<void> _load() async {
+    final service = ref.read(regionalVariantServiceProvider);
+    final variant = await service.getVariant();
+    state = variant;
+  }
+
+  Future<void> setVariant(RegionalVariant variant) async {
+    final service = ref.read(regionalVariantServiceProvider);
+    state = variant;
+    await service.setVariant(variant);
   }
 }

@@ -31,9 +31,24 @@ const Map<String, List<Map<String, String>>> celebrationsByCategory = {
       'assetPath': 'assets/rituals/bendiciones/bendicion_del_agua_fuera_de_la_misa.yaml',
     },
     {
+      'id': 'bendicion_objetos_piadosos',
+      'title': 'Bendición de objetos piadosos',
+      'assetPath': 'assets/rituals/bendiciones/bendicion_objetos_piadosos.yaml',
+    },
+    {
       'id': 'bendicion_de_una_nueva_casa',
       'title': 'Bendición de una nueva casa',
       'assetPath': 'assets/rituals/bendiciones/bendicion_de_una_nueva_casa.yaml',
+    },
+    {
+      'id': 'bendicion_laboratorio_taller_tienda',
+      'title': 'Bendición de laboratorio, taller o tienda',
+      'assetPath': 'assets/rituals/bendiciones/bendicion_laboratorio_taller_tienda.yaml',
+    },
+    {
+      'id': 'bendicion_vehiculo_y_barca',
+      'title': 'Bendición de vehículo o barca',
+      'assetPath': 'assets/rituals/bendiciones/bendicion_vehiculo_y_barca.yaml',
     },
     {
       'id': 'bendicion_medalla_san_benito',
@@ -49,21 +64,6 @@ const Map<String, List<Map<String, String>>> celebrationsByCategory = {
       'id': 'bendicion_e_imposicion_del_escapulario',
       'title': 'Bendición e imposición del escapulario',
       'assetPath': 'assets/rituals/bendiciones/bendicion_e_imposicion_del_escapulario.yaml',
-    },
-    {
-      'id': 'bendicion_objetos_piadosos',
-      'title': 'Bendición de objetos piadosos',
-      'assetPath': 'assets/rituals/bendiciones/bendicion_objetos_piadosos.yaml',
-    },
-    {
-      'id': 'bendicion_laboratorio_taller_tienda',
-      'title': 'Bendición de laboratorio, taller o tienda',
-      'assetPath': 'assets/rituals/bendiciones/bendicion_laboratorio_taller_tienda.yaml',
-    },
-    {
-      'id': 'bendicion_vehiculo_y_barca',
-      'title': 'Bendición de vehículo o barca',
-      'assetPath': 'assets/rituals/bendiciones/bendicion_vehiculo_y_barca.yaml',
     },
   ],
   'enfermos_y_difuntos': [

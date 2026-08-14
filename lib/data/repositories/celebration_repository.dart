@@ -1,3 +1,4 @@
+import '../../domain/preferences/regional_variant_service.dart';
 import '../models/category.dart';
 import '../models/celebration.dart';
 import '../parsers/celebration_parser.dart';
@@ -18,6 +19,23 @@ class CelebrationRepository {
 
   List<Map<String, String>> getCelebrationsByCategory(String categoryId) {
     return celebrationsByCategory[categoryId] ?? [];
+  }
+
+  /// Convierte una ruta de la biblioteca española (`assets/rituals/...`) en
+  /// su equivalente en la carpeta argentina (`assets/rituals_ar/...`),
+  /// manteniendo la misma subcarpeta y nombre de archivo. Si ese archivo
+  /// todavía no existe (Biblioteca no lo transcribió aún), devuelve la ruta
+  /// española original sin avisar ni fallar — fallback silencioso.
+  Future<String> resolveAssetPath(
+    String basePath,
+    RegionalVariant variant,
+  ) async {
+    if (variant != RegionalVariant.argentina) return basePath;
+    if (!basePath.startsWith('assets/rituals/')) return basePath;
+
+    final arPath = basePath.replaceFirst('assets/rituals/', 'assets/rituals_ar/');
+    final exists = await _loader.assetExists(arPath);
+    return exists ? arPath : basePath;
   }
 
   Future<Celebration> getCelebration({

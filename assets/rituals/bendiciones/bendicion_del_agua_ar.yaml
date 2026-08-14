@@ -1,0 +1,214 @@
+id: bendicion_del_agua_fuera_de_la_misa
+
+metadata:
+  titulo: "Bendición del agua"
+  tipo: bendicion
+  libro: "Bendiciones"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  fuente: "Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina. Transcripción asistida por curas.com.ar/Bendiciones/Bendicionesplus.htm, cotejada por Ricardo contra la edición impresa."
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+  nota: |
+    Primer archivo de la variante regional argentina. Mismo id que la versión española bendicion_del_agua_fuera_de_la_misa.yaml (mismo ritual, carpeta paralela) para no romper favoritos/preferencias al togglear variante — ruta exacta pendiente de que Programming la defina. Fuente: Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina — edición oficial, sin advertencia. La transcripción se apoyó en curas.com.ar/Bendiciones/Bendicionesplus.htm, ítem 7, cotejado por Ricardo contra el libro físico.
+
+    Decisiones tomadas con Ricardo para esta primera transcripción, aplicables como criterio a los próximos cuatro archivos (vivienda, comercio, vehículo, objetos/medalla/imágenes):
+    - El saludo trinitario inicial y su "Amén" no vienen escritos en la fuente web (se asume implícito); se completó con el mismo patrón ya usado en la biblioteca española.
+    - Se agregó la monición previa a la lectura (tomada literalmente de bendicion_del_agua_fuera_de_la_misa.yaml, n. 1228: "Con esta bendición del agua, recordamos a Cristo..."), que no está en la fuente argentina — decisión de Ricardo de sumar riqueza de contenido reutilizando moniciones ya existentes en español cuando el texto no usa "vosotros" y entra sin adaptar el registro.
+    - La aspersión no trae fórmula hablada en la fuente ("Padrenuestro (aspersión)" como renglón suelto); por indicación de Ricardo, se completó con la misma fórmula ya usada en la versión española ("Que esta agua nos recuerde nuestro bautismo..."), separada en bloques de rúbrica + bendición + respuesta.
+    - El Padrenuestro se reubicó al final del rito, inmediatamente antes del saludo y la bendición final — no donde lo pone la fuente web (intercalado con la aspersión) — por indicación expresa de Ricardo: el Padrenuestro del rito se reza todos juntos al final; durante el recorrido de la aspersión (si el lugar es grande, como un comercio) pueden rezarse otras oraciones sueltas, pero eso no se modela acá.
+    - Las invocaciones de las preces SÍ son oraciones completas en el libro físico (la web las truncaba con puntos suspensivos por error de transcripción propia). Formato confirmado por Ricardo: cada invocación termina en "Oremos." como parte del texto (cue de respuesta, mismo patrón que la Oración Universal de la Misa), seguida de la respuesta fija. Las dos primeras invocaciones ya están con el texto exacto del libro; las otras dos (Espíritu de la Verdad / vida en abundancia) quedan con el texto truncado de la web como placeholder, marcadas # PENDIENTE, hasta que Ricardo confirme la redacción completa del libro físico.
+    - La bendición final conserva la fórmula propia de esta fuente ("Los bendiga Dios todopoderoso...", distinta de la ya usada en la biblioteca española "Y la bendición de Dios todopoderoso... descienda sobre vosotros") — se respeta como parte de la identidad de la variante argentina, no se homogeneiza con España. La alternativa singular "(Te)" que trae la fuente para uno solo destinatario no se modela como opción — es una nota de adaptación libre, mismo criterio ya usado en la biblioteca para paréntesis de este tipo (ej. "N.", "(en su advocación de...)").
+    - Se usa "✠" en vez de "+" para la señal de la cruz en la oración de bendición y en la bendición final, siguiendo el estilo ya establecido en el resto de la biblioteca — indicación de Ricardo: el libro físico sí trae el símbolo, la web lo simplificó a "+".
+    - Sin casos de Regla 3.2: las dos lecturas de la fuente (Jn 7,37-39 y Jn 3,5-6) son ambas evangélicas, caso "limpio" — la aclamación tras la lectura queda igual para las dos opciones.
+    - PENDIENTE: confirmar si vale la pena sumar más lecturas alternativas de la versión española (hay 7 en total: Is 12, Is 55, Si 15, Jn 5, Ap 7, Ap 22, Jn 13) a las 2 que ya trae la fuente argentina — no se agregaron todavía, a la espera de que Ricardo confirme si corresponde para este archivo en particular.
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_inicial
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_saludo_celebrante
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Luego el celebrante saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Que el Espíritu Santo prometido por Jesús esté con todos ustedes."
+
+  - id: respuesta_y_con_tu_espiritu
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: monicion_bendicion_agua
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Con esta bendición del agua, recordamos a Cristo, agua viva, así como el sacramento del bautismo, en el cual nacimos de nuevo del agua y del Espíritu Santo. Siempre, pues, que seamos rociados con esta agua o que nos santigüemos con ella al entrar en la iglesia o dentro de nuestras casas, daremos gracias a Dios por su don inexplicable, y pediremos su ayuda para vivir siempre de acuerdo con las exigencias del bautismo, sacramento de la fe, que un día recibimos."
+
+  - id: lectura_evangelio
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    referencia: "Jn 7, 37-39"
+    encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Juan. «El que tenga sed, que venga a mí»."
+    texto: |
+      El último día, el más solemne de la fiesta, Jesús, poniéndose de pie, exclamó:
+
+      —«El que tenga sed, venga a mí; y beba el que cree en mí». Como dice la Escritura: «De su seno brotarán manantiales de agua viva». Él se refería al Espíritu que debían recibir los que creyeran en él, porque el Espíritu no había sido dado todavía, ya que Jesús aún no había sido glorificado.
+    opciones:
+      - id: opcion_jn_3_5_6
+        referencia: "Jn 3, 5-6"
+        encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Juan. «El que no nace del agua y del Espíritu no puede entrar en el Reino de Dios»."
+        texto: |
+          Dijo Jesús a Nicodemo, que era uno de los principales maestros entre los judíos:
+
+          —«Te aseguro que el que no nace del agua y del Espíritu no puede entrar en el Reino de Dios. Lo que nace de la carne es carne; lo que nace del Espíritu es espíritu».
+
+  - id: proclamacion_palabra_del_senor
+    tipo: saludo
+    actor: lector
+    obligatorio: true
+    texto: "Palabra del Señor."
+
+  - id: respuesta_gloria_a_ti
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Gloria a ti, Señor Jesús."
+
+  - id: preces_agua
+    tipo: preces
+    actor: celebrante
+    obligatorio: false
+    invitacion: "A Jesucristo, que nos prometió el Espíritu Santo, dirijamos nuestra oración, diciendo a cada intención:"
+    respuesta_fija: "Escucha, Señor, a quien te pedimos con fe."
+    invocaciones:
+      - invocacion: "Al Señor que nos llama a renacer a una vida nueva. Oremos."
+        respuesta: "Escucha, Señor, a quien te pedimos con fe."
+      - invocacion: "Al Señor que nos invita a guardar sus palabras. Oremos."
+        respuesta: "Escucha, Señor, a quien te pedimos con fe."
+      - invocacion: "Tú que nos prometes el Espíritu de la Verdad..." # PENDIENTE: confirmar texto completo del libro físico (n. Oremos. incluido)
+        respuesta: "Escucha, Señor, a quien te pedimos con fe."
+      - invocacion: "Tú que nos das la vida en abundancia..." # PENDIENTE: confirmar texto completo del libro físico (n. Oremos. incluido)
+        respuesta: "Escucha, Señor, a quien te pedimos con fe."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: oracion_bendicion_agua
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Dios todopoderoso, que eres la fuente y el principio de la vida del cuerpo y del espíritu, bendice ✠ esta agua que vamos a utilizar con fe para implorar el perdón de nuestros pecados y para alcanzar la protección de tu gracia contra todas las enfermedades y asechanzas del pecado. Concédenos, Señor, que recordemos siempre que somos bautizados y que vivamos de acuerdo con la dignidad de la vida nueva propia de los cristianos. Por Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion_bendicion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_aspersion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Después de la oración de bendición, el celebrante rocía con el agua bendecida a los presentes, diciendo, según las circunstancias:"
+
+  - id: bendicion_aspersion
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que esta agua nos recuerde nuestro bautismo en Cristo, que nos redimió con su muerte y resurrección."
+
+  - id: respuesta_amen_aspersion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_padrenuestro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El celebrante introduce la oración dominical con estas o parecidas palabras:"
+
+  - id: monicion_padrenuestro
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y ahora, todos juntos, invoquemos a Dios con la oración que el mismo Cristo nos enseñó:"
+
+  - id: oracion_padrenuestro
+    tipo: oracion
+    actor: todos
+    obligatorio: true
+    texto: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal."
+
+  - id: saludo_final
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor esté con ustedes."
+
+  - id: respuesta_y_con_tu_espiritu_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: bendicion_final
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Los bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+
+  - id: respuesta_amen_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
