@@ -17,29 +17,11 @@ class HomeScreen extends ConsumerWidget {
 
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(28, 12, 20, 0),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () => context.push('/about'),
-                  child: Icon(
-                    Icons.info_outline,
-                    color: MunusColors.textDiscrete,
-                    size: 18,
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: favoritesAsync.when(
-                loading: () =>
-                    const Center(child: CircularProgressIndicator()),
-                error: (_, _) =>
-                    const Center(child: Text('Error al cargar favoritos')),
-                data: (favorites) {
+        child: favoritesAsync.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (_, _) =>
+              const Center(child: Text('Error al cargar favoritos')),
+          data: (favorites) {
             final items = <Map<String, String?>>[];
 
             // Sección favoritos
@@ -93,7 +75,7 @@ class HomeScreen extends ConsumerWidget {
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return Padding(
-                    padding: const EdgeInsets.only(top: 20, bottom: 40),
+                    padding: const EdgeInsets.only(top: 56, bottom: 40),
                     child: Text(
                       'MUNUS',
                       textAlign: TextAlign.center,
@@ -110,9 +92,30 @@ class HomeScreen extends ConsumerWidget {
 
                 if (index == items.length + 1) {
                   return Padding(
-                    padding: const EdgeInsets.only(top: 40, bottom: 20),
-                    child: Center(
-                      child: RegionalVariantToggle(dense: true),
+                    padding: const EdgeInsets.only(top: 40, bottom: 24),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Traducción:',
+                          style: TextStyle(
+                            fontFamily: MunusFonts.ui,
+                            fontSize: 9,
+                            letterSpacing: 0.5,
+                            color: MunusColors.textDiscrete,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        const RegionalVariantToggle(dense: true),
+                        const SizedBox(height: 28),
+                        GestureDetector(
+                          onTap: () => context.push('/about'),
+                          child: Icon(
+                            Icons.info_outline,
+                            color: MunusColors.textDiscrete,
+                            size: 18,
+                          ),
+                        ),
+                      ],
                     ),
                   );
                 }
@@ -162,10 +165,7 @@ class HomeScreen extends ConsumerWidget {
                 );
               },
             );
-                },
-              ),
-            ),
-          ],
+          },
         ),
       ),
     );

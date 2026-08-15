@@ -140,6 +140,7 @@ contenido:
     tipo: oracion
     actor: celebrante
     obligatorio: true
+    display_name: "Bendición de un vehículo"
     texto: "Dios omnipotente, escucha con bondad nuestras súplicas y bendice ✠ este vehículo con tu santo poder. Salva y protege de todos los peligros a cuantos viajarán en él; muéstrales el camino de la salvación y concédeles que, practicando siempre lo que es bueno con la ayuda de tu gracia, después de las vicisitudes en el camino de la vida, merezcan la alegría eterna. Te lo pedimos por Jesucristo, nuestro Señor."
     opciones:
       - id: formula_barca

@@ -1,0 +1,237 @@
+id: bendicion_e_imposicion_del_escapulario
+
+metadata:
+  titulo: "Bendición e imposición del escapulario de la Virgen del Carmen"
+  tipo: bendicion
+  libro: "Bendiciones"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  fuente: "Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina. Transcripción asistida por curas.com.ar/Bendiciones/Bendicionesplus.htm, ítem 3, cotejada por Ricardo contra la edición impresa."
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+  nota: |
+    Sexto archivo de la variante regional argentina. Mismo id que la versión española bendicion_e_imposicion_del_escapulario.yaml.
+
+    Caso limpio: las dos lecturas (Lc 2,51-52 y Jn 19,25-27) son ambas evangélicas — sin necesidad de Regla 3.2, opciones simples de texto.
+
+    Trae un bloque que no había aparecido en los archivos anteriores: la fórmula de "Entrega e imposición" del escapulario en sí (dirigida a la persona que lo recibe, "N., recibe este hábito..."), distinta de la oración de bendición. Se modeló como tipo: bendicion (acción física concreta con fórmula hablada — imposición —, mismo criterio que el resto de la biblioteca para obligatorio: true), con su propia respuesta "Amén" (la fuente la pone entre paréntesis, se modela como bloque de respuesta explícito, mismo criterio que el resto de la biblioteca).
+
+    Preces: las 4 invocaciones ya venían completas en la web con "Oremos." — se corrigió únicamente una errata de tipeo ("abrimos" → "abrirnos" en la segunda invocación).
+
+    Aspersión: sin fórmula hablada en la fuente ("Padrenuestro (aspersión de los escapularios)"). Se reutilizó la misma fórmula ya usada en los archivos anteriores — PENDIENTE DE CONFIRMAR si el archivo español equivalente (bendicion_e_imposicion_del_escapulario.yaml) trae una fórmula distinta, no se pudo cotejar, no está en este chat.
+
+    Padrenuestro reubicado al final del rito, antes del saludo y bendición final, mismo criterio que los archivos anteriores. Se usa "✠" en vez de "+".
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_inicial
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_saludo_celebrante
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Luego el celebrante saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Que la gracia de nuestro Señor Jesucristo esté con todos ustedes."
+
+  - id: respuesta_y_con_tu_espiritu
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: lectura_evangelio
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    display_name: "Jesús iba creciendo en sabiduría"
+    referencia: "Lc 2, 51-52"
+    encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Jesús iba creciendo en sabiduría, en estatura y en gracia»."
+    texto: |
+      Cuando Jesús tenía doce años, regresó con sus padres de Jerusalén a Nazaret y vivía sujeto a ellos. Su madre conservaba todo en su corazón. Jesús iba creciendo en sabiduría, en estatura y en gracia, delante de Dios y de los hombres.
+    opciones:
+      - id: opcion_jn_19_25_27
+        display_name: "Mujer, aquí tienes a tu hijo"
+        referencia: "Jn 19, 25-27"
+        encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Juan. «Mujer, aquí tienes a tu hijo»."
+        texto: |
+          Junto a la cruz de Jesús, estaba su madre y la hermana de su madre, María, mujer de Cleofás, y María Magdalena. Al ver a la madre y cerca de ella al discípulo a quien él amaba, Jesús le dijo:
+
+          —«Mujer, aquí tienes a tu hijo».
+
+          Luego dijo al discípulo:
+
+          —«Aquí tienes a tu madre».
+
+          Y desde aquel momento, el discípulo la recibió como suya.
+
+  - id: proclamacion_palabra_del_senor
+    tipo: saludo
+    actor: lector
+    obligatorio: true
+    texto: "Palabra del Señor."
+
+  - id: respuesta_gloria_a_ti
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Gloria a ti, Señor Jesús."
+
+  - id: rubrica_titulo_preces
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Preces"
+
+  - id: preces_escapulario
+    tipo: preces
+    actor: celebrante
+    obligatorio: true
+    invitacion: "Dios hizo grandes cosas en María. Él puede también obrar maravillas en nosotros si le pedimos con fe y confianza. A cada intención respondamos:"
+    respuesta_fija: "Por María, escúchanos, Señor."
+    invocaciones:
+      - invocacion: "Para que seamos protegidos por la intercesión de la Madre de la Iglesia. Oremos."
+        respuesta: "Por María, escúchanos, Señor."
+      - invocacion: "Para que busquemos abrirnos a la Voluntad del Padre. Oremos."
+        respuesta: "Por María, escúchanos, Señor."
+      - invocacion: "Para que meditemos y encarnemos la Palabra del Evangelio. Oremos."
+        respuesta: "Por María, escúchanos, Señor."
+      - invocacion: "Para que anunciemos a los hermanos la alegría y la paz de Dios. Oremos."
+        respuesta: "Por María, escúchanos, Señor."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: oracion_bendicion_escapulario
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Señor nuestro, Jesucristo, Salvador del género humano, santifica ✠ este hábito que tu servidor(a) N. ha resuelto llevar por amor a ti y a tu santísima Madre, la Virgen María, a quien veneramos en su advocación del Monte Carmelo. Que, por la oración en el cielo de nuestra Señora, sea defendido(a) en los momentos de debilidad y tentación y persevere en tu gracia hasta la muerte. Tú que vives y reinas por los siglos de los siglos."
+
+  - id: respuesta_amen_oracion_bendicion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_aspersion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Después de la oración de bendición, el celebrante rocía con el agua bendecida los escapularios, diciendo, según las circunstancias:"
+
+  - id: bendicion_aspersion
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que esta agua nos recuerde nuestro bautismo en Cristo, que nos redimió con su muerte y resurrección."
+
+  - id: respuesta_amen_aspersion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_entrega
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Entrega e imposición"
+
+  - id: entrega_imposicion_escapulario
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "N., recibe este hábito bendito y suplica a la Santísima Virgen que, por sus méritos, puedas llevarlo sin mancha y que él sea un signo claro del amor de Dios por ti."
+
+  - id: respuesta_amen_entrega
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_padrenuestro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El celebrante introduce la oración dominical con estas o parecidas palabras:"
+
+  - id: monicion_padrenuestro
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y ahora, todos juntos, invoquemos a Dios con la oración que el mismo Cristo nos enseñó:"
+
+  - id: oracion_padrenuestro
+    tipo: oracion
+    actor: todos
+    obligatorio: true
+    texto: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal."
+
+  - id: saludo_final
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor esté con ustedes."
+
+  - id: respuesta_y_con_tu_espiritu_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: bendicion_final
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Los bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+
+  - id: respuesta_amen_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."

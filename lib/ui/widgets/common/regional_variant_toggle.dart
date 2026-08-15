@@ -25,7 +25,7 @@ class RegionalVariantToggle extends ConsumerWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           _DenseOption(
-            label: 'España',
+            label: 'CEE (España)',
             selected: variant == RegionalVariant.espana,
             onTap: () => ref
                 .read(regionalVariantProvider.notifier)
@@ -40,7 +40,7 @@ class RegionalVariantToggle extends ConsumerWidget {
             ),
           ),
           _DenseOption(
-            label: 'Argentina',
+            label: 'CEA (Argentina)',
             selected: variant == RegionalVariant.argentina,
             onTap: () => ref
                 .read(regionalVariantProvider.notifier)

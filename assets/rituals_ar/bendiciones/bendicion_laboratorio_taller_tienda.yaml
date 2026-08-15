@@ -81,6 +81,7 @@ contenido:
     tipo: lectura
     actor: lector
     obligatorio: true
+    display_name: "El tesoro escondido"
     referencia: "Mt 13, 44-46"
     encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Mateo. «El Reino de los Cielos se parece a un tesoro escondido»."
     texto: |
@@ -89,6 +90,7 @@ contenido:
       —«El Reino de los Cielos se parece a un tesoro escondido en un campo; un hombre lo encuentra, lo vuelve a esconder, y lleno de alegría, vende todo lo que posee y compra el campo. El Reino de los Cielos se parece también a un negociante que se dedicaba a buscar perlas finas; y al encontrar una de gran valor, fue a vender todo lo que tenía y la compró».
     opciones:
       - id: opcion_lc_10_38_42
+        display_name: "Marta lo recibió en su casa"
         referencia: "Lc 10, 38-42"
         encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Marta lo recibió en su casa»."
         texto: |
@@ -100,6 +102,7 @@ contenido:
 
           —«Marta, Marta, te inquietas y te agitas por muchas cosas, y sin embargo pocas cosas, o más bien, una sola es necesaria. María eligió la mejor parte, que no le será quitada».
       - id: opcion_lc_16_10
+        display_name: "Fiel en lo poco, fiel en lo mucho"
         referencia: "Lc 16, 10"
         encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Lucas. «El que es fiel en lo poco, también es fiel en lo mucho»."
         texto: |

@@ -1,0 +1,363 @@
+id: bendicion_objetos_piadosos
+
+metadata:
+  titulo: "Bendición de una imagen piadosa"
+  tipo: bendicion
+  libro: "Bendiciones"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  fuente: "Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina. Transcripción asistida por curas.com.ar/Bendiciones/Bendicionesplus.htm, ítems 1 (cruz/imagen de Nuestro Señor), 2 (imagen de la Santísima Virgen) y 4 (imagen de un santo), cotejada por Ricardo contra la edición impresa."
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+  nota: |
+    Quinto archivo de la variante regional argentina. Mismo id que la versión española bendicion_objetos_piadosos.yaml, que en español es un rito genérico con una sola fórmula. En la fuente argentina, en cambio, hay ritos separados y bastante distintos para cruz/imagen de Cristo, imagen de la Virgen e imagen de un santo (saludo, lectura, preces y oración de bendición propios en cada caso).
+
+    Decisión de arquitectura (con Ricardo): en vez de tres archivos sueltos que generarían tres entradas nuevas sin correspondencia en la pantalla de inicio (problema detectado al togglear a España), se usó Regla 3.2 a escala de rito completo: un único bloque bendicion_imagen_piadosa con tres opciones (Cristo, Virgen, Santo), cada una con su propio elementos que agrupa saludo del celebrante + lectura + preces + oración de bendición completos. Es la primera vez que se usa la Regla 3.2 a esta escala en la biblioteca (hasta ahora solo se había usado para acciones puntuales como un saludo o un acto penitencial), pero el spec no limita la profundidad de la recursión y el motor de renderizado ya soporta anidar lectura+preces+oración dentro de una opción (lo hace en los 5 archivos "mixtos" españoles, aunque a menor escala). Con esto, el sacerdote elige una sola vez, cerca del comienzo del rito, y todo lo demás (lectura, preces, oración) sigue esa elección automáticamente — sin necesidad de ningún cambio de Programming.
+
+    El Rito de la Cruz/imagen de Cristo trae, a su vez, dos fórmulas de oración de bendición de igual rango según se bendiga una cruz o una imagen — se modelaron como opciones internas de oracion_bendicion_cristo (Regla 3.2 anidada dentro de Regla 3.2, exactamente como el Ejemplo 1 del spec).
+
+    El rito de un santo trae dos lecturas alternativas, ambas evangélicas — caso "limpio", sin necesidad de Regla 3.2 ahí (opciones simples de texto).
+
+    Preces: las de Cristo y Virgen ya venían completas en la web. Las de Santo venían truncadas con "..." o sin puntuación final — se adaptaron al patrón "Para que... Oremos." ya establecido en los archivos anteriores, PENDIENTE de confirmar contra el libro físico (marcadas una por una).
+
+    Aspersión y Padrenuestro: comunes a las tres ramas (no dependen de qué imagen se elija), se dejaron fuera del bloque de opciones, después de él, mismo criterio que el resto de la biblioteca — se reutilizó la fórmula ya usada en los cuatro archivos anteriores.
+
+    PENDIENTE de decidir con Ricardo: si corresponde sumar también "Bendición del Santo Rosario" (ítem 6 de la web) y/o "Bendición de diversos objetos" (ítem 10) a este mismo archivo como cuarta/quinta rama, o dejarlos aparte. No se agregaron en esta ronda.
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_inicial
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: bendicion_imagen_piadosa
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    opciones:
+      - id: opcion_cristo
+        display_name: "Cruz o imagen de Nuestro Señor Jesucristo"
+        elementos:
+          - id: saludo_celebrante_cristo
+            tipo: saludo
+            actor: celebrante
+            obligatorio: true
+            texto: "Jesucristo, muerto y resucitado para la salvación del mundo, esté con todos ustedes."
+          - id: respuesta_y_con_tu_espiritu_cristo
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Y con tu espíritu."
+          - id: rubrica_titulo_lectura_cristo
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Lectura de la Palabra de Dios"
+          - id: lectura_flp_2_1_5
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Flp 2, 1-5"
+            encabezado: "Lectura de la carta del apóstol san Pablo a los cristianos de Filipos. «Se anonadó a sí mismo»."
+            texto: |
+              Tengan los mismos sentimientos de Cristo Jesús. Él, que era de condición divina, no consideró esta igualdad con Dios como algo que debía guardar celosamente: al contrario, se anonadó a sí mismo, tomando la condición de servidor y haciéndose semejante a los hombres. Y presentándose con aspecto humano, se humilló hasta aceptar por obediencia la muerte y muerte de cruz. Por eso, Dios lo exaltó y le dio el Nombre que está sobre todo nombre, para que al nombre de Jesús, se doble toda rodilla en el cielo, en la tierra y en los abismos, y toda lengua proclame para gloria de Dios Padre: «Jesucristo es el Señor».
+          - id: proclamacion_flp_2_1_5
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra de Dios."
+          - id: respuesta_te_alabamos_cristo
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Te alabamos, Señor."
+          - id: rubrica_titulo_preces_cristo
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Preces"
+          - id: preces_cristo
+            tipo: preces
+            actor: celebrante
+            obligatorio: true
+            invitacion: "Invoquemos a nuestro Redentor que nos ha salvado con su Cruz, y a cada intención recemos diciéndole:"
+            respuesta_fija: "Por tu cruz, sálvanos, Señor."
+            invocaciones:
+              - invocacion: "Cristo Jesús, que te despojaste de tu gloria, haz que todos los cristianos imitemos tu humildad."
+                respuesta: "Por tu cruz, sálvanos, Señor."
+              - invocacion: "Cristo Jesús, que fuiste exaltado por el Padre sobre todas las cosas, concédenos el don de la perseverancia hasta el fin en tu servicio."
+                respuesta: "Por tu cruz, sálvanos, Señor."
+              - invocacion: "Cristo Jesús, que fuiste levantado en alto para atraer a todos los hombres hacia ti, haz que todos te confiesen como único Señor."
+                respuesta: "Por tu cruz, sálvanos, Señor."
+          - id: rubrica_titulo_oracion_bendicion_cristo
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Oración de bendición"
+          - id: oracion_bendicion_cristo
+            tipo: oracion
+            actor: celebrante
+            obligatorio: true
+            opciones:
+              - id: formula_cruz
+                display_name: "Bendición de una cruz"
+                texto: "Bendice, Señor, ✠ con tu poder esta cruz; haz que tus fieles al venerarla la descubran como el verdadero signo de salvación y reciban los frutos que Jesucristo obtuvo con su muerte y resurrección. Te pedimos que quienes la contemplen encuentren consuelo en sus aflicciones y seguridad en sus peligros. Por Jesucristo, nuestro Señor."
+              - id: formula_imagen_senor
+                display_name: "Bendición de una imagen de Nuestro Señor"
+                texto: "Dios misericordioso, que te diste a conocer en Jesucristo, nuestro Señor. Derrama tu bendición ✠ sobre esta imagen de tu Hijo, para que quienes la contemplen lo descubran como Camino, Verdad y Vida, tal como Él mismo quiso revelarse. Llena con tu espíritu el corazón de cuantos recen delante de esta imagen para que se sientan enviados a transmitir la Palabra y el estilo del Evangelio que nos anunció Jesús. Te lo pedimos por el mismo Jesucristo, nuestro Señor."
+          - id: respuesta_amen_oracion_cristo
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+
+      - id: opcion_virgen
+        display_name: "Imagen de la Santísima Virgen"
+        elementos:
+          - id: saludo_celebrante_virgen
+            tipo: saludo
+            actor: celebrante
+            obligatorio: true
+            texto: "Que Jesucristo, el Hijo de Dios y el Hijo de María, esté con todos ustedes."
+          - id: respuesta_y_con_tu_espiritu_virgen
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Y con tu espíritu."
+          - id: rubrica_titulo_lectura_virgen
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Lectura de la Palabra de Dios"
+          - id: lectura_lc_1_46_50
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            referencia: "Lc 1, 46-50"
+            encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Mi alma canta la grandeza del Señor»."
+            texto: |
+              En aquel tiempo, María dijo:
+
+              —«Mi alma canta la grandeza del Señor, y mi espíritu se estremece de gozo en Dios, mi salvador, porque él miró con bondad la pequeñez de su servidora. En adelante todas las generaciones me llamarán feliz, porque el Todopoderoso ha hecho en mí grandes cosas: ¡Su Nombre es santo! Su misericordia se extiende de generación en generación sobre aquellos que lo temen».
+          - id: proclamacion_lc_1_46_50
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra del Señor."
+          - id: respuesta_gloria_virgen
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Gloria a ti, Señor Jesús."
+          - id: rubrica_titulo_preces_virgen
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Preces"
+          - id: preces_virgen
+            tipo: preces
+            actor: celebrante
+            obligatorio: true
+            invitacion: "Recemos a Dios, Padre todopoderoso, que colmó con su gracia a María Santísima y por medio de su Hijo nos la entregó como Madre nuestra. A cada intención recemos diciendo:"
+            respuesta_fija: "Por María, escúchanos, Señor."
+            invocaciones:
+              - invocacion: "Por esta tierra que habitamos, para que crezca la concordia y la paz interior. Oremos."
+                respuesta: "Por María, escúchanos, Señor."
+              - invocacion: "Por quienes sufren por cualquier causa, para que encuentren en María el consuelo espiritual que necesitan. Oremos."
+                respuesta: "Por María, escúchanos, Señor."
+              - invocacion: "Por quienes se sienten sin fe y sin esperanza, para que el Espíritu que colmó a la Santísima Virgen los asista. Oremos."
+                respuesta: "Por María, escúchanos, Señor."
+              - invocacion: "Por quienes rezarán delante de esta imagen, para que encuentren en María la protección que buscan y su ejemplo de entrega los impulse a seguir a Jesús. Oremos."
+                respuesta: "Por María, escúchanos, Señor."
+          - id: rubrica_titulo_oracion_bendicion_virgen
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Oración de bendición"
+          - id: oracion_bendicion_virgen
+            tipo: oracion
+            actor: celebrante
+            obligatorio: true
+            texto: "Dios eterno y bondadoso, que nos concediste tener imágenes de tus santos para que al contemplarlas meditemos y nos acerquemos a Jesucristo; te pedimos, ahora, que bendigas ✠ y santifiques esta imagen de la Santísima Virgen María (en su advocación de...). Concede que quienes recen delante de ella, inspirados por ti y por el ejemplo de fe y amor de nuestra Madre del Cielo, amen más y mejor a sus hermanos y obtengan por intercesión de la Madre de tu Hijo la gracia que necesitan para esta vida y la gloria eterna en la Vida futura. Por Jesucristo, nuestro Señor."
+          - id: respuesta_amen_oracion_virgen
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+
+      - id: opcion_santo
+        display_name: "Imagen de un santo"
+        elementos:
+          - id: saludo_celebrante_santo
+            tipo: saludo
+            actor: celebrante
+            obligatorio: true
+            texto: "Que el Espíritu Santo, dador de los dones y carismas, los anime y fortalezca, y esté con todos ustedes."
+          - id: respuesta_y_con_tu_espiritu_santo
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Y con tu espíritu."
+          - id: rubrica_titulo_lectura_santo
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Lectura de la Palabra de Dios"
+          - id: lectura_mt_5_13_16
+            tipo: lectura
+            actor: lector
+            obligatorio: true
+            display_name: "Sal de la tierra, luz del mundo"
+            referencia: "Mt 5, 13-16"
+            encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Mateo. «Ustedes son la sal de la tierra, ustedes son la luz del mundo»."
+            texto: |
+              Dijo Jesús:
+
+              —«Ustedes son la sal de la tierra. Pero si la sal pierde su sabor, ¿con qué se la volverá a salar? Ya no sirve para nada, sino para ser tirada y pisada por los hombres. Ustedes son la luz del mundo. No se puede ocultar una ciudad situada en la cima de una montaña. Y no se enciende una lámpara para meterla debajo de un cajón, sino que se la pone sobre el candelero para que ilumine a todos los que están en la casa. Así debe brillar ante los ojos de los hombres la luz que hay en ustedes, a fin de que ellos vean sus buenas obras y glorifiquen al Padre que está en el cielo».
+            opciones:
+              - id: opcion_jn_14_8_10
+                display_name: "El que me ha visto a mí, ha visto al Padre"
+                referencia: "Jn 14, 8-10"
+                encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Juan. «El que me ha visto, ha visto al Padre»."
+                texto: |
+                  En aquel tiempo, Felipe dijo a Jesús:
+
+                  —«Señor, muéstranos al Padre y eso nos basta».
+
+                  Jesús le respondió:
+
+                  —«Felipe, hace tanto tiempo que estoy con ustedes, ¿y todavía no me conocen? El que me ha visto, ha visto al Padre. ¿Cómo dices: “Muéstranos al Padre”? ¿No crees que yo estoy en el Padre y que el Padre está en mí? Las palabras que digo no son mías: el Padre que habita en mí es el que hace las obras».
+          - id: proclamacion_santo
+            tipo: saludo
+            actor: lector
+            obligatorio: true
+            texto: "Palabra del Señor."
+          - id: respuesta_gloria_santo
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Gloria a ti, Señor Jesús."
+          - id: rubrica_titulo_preces_santo
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Preces"
+          - id: preces_santo
+            tipo: preces
+            actor: celebrante
+            obligatorio: true
+            invitacion: "Confiados en el poder del Señor, le dirigimos ahora nuestra oración, diciendo a cada intención:"
+            respuesta_fija: "Escúchanos, Señor, que confiamos en ti."
+            invocaciones:
+              - invocacion: "Para que aprendamos a contemplarte en la obra de la Creación. Oremos." # PENDIENTE: confirmar texto exacto del libro físico
+                respuesta: "Escúchanos, Señor, que confiamos en ti."
+              - invocacion: "Para que sepamos descubrirte en el hermano que está cerca. Oremos." # PENDIENTE: confirmar texto exacto del libro físico
+                respuesta: "Escúchanos, Señor, que confiamos en ti."
+              - invocacion: "Para que te busquemos en la oración. Oremos." # PENDIENTE: confirmar texto exacto del libro físico
+                respuesta: "Escúchanos, Señor, que confiamos en ti."
+              - invocacion: "Para que nos animemos a confiarte nuestras alegrías y dificultades. Oremos." # PENDIENTE: confirmar texto exacto del libro físico
+                respuesta: "Escúchanos, Señor, que confiamos en ti."
+          - id: rubrica_titulo_oracion_bendicion_santo
+            tipo: titulo
+            actor: celebrante
+            obligatorio: true
+            texto: "Oración de bendición"
+          - id: oracion_bendicion_santo
+            tipo: oracion
+            actor: celebrante
+            obligatorio: true
+            texto: "Dios eterno y bondadoso, que nos concedes tener imágenes de tus santos para que al contemplarlas meditemos y nos acerquemos a Jesucristo, a quienes ellos conocieron, siguieron y amaron. Te pedimos ahora que bendigas ✠ y santifiques esta imagen de san N. (santa N.); concede a quienes recen delante de ella que, inspirados por ti, amen más y mejor a sus hermanos y, por intercesión de san N. (santa N.), obtengan tu gracia en este mundo y la gloria eterna en la Vida futura. Por Jesucristo, nuestro Señor."
+          - id: respuesta_amen_oracion_santo
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
+
+  - id: rubrica_aspersion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Después de la oración de bendición, el celebrante rocía con el agua bendecida la imagen y a los presentes, diciendo, según las circunstancias:"
+
+  - id: bendicion_aspersion
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que esta agua nos recuerde nuestro bautismo en Cristo, que nos redimió con su muerte y resurrección."
+
+  - id: respuesta_amen_aspersion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_padrenuestro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El celebrante introduce la oración dominical con estas o parecidas palabras:"
+
+  - id: monicion_padrenuestro
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y ahora, todos juntos, invoquemos a Dios con la oración que el mismo Cristo nos enseñó:"
+
+  - id: oracion_padrenuestro
+    tipo: oracion
+    actor: todos
+    obligatorio: true
+    texto: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal."
+
+  - id: saludo_final
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor esté con ustedes."
+
+  - id: respuesta_y_con_tu_espiritu_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: bendicion_final
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Los bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+
+  - id: respuesta_amen_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."

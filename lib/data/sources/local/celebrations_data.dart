@@ -57,7 +57,7 @@ const Map<String, List<Map<String, String>>> celebrationsByCategory = {
     },
     {
       'id': 'exorcismo_bendicion_sal_y_agua',
-      'title': 'Exorcismo y bendición de sal y agua',
+      'title': 'Bendición de sal y agua',
       'assetPath': 'assets/rituals/bendiciones/exorcismo_bendicion_sal_y_agua.yaml',
     },
     {
