@@ -81,6 +81,8 @@ flutter:
     - assets/rituals_ar/bendiciones/bendicion_de_una_nueva_casa.yaml
     - assets/rituals_ar/bendiciones/bendicion_laboratorio_taller_tienda.yaml
     - assets/rituals_ar/bendiciones/bendicion_vehiculo_y_barca.yaml
+    - assets/rituals_ar/bendiciones/bendicion_objetos_piadosos.yaml
+    - assets/rituals_ar/bendiciones/bendicion_e_imposicion_del_escapulario.yaml
     - assets/images/tiritas.png
     - assets/images/tirita_sola.png
 
