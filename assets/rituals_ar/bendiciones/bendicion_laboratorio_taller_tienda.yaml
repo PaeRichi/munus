@@ -12,8 +12,10 @@ metadata:
   fuente: "Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina. Transcripción asistida por curas.com.ar/Bendiciones/Bendicionesplus.htm, ítem 13, cotejada por Ricardo contra la edición impresa."
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
+  version: 2
   nota: |
+    v2: se agregaron las fórmulas de laboratorio y taller (bendicion_laboratorio_taller_tienda.yaml español) como opciones de la oración de bendición — Ricardo detectó que solo se había hecho este agregado en vehículo, faltaba acá. Se agregó display_name al bloque padre y a las opciones de lectura para prolijidad del selector.
+
     Tercer archivo de la variante regional argentina.
 
     PENDIENTE DE CONFIRMAR: el id de este archivo se puso igual al del archivo español bendicion_laboratorio_taller_tienda.yaml, asumiendo que es el equivalente español de "comercio" (esa oración cubre laboratorio/taller/tienda). Si el mapeo correcto es otro, hay que corregir el id antes de subir el archivo a rituals_ar — es crítico para no romper favoritos/preferencias del usuario.
@@ -156,7 +158,15 @@ contenido:
     tipo: oracion
     actor: celebrante
     obligatorio: true
+    display_name: "Bendición de un comercio"
     texto: "Dios misericordioso, que te diste a conocer en tu Hijo Jesucristo, el Señor; derrama tu bendición ✠ sobre este lugar y concede el Espíritu Santo, para que con su don de Consejo y Fortaleza anime a quienes trabajan aquí y así, por la justicia y la caridad, encarnen el Evangelio de Jesús. Muéstrate providente con quienes buscan trabajar honestamente y haz que todos los que ingresen o permanezcan en este lugar obtengan lo necesario para vivir dignamente. Te lo pedimos por Jesucristo, nuestro Señor."
+    opciones:
+      - id: formula_laboratorio
+        display_name: "Bendición de un laboratorio"
+        texto: "Oh, Dios, que en el designio de tu providencia, aceptas bondadosamente perfeccionar con tus bendiciones todas las actividades de los hombres, tanto las corporales como las intelectuales, te pedimos que todos los que en este lugar traten, con sus experimentos, de estudiar los males y hallar los remedios, puedan, con tu ayuda, determinar con precisión lo que investiguen y realizar con éxito el fruto de su estudio. Por Jesucristo, nuestro Señor."
+      - id: formula_taller
+        display_name: "Bendición de un taller"
+        texto: "Oh, Dios, tu Hijo, con el trabajo de sus manos, elevó la dignidad del trabajo humano y nos concedió el don inestimable de colaborar con nuestro trabajo a su obra redentora; concede a tus fieles la bendición que esperan de ti, para que, dedicándose a transformar con habilidad las cosas que tú has creado, reconozcan su dignidad y se alegren de aliviar con su esfuerzo las necesidades de la familia humana, para alabanza de tu gloria. Por Jesucristo, nuestro Señor."
 
   - id: respuesta_amen_oracion_bendicion
     tipo: respuesta

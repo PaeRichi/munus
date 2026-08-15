@@ -12,8 +12,10 @@ metadata:
   fuente: "Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina. Transcripción asistida por curas.com.ar/Bendiciones/Bendicionesplus.htm, ítems 1 (cruz/imagen de Nuestro Señor), 2 (imagen de la Santísima Virgen) y 4 (imagen de un santo), cotejada por Ricardo contra la edición impresa."
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 1
+  version: 2
   nota: |
+    v2: tras la primera prueba de Ricardo (funcionó bien), se reordenó la estructura por pedido suyo: el selector de imagen (bendicion_imagen_piadosa) ahora es el primer bloque real del rito, antes que nada más — el saludo trinitario ("En el nombre del Padre...") se duplicó dentro de cada una de las tres ramas (era idéntico en las tres) en vez de estar una sola vez a nivel superior antes del selector. Así el sacerdote elige la imagen como lo primero que hace, en vez de tener que pasar el saludo trinitario antes de ver el selector.
+
     Quinto archivo de la variante regional argentina. Mismo id que la versión española bendicion_objetos_piadosos.yaml, que en español es un rito genérico con una sola fórmula. En la fuente argentina, en cambio, hay ritos separados y bastante distintos para cruz/imagen de Cristo, imagen de la Virgen e imagen de un santo (saludo, lectura, preces y oración de bendición propios en cada caso).
 
     Decisión de arquitectura (con Ricardo): en vez de tres archivos sueltos que generarían tres entradas nuevas sin correspondencia en la pantalla de inicio (problema detectado al togglear a España), se usó Regla 3.2 a escala de rito completo: un único bloque bendicion_imagen_piadosa con tres opciones (Cristo, Virgen, Santo), cada una con su propio elementos que agrupa saludo del celebrante + lectura + preces + oración de bendición completos. Es la primera vez que se usa la Regla 3.2 a esta escala en la biblioteca (hasta ahora solo se había usado para acciones puntuales como un saludo o un acto penitencial), pero el spec no limita la profundidad de la recursión y el motor de renderizado ya soporta anidar lectura+preces+oración dentro de una opción (lo hace en los 5 archivos "mixtos" españoles, aunque a menor escala). Con esto, el sacerdote elige una sola vez, cerca del comienzo del rito, y todo lo demás (lectura, preces, oración) sigue esa elección automáticamente — sin necesidad de ningún cambio de Programming.
@@ -35,24 +37,6 @@ contenido:
     obligatorio: true
     texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
 
-  - id: saludo_inicial_trinitario
-    tipo: saludo
-    actor: celebrante
-    obligatorio: true
-    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
-
-  - id: rubrica_signan_responden
-    tipo: rubrica
-    actor: celebrante
-    obligatorio: false
-    texto: "Todos se santiguan y responden:"
-
-  - id: respuesta_amen_inicial
-    tipo: respuesta
-    actor: asamblea
-    obligatorio: true
-    texto: "Amén."
-
   - id: bendicion_imagen_piadosa
     tipo: bendicion
     actor: celebrante
@@ -61,6 +45,21 @@ contenido:
       - id: opcion_cristo
         display_name: "Cruz o imagen de Nuestro Señor Jesucristo"
         elementos:
+          - id: saludo_inicial_trinitario_cristo
+            tipo: saludo
+            actor: celebrante
+            obligatorio: true
+            texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+          - id: rubrica_signan_responden_cristo
+            tipo: rubrica
+            actor: celebrante
+            obligatorio: false
+            texto: "Todos se santiguan y responden:"
+          - id: respuesta_amen_inicial_cristo
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
           - id: saludo_celebrante_cristo
             tipo: saludo
             actor: celebrante
@@ -137,6 +136,21 @@ contenido:
       - id: opcion_virgen
         display_name: "Imagen de la Santísima Virgen"
         elementos:
+          - id: saludo_inicial_trinitario_virgen
+            tipo: saludo
+            actor: celebrante
+            obligatorio: true
+            texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+          - id: rubrica_signan_responden_virgen
+            tipo: rubrica
+            actor: celebrante
+            obligatorio: false
+            texto: "Todos se santiguan y responden:"
+          - id: respuesta_amen_inicial_virgen
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
           - id: saludo_celebrante_virgen
             tipo: saludo
             actor: celebrante
@@ -211,6 +225,21 @@ contenido:
       - id: opcion_santo
         display_name: "Imagen de un santo"
         elementos:
+          - id: saludo_inicial_trinitario_santo
+            tipo: saludo
+            actor: celebrante
+            obligatorio: true
+            texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+          - id: rubrica_signan_responden_santo
+            tipo: rubrica
+            actor: celebrante
+            obligatorio: false
+            texto: "Todos se santiguan y responden:"
+          - id: respuesta_amen_inicial_santo
+            tipo: respuesta
+            actor: asamblea
+            obligatorio: true
+            texto: "Amén."
           - id: saludo_celebrante_santo
             tipo: saludo
             actor: celebrante
