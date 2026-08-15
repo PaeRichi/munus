@@ -1,0 +1,228 @@
+id: bendicion_laboratorio_taller_tienda
+
+metadata:
+  titulo: "Bendición de un comercio"
+  tipo: bendicion
+  libro: "Bendiciones"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  fuente: "Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina. Transcripción asistida por curas.com.ar/Bendiciones/Bendicionesplus.htm, ítem 13, cotejada por Ricardo contra la edición impresa."
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 1
+  nota: |
+    Tercer archivo de la variante regional argentina.
+
+    PENDIENTE DE CONFIRMAR: el id de este archivo se puso igual al del archivo español bendicion_laboratorio_taller_tienda.yaml, asumiendo que es el equivalente español de "comercio" (esa oración cubre laboratorio/taller/tienda). Si el mapeo correcto es otro, hay que corregir el id antes de subir el archivo a rituals_ar — es crítico para no romper favoritos/preferencias del usuario.
+
+    Caso "limpio" (sin Regla 3.2): las tres lecturas de la fuente (Mt 13,44-46, Lc 10,38-42, Lc 16,10) son todas evangélicas — misma aclamación para las tres, el bloque padre conserva texto propio con las otras dos como opciones simples.
+
+    Preces: la fuente web trae las 5 invocaciones truncadas con "..." (o sin punto final en la última, con un error de tipeo — "ponemos" en vez de "ponernos"). Siguiendo el patrón ya confirmado por Ricardo en agua y vivienda ("Para que... Oremos."), se completaron las 5 invocaciones con "Oremos." al final y se corrigió el error de tipeo. PENDIENTE DE CONFIRMAR contra el libro físico — a diferencia de agua y vivienda, acá todavía no se cotejó ninguna de las 5.
+
+    Oración de bendición: la web trae una sola fórmula. PENDIENTE DE CONFIRMAR con Ricardo si el libro físico tiene una segunda alternativa (como ocurrió con agua) o si es una sola (como en vivienda).
+
+    Aspersión: sin fórmula hablada en la fuente ("Padrenuestro (aspersión)"). Se reutilizó la misma fórmula ya usada en agua_ar y vivienda_ar ("Que esta agua nos recuerde nuestro bautismo en Cristo..."), asumiendo que aplica igual acá (no hay motivo litúrgico para que cambie). PENDIENTE DE CONFIRMAR si el archivo español equivalente (bendicion_laboratorio_taller_tienda.yaml) trae una fórmula distinta — no se pudo cotejar, no está en este chat.
+
+    Padrenuestro reubicado al final del rito, mismo criterio que los dos archivos anteriores. Se usa "✠" en vez de "+".
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_inicial
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_saludo_celebrante
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Luego el celebrante saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Que Dios nuestro Padre y Jesucristo el Señor estén con todos ustedes."
+
+  - id: respuesta_y_con_tu_espiritu
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: lectura_evangelio
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    referencia: "Mt 13, 44-46"
+    encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Mateo. «El Reino de los Cielos se parece a un tesoro escondido»."
+    texto: |
+      Dijo Jesús:
+
+      —«El Reino de los Cielos se parece a un tesoro escondido en un campo; un hombre lo encuentra, lo vuelve a esconder, y lleno de alegría, vende todo lo que posee y compra el campo. El Reino de los Cielos se parece también a un negociante que se dedicaba a buscar perlas finas; y al encontrar una de gran valor, fue a vender todo lo que tenía y la compró».
+    opciones:
+      - id: opcion_lc_10_38_42
+        referencia: "Lc 10, 38-42"
+        encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Lucas. «Marta lo recibió en su casa»."
+        texto: |
+          Jesús entró en un pueblo, y una mujer que se llamaba Marta lo recibió en su casa. Tenía una hermana llamada María, que, sentada a los pies del Señor, escuchaba su Palabra. Marta, que estaba muy ocupada con los quehaceres de la casa, dijo a Jesús:
+
+          —«Señor, ¿no te importa que mi hermana me deje sola con todo el trabajo? Dile que me ayude».
+
+          Pero el Señor le respondió:
+
+          —«Marta, Marta, te inquietas y te agitas por muchas cosas, y sin embargo pocas cosas, o más bien, una sola es necesaria. María eligió la mejor parte, que no le será quitada».
+      - id: opcion_lc_16_10
+        referencia: "Lc 16, 10"
+        encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Lucas. «El que es fiel en lo poco, también es fiel en lo mucho»."
+        texto: |
+          En aquel tiempo dijo Jesús:
+
+          —«El que es fiel en lo poco, también es fiel en lo mucho, y el que es deshonesto en lo poco, también es deshonesto en lo mucho».
+
+  - id: proclamacion_palabra_del_senor
+    tipo: saludo
+    actor: lector
+    obligatorio: true
+    texto: "Palabra del Señor."
+
+  - id: respuesta_gloria_a_ti
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Gloria a ti, Señor Jesús."
+
+  - id: rubrica_titulo_preces
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Preces"
+
+  - id: preces_comercio
+    tipo: preces
+    actor: celebrante
+    obligatorio: true
+    invitacion: "Animados por el Espíritu del Señor que inspira toda oración, digamos a cada intención:"
+    respuesta_fija: "Escúchanos, Señor, que confiamos en ti."
+    invocaciones:
+      - invocacion: "Para que sepamos contemplarte en la obra de la Creación. Oremos." # PENDIENTE: confirmar texto exacto del libro físico
+        respuesta: "Escúchanos, Señor, que confiamos en ti."
+      - invocacion: "Para que sepamos descubrirte en el hermano que está cerca. Oremos." # PENDIENTE: confirmar texto exacto del libro físico
+        respuesta: "Escúchanos, Señor, que confiamos en ti."
+      - invocacion: "Para que sepamos ser verdaderamente justos y superar la justicia con la caridad. Oremos." # PENDIENTE: confirmar texto exacto del libro físico
+        respuesta: "Escúchanos, Señor, que confiamos en ti."
+      - invocacion: "Para que sepamos ser generosos con los más necesitados. Oremos." # PENDIENTE: confirmar texto exacto del libro físico
+        respuesta: "Escúchanos, Señor, que confiamos en ti."
+      - invocacion: "Para que sepamos ponernos al servicio del bien común. Oremos." # PENDIENTE: confirmar texto exacto del libro físico
+        respuesta: "Escúchanos, Señor, que confiamos en ti."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: oracion_bendicion_comercio
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Dios misericordioso, que te diste a conocer en tu Hijo Jesucristo, el Señor; derrama tu bendición ✠ sobre este lugar y concede el Espíritu Santo, para que con su don de Consejo y Fortaleza anime a quienes trabajan aquí y así, por la justicia y la caridad, encarnen el Evangelio de Jesús. Muéstrate providente con quienes buscan trabajar honestamente y haz que todos los que ingresen o permanezcan en este lugar obtengan lo necesario para vivir dignamente. Te lo pedimos por Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion_bendicion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_aspersion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Después de la oración de bendición, el celebrante rocía con el agua bendecida a los presentes y al lugar, diciendo, según las circunstancias:"
+
+  - id: bendicion_aspersion
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que esta agua nos recuerde nuestro bautismo en Cristo, que nos redimió con su muerte y resurrección."
+
+  - id: respuesta_amen_aspersion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_padrenuestro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El celebrante introduce la oración dominical con estas o parecidas palabras:"
+
+  - id: monicion_padrenuestro
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y ahora, todos juntos, invoquemos a Dios con la oración que el mismo Cristo nos enseñó:"
+
+  - id: oracion_padrenuestro
+    tipo: oracion
+    actor: todos
+    obligatorio: true
+    texto: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal."
+
+  - id: saludo_final
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor esté con ustedes."
+
+  - id: respuesta_y_con_tu_espiritu_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: bendicion_final
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Los bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+
+  - id: respuesta_amen_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."

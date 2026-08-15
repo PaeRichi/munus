@@ -1,0 +1,219 @@
+id: bendicion_vehiculo_y_barca
+
+metadata:
+  titulo: "Bendición de un vehículo"
+  tipo: bendicion
+  libro: "Bendiciones"
+  parte: ~
+  capitulo: ~
+  numeros:
+    inicio: ~
+    fin: ~
+  fuente: "Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina. Transcripción asistida por curas.com.ar/Bendiciones/Bendicionesplus.htm, ítem 14, cotejada por Ricardo contra la edición impresa."
+  ministros: [sacerdote, diacono]
+  idioma: es
+  version: 2
+  nota: |
+    v2: confirmado por Ricardo. Id correcto (bendicion_vehiculo_y_barca). Cuarta prece correcta con el "Oremos." agregado. El libro trae una sola fórmula de oración de bendición (no hay segunda opción). Se corrigió "después de los acontecimientos en el camino de la vida" (como traía la web, errata de transcripción de ellos) → "después de las vicisitudes en el camino de la vida" (texto exacto del libro físico).
+
+    Cuarto archivo de la variante regional argentina. Id igual al del archivo español bendicion_vehiculo_y_barca.yaml.
+
+    Caso simple: la fuente trae una sola lectura (Jn 14, 1-6), sin alternativa "o bien" — no hay opciones en el bloque de lectura.
+
+    Preces: la fuente web trae 3 de las 4 invocaciones ya completas con "Oremos." al final; solo la cuarta ("Para que quienes viajan en este momento lleguen a su destino con tranquilidad") venía sin el "Oremos." final — se agregó siguiendo el mismo patrón. PENDIENTE DE CONFIRMAR esa cuarta contra el libro físico (las primeras tres ya venían completas en la web, se transcribieron tal cual).
+
+    Oración de bendición: la web trae una sola fórmula. PENDIENTE DE CONFIRMAR con Ricardo si el libro físico tiene una segunda alternativa.
+
+    Se corrigieron dos erratas de la web en el texto de la lectura ("no juera así" → "no fuera así"; "les haya reparado un lugar" → "les haya preparado un lugar").
+
+    Aspersión: sin fórmula hablada en la fuente ("Padrenuestro (aspersión)"). Se reutilizó la misma fórmula ya usada en los tres archivos anteriores ("Que esta agua nos recuerde nuestro bautismo en Cristo..."). Padrenuestro reubicado al final del rito. Se usa "✠" en vez de "+".
+
+contenido:
+  - id: rubrica_titulo_rito
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+
+  - id: saludo_inicial_trinitario
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "En el nombre del Padre, y del Hijo, y del Espíritu Santo."
+
+  - id: rubrica_signan_responden
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Todos se santiguan y responden:"
+
+  - id: respuesta_amen_inicial
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_saludo_celebrante
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "Luego el celebrante saluda a los presentes, diciendo:"
+
+  - id: saludo_celebrante
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "Que el Espíritu de Dios nos colme con sus dones y Jesús, nuestro Señor, esté con ustedes."
+
+  - id: respuesta_y_con_tu_espiritu
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: rubrica_titulo_lectura
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Lectura de la Palabra de Dios"
+
+  - id: lectura_evangelio
+    tipo: lectura
+    actor: lector
+    obligatorio: true
+    referencia: "Jn 14, 1-6"
+    encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Juan. «Yo soy el Camino, la Verdad y la Vida»."
+    texto: |
+      Dijo Jesús:
+
+      —«No se inquieten. Crean en Dios y crean también en mí. En la casa de mi Padre hay muchas habitaciones; si no fuera así, se lo habría dicho a ustedes. Voy a prepararles un lugar. Y cuando haya ido y les haya preparado un lugar, volveré otra vez para llevarlos conmigo, a fin de que donde yo esté, estén también ustedes. Ya conocen el camino del lugar adonde voy».
+
+      Tomás le dijo:
+
+      —«Señor, no sabemos adónde vas. ¿Cómo vamos a conocer el camino?».
+
+      Jesús le respondió:
+
+      —«Yo soy el Camino, la Verdad y la Vida. Nadie va al Padre, sino por mí».
+
+  - id: proclamacion_palabra_del_senor
+    tipo: saludo
+    actor: lector
+    obligatorio: true
+    texto: "Palabra del Señor."
+
+  - id: respuesta_gloria_a_ti
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Gloria a ti, Señor Jesús."
+
+  - id: rubrica_titulo_preces
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Preces"
+
+  - id: preces_vehiculo
+    tipo: preces
+    actor: celebrante
+    obligatorio: true
+    invitacion: "Supliquemos al Señor, nuestro Dios, que cuide con amor de todos sus hijos, especialmente de quienes piden ahora su bendición. A cada intención rezamos diciendo:"
+    respuesta_fija: "Escúchanos, Señor, que confiamos en ti."
+    invocaciones:
+      - invocacion: "Para que seamos cuidadosos con el don inapreciable de la vida. Oremos."
+        respuesta: "Escúchanos, Señor, que confiamos en ti."
+      - invocacion: "Para que seamos respetuosos y solidarios con nuestros hermanos. Oremos."
+        respuesta: "Escúchanos, Señor, que confiamos en ti."
+      - invocacion: "Para que seamos instrumentos de unidad y de paz para el bien común. Oremos."
+        respuesta: "Escúchanos, Señor, que confiamos en ti."
+      - invocacion: "Para que quienes viajan en este momento lleguen a su destino con tranquilidad. Oremos." # PENDIENTE: confirmar texto exacto del libro físico (la web no traía el "Oremos." final)
+        respuesta: "Escúchanos, Señor, que confiamos en ti."
+
+  - id: rubrica_titulo_oracion_bendicion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Oración de bendición"
+
+  - id: oracion_bendicion_vehiculo
+    tipo: oracion
+    actor: celebrante
+    obligatorio: true
+    texto: "Dios omnipotente, escucha con bondad nuestras súplicas y bendice ✠ este vehículo con tu santo poder. Salva y protege de todos los peligros a cuantos viajarán en él; muéstrales el camino de la salvación y concédeles que, practicando siempre lo que es bueno con la ayuda de tu gracia, después de las vicisitudes en el camino de la vida, merezcan la alegría eterna. Te lo pedimos por Jesucristo, nuestro Señor."
+    opciones:
+      - id: formula_barca
+        display_name: "Bendición de una barca"
+        texto: "Atiende, Señor, nuestras súplicas, con las que imploramos tu clemencia, para que alejes de esta barca todo vendaval adverso y domines con tu poder la turbulencia de las olas; así, los que en ella naveguen, salvaguardados con tu protección, podrán ver realizados sus deseos y llegar salvos al puerto anhelado. Por Jesucristo, nuestro Señor."
+
+  - id: respuesta_amen_oracion_bendicion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_aspersion
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: true
+    texto: "Después de la oración de bendición, el celebrante rocía con el agua bendecida el vehículo y a los presentes, diciendo, según las circunstancias:"
+
+  - id: bendicion_aspersion
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Que esta agua nos recuerde nuestro bautismo en Cristo, que nos redimió con su muerte y resurrección."
+
+  - id: respuesta_amen_aspersion
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
+
+  - id: rubrica_titulo_conclusion
+    tipo: titulo
+    actor: celebrante
+    obligatorio: true
+    texto: "Conclusión del rito"
+
+  - id: rubrica_padrenuestro
+    tipo: rubrica
+    actor: celebrante
+    obligatorio: false
+    texto: "El celebrante introduce la oración dominical con estas o parecidas palabras:"
+
+  - id: monicion_padrenuestro
+    tipo: monicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Y ahora, todos juntos, invoquemos a Dios con la oración que el mismo Cristo nos enseñó:"
+
+  - id: oracion_padrenuestro
+    tipo: oracion
+    actor: todos
+    obligatorio: true
+    texto: "Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal."
+
+  - id: saludo_final
+    tipo: saludo
+    actor: celebrante
+    obligatorio: true
+    texto: "El Señor esté con ustedes."
+
+  - id: respuesta_y_con_tu_espiritu_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Y con tu espíritu."
+
+  - id: bendicion_final
+    tipo: bendicion
+    actor: celebrante
+    obligatorio: true
+    texto: "Los bendiga Dios todopoderoso, Padre, Hijo ✠ y Espíritu Santo."
+
+  - id: respuesta_amen_final
+    tipo: respuesta
+    actor: asamblea
+    obligatorio: true
+    texto: "Amén."
