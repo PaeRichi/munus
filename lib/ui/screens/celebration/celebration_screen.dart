@@ -77,14 +77,21 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
+      // _optionsElementFound solo confirma que se le asignó el GlobalKey
+      // a un widget -- no que ese widget ya esté montado en pantalla. Si
+      // el ritual tiene una monición larga antes del primer bloque con
+      // opciones, ese bloque puede quedar fuera del scroll inicial y
+      // nunca llegar a montarse en el primer frame. currentContext sigue
+      // siendo null en ese caso -- lo chequeamos acá para no apuntar el
+      // tour a un target inexistente (eso fue justamente lo que causaba
+      // el crash reportado).
+      final optionsTargetReady =
+          _optionsElementFound && _optionsKey.currentContext != null;
       TutorialCoachMark(
         targets: buildCelebrationTourTargets(
           favoritoKey: _favoritoKey,
           qrKey: _qrKey,
-          // Si ningún elemento de este ritual tiene `opciones` como primer
-          // caso visible, no forzamos ese paso -- ver nota en
-          // celebration_tour.dart.
-          optionsKey: _optionsElementFound ? _optionsKey : null,
+          optionsKey: optionsTargetReady ? _optionsKey : null,
         ),
         colorShadow: Colors.black,
         opacityShadow: 0.8,

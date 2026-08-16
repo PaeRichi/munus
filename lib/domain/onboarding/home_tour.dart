@@ -4,37 +4,44 @@ import 'tour_step_content.dart';
 
 /// Arma los targets del tour general (primera apertura de la app).
 ///
-/// Requiere dos GlobalKeys ya asignadas a los widgets reales en
-/// home_screen.dart:
-/// - [ritualsListKey]: algún elemento representativo de la lista de
-///   rituales (ej. el primer ListTile o el primer header de sección).
-/// - [regionalToggleKey]: el RegionalVariantToggle al pie de la Home.
+/// [ritualsListKey] es nullable: si por algún motivo no se pudo asignar a
+/// ningún ítem real de la lista (ej. no hay rituales cargados todavía),
+/// ese paso se omite en vez de apuntar a un target inexistente -- mismo
+/// criterio ya usado en celebration_tour.dart para el paso de opciones.
 ///
-/// El mensaje de cierre ("Ya estás listo para usar Munus.") NO es un target
-/// más acá -- es un diálogo aparte que se dispara desde el callback `finish`
-/// de TutorialCoachMark (ver PASO_4_home_screen_wiring.md), porque no está
-/// anclado a ningún elemento puntual de la interfaz.
+/// IMPORTANTE: este target NUNCA debe ser el ListView completo. Un target
+/// del tamaño de toda la pantalla hace que la animación de pulso del
+/// paquete se vea como franjas grises rebotando en los bordes (bug real
+/// encontrado en pruebas) -- tiene que ser un elemento chico y acotado,
+/// acá el primer ritual visible de la lista.
 List<TargetFocus> buildHomeTourTargets({
-  required GlobalKey ritualsListKey,
+  required GlobalKey? ritualsListKey,
   required GlobalKey regionalToggleKey,
 }) {
-  return [
-    TargetFocus(
-      identify: 'home_tour_rituals_list',
-      keyTarget: ritualsListKey,
-      shape: ShapeLightFocus.RRect,
-      radius: 12,
-      contents: [
-        TargetContent(
-          align: ContentAlign.bottom,
-          builder: (context, controller) => TourStepContent(
-            title: 'Todos tus rituales, a mano',
-            body: 'Accedé directamente a los rituales de uso frecuente.',
-            onNext: controller.next,
+  final targets = <TargetFocus>[];
+
+  if (ritualsListKey != null) {
+    targets.add(
+      TargetFocus(
+        identify: 'home_tour_rituals_list',
+        keyTarget: ritualsListKey,
+        shape: ShapeLightFocus.RRect,
+        radius: 12,
+        contents: [
+          TargetContent(
+            align: ContentAlign.bottom,
+            builder: (context, controller) => TourStepContent(
+              title: 'Todos tus rituales, a mano',
+              body: 'Accedé directamente a los rituales de uso frecuente.',
+              onNext: controller.next,
+            ),
           ),
-        ),
-      ],
-    ),
+        ],
+      ),
+    );
+  }
+
+  targets.add(
     TargetFocus(
       identify: 'home_tour_regional_toggle',
       keyTarget: regionalToggleKey,
@@ -52,5 +59,7 @@ List<TargetFocus> buildHomeTourTargets({
         ),
       ],
     ),
-  ];
+  );
+
+  return targets;
 }
