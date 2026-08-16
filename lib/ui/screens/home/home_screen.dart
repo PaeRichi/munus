@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -41,36 +42,47 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     if (hasSeenTour || _tourLaunched) return;
     _tourLaunched = true;
 
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      final ritualsListKey = _listKeyAssigned ? _ritualsListKey : null;
-      // Si por algún motivo el primer paso no tiene target (lista vacía),
-      // el tour arranca directo en el toggle -- hay que llevarlo a la
-      // vista antes del primer show(), ya que en ese caso no hay un
-      // "Siguiente" previo que dispare el scroll.
-      if (ritualsListKey == null) {
-        await scrollKeyIntoView(_regionalToggleKey, _scrollController);
-        if (!mounted) return;
-      }
-      TutorialCoachMark(
-        targets: buildHomeTourTargets(
-          ritualsListKey: ritualsListKey,
-          regionalToggleKey: _regionalToggleKey,
-          scrollController: _scrollController,
-        ),
-        colorShadow: Colors.black,
-        opacityShadow: 0.8,
-        paddingFocus: 8,
-        hideSkip: true,
-        onFinish: () {
-          ref.read(homeTourServiceProvider).markAsSeen();
-          showTourFinishDialog(
-            context,
-            message: 'Ya estás listo para usar Munus.',
-          );
-        },
-      ).show(context: context);
+      _runHomeTourSequence();
     });
+  }
+
+  /// Muestra los dos pasos como overlays INDEPENDIENTES en secuencia, no
+  /// como targets de un mismo TutorialCoachMark -- ver la explicación
+  /// completa en home_tour.dart. En criollo: paso 1 se cierra del todo,
+  /// recién ahí se scrollea con la pantalla limpia (sin overlay encima),
+  /// y recién ahí se abre el paso 2 ya en su posición final.
+  Future<void> _runHomeTourSequence() async {
+    if (_listKeyAssigned) {
+      await _showSingleTarget(ritualsListTarget(_ritualsListKey));
+      if (!mounted) return;
+    }
+
+    await scrollKeyIntoView(_regionalToggleKey, _scrollController);
+    if (!mounted) return;
+
+    await _showSingleTarget(regionalToggleTarget(_regionalToggleKey));
+    if (!mounted) return;
+
+    ref.read(homeTourServiceProvider).markAsSeen();
+    showTourFinishDialog(
+      context,
+      message: 'Ya estás listo para usar Munus.',
+    );
+  }
+
+  Future<void> _showSingleTarget(TargetFocus target) {
+    final completer = Completer<void>();
+    TutorialCoachMark(
+      targets: [target],
+      colorShadow: Colors.black,
+      opacityShadow: 0.8,
+      paddingFocus: 8,
+      hideSkip: true,
+      onFinish: () => completer.complete(),
+    ).show(context: context);
+    return completer.future;
   }
 
   @override

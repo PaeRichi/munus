@@ -82,9 +82,11 @@ final regionalVariantProvider =
         RegionalVariantNotifier.new);
 
 class RegionalVariantNotifier extends Notifier<RegionalVariant> {
+  late final Future<void> _loaded;
+
   @override
   RegionalVariant build() {
-    _load();
+    _loaded = _load();
     return RegionalVariantService.defaultVariant;
   }
 
@@ -93,6 +95,14 @@ class RegionalVariantNotifier extends Notifier<RegionalVariant> {
     final variant = await service.getVariant();
     state = variant;
   }
+
+  /// Espera a que la variante persistida en shared_preferences termine de
+  /// cargarse. build() devuelve el default de forma síncrona antes de que
+  /// _load() complete; cualquier lector que necesite el valor real ya en su
+  /// primer uso (ej. resolver el asset path de un ritual en initState) debe
+  /// esperar esto antes de leer el estado, para no quedarse con el default
+  /// por una carrera entre la lectura async de disco y una lectura síncrona.
+  Future<void> ensureLoaded() => _loaded;
 
   Future<void> setVariant(RegionalVariant variant) async {
     final service = ref.read(regionalVariantServiceProvider);

@@ -61,7 +61,7 @@ class MunusTextStyles {
   /// en vez de semibold.
   static TextStyle liturgicalTitle(double fontSize) => TextStyle(
         fontFamily: MunusFonts.display,
-        fontSize: fontSize - 2,
+        fontSize: fontSize + 4,
         color: MunusColors.textGold,
         fontWeight: FontWeight.w500,
         height: 1.3,

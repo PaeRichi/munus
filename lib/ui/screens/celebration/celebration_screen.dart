@@ -51,11 +51,19 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
     super.initState();
     WakelockPlus.enable();
     final repository = ref.read(celebrationRepositoryProvider);
-    final variant = ref.read(regionalVariantProvider);
-    _resolvedAssetPathFuture = repository.resolveAssetPath(
-      widget.celebrationMeta['assetPath']!,
-      variant,
-    );
+    // Se espera ensureLoaded() antes de leer la variante: build() del
+    // notifier devuelve el default de forma síncrona antes de que termine
+    // de leer shared_preferences, así que leer el estado acá sin esperar
+    // podía devolver España aunque el usuario tuviera Argentina persistida
+    // (bug: variante no se aplicaba en el primer ritual abierto tras
+    // iniciar la app).
+    _resolvedAssetPathFuture = ref
+        .read(regionalVariantProvider.notifier)
+        .ensureLoaded()
+        .then((_) => repository.resolveAssetPath(
+              widget.celebrationMeta['assetPath']!,
+              ref.read(regionalVariantProvider),
+            ));
     _celebrationFuture = _resolvedAssetPathFuture.then(
       (assetPath) => repository.getCelebration(
         assetPath: assetPath,

@@ -26,7 +26,7 @@ contenido:
     tipo: titulo
     actor: celebrante
     obligatorio: true
-    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+    texto: "Rito de la bendición — Ritos iniciales"
 
   - id: rubrica_1397
     tipo: rubrica
