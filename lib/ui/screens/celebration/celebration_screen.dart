@@ -36,6 +36,7 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
   final _favoritoKey = GlobalKey();
   final _qrKey = GlobalKey();
   final _optionsKey = GlobalKey();
+  final _scrollController = ScrollController();
   bool _optionsElementFound = false;
   bool _tourLaunched = false;
   // Consulta directa al servicio (no vía provider/Notifier): nada más en
@@ -68,6 +69,7 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
   @override
   void dispose() {
     WakelockPlus.disable();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -77,21 +79,17 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      // _optionsElementFound solo confirma que se le asignó el GlobalKey
-      // a un widget -- no que ese widget ya esté montado en pantalla. Si
-      // el ritual tiene una monición larga antes del primer bloque con
-      // opciones, ese bloque puede quedar fuera del scroll inicial y
-      // nunca llegar a montarse en el primer frame. currentContext sigue
-      // siendo null en ese caso -- lo chequeamos acá para no apuntar el
-      // tour a un target inexistente (eso fue justamente lo que causaba
-      // el crash reportado).
-      final optionsTargetReady =
-          _optionsElementFound && _optionsKey.currentContext != null;
+      // Ya no hace falta chequear si _optionsKey está montado: si
+      // _optionsElementFound es true, el scroll automático (ver
+      // celebration_tour.dart / scroll_into_view.dart) se encarga de
+      // llevarlo a la vista cuando corresponda, esté donde esté en la
+      // lista.
       TutorialCoachMark(
         targets: buildCelebrationTourTargets(
           favoritoKey: _favoritoKey,
           qrKey: _qrKey,
-          optionsKey: optionsTargetReady ? _optionsKey : null,
+          scrollController: _scrollController,
+          optionsKey: _optionsElementFound ? _optionsKey : null,
         ),
         colorShadow: Colors.black,
         opacityShadow: 0.8,
@@ -318,6 +316,7 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
               }
 
               return ListView(
+                controller: _scrollController,
                 padding: const EdgeInsets.symmetric(
                     horizontal: 24, vertical: 32),
                 children: elementWidgets,

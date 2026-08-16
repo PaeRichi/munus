@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 import 'tour_step_content.dart';
+import 'scroll_into_view.dart';
 
 /// Arma los targets del tour de celebración (primera entrada a CUALQUIER
 /// ritual).
 ///
-/// [optionsKey] es nullable a propósito: no todo ritual tiene necesariamente
-/// un bloque con `opciones` como primer elemento visible (aunque en la
-/// práctica casi todos los de la Biblioteca sí). Si es null, ese paso se
-/// omite y el tour queda de 2 pasos (favorito + QR) en vez de 3, para no
-/// romper con NotFoundTargetException al apuntar a un target inexistente.
+/// [optionsKey] es nullable: no todo ritual tiene necesariamente un
+/// bloque con `opciones` como primer elemento visible. Si es null, ese
+/// paso se omite -- si NO es null, igual puede estar fuera de la vista
+/// inicial (rituales con monición larga antes de la lectura), por eso
+/// [scrollController] se usa para llevarlo a la vista antes de mostrar
+/// ese paso, en el "Siguiente" del paso anterior (favorito).
 List<TargetFocus> buildCelebrationTourTargets({
   required GlobalKey favoritoKey,
   required GlobalKey qrKey,
+  required ScrollController scrollController,
   GlobalKey? optionsKey,
 }) {
   final targets = <TargetFocus>[
@@ -27,7 +30,14 @@ List<TargetFocus> buildCelebrationTourTargets({
             title: 'Guardá este ritual entre tus favoritos',
             body: 'Tocá la tirita para marcarlo como favorito y encontrarlo '
                 'rápidamente desde la pantalla principal.',
-            onNext: controller.next,
+            onNext: () {
+              if (optionsKey != null) {
+                scrollKeyIntoView(optionsKey, scrollController)
+                    .then((_) => controller.next());
+              } else {
+                controller.next();
+              }
+            },
           ),
         ),
       ],
