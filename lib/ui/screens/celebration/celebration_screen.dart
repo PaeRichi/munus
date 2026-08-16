@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 import '../../../core/providers/repository_providers.dart';
 import '../../../data/models/celebration.dart';
 import '../../../data/models/liturgical_element.dart';
 import '../../widgets/celebration/liturgical_element_widget.dart';
+import '../../widgets/common/options_pill_button.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../../domain/onboarding/celebration_tour.dart';
+import '../../../domain/onboarding/tour_finish_dialog.dart';
 import 'package:go_router/go_router.dart';
 
 
@@ -28,6 +32,19 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
   late final Future<Celebration> _celebrationFuture;
   late final Future<String> _resolvedAssetPathFuture;
 
+  // --- Onboarding: keys de los targets del tour de celebración ---
+  final _favoritoKey = GlobalKey();
+  final _qrKey = GlobalKey();
+  final _optionsKey = GlobalKey();
+  bool _optionsElementFound = false;
+  bool _tourLaunched = false;
+  // Consulta directa al servicio (no vía provider/Notifier): nada más en
+  // la app necesita reaccionar a este flag en tiempo real, así que evitamos
+  // el patrón NotifierProvider (que además tiene una ventana donde el
+  // valor default se muestra antes de que cargue el real -- indeseable
+  // acá porque dispararía el tour de más).
+  late final Future<bool> _hasSeenTourFuture;
+
   @override
   void initState() {
     super.initState();
@@ -44,12 +61,44 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
         categoryId: widget.categoryId,
       ),
     );
+    _hasSeenTourFuture =
+        ref.read(celebrationTourServiceProvider).hasSeenTour();
   }
 
   @override
   void dispose() {
     WakelockPlus.disable();
     super.dispose();
+  }
+
+  void _maybeShowCelebrationTour(bool hasSeenTour) {
+    if (hasSeenTour || _tourLaunched) return;
+    _tourLaunched = true;
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      TutorialCoachMark(
+        targets: buildCelebrationTourTargets(
+          favoritoKey: _favoritoKey,
+          qrKey: _qrKey,
+          // Si ningún elemento de este ritual tiene `opciones` como primer
+          // caso visible, no forzamos ese paso -- ver nota en
+          // celebration_tour.dart.
+          optionsKey: _optionsElementFound ? _optionsKey : null,
+        ),
+        colorShadow: Colors.black,
+        opacityShadow: 0.8,
+        paddingFocus: 8,
+        hideSkip: true,
+        onFinish: () {
+          ref.read(celebrationTourServiceProvider).markAsSeen();
+          showTourFinishDialog(
+            context,
+            message: 'Todo listo para celebrar.',
+          );
+        },
+      ).show(context: context);
+    });
   }
 
   List<Widget> _buildElementWidgets(
@@ -59,9 +108,19 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
     String celebrationId,
   ) {
     final widgets = <Widget>[];
+    // Se resetea en cada build; se vuelve a calcular junto con la lista.
+    _optionsElementFound = false;
 
     void addSpacer() {
       if (widgets.isNotEmpty) widgets.add(const SizedBox(height: 20));
+    }
+
+    Widget maybeWrapWithOptionsKey(Widget child, bool elementHasOptions) {
+      if (elementHasOptions && !_optionsElementFound) {
+        _optionsElementFound = true;
+        return KeyedSubtree(key: _optionsKey, child: child);
+      }
+      return child;
     }
 
     Future<void> handleSelected(String elementId, String optionId) async {
@@ -78,12 +137,15 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
 
       if (el.type == LiturgicalElementType.title && nextHasOptions) {
         addSpacer();
-        widgets.add(_TitleWithOptionsButton(
-          titleElement: el,
-          optionsElement: next,
-          preferences: preferences,
-          fontSize: fontSize,
-          onOptionSelected: handleSelected,
+        widgets.add(maybeWrapWithOptionsKey(
+          _TitleWithOptionsButton(
+            titleElement: el,
+            optionsElement: next,
+            preferences: preferences,
+            fontSize: fontSize,
+            onOptionSelected: handleSelected,
+          ),
+          true,
         ));
         addSpacer();
         widgets.add(LiturgicalElementWidget(
@@ -97,12 +159,15 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
         i += 2;
       } else {
         addSpacer();
-        widgets.add(LiturgicalElementWidget(
-          element: el,
-          fontSize: fontSize,
-          preferences: preferences,
-          showOptionalRubrics: showOptional,
-          onOptionSelected: handleSelected,
+        widgets.add(maybeWrapWithOptionsKey(
+          LiturgicalElementWidget(
+            element: el,
+            fontSize: fontSize,
+            preferences: preferences,
+            showOptionalRubrics: showOptional,
+            onOptionSelected: handleSelected,
+          ),
+          el.options.isNotEmpty,
         ));
         i += 1;
       }
@@ -136,6 +201,7 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
         orElse: () => false,
       );
       return IconButton(
+        key: _favoritoKey,
         icon: TweenAnimationBuilder<double>(
           key: ValueKey(isFavorite),
           tween: Tween(begin: 1.5, end: 1.0),
@@ -165,6 +231,7 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
     },
   ),
   IconButton(
+  key: _qrKey,
   icon: const Icon(Icons.qr_code),
   color: MunusColors.textDiscrete,
   tooltip: 'Mostrar QR para la asamblea',
@@ -236,11 +303,17 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
                 child: Text('Error al cargar preferencias')),
             data: (preferences) {
               final fontSize = ref.watch(fontSizeProvider);
+              final elementWidgets = _buildElementWidgets(
+                  elements, preferences, fontSize, celebrationId);
+
+              if (!_tourLaunched) {
+                _hasSeenTourFuture.then(_maybeShowCelebrationTour);
+              }
+
               return ListView(
                 padding: const EdgeInsets.symmetric(
                     horizontal: 24, vertical: 32),
-                children: _buildElementWidgets(
-                    elements, preferences, fontSize, celebrationId),
+                children: elementWidgets,
               );
             },
           );
@@ -276,31 +349,18 @@ class _TitleWithOptionsButton extends StatelessWidget {
           Expanded(
             child: Text(
               titleElement.text ?? '',
-              style: MunusTextStyles.sectionTitle(fontSize),
+              style: MunusTextStyles.liturgicalTitle(fontSize),
             ),
           ),
           const SizedBox(width: 12),
-          GestureDetector(
+          OptionsPillButton(
+            fontSize: fontSize,
             onTap: () => LiturgicalElementWidget.showOptionsSheet(
               context,
               element: optionsElement,
               preferences: preferences,
               fontSize: fontSize,
               onOptionSelected: onOptionSelected,
-            ),
-            child: Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-              decoration: BoxDecoration(
-                border: Border.all(color: MunusColors.textRubric, width: 1),
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Text(
-                'Elegir fórmula',
-                style: MunusTextStyles.reference(fontSize - 4).copyWith(
-                  color: MunusColors.textRubric,
-                ),
-              ),
             ),
           ),
         ],

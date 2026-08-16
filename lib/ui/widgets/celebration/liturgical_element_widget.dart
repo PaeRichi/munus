@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../data/models/liturgical_element.dart';
 import '../../../core/theme/app_theme.dart';
+import '../common/options_pill_button.dart';
 
 class LiturgicalElementWidget extends StatelessWidget {
   final LiturgicalElement element;
@@ -187,21 +188,9 @@ class LiturgicalElementWidget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8),
       child: Align(
         alignment: Alignment.centerRight,
-        child: GestureDetector(
+        child: OptionsPillButton(
+          fontSize: fontSize,
           onTap: () => _showOptions(context),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-            decoration: BoxDecoration(
-              border: Border.all(color: MunusColors.textRubric, width: 1),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Text(
-              'Elegir fórmula',
-              style: MunusTextStyles.reference(fontSize - 4).copyWith(
-                color: MunusColors.textRubric,
-              ),
-            ),
-          ),
         ),
       ),
     );
@@ -249,7 +238,7 @@ class LiturgicalElementWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 28),
       child: Text(element.text ?? '',
-          style: MunusTextStyles.sectionTitle(fontSize)),
+          style: MunusTextStyles.liturgicalTitle(fontSize)),
     );
   }
 

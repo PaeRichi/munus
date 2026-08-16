@@ -52,6 +52,22 @@ class MunusTextStyles {
         fontWeight: FontWeight.w600,
       );
 
+  /// Título de sección DENTRO de una celebración (tipo: titulo en el YAML,
+  /// ej. "Rito de la bendición — Ritos iniciales"). Deliberadamente
+  /// separado de sectionTitle: ese se sigue usando tal cual para los
+  /// headers de categoría en la Home ("FRECUENTES", "BENDICIONES"...),
+  /// que no fueron parte de este pedido de Producto. Serif editorial en
+  /// vez de sans-serif, sin el letterSpacing "de mayúsculas", peso medio
+  /// en vez de semibold.
+  static TextStyle liturgicalTitle(double fontSize) => TextStyle(
+        fontFamily: MunusFonts.display,
+        fontSize: fontSize - 2,
+        color: MunusColors.textGold,
+        fontWeight: FontWeight.w500,
+        height: 1.3,
+        letterSpacing: 0.2,
+      );
+
   static TextStyle responseLabel(double fontSize) => TextStyle(
         fontFamily: MunusFonts.ui,
         fontSize: fontSize - 4,

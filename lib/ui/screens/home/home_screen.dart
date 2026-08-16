@@ -1,19 +1,71 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 import '../../../core/providers/repository_providers.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../domain/preferences/font_size_service.dart';
 import '../../widgets/common/regional_variant_toggle.dart';
+import '../../../domain/onboarding/home_tour.dart';
+import '../../../domain/onboarding/tour_finish_dialog.dart';
 
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  final _ritualsListKey = GlobalKey();
+  final _regionalToggleKey = GlobalKey();
+  bool _tourLaunched = false;
+  // Ver nota equivalente en celebration_screen.dart: consulta directa al
+  // servicio, no vía NotifierProvider -- evita la ventana donde el valor
+  // default se muestra antes de que cargue el real.
+  late final Future<bool> _hasSeenTourFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _hasSeenTourFuture = ref.read(homeTourServiceProvider).hasSeenTour();
+  }
+
+  void _maybeShowHomeTour(bool hasSeenTour) {
+    if (hasSeenTour || _tourLaunched) return;
+    _tourLaunched = true;
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      TutorialCoachMark(
+        targets: buildHomeTourTargets(
+          ritualsListKey: _ritualsListKey,
+          regionalToggleKey: _regionalToggleKey,
+        ),
+        colorShadow: Colors.black,
+        opacityShadow: 0.8,
+        paddingFocus: 8,
+        hideSkip: true,
+        onFinish: () {
+          ref.read(homeTourServiceProvider).markAsSeen();
+          showTourFinishDialog(
+            context,
+            message: 'Ya estás listo para usar Munus.',
+          );
+        },
+      ).show(context: context);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final repository = ref.watch(celebrationRepositoryProvider);
     final favoritesAsync = ref.watch(favoritesProvider);
     final categories = repository.getCategories();
+
+    if (!_tourLaunched) {
+      _hasSeenTourFuture.then(_maybeShowHomeTour);
+    }
 
     return Scaffold(
       body: SafeArea(
@@ -70,12 +122,18 @@ class HomeScreen extends ConsumerWidget {
             }
 
             return ListView.builder(
+              key: _ritualsListKey,
               padding: const EdgeInsets.symmetric(horizontal: 28),
               itemCount: items.length + 2,
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return Padding(
-                    padding: const EdgeInsets.only(top: 56, bottom: 40),
+                    // Antes: top 56 / bottom 40. Se achica el espacio
+                    // hasta "FRECUENTES" ~14% a pedido de Producto (logo
+                    // demasiado separado del contenido). Si hace falta
+                    // afinar más, tocar bottom acá y/o el top del header
+                    // más abajo -- son los dos únicos números en juego.
+                    padding: const EdgeInsets.only(top: 52, bottom: 34),
                     child: Text(
                       'MUNUS',
                       textAlign: TextAlign.center,
@@ -99,13 +157,21 @@ class HomeScreen extends ConsumerWidget {
                           'Traducción:',
                           style: TextStyle(
                             fontFamily: MunusFonts.ui,
-                            fontSize: 9,
+                            // Antes 9px -- Producto pidió más presencia
+                            // porque es una función importante (y parte
+                            // del tour inicial). Subido a 11 + peso medio,
+                            // sigue discreto pero más legible.
+                            fontSize: 11,
+                            fontWeight: FontWeight.w500,
                             letterSpacing: 0.5,
                             color: MunusColors.textDiscrete,
                           ),
                         ),
                         const SizedBox(height: 6),
-                        const RegionalVariantToggle(dense: true),
+                        Container(
+                          key: _regionalToggleKey,
+                          child: const RegionalVariantToggle(dense: true),
+                        ),
                         const SizedBox(height: 28),
                         GestureDetector(
                           onTap: () => context.push('/about'),
@@ -124,7 +190,10 @@ class HomeScreen extends ConsumerWidget {
                 if (item['type'] == 'header') {
                   return Padding(
                     key: ValueKey(item['title']),
-                    padding: const EdgeInsets.only(top: 32, bottom: 8),
+                    // Antes top 32 / bottom 8. Baja levemente junto con
+                    // el ajuste del logo de arriba, mismo pedido de
+                    // Producto (achicar el vacío MUNUS -> FRECUENTES).
+                    padding: const EdgeInsets.only(top: 28, bottom: 8),
                     child: Text(
                       item['title']!,
                       style: MunusTextStyles.sectionTitle(

@@ -5,6 +5,8 @@ import '../../domain/preferences/celebration_preferences_service.dart';
 import '../../domain/preferences/font_size_service.dart';
 import '../../domain/preferences/regional_variant_service.dart';
 import '../../domain/qr/assembly_url_service.dart';
+import '../../domain/onboarding/home_tour_service.dart';
+import '../../domain/onboarding/celebration_tour_service.dart';
 
 final assemblyUrlServiceProvider = Provider<AssemblyUrlService>((ref) {
   return AssemblyUrlService();
@@ -98,3 +100,18 @@ class RegionalVariantNotifier extends Notifier<RegionalVariant> {
     await service.setVariant(variant);
   }
 }
+
+// --- Onboarding: flags de "ya vio el tour" ---
+//
+// A diferencia de fontSizeProvider/regionalVariantProvider, acá no se usa
+// un NotifierProvider con estado observado por otros widgets: nada más en
+// la app necesita reaccionar en tiempo real a "¿ya vio el tour?". Cada
+// pantalla (Home / Celebración) lo consulta una sola vez al entrar, vía
+// estos providers de servicio simples.
+final homeTourServiceProvider = Provider<HomeTourService>((ref) {
+  return HomeTourService();
+});
+
+final celebrationTourServiceProvider = Provider<CelebrationTourService>((ref) {
+  return CelebrationTourService();
+});
