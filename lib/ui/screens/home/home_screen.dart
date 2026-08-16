@@ -187,7 +187,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           'Traducción:',
                           style: TextStyle(
                             fontFamily: MunusFonts.ui,
-                            fontSize: 11,
+                            fontSize: 12,
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.5,
                             color: MunusColors.textDiscrete,
@@ -198,7 +198,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           key: _regionalToggleKey,
                           child: const RegionalVariantToggle(dense: true),
                         ),
-                        const SizedBox(height: 28),
+                        const SizedBox(height: 32),
                         GestureDetector(
                           onTap: () => context.push('/about'),
                           child: Icon(
