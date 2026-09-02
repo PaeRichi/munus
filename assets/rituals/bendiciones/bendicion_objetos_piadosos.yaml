@@ -11,8 +11,8 @@ metadata:
     fin: 1361
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 6
-  nota: "v6: lectura_2co_3_4 se reestructuró con Regla 3.2 para corregir la aclamación tras la lectura, que dependía del género de la lectura elegida. Las 9 lecturas (la que era 'principal', 2 Co 3,17b—4,2, más las 8 alternativas) pasaron a ser 9 opciones de igual rango, cada una con su propio elementos agrupando lectura + proclamación (tipo: saludo, actor: lector) + respuesta (tipo: respuesta, actor: asamblea). 7 de las 9 son epístolas ('Palabra de Dios.' / 'Te alabamos, Señor.'); Lc 11,5-13 y Lc 18,1-8 son evangélicas ('Palabra del Señor.' / 'Gloria a ti, Señor Jesús.'). Se eliminó el bloque suelto respuesta_palabra_de_dios, que antes traía mal el actor (asamblea en vez de lector) y no distinguía género de lectura. El bloque padre lectura_2co_3_4 quedó sin texto propio, como corresponde cuando todas las opciones son de igual rango. v5: se agregó display_name al bloque padre oracion_bendicion_objetos ('Fórmula principal') y a su opción oracion_bendicion_rito_breve_1366 ('Fórmula del Rito breve'), ahora que Programming habilitó el campo display_name también a nivel del bloque padre (antes solo existía dentro de opciones). v4: se bajó a obligatorio: false rubrica_1360 ('El celebrante, con las manos extendidas, dice:'), rúbrica de postura sin acción física sobre personas/lugar — mismo criterio ya aplicado en bendicion_del_agua_fuera_de_la_misa.yaml, bendicion_de_una_nueva_casa.yaml y bendicion_e_imposicion_del_escapulario.yaml. v3: se bajaron a obligatorio: false rubrica_signan_responden ('Todos se santiguan y responden:') y rubrica_todos_responden_1351 ('Todos responden:'), rúbricas de cue funcional que no aportan valor pastoral al quedar siempre visibles — mismo ajuste aplicado a bendicion_laboratorio_taller_tienda.yaml y bendicion_vehiculo_y_barca.yaml. Se mantiene en true la rúbrica que introduce una aspersión con fórmula hablada, criterio ya establecido. v2: se completaron las 9 lecturas alternativas de lectura_2co_3_4 (transcriptas por Ricardo). Se agregó el título 'Preces' (tipo: titulo, obligatorio: false) antes de preces_espiritu_piedad, que faltaba. Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente toda la sección bajo el título. Se separó conclusion_rito_objetos, que traía 'R. Amén.' y la bendición final trinitaria embebidos como texto corrido, en bloques independientes (conclusión, respuesta, rúbrica de transición 'Luego dice:', bendición final, respuesta), agregando la rúbrica de transición que faltaba. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). La opción oracion_bendicion_rito_breve_1366 en oracion_bendicion_objetos se confirmó con Ricardo como variante oficial legítima (Regla 3.1, fórmula del Rito breve n. 1366) y se mantiene."
+  version: 7
+  nota: "v7: auditoría de consistencia de selectores. Se quitaron puntos suspensivos colgantes en 2 display_name de lectura (opcion_2co_3_17b_4_2, opcion_ga_1_2). Se agregó display_name a las 3 opciones de salmo_99_100, que no lo tenían. v6: lectura_2co_3_4 se reestructuró con Regla 3.2 para corregir la aclamación tras la lectura, que dependía del género de la lectura elegida. Las 9 lecturas (la que era 'principal', 2 Co 3,17b—4,2, más las 8 alternativas) pasaron a ser 9 opciones de igual rango, cada una con su propio elementos agrupando lectura + proclamación (tipo: saludo, actor: lector) + respuesta (tipo: respuesta, actor: asamblea). 7 de las 9 son epístolas ('Palabra de Dios.' / 'Te alabamos, Señor.'); Lc 11,5-13 y Lc 18,1-8 son evangélicas ('Palabra del Señor.' / 'Gloria a ti, Señor Jesús.'). Se eliminó el bloque suelto respuesta_palabra_de_dios, que antes traía mal el actor (asamblea en vez de lector) y no distinguía género de lectura. El bloque padre lectura_2co_3_4 quedó sin texto propio, como corresponde cuando todas las opciones son de igual rango. v5: se agregó display_name al bloque padre oracion_bendicion_objetos ('Fórmula principal') y a su opción oracion_bendicion_rito_breve_1366 ('Fórmula del Rito breve'), ahora que Programming habilitó el campo display_name también a nivel del bloque padre (antes solo existía dentro de opciones). v4: se bajó a obligatorio: false rubrica_1360 ('El celebrante, con las manos extendidas, dice:'), rúbrica de postura sin acción física sobre personas/lugar — mismo criterio ya aplicado en bendicion_del_agua_fuera_de_la_misa.yaml, bendicion_de_una_nueva_casa.yaml y bendicion_e_imposicion_del_escapulario.yaml. v3: se bajaron a obligatorio: false rubrica_signan_responden ('Todos se santiguan y responden:') y rubrica_todos_responden_1351 ('Todos responden:'), rúbricas de cue funcional que no aportan valor pastoral al quedar siempre visibles — mismo ajuste aplicado a bendicion_laboratorio_taller_tienda.yaml y bendicion_vehiculo_y_barca.yaml. Se mantiene en true la rúbrica que introduce una aspersión con fórmula hablada, criterio ya establecido. v2: se completaron las 9 lecturas alternativas de lectura_2co_3_4 (transcriptas por Ricardo). Se agregó el título 'Preces' (tipo: titulo, obligatorio: false) antes de preces_espiritu_piedad, que faltaba. Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente toda la sección bajo el título. Se separó conclusion_rito_objetos, que traía 'R. Amén.' y la bendición final trinitaria embebidos como texto corrido, en bloques independientes (conclusión, respuesta, rúbrica de transición 'Luego dice:', bendición final, respuesta), agregando la rúbrica de transición que faltaba. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). La opción oracion_bendicion_rito_breve_1366 en oracion_bendicion_objetos se confirmó con Ricardo como variante oficial legítima (Regla 3.1, fórmula del Rito breve n. 1366) y se mantiene."
 
 praenotanda: |
   1346. El presente rito debe utilizarse en la bendición de medallas, pequeñas cruces, imágenes religiosas que no se han de exponer en lugares sagrados, escapularios, coronas y objetos similares que se usan para la práctica de ejercicios piadosos.
@@ -118,7 +118,7 @@ contenido:
     obligatorio: true
     opciones:
       - id: opcion_2co_3_17b_4_2
-        display_name: "Reflejamos la gloria del Señor..."
+        display_name: "Reflejamos la gloria del Señor"
         elementos:
           - id: lectura_2co_3_17b_4_2_texto
             tipo: lectura
@@ -274,7 +274,7 @@ contenido:
             texto: "Te alabamos, Señor."
 
       - id: opcion_ga_1_2
-        display_name: "Ya no soy yo quien vive..."
+        display_name: "Ya no soy yo quien vive"
         elementos:
           - id: lectura_ga_1_2_texto
             tipo: lectura
@@ -442,12 +442,15 @@ contenido:
       - "«El Señor es bueno, su misericordia es eterna, su fidelidad por todas las edades»."
     opciones:
       - id: salmo_122_123
+        display_name: "A ti levanto mis ojos"
         referencia: "Sal 122 (123), 1. 2. 3-4"
         estribillo: "A ti levanto mis ojos, a ti que habitas en el cielo."
       - id: salmo_138_139
+        display_name: "Tú, Señor, lo sabes todo"
         referencia: "Sal 138 (139), 1-2. 3-4. 5-6. 7-8. 9-10"
         estribillo: "Tú, Señor, lo sabes todo."
       - id: salmo_150
+        display_name: "Alabad al Señor por sus obras magníficas"
         referencia: "Sal 150, 1-2. 3-4. 5"
         estribillo: "Alabad al Señor por sus obras magníficas."
 

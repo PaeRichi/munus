@@ -11,8 +11,8 @@ metadata:
     fin: 552
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 4
-  nota: "v4: lectura_evangelio se reestructuró con Regla 3.2 para corregir la aclamación tras la lectura, que dependía del género de la lectura elegida. Las 6 lecturas (la que era 'principal', Lc 10,5-9, más las 5 alternativas) pasaron a ser 6 opciones de igual rango, cada una con su propio elementos agrupando lectura + proclamación (tipo: saludo, actor: lector) + respuesta (tipo: respuesta, actor: asamblea). 5 de las 6 son evangélicas ('Palabra del Señor.' / 'Gloria a ti, Señor Jesús.'); Gn 18,1-10a es la única no evangélica ('Palabra de Dios.' / 'Te alabamos, Señor.'). Se eliminó el bloque suelto respuesta_palabra_del_senor, que antes traía mal el actor (asamblea en vez de lector) y no distinguía género de lectura. El bloque padre lectura_evangelio quedó sin texto propio, como corresponde cuando todas las opciones son de igual rango. v3: se completaron las 5 lecturas alternativas de lectura_evangelio (Gn 18,1-10a / Mc 1,29-31 / Lc 10,38-42 / Lc 19,1-9 / Lc 24,28-32), transcriptas por Ricardo desde el Bendicional/Leccionario. Cada opción quedó con encabezado y texto completos; se retiraron los comentarios # PENDIENTE. Se corrigió la referencia de la segunda opción de Mc 1,29-30 a Mc 1,29-31 (el texto transcripto llega hasta el v. 31, 'y la levantó... se puso a servirles'). v2 (migración a v1.1): no se encontraron casos de Regla 3.2 (todas las alternativas del archivo — lectura y salmo — son variantes de contenido simple, no de forma litúrgica), por lo que la estructura de opciones no cambió. Se retiraron los números de cita del libro al inicio de las rúbricas (se conservan en praenotanda, que reproduce el texto introductorio completo del libro). Se revisó obligatorio: solo queda true la rúbrica de la aspersión (acción física concreta sobre personas/lugar); las de postura (manos extendidas/juntas) pasan a false."
+  version: 5
+  nota: "v5: auditoría de consistencia de selectores. Se quitaron puntos suspensivos colgantes en 2 display_name de lectura (opcion_gn_18_1_10a, opcion_mc_1_29_31). Se agregó display_name a las 2 opciones de salmo_responsorial_126, que no lo tenían (tomado del estribillo de cada una) — pendiente confirmar con Programming si el selector de tipo: salmo efectivamente muestra el botón de opciones en la UI actual. v4: lectura_evangelio se reestructuró con Regla 3.2 para corregir la aclamación tras la lectura, que dependía del género de la lectura elegida. Las 6 lecturas (la que era 'principal', Lc 10,5-9, más las 5 alternativas) pasaron a ser 6 opciones de igual rango, cada una con su propio elementos agrupando lectura + proclamación (tipo: saludo, actor: lector) + respuesta (tipo: respuesta, actor: asamblea). 5 de las 6 son evangélicas ('Palabra del Señor.' / 'Gloria a ti, Señor Jesús.'); Gn 18,1-10a es la única no evangélica ('Palabra de Dios.' / 'Te alabamos, Señor.'). Se eliminó el bloque suelto respuesta_palabra_del_senor, que antes traía mal el actor (asamblea en vez de lector) y no distinguía género de lectura. El bloque padre lectura_evangelio quedó sin texto propio, como corresponde cuando todas las opciones son de igual rango. v3: se completaron las 5 lecturas alternativas de lectura_evangelio (Gn 18,1-10a / Mc 1,29-31 / Lc 10,38-42 / Lc 19,1-9 / Lc 24,28-32), transcriptas por Ricardo desde el Bendicional/Leccionario. Cada opción quedó con encabezado y texto completos; se retiraron los comentarios # PENDIENTE. Se corrigió la referencia de la segunda opción de Mc 1,29-30 a Mc 1,29-31 (el texto transcripto llega hasta el v. 31, 'y la levantó... se puso a servirles'). v2 (migración a v1.1): no se encontraron casos de Regla 3.2 (todas las alternativas del archivo — lectura y salmo — son variantes de contenido simple, no de forma litúrgica), por lo que la estructura de opciones no cambió. Se retiraron los números de cita del libro al inicio de las rúbricas (se conservan en praenotanda, que reproduce el texto introductorio completo del libro). Se revisó obligatorio: solo queda true la rúbrica de la aspersión (acción física concreta sobre personas/lugar); las de postura (manos extendidas/juntas) pasan a false."
 
 praenotanda: |
   534. Cuando los cristianos desean inaugurar una nueva casa invocando la protección divina, el pastor de almas y sus cooperadores accederán de buen grado a este deseo, ya que con ello se les ofrece una magnífica ocasión de entrar en contacto con aquellos fieles. Así, juntos y con alegría, dan gracias a Dios, de quien procede todo bien, por el don de una nueva vivienda.
@@ -144,7 +144,7 @@ contenido:
             texto: "Gloria a ti, Señor Jesús."
 
       - id: opcion_gn_18_1_10a
-        display_name: "Señor, no pases de largo..."
+        display_name: "Señor, no pases de largo"
         elementos:
           - id: lectura_gn_18_1_10a_texto
             tipo: lectura
@@ -190,7 +190,7 @@ contenido:
             texto: "Te alabamos, Señor."
 
       - id: opcion_mc_1_29_31
-        display_name: "Él se acercó, la cogió de la mano..."
+        display_name: "Él se acercó, la cogió de la mano"
         elementos:
           - id: lectura_mc_1_29_31_texto
             tipo: lectura
@@ -344,9 +344,11 @@ contenido:
       - "Dichoso el hombre que llena con ellas su aljaba: no quedará derrotado cuando litigue con su adversario en la plaza."
     opciones:
       - id: opcion_sal_111
+        display_name: "Dichoso quien teme al Señor"
         referencia: "Sal 111 (112), 1-2. 3-4. 5-6. 7-8. 9"
         estribillo: "Dichoso quien teme al Señor."
       - id: opcion_sal_127
+        display_name: "La bendición del hombre que teme al Señor"
         referencia: "Sal 127 (128), 1-2. 3. 4-6a"
         estribillo: "Esta es la bendición del hombre que teme al Señor."
 

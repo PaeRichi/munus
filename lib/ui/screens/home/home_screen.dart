@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 import '../../../core/providers/repository_providers.dart';
 import '../../../core/theme/app_theme.dart';
-import '../../../domain/preferences/font_size_service.dart';
 import '../../widgets/common/regional_variant_toggle.dart';
 import '../../../domain/onboarding/home_tour.dart';
 import '../../../domain/onboarding/tour_finish_dialog.dart';
@@ -222,7 +221,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     child: Text(
                       item['title']!,
                       style: MunusTextStyles.sectionTitle(
-                          FontSizeService.defaultSize),
+                          ref.watch(fontSizeProvider)),
                     ),
                   );
                 }
@@ -233,7 +232,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   contentPadding: EdgeInsets.zero,
                   title: Text(
                     item['title']!,
-                    style: MunusTextStyles.bodyText(FontSizeService.defaultSize),
+                    style: MunusTextStyles.bodyText(ref.watch(fontSizeProvider)),
                   ),
                   trailing: isFavorite
                       ? _FavoriteRibbon(

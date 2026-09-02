@@ -11,8 +11,8 @@ metadata:
     fin: 683
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 5
-  nota: "v5: lectura_gn_1_27_31 se reestructuró con Regla 3.2 para corregir la aclamación tras la lectura, que dependía del género de la lectura elegida. Las 8 lecturas (la que era 'principal', Gn 1,27-31a, más las 7 alternativas) pasaron a ser 8 opciones de igual rango, cada una con su propio elementos agrupando lectura + proclamación (tipo: saludo, actor: lector) + respuesta (tipo: respuesta, actor: asamblea). 4 de las 8 son evangélicas —Mc 6,1-3, Mt 6,25-34, Mt 25,14-29, Lc 16,9-12— ('Palabra del Señor.' / 'Gloria a ti, Señor Jesús.'); las 4 restantes —Gn 1,27-31a, Si 38,24-34, 1 Ts 4,9-12, 2 Ts 3,6-13— no lo son ('Palabra de Dios.' / 'Te alabamos, Señor.'). Se eliminó el bloque suelto respuesta_palabra_de_dios, que antes traía mal el actor (asamblea en vez de lector) y no distinguía género de lectura. El bloque padre lectura_gn_1_27_31 quedó sin texto propio, como corresponde cuando todas las opciones son de igual rango. v4: se bajaron a obligatorio: false rubrica_680 ('El celebrante, con las manos extendidas, dice la oración de bendición correspondiente al tipo de local:', rúbrica de postura), rubrica_681_aspersion (rocía sin fórmula hablada que la acompañe — solo dice 'mientras se interpreta un canto', sin 'diciendo:') y rubrica_682 ('El celebrante concluye el rito, diciendo, con las manos extendidas...', transición genérica) — mismo criterio ya aplicado en bendicion_del_agua_fuera_de_la_misa.yaml, bendicion_de_una_nueva_casa.yaml y bendicion_e_imposicion_del_escapulario.yaml. v3: se bajaron a obligatorio: false rubrica_signan_responden ('Todos se santiguan y responden:') y rubrica_todos_responden_670 ('Todos responden:'), rúbricas de cue funcional que no aportan valor pastoral al quedar siempre visibles — mismo ajuste aplicado a bendicion_objetos_piadosos.yaml y bendicion_vehiculo_y_barca.yaml. v2: se completaron las 6 lecturas alternativas de lectura_gn_1_27_31 que faltaban (opcion_mc_6_1_3 ya estaba completa y no se tocó). Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente la sección. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). Sin casos de Regla 3.2."
+  version: 6
+  nota: "v6: auditoría de consistencia de selectores. Se corrigió bendicion_lugar_de_trabajo — las tres opciones usaban encabezado con la letra del libro pegada ('a)'/'b)'/'c)'), reemplazado por display_name limpio. Se quitaron puntos suspensivos colgantes en 2 display_name de lectura (opcion_mt_25_14_29, opcion_lc_16_9_12). Se agregó display_name a la opción de salmo_89_90 (salmo_103_104), que no lo tenía. v5: lectura_gn_1_27_31 se reestructuró con Regla 3.2 para corregir la aclamación tras la lectura, que dependía del género de la lectura elegida. Las 8 lecturas (la que era 'principal', Gn 1,27-31a, más las 7 alternativas) pasaron a ser 8 opciones de igual rango, cada una con su propio elementos agrupando lectura + proclamación (tipo: saludo, actor: lector) + respuesta (tipo: respuesta, actor: asamblea). 4 de las 8 son evangélicas —Mc 6,1-3, Mt 6,25-34, Mt 25,14-29, Lc 16,9-12— ('Palabra del Señor.' / 'Gloria a ti, Señor Jesús.'); las 4 restantes —Gn 1,27-31a, Si 38,24-34, 1 Ts 4,9-12, 2 Ts 3,6-13— no lo son ('Palabra de Dios.' / 'Te alabamos, Señor.'). Se eliminó el bloque suelto respuesta_palabra_de_dios, que antes traía mal el actor (asamblea en vez de lector) y no distinguía género de lectura. El bloque padre lectura_gn_1_27_31 quedó sin texto propio, como corresponde cuando todas las opciones son de igual rango. v4: se bajaron a obligatorio: false rubrica_680 ('El celebrante, con las manos extendidas, dice la oración de bendición correspondiente al tipo de local:', rúbrica de postura), rubrica_681_aspersion (rocía sin fórmula hablada que la acompañe — solo dice 'mientras se interpreta un canto', sin 'diciendo:') y rubrica_682 ('El celebrante concluye el rito, diciendo, con las manos extendidas...', transición genérica) — mismo criterio ya aplicado en bendicion_del_agua_fuera_de_la_misa.yaml, bendicion_de_una_nueva_casa.yaml y bendicion_e_imposicion_del_escapulario.yaml. v3: se bajaron a obligatorio: false rubrica_signan_responden ('Todos se santiguan y responden:') y rubrica_todos_responden_670 ('Todos responden:'), rúbricas de cue funcional que no aportan valor pastoral al quedar siempre visibles — mismo ajuste aplicado a bendicion_objetos_piadosos.yaml y bendicion_vehiculo_y_barca.yaml. v2: se completaron las 6 lecturas alternativas de lectura_gn_1_27_31 que faltaban (opcion_mc_6_1_3 ya estaba completa y no se tocó). Se reordenó el título 'Oración de bendición': antes aparecía después del bloque 'Oremos' (rubrica sin preces / invitación / silencio); ahora aparece inmediatamente después de las preces, agrupando correctamente la sección. Se retiraron los números de cita del libro al inicio de rúbricas y títulos (se conservan en praenotanda). Sin casos de Regla 3.2."
 
 praenotanda: |
   665. El hombre, con el trabajo asiduo de sus manos, y el desempeño de su cometido, cuida incesantemente de la creación. Por otra parte, «el progreso de las técnicas de producción y la mejor organización del comercio y de los servicios han convertido la economía en un instrumento capaz de satisfacer las nuevas necesidades de la familia humana que no dejan de acrecentarse». Existe, pues, motivo más que suficiente para bendecir aquellos lugares donde el hombre trabaja con empeño en beneficio propio y en provecho de sus semejantes.
@@ -302,7 +302,7 @@ contenido:
             texto: "Gloria a ti, Señor Jesús."
 
       - id: opcion_mt_25_14_29
-        display_name: "Has sido fiel en lo poco..."
+        display_name: "Has sido fiel en lo poco"
         elementos:
           - id: lectura_mt_25_14_29_texto
             tipo: lectura
@@ -360,7 +360,7 @@ contenido:
             texto: "Gloria a ti, Señor Jesús."
 
       - id: opcion_lc_16_9_12
-        display_name: "El que es de fiar en lo menudo..."
+        display_name: "El que es de fiar en lo menudo"
         elementos:
           - id: lectura_lc_16_9_12_texto
             tipo: lectura
@@ -408,6 +408,7 @@ contenido:
       - "Por la mañana sácianos de tu misericordia, y toda nuestra vida será alegría y júbilo. Que tus siervos vean tu acción, y sus hijos tu gloria."
     opciones:
       - id: salmo_103_104
+        display_name: "Gloria a Dios para siempre"
         referencia: "Sal 103 (104), 1ab y 5. 14-15. 23-24"
         estribillo: "Gloria a Dios para siempre, goce el Señor con sus obras."
 
@@ -485,13 +486,13 @@ contenido:
     obligatorio: true
     opciones:
       - id: formula_laboratorio
-        encabezado: "a) Bendición de un laboratorio"
+        display_name: "Bendición de un laboratorio"
         texto: "Oh, Dios, que en el designio de tu providencia, aceptas bondadosamente perfeccionar con tus bendiciones todas las actividades de los hombres, tanto las corporales como las intelectuales, te pedimos que todos los que en este lugar traten, con sus experimentos, de estudiar los males y hallar los remedios, puedan, con tu ayuda, determinar con precisión lo que investiguen y realizar con éxito el fruto de su estudio. Por Jesucristo, nuestro Señor."
       - id: formula_taller
-        encabezado: "b) Bendición de un taller"
+        display_name: "Bendición de un taller"
         texto: "Oh, Dios, tu Hijo, con el trabajo de sus manos, elevó la dignidad del trabajo humano y nos concedió el don inestimable de colaborar con nuestro trabajo a su obra redentora; concede a tus fieles la bendición que esperan de ti, para que, dedicándose a transformar con habilidad las cosas que tú has creado, reconozcan su dignidad y se alegren de aliviar con su esfuerzo las necesidades de la familia humana, para alabanza de tu gloria. Por Jesucristo, nuestro Señor."
       - id: formula_tienda_comercio
-        encabezado: "c) Bendición de una tienda de comercio"
+        display_name: "Bendición de una tienda de comercio"
         texto: "Dios, Padre providentísimo, que pusiste en manos del hombre la tierra y sus productos para que contribuyera con su trabajo a que los bienes creados alcancen a todos, bendice a los que usen este local y haz que, observando en sus compras y ventas la justicia y la caridad, puedan alegrarse de contribuir al bien común y al progreso de la comunidad humana. Por Jesucristo, nuestro Señor."
 
   - id: respuesta_amen_oracion_bendicion

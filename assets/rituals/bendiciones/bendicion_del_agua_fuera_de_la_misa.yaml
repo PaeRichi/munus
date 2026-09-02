@@ -11,8 +11,8 @@ metadata:
     fin: 1234
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 4
-  nota: "v4: lectura_evangelio se reestructuró con Regla 3.2 para corregir la aclamación tras la lectura, que dependía del género de la lectura elegida. Las 8 lecturas (la que era 'principal', Jn 7,37-39, más las 7 alternativas) pasaron a ser 8 opciones de igual rango, cada una con su propio elementos agrupando lectura + proclamación (tipo: saludo, actor: lector) + respuesta (tipo: respuesta, actor: asamblea). 3 de las 8 son evangélicas —Jn 7,37-39, Jn 5,1-6, Jn 13,3-15— ('Palabra del Señor.' / 'Gloria a ti, Señor Jesús.'); las 5 restantes —Is 12, Is 55, Si 15, Ap 7, Ap 22— no lo son ('Palabra de Dios.' / 'Te alabamos, Señor.'). Se eliminó el bloque suelto respuesta_palabra_del_senor, que antes traía mal el actor (asamblea en vez de lector) y no distinguía género de lectura. El bloque padre lectura_evangelio quedó sin texto propio, como corresponde cuando todas las opciones son de igual rango. v3: se completaron las 7 lecturas alternativas de lectura_evangelio (Is 12,1-6 / Is 55,1-11 / Si 15,1-6 / Jn 5,1-6 / Ap 7,13-17 / Ap 22,1-5 / Jn 13,3-15), transcriptas por Ricardo desde el Bendicional/Leccionario. Cada opción quedó con encabezado y texto completos; se retiraron los comentarios # PENDIENTE. En Jn 5,1-6 se conservó entre corchetes el v. 3b-4 (mención del ángel que agita el agua), tal como lo marca el Leccionario como variante textual opcional en la proclamación. v2 (migración a v1.1): la letanía (n. 1233) migró de bloque suelto a tercera opción de oracion_bendicion con elementos (Regla 3.2), por tratarse de una fórmula estructuralmente distinta (letanía vs. oración corrida). Se retiraron los números de cita del libro al inicio de las rúbricas. Se revisó obligatorio en las rúbricas: solo queda true la que describe la aspersión (acción física concreta); el resto pasan a false. Se quitó la rúbrica n. 1230 (listado de lecturas alternativas), redundante una vez que esas lecturas están modeladas como opciones."
+  version: 5
+  nota: "v5: auditoría de consistencia de selectores. Se agregó display_name faltante al padre de oracion_bendicion (nunca lo había tenido). Se limpiaron 4 display_name que usaban palabras iniciales cortadas con puntos suspensivos (opcion_is_12_1_6, opcion_jn_13_3_15, alternativa_1232, letania_bendicion_agua_1233_opcion) — criterio establecido para toda la biblioteca: frase corta y completa (cita o casi-cita del propio texto), nunca colgando con '...'. Las otras 6 opciones de lectura ya cumplían este criterio y no se tocaron. v4: lectura_evangelio se reestructuró con Regla 3.2 para corregir la aclamación tras la lectura, que dependía del género de la lectura elegida. Las 8 lecturas (la que era 'principal', Jn 7,37-39, más las 7 alternativas) pasaron a ser 8 opciones de igual rango, cada una con su propio elementos agrupando lectura + proclamación (tipo: saludo, actor: lector) + respuesta (tipo: respuesta, actor: asamblea). 3 de las 8 son evangélicas —Jn 7,37-39, Jn 5,1-6, Jn 13,3-15— ('Palabra del Señor.' / 'Gloria a ti, Señor Jesús.'); las 5 restantes —Is 12, Is 55, Si 15, Ap 7, Ap 22— no lo son ('Palabra de Dios.' / 'Te alabamos, Señor.'). Se eliminó el bloque suelto respuesta_palabra_del_senor, que antes traía mal el actor (asamblea en vez de lector) y no distinguía género de lectura. El bloque padre lectura_evangelio quedó sin texto propio, como corresponde cuando todas las opciones son de igual rango. v3: se completaron las 7 lecturas alternativas de lectura_evangelio (Is 12,1-6 / Is 55,1-11 / Si 15,1-6 / Jn 5,1-6 / Ap 7,13-17 / Ap 22,1-5 / Jn 13,3-15), transcriptas por Ricardo desde el Bendicional/Leccionario. Cada opción quedó con encabezado y texto completos; se retiraron los comentarios # PENDIENTE. En Jn 5,1-6 se conservó entre corchetes el v. 3b-4 (mención del ángel que agita el agua), tal como lo marca el Leccionario como variante textual opcional en la proclamación. v2 (migración a v1.1): la letanía (n. 1233) migró de bloque suelto a tercera opción de oracion_bendicion con elementos (Regla 3.2), por tratarse de una fórmula estructuralmente distinta (letanía vs. oración corrida). Se retiraron los números de cita del libro al inicio de las rúbricas. Se revisó obligatorio en las rúbricas: solo queda true la que describe la aspersión (acción física concreta); el resto pasan a false. Se quitó la rúbrica n. 1230 (listado de lecturas alternativas), redundante una vez que esas lecturas están modeladas como opciones."
 
 praenotanda: |
   1223. Un elemento que gozó siempre de gran veneración en la Iglesia y constituye uno de los signos que con frecuencia usa para bendecir a los fieles es el agua. El agua ritualmente bendecida evoca en los fieles el recuerdo de Cristo, que representó para nosotros la culminación de las bendiciones divinas. Él, en efecto, que se dio a sí mismo el apelativo de «agua viva», instituyó para nosotros el bautismo, sacramento del agua, como signo de bendición salvadora.
@@ -142,7 +142,7 @@ contenido:
             texto: "Gloria a ti, Señor Jesús."
 
       - id: opcion_is_12_1_6
-        display_name: "Sacaréis aguas con gozo..."
+        display_name: "Sacaréis aguas con gozo"
         elementos:
           - id: lectura_is_12_1_6_texto
             tipo: lectura
@@ -346,7 +346,7 @@ contenido:
             texto: "Te alabamos, Señor."
 
       - id: opcion_jn_13_3_15
-        display_name: "Os he dado ejemplo..."
+        display_name: "Os he dado ejemplo"
         elementos:
           - id: lectura_jn_13_3_15_texto
             tipo: lectura
@@ -425,13 +425,14 @@ contenido:
     tipo: oracion
     actor: celebrante
     obligatorio: true
+    display_name: "Agua viva de nuestra salvación"
     texto: "Bendito seas, Señor, Dios todopoderoso, que te has dignado bendecirnos y transformarnos interiormente en Cristo, agua viva de nuestra salvación; haz, te pedimos, que los que nos protegemos con la aspersión o el uso de esta agua sintamos, por la fuerza del Espíritu Santo, renovada la juventud de nuestra alma y andemos siempre en una vida nueva. Por Jesucristo, nuestro Señor."
     opciones:
       - id: alternativa_1232
-        display_name: "Señor, Padre santo, dirige tu mirada..."
+        display_name: "Dirige tu mirada sobre nosotros"
         texto: "Señor, Padre santo, dirige tu mirada sobre nosotros, que, redimidos por tu Hijo, hemos nacido de nuevo del agua y del Espíritu Santo en la fuente bautismal; concédenos, te pedimos, que todos los que reciban la aspersión de esta agua queden renovados en el cuerpo y en el alma y te sirvan con limpieza de vida. Por Jesucristo, nuestro Señor."
       - id: letania_bendicion_agua_1233_opcion
-        display_name: "Letanía: Oh, Dios, creador de todas las cosas..."
+        display_name: "Letanía: bendice y purifica a tu Iglesia"
         elementos:
           - id: letania_bendicion_agua_1233
             tipo: letania
