@@ -11,6 +11,7 @@ import '../../../core/theme/app_theme.dart';
 import '../../../domain/onboarding/celebration_tour.dart';
 import '../../../domain/onboarding/tour_finish_dialog.dart';
 import 'package:go_router/go_router.dart';
+import '../../screens/qr/assembly_qr_sheet.dart';
 
 
 class CelebrationScreen extends ConsumerStatefulWidget {
@@ -255,10 +256,11 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
     final assetPath = await _resolvedAssetPathFuture;
     final url = service.generateUrl(assetPath, preferences);
     if (context.mounted) {
-      context.push('/qr', extra: {
-        'url': url,
-        'title': widget.celebrationMeta['title'] ?? '',
-      });
+  showAssemblyQrSheet(
+    context,
+    url: url,
+    celebrationTitle: widget.celebrationMeta['title'] ?? '',
+  );
     }
   },
 ),
