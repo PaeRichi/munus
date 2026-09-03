@@ -10,7 +10,6 @@ import '../../widgets/common/options_pill_button.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../domain/onboarding/celebration_tour.dart';
 import '../../../domain/onboarding/tour_finish_dialog.dart';
-import 'package:go_router/go_router.dart';
 import '../../screens/qr/assembly_qr_sheet.dart';
 
 
