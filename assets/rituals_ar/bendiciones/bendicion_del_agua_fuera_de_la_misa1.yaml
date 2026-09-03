@@ -9,25 +9,32 @@ metadata:
   numeros:
     inicio: ~
     fin: ~
-  fuente: "Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina. Transcripción asistida por curas.com.ar/Bendiciones/Bendicionesplus.htm, ítem 7, cotejada por Ricardo contra la edición impresa."
+  fuente: "Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina. Transcripción asistida por curas.com.ar/Bendiciones/Bendicionesplus.htm, cotejada por Ricardo contra la edición impresa."
   ministros: [sacerdote, diacono]
   idioma: es
-  version: 5
+  version: 3
   nota: |
-    v5: se corrigió el display_name de las dos opciones de la oración de bendición, que habían quedado con palabras iniciales literales del texto ("Dios todopoderoso, fuente y principio de la vida...", "Señor Jesucristo, que vives Resucitado...") en vez de una frase temática corta — inconsistente con el criterio ya usado en el resto de la biblioteca (ej. "El tesoro escondido", "Bendición de una barca"). Se estableció como criterio único para toda la biblioteca, español y argentino: el selector de opciones siempre usa una frase temática corta redactada por Biblioteca, nunca cita bíblica ni palabras iniciales literales — el sacerdote no tiene las citas de memoria, y las palabras iniciales cortadas a mitad de oración son menos legibles de un vistazo que una frase temática.
-
-    v4: se agregó display_name faltante en lectura_evangelio (padre y opción) y en oracion_bendicion_agua (padre) — era el único de los 6 archivos argentinos que había quedado sin este campo, detectado en una auditoría de consistencia de selectores hecha después de encontrar el mismo problema (peor, con letras "b)"/"d)" pegadas del libro) en los archivos españoles bendicion_vehiculo_y_barca.yaml y bendicion_laboratorio_taller_tienda.yaml.
-
     v3: se quitó la monición larga previa a la lectura (tomada de la versión española, n. 1228) — Ricardo aclaró que lo que tenía en mente al pedir sumar "moniciones previas" eran indicaciones cortas tipo rúbrica que aparecen en algunos ritos, no moniciones extensas como las del Bendicional español; esta fuente argentina en particular no trae ninguna indicación corta en ese punto, así que no se agregó nada. Se confirmaron con Ricardo el texto de las invocaciones 3 y 4 de las preces (correspondían al libro físico) y el formato de la segunda oración de bendición agregada en v2. v2: correcciones tras la primera prueba de Ricardo en la app. Se agregó el título "Preces" que faltaba antes del bloque de preces (obligatorio: false, igual criterio que el resto de la biblioteca cuando las preces son opcionales). Se corrigió "a quien te pedimos con fe" → "a quienes te pedimos con fe" en respuesta_fija y en las 4 respuestas de invocaciones. Se ajustó el estilo de las invocaciones 3 y 4 a "Al Señor que... Oremos." (antes "Tú que...", truncadas con "..."). Se agregó como opción la segunda fórmula de la oración de bendición ("Señor Jesucristo, que vives Resucitado..."), transcripta por Ricardo desde el libro físico — se retiró el "R. Amén." que traía embebido, ya cubierto por el bloque de respuesta compartido; se corrigió "Tu que" → "Tú que" y se agregó una coma tras "creyentes". Bug reportado a Programming, no resuelto: el selector de opciones no preselecciona ninguna lectura cuando el bloque padre no tiene texto propio (deja un vacío visual la primera vez que se abre el rito) — confirmado que sigue ocurriendo.
 
-    Primer archivo de la variante regional argentina. Mismo id que la versión española bendicion_del_agua_fuera_de_la_misa.yaml (mismo ritual, carpeta paralela) para no romper favoritos/preferencias al togglear variante. Fuente: Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina — edición oficial, sin advertencia. La transcripción se apoyó en curas.com.ar/Bendiciones/Bendicionesplus.htm, ítem 7, cotejado por Ricardo contra el libro físico.
+    Primer archivo de la variante regional argentina. Mismo id que la versión española bendicion_del_agua_fuera_de_la_misa.yaml (mismo ritual, carpeta paralela) para no romper favoritos/preferencias al togglear variante — ruta exacta pendiente de que Programming la defina. Fuente: Bendiciones, 3ª edición (2011), Oficina del Libro, Conferencia Episcopal Argentina — edición oficial, sin advertencia. La transcripción se apoyó en curas.com.ar/Bendiciones/Bendicionesplus.htm, ítem 7, cotejado por Ricardo contra el libro físico.
+
+    Decisiones tomadas con Ricardo para esta primera transcripción, aplicables como criterio a los próximos cuatro archivos (vivienda, comercio, vehículo, objetos/medalla/imágenes):
+    - El saludo trinitario inicial y su "Amén" no vienen escritos en la fuente web (se asume implícito); se completó con el mismo patrón ya usado en la biblioteca española.
+    - Se agregó la monición previa a la lectura (tomada literalmente de bendicion_del_agua_fuera_de_la_misa.yaml, n. 1228: "Con esta bendición del agua, recordamos a Cristo..."), que no está en la fuente argentina — decisión de Ricardo de sumar riqueza de contenido reutilizando moniciones ya existentes en español cuando el texto no usa "vosotros" y entra sin adaptar el registro.
+    - La aspersión no trae fórmula hablada en la fuente ("Padrenuestro (aspersión)" como renglón suelto); por indicación de Ricardo, se completó con la misma fórmula ya usada en la versión española ("Que esta agua nos recuerde nuestro bautismo..."), separada en bloques de rúbrica + bendición + respuesta.
+    - El Padrenuestro se reubicó al final del rito, inmediatamente antes del saludo y la bendición final — no donde lo pone la fuente web (intercalado con la aspersión) — por indicación expresa de Ricardo: el Padrenuestro del rito se reza todos juntos al final; durante el recorrido de la aspersión (si el lugar es grande, como un comercio) pueden rezarse otras oraciones sueltas, pero eso no se modela acá.
+    - Las invocaciones de las preces SÍ son oraciones completas en el libro físico (la web las truncaba con puntos suspensivos por error de transcripción propia). Formato confirmado por Ricardo: cada invocación termina en "Oremos." como parte del texto (cue de respuesta, mismo patrón que la Oración Universal de la Misa), seguida de la respuesta fija. Las dos primeras invocaciones ya están con el texto exacto del libro; las otras dos (Espíritu de la Verdad / vida en abundancia) quedan con el texto truncado de la web como placeholder, marcadas # PENDIENTE, hasta que Ricardo confirme la redacción completa del libro físico.
+    - La bendición final conserva la fórmula propia de esta fuente ("Los bendiga Dios todopoderoso...", distinta de la ya usada en la biblioteca española "Y la bendición de Dios todopoderoso... descienda sobre vosotros") — se respeta como parte de la identidad de la variante argentina, no se homogeneiza con España. La alternativa singular "(Te)" que trae la fuente para uno solo destinatario no se modela como opción — es una nota de adaptación libre, mismo criterio ya usado en la biblioteca para paréntesis de este tipo (ej. "N.", "(en su advocación de...)").
+    - Se usa "✠" en vez de "+" para la señal de la cruz en la oración de bendición y en la bendición final, siguiendo el estilo ya establecido en el resto de la biblioteca — indicación de Ricardo: el libro físico sí trae el símbolo, la web lo simplificó a "+".
+    - Sin casos de Regla 3.2: las dos lecturas de la fuente (Jn 7,37-39 y Jn 3,5-6) son ambas evangélicas, caso "limpio" — la aclamación tras la lectura queda igual para las dos opciones.
+    - PENDIENTE: confirmar si vale la pena sumar más lecturas alternativas de la versión española (hay 7 en total: Is 12, Is 55, Si 15, Jn 5, Ap 7, Ap 22, Jn 13) a las 2 que ya trae la fuente argentina — no se agregaron todavía, a la espera de que Ricardo confirme si corresponde para este archivo en particular.
 
 contenido:
   - id: rubrica_titulo_rito
     tipo: titulo
     actor: celebrante
     obligatorio: true
-    texto: "RITO DE LA BENDICIÓN — Ritos iniciales"
+    texto: "Rito de la bendición — Ritos iniciales"
 
   - id: saludo_inicial_trinitario
     tipo: saludo
@@ -75,7 +82,6 @@ contenido:
     tipo: lectura
     actor: lector
     obligatorio: true
-    display_name: "El que tenga sed, que venga a mí"
     referencia: "Jn 7, 37-39"
     encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Juan. «El que tenga sed, que venga a mí»."
     texto: |
@@ -84,7 +90,6 @@ contenido:
       —«El que tenga sed, venga a mí; y beba el que cree en mí». Como dice la Escritura: «De su seno brotarán manantiales de agua viva». Él se refería al Espíritu que debían recibir los que creyeran en él, porque el Espíritu no había sido dado todavía, ya que Jesús aún no había sido glorificado.
     opciones:
       - id: opcion_jn_3_5_6
-        display_name: "El que no nace del agua y del Espíritu"
         referencia: "Jn 3, 5-6"
         encabezado: "Escuchen ahora, hermanos, las palabras del santo Evangelio según san Juan. «El que no nace del agua y del Espíritu no puede entrar en el Reino de Dios»."
         texto: |
@@ -136,11 +141,10 @@ contenido:
     tipo: oracion
     actor: celebrante
     obligatorio: true
-    display_name: "Perdón y protección por el bautismo"
     texto: "Dios todopoderoso, que eres la fuente y el principio de la vida del cuerpo y del espíritu, bendice ✠ esta agua que vamos a utilizar con fe para implorar el perdón de nuestros pecados y para alcanzar la protección de tu gracia contra todas las enfermedades y asechanzas del pecado. Concédenos, Señor, que recordemos siempre que somos bautizados y que vivamos de acuerdo con la dignidad de la vida nueva propia de los cristianos. Por Jesucristo, nuestro Señor."
     opciones:
       - id: oracion_bendicion_agua_resucitado
-        display_name: "El Espíritu, agua viva que renueva"
+        display_name: "Señor Jesucristo, que vives Resucitado..."
         texto: "Señor Jesucristo, que vives Resucitado, bendice ✠ por tu poder esta agua que vamos a utilizar con fe y concédenos que el Espíritu Santo, que es el agua viva que prometiste a los creyentes, nos transforme en nuevas creaturas. Tú que vives y reinas por los siglos de los siglos."
 
   - id: respuesta_amen_oracion_bendicion

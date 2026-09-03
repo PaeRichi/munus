@@ -11,8 +11,8 @@ metadata:
     fin: 153
   ministros: [sacerdote]
   idioma: es
-  version: 5
-  nota: "v5: se separó respuesta_palabra_del_senor_uncion (mal modelada como tipo: respuesta / actor: asamblea con texto 'Palabra del Señor') en dos bloques: proclamacion_palabra_del_senor_uncion (tipo: saludo, actor: lector) y respuesta_gloria_a_ti_uncion (tipo: respuesta, actor: asamblea, texto 'Gloria a ti, Señor Jesús'). Las 5 lecturas del archivo (principal + 4 opciones) son todas evangélicas, por lo que no hizo falta Regla 3.2 — la aclamación es fija para todo el bloque. v4: se agregó display_name al bloque padre oracion_despues_uncion_144 ('Para cualquier enfermo — 1') ahora que Programming habilitó el campo también a nivel del bloque padre (antes solo existía dentro de opciones); se renombró oracion_145_redimir_hombres a 'Para cualquier enfermo — 2' para que ambas fórmulas genéricas queden distinguibles entre sí, siguiendo el mismo patrón de numeración ya usado en el archivo para las fórmulas del óleo. v3: se cambió el display_name de oracion_145_redimir_hombres de 'Señor Jesucristo, que para redimir...' (estilo texto largo) a 'Para cualquier enfermo', para distinguirla claramente de las otras oraciones alternativas que sí están etiquetadas por circunstancia específica (anciano, peligro grave, viático, agonía). v2: Actualizado a MUNUS YAML Spec v1.1: saludos iniciales (nn. 125-127), monición/oración antes de la Unción (nn. 129-130), acto penitencial (nn. 131-134), letanía por el enfermo (nn. 136-138), bendición del óleo (nn. 140-142) y bendición final (nn. 151-153) migrados a opciones con elementos (Regla 3.2), por tratarse de variantes estructuralmente distintas entre sí, no solo de contenido. Se retiraron las marcas literales 'V.'/'R.' de los textos de saludo y respuesta, redundantes con tipo/actor. Se agregaron display_name a las opciones con elementos y a las de texto largo. Se retiraron los números de cita del libro al inicio de rúbricas, títulos y el gesto de imposición de manos (se conservaron las referencias cruzadas a otros números dentro del texto, ej. 'n. 259', 'nn. 260 ss', 'n. 21', 'nn. 105-110')."
+  version: 6
+  nota: "v6: auditoría de consistencia de selectores. Se agregó display_name faltante a 4 bloques padre que no lo tenían (saludo_inicial, respuesta_gracia_y_paz, monicion_129_santiago, lectura_mt_8_centurion) y a 3 opciones que tampoco lo tenían (saludo_paz_contigo, respuesta_gracia_y_paz_alt, y las 4 lecturas alternativas de lectura_mt_8_centurion). Se quitaron puntos suspensivos colgantes en 9 display_name que usaban palabras iniciales cortadas (saludo_gracia_comunion, saludo_gracia_y_paz, oracion_130_alternativa, los 3 formularios de letania_por_el_enfermo, y las 3 fórmulas de bendicion_final) — mismo criterio ya aplicado en toda la biblioteca: frase corta y completa, cita o casi-cita del texto, nunca colgando con '...'. No se tocaron acto_penitencial, bendicion_del_oleo ni oracion_despues_uncion_144, que ya usaban un criterio interno consistente y válido (fórmulas numeradas o por circunstancia pastoral). v5: se separó respuesta_palabra_del_senor_uncion (mal modelada como tipo: respuesta / actor: asamblea con texto 'Palabra del Señor') en dos bloques: proclamacion_palabra_del_senor_uncion (tipo: saludo, actor: lector) y respuesta_gloria_a_ti_uncion (tipo: respuesta, actor: asamblea, texto 'Gloria a ti, Señor Jesús'). Las 5 lecturas del archivo (principal + 4 opciones) son todas evangélicas, por lo que no hizo falta Regla 3.2 — la aclamación es fija para todo el bloque. v4: se agregó display_name al bloque padre oracion_despues_uncion_144 ('Para cualquier enfermo — 1') ahora que Programming habilitó el campo también a nivel del bloque padre (antes solo existía dentro de opciones); se renombró oracion_145_redimir_hombres a 'Para cualquier enfermo — 2' para que ambas fórmulas genéricas queden distinguibles entre sí, siguiendo el mismo patrón de numeración ya usado en el archivo para las fórmulas del óleo. v3: se cambió el display_name de oracion_145_redimir_hombres de 'Señor Jesucristo, que para redimir...' (estilo texto largo) a 'Para cualquier enfermo', para distinguirla claramente de las otras oraciones alternativas que sí están etiquetadas por circunstancia específica (anciano, peligro grave, viático, agonía). v2: Actualizado a MUNUS YAML Spec v1.1: saludos iniciales (nn. 125-127), monición/oración antes de la Unción (nn. 129-130), acto penitencial (nn. 131-134), letanía por el enfermo (nn. 136-138), bendición del óleo (nn. 140-142) y bendición final (nn. 151-153) migrados a opciones con elementos (Regla 3.2), por tratarse de variantes estructuralmente distintas entre sí, no solo de contenido. Se retiraron las marcas literales 'V.'/'R.' de los textos de saludo y respuesta, redundantes con tipo/actor. Se agregaron display_name a las opciones con elementos y a las de texto largo. Se retiraron los números de cita del libro al inicio de rúbricas, títulos y el gesto de imposición de manos (se conservaron las referencias cruzadas a otros números dentro del texto, ej. 'n. 259', 'nn. 260 ss', 'n. 21', 'nn. 105-110')."
 
 contenido:
   - id: rubrica_preparativos
@@ -37,12 +37,14 @@ contenido:
     tipo: saludo
     actor: celebrante
     obligatorio: true
+    display_name: "La paz del Señor a esta casa"
     texto: "La paz del Señor a esta casa y a todos los aquí presentes."
     opciones:
       - id: saludo_paz_contigo
+        display_name: "La paz del Señor sea con vosotros"
         texto: "La paz del Señor sea con vosotros (contigo)."
       - id: saludo_gracia_comunion
-        display_name: "La gracia de nuestro Señor..."
+        display_name: "La gracia de nuestro Señor Jesucristo"
         elementos:
           - id: linea_gracia_comunion
             tipo: saludo
@@ -55,7 +57,7 @@ contenido:
             obligatorio: true
             texto: "Y con tu espíritu."
       - id: saludo_gracia_y_paz
-        display_name: "La gracia y la paz..."
+        display_name: "La gracia y la paz de Dios, nuestro Padre"
         elementos:
           - id: linea_gracia_y_paz
             tipo: saludo
@@ -66,9 +68,11 @@ contenido:
             tipo: respuesta
             actor: asamblea
             obligatorio: true
+            display_name: "Bendito sea Dios, Padre de nuestro Señor Jesucristo"
             texto: "Bendito sea Dios, Padre de nuestro Señor Jesucristo."
             opciones:
               - id: respuesta_gracia_y_paz_alt
+                display_name: "Y con tu espíritu"
                 texto: "Y con tu espíritu."
 
   - id: rubrica_128_aspersion
@@ -93,10 +97,11 @@ contenido:
     tipo: monicion
     actor: celebrante
     obligatorio: true
+    display_name: "Monición sobre la Unción"
     texto: "Queridos hermanos: En el Evangelio leemos que nuestro Señor Jesucristo curaba a los enfermos, que acudían a él en busca de salud. El mismo, que durante su vida sufrió tanto por los hombres, está ahora presente en medio de nosotros, reunidos en su nombre, y nos dice por medio del apóstol Santiago: «¿Está enfermo alguno de vosotros? Llame a los presbíteros de la Iglesia, y que recen sobre él, después de ungirlo con óleo, en nombre del Señor. Y la oración de fe salvará al enfermo, y el Señor lo curará, y, si ha cometido pecado, lo perdonará». Pongamos, pues, a nuestro hermano enfermo en manos de Cristo, que lo ama y puede curarlo, para que le conceda alivio y salud."
     opciones:
       - id: oracion_130_alternativa
-        display_name: "Señor, Dios nuestro..."
+        display_name: "Oración en lugar de la monición"
         elementos:
           - id: oracion_130_escucha
             tipo: oracion
@@ -242,6 +247,7 @@ contenido:
     tipo: lectura
     actor: lector
     obligatorio: true
+    display_name: "Basta que lo digas de palabra"
     referencia: "Mt 8, 5-10.13"
     encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según San Mateo."
     texto: |
@@ -266,21 +272,25 @@ contenido:
       —Vuelve a casa, que se cumpla lo que has creído.
     opciones:
       - id: lectura_jn_10_buen_pastor
+        display_name: "Yo soy el Buen Pastor"
         referencia: "Jn 10, 14-18"
         encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según San Juan. «El Buen Pastor da su vida por sus ovejas»."
         texto: |
           En aquel tiempo, dijo Jesús: «Yo soy el Buen Pastor: conozco a mis ovejas, y mis ovejas me conocen a mí —como el Padre me conoce a mí y como yo conozco al Padre— y doy mi vida por las ovejas. Tengo, además, otras ovejas que no son de este corral y a las que debo también conducir: ellas oirán mi voz, y así habrá un solo Rebaño y un solo Pastor. El Padre me ama porque yo doy mi vida para recobrarla. Nadie me la quita, sino que la doy por mí mismo. Tengo el poder de darla y de recobrarla; éste es el mandato que recibí de mi Padre».
       - id: lectura_mc_2_paralitico
+        display_name: "Son perdonados tus pecados"
         referencia: "Mc 2, 1-12"
         encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según San Marcos. «Y al ver su fe, dijo: son perdonados tus pecados»."
         texto: |
           En aquel tiempo: Entró Jesús en Cafarnaún, después de algunos días, y se supo que estaba en casa. Y acudieron tantos que ni a la puerta cabían, y él les dirigía la palabra. Le trajeron un paralítico, llevado entre cuatro. Y no pudiendo presentárselo a causa de la multitud, levantaron la techumbre donde él estaba, hicieron un boquete, y descolgaron la camilla con el paralítico. Al ver Jesús su fe, dijo al paralítico: «Hijo, son perdonados tus pecados». Algunos de los escribas allí sentados criticaban entre sí, diciendo: «¿Cómo habla así éste? ¡Blasfema! ¿Quién puede perdonar los pecados, sino sólo Dios?». Al punto, conociendo Jesús en su espíritu lo que pensaban, les dijo: «¿Por qué pensáis eso en vuestros corazones? ¿Qué es más fácil decir al paralítico: Perdonados son tus pecados, o decirle: Levántate, carga con tu camilla y anda? Pues para que veáis que el Hijo del Hombre tiene poder para perdonar pecados sobre la tierra», dijo al paralítico: «Levántate, toma tu camilla y vete a tu casa». El paralítico se levantó y al punto, cargando con la camilla, salió a la vista de todos, de modo que todos se maravillaron, y glorificaban a Dios, diciendo: «Jamás hemos visto cosa igual».
       - id: lectura_mt_8_leproso
+        display_name: "Señor, si quieres, puedes limpiarme"
         referencia: "Mt 8, 1-4"
         encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según San Mateo. «Señor, si quieres, puedes limpiarme»."
         texto: |
           Cuando Jesús bajó del monte, lo siguieron las multitudes. Y he aquí que se le acerca un leproso y se postra ante él, diciendo: «Señor, si quieres, puedes limpiarme». Tendiendo él la mano, lo tocó y dijo: «Quiero. Queda limpio». Y al instante quedó limpio de su lepra. Jesús le dice: «Mira, no se lo digas a nadie; pero ve, muéstrate al sacerdote y ofrece el don que ordenó Moisés, para que le sirva de testimonio».
       - id: lectura_mt_8_suegra_pedro
+        display_name: "Él cargó sobre sí nuestras enfermedades"
         referencia: "Mt 8, 14-17"
         encabezado: "Escuchad ahora, hermanos, las palabras del santo Evangelio según San Mateo. «Él cargó sobre sí nuestras enfermedades»."
         texto: |
@@ -322,7 +332,7 @@ contenido:
     obligatorio: false
     opciones:
       - id: formulario_136_primero
-        display_name: "Con humildad y confianza..."
+        display_name: "Con humildad y confianza invoquemos al Señor"
         elementos:
           - id: monicion_letania_1
             tipo: monicion
@@ -347,7 +357,7 @@ contenido:
               - invocacion: "Da vida y salud a quien en tu nombre vamos a imponer las manos."
                 respuesta: "Te rogamos, óyenos."
       - id: formulario_137_segundo
-        display_name: "Tú, que soportaste..."
+        display_name: "Tú, que soportaste nuestros sufrimientos"
         elementos:
           - id: letania_137_segunda
             tipo: letania
@@ -361,7 +371,7 @@ contenido:
               - invocacion: "Tú, que mandaste a los apóstoles imponer las manos sobre los enfermos, Señor, ten piedad."
                 respuesta: "Señor, ten piedad."
       - id: formulario_138_tercero
-        display_name: "Oremos al Señor..."
+        display_name: "Oremos al Señor por el enfermo"
         elementos:
           - id: monicion_letania_3
             tipo: monicion
@@ -601,7 +611,7 @@ contenido:
     obligatorio: false
     opciones:
       - id: bendicion_final_formula_1
-        display_name: "Que Dios Padre te bendiga..."
+        display_name: "Que Dios Padre te bendiga"
         elementos:
           - id: bendicion_final_151_padre
             tipo: bendicion
@@ -664,7 +674,7 @@ contenido:
             obligatorio: true
             texto: "Amén."
       - id: bendicion_final_formula_2
-        display_name: "Jesucristo, el Señor, esté..."
+        display_name: "Jesucristo, el Señor, esté a tu lado"
         elementos:
           - id: bendicion_final_152_defenderte
             tipo: bendicion
@@ -707,7 +717,7 @@ contenido:
             obligatorio: true
             texto: "Amén."
       - id: bendicion_final_formula_3
-        display_name: "La bendición de Dios todopoderoso..."
+        display_name: "La bendición de Dios todopoderoso"
         elementos:
           - id: bendicion_final_153
             tipo: bendicion
