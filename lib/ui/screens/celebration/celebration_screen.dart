@@ -323,12 +323,15 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
                 _hasSeenTourFuture.then(_maybeShowCelebrationTour);
               }
 
-              return ListView(
-                controller: _scrollController,
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 24, vertical: 32),
-                children: elementWidgets,
-              );
+              return PrimaryScrollController(
+  controller: _scrollController,
+  child: ListView(
+    controller: _scrollController,
+    padding: const EdgeInsets.symmetric(
+        horizontal: 24, vertical: 32),
+    children: elementWidgets,
+  ),
+);
             },
           );
         },

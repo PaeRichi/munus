@@ -155,113 +155,118 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 items.indexWhere((i) => i['type'] == 'celebration');
             _listKeyAssigned = firstCelebrationIndex != -1;
 
-            return ListView.builder(
+            return PrimaryScrollController(
               controller: _scrollController,
-              padding: const EdgeInsets.symmetric(horizontal: 28),
-              itemCount: items.length + 2,
-              itemBuilder: (context, index) {
-                if (index == 0) {
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 52, bottom: 34),
-                    child: Text(
-                      'MUNUS',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: MunusFonts.display,
-                        fontSize: 52,
-                        fontWeight: FontWeight.w200,
-                        color: MunusColors.textMain,
-                        letterSpacing: 12,
+              child: ListView.builder(
+                controller: _scrollController,
+                padding: const EdgeInsets.symmetric(horizontal: 28),
+                itemCount: items.length + 2,
+                itemBuilder: (context, index) {
+                  if (index == 0) {
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 52, bottom: 34),
+                      child: Text(
+                        'MUNUS',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: MunusFonts.display,
+                          fontSize: 52,
+                          fontWeight: FontWeight.w200,
+                          color: MunusColors.textMain,
+                          letterSpacing: 12,
+                        ),
                       ),
-                    ),
-                  );
-                }
+                    );
+                  }
 
-                if (index == items.length + 1) {
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 40, bottom: 24),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Traducción:',
-                          style: TextStyle(
-                            fontFamily: MunusFonts.ui,
-                            fontSize: 12.5,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 0.5,
-                            color: MunusColors.textDiscrete,
+                  if (index == items.length + 1) {
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 40, bottom: 24),
+                      child: Column(
+                        children: [
+                          Text(
+                            'Traducción:',
+                            style: TextStyle(
+                              fontFamily: MunusFonts.ui,
+                              fontSize: 12.5,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 0.5,
+                              color: MunusColors.textDiscrete,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 6),
-                        KeyedSubtree(
-                          key: _regionalToggleKey,
-                          child: const RegionalVariantToggle(dense: true),
-                        ),
-                        const SizedBox(height: 36),
-                        GestureDetector(
-                          onTap: () => context.push('/about'),
-                          child: Icon(
-                            Icons.info_outline,
-                            color: MunusColors.textDiscrete,
-                            size: 18,
+                          const SizedBox(height: 6),
+                          KeyedSubtree(
+                            key: _regionalToggleKey,
+                            child: const RegionalVariantToggle(dense: true),
                           ),
-                        ),
-                      ],
-                    ),
-                  );
-                }
+                          const SizedBox(height: 36),
+                          GestureDetector(
+                            onTap: () => context.push('/about'),
+                            child: Icon(
+                              Icons.info_outline,
+                              color: MunusColors.textDiscrete,
+                              size: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
 
-                final itemIndex = index - 1;
-                final item = items[itemIndex];
+                  final itemIndex = index - 1;
+                  final item = items[itemIndex];
 
-                if (item['type'] == 'header') {
-                  return Padding(
-                    key: ValueKey(item['title']),
-                    padding: const EdgeInsets.only(top: 28, bottom: 8),
-                    child: Text(
+                  if (item['type'] == 'header') {
+                    return Padding(
+                      key: ValueKey(item['title']),
+                      padding: const EdgeInsets.only(top: 28, bottom: 8),
+                      child: Text(
+                        item['title']!,
+                        style: MunusTextStyles.sectionTitle(
+                            ref.watch(fontSizeProvider)),
+                      ),
+                    );
+                  }
+
+                  final isFavorite = favorites.contains(item['id']);
+                  final tile = ListTile(
+                    key: ValueKey(item['id']),
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(
                       item['title']!,
-                      style: MunusTextStyles.sectionTitle(
-                          ref.watch(fontSizeProvider)),
+                      style:
+                          MunusTextStyles.bodyText(ref.watch(fontSizeProvider)),
+                    ),
+                    trailing: isFavorite
+                        ? _FavoriteRibbon(
+                            onRemove: () async {
+                              final service =
+                                  ref.read(favoritesServiceProvider);
+                              await service.toggleFavorite(item['id']!);
+                              ref.invalidate(favoritesProvider);
+                            },
+                          )
+                        : Icon(
+                            Icons.chevron_right,
+                            color: MunusColors.textDiscrete,
+                            size: 22,
+                          ),
+                    onTap: () => context.push(
+                      '/category/${item['categoryId']}/celebration',
+                      extra: {
+                        'title': item['title'],
+                        'assetPath': item['assetPath'],
+                        'id': item['id'],
+                      },
                     ),
                   );
-                }
 
-                final isFavorite = favorites.contains(item['id']);
-                final tile = ListTile(
-                  key: ValueKey(item['id']),
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(
-                    item['title']!,
-                    style: MunusTextStyles.bodyText(ref.watch(fontSizeProvider)),
-                  ),
-                  trailing: isFavorite
-                      ? _FavoriteRibbon(
-                          onRemove: () async {
-                            final service = ref.read(favoritesServiceProvider);
-                            await service.toggleFavorite(item['id']!);
-                            ref.invalidate(favoritesProvider);
-                          },
-                        )
-                      : Icon(
-                          Icons.chevron_right,
-                          color: MunusColors.textDiscrete,
-                          size: 22,
-                        ),
-                  onTap: () => context.push(
-                    '/category/${item['categoryId']}/celebration',
-                    extra: {
-                      'title': item['title'],
-                      'assetPath': item['assetPath'],
-                      'id': item['id'],
-                    },
-                  ),
-                );
-
-                if (itemIndex == firstCelebrationIndex) {
-                  return KeyedSubtree(key: _ritualsListKey, child: tile);
-                }
-                return tile;
-              },
+                  if (itemIndex == firstCelebrationIndex) {
+                    return KeyedSubtree(key: _ritualsListKey, child: tile);
+                  }
+                  return tile;
+                },
+              ),
             );
           },
         ),
