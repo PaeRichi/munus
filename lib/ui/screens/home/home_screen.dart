@@ -158,7 +158,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             return PrimaryScrollController(
               controller: _scrollController,
               child: ListView.builder(
-                controller: _scrollController,
                 padding: const EdgeInsets.symmetric(horizontal: 28),
                 itemCount: items.length + 2,
                 itemBuilder: (context, index) {

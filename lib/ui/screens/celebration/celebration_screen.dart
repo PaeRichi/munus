@@ -327,7 +327,6 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
               return PrimaryScrollController(
   controller: _scrollController,
   child: ListView(
-    controller: _scrollController,
     padding: const EdgeInsets.symmetric(
         horizontal: 24, vertical: 32),
     children: elementWidgets,
