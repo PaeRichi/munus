@@ -94,70 +94,78 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       _hasSeenTourFuture.then(_maybeShowHomeTour);
     }
 
-    return Scaffold(
-      body: SafeArea(
-        child: favoritesAsync.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (_, _) =>
-              const Center(child: Text('Error al cargar favoritos')),
-          data: (favorites) {
-            final items = <Map<String, String?>>[];
+    // El PrimaryScrollController tiene que envolver el Scaffold ENTERO,
+    // no solo el ListView de más abajo. El gesto nativo de iOS "tocar la
+    // barra de estado para volver arriba" lo maneja el Scaffold, y busca
+    // el PrimaryScrollController mirando hacia sus ANCESTROS -- nunca
+    // hacia adentro de su propio body. Si el wrapper queda adentro del
+    // body (como estaba antes), el Scaffold nunca lo encuentra y el
+    // gesto no funciona, aunque el ListView scrollee perfecto por todo
+    // lo demás.
+    return PrimaryScrollController(
+      controller: _scrollController,
+      child: Scaffold(
+        body: SafeArea(
+          child: favoritesAsync.when(
+            loading: () => const Center(child: CircularProgressIndicator()),
+            error: (_, _) =>
+                const Center(child: Text('Error al cargar favoritos')),
+            data: (favorites) {
+              final items = <Map<String, String?>>[];
 
-            // Sección favoritos
-            if (favorites.isNotEmpty) {
-              items.add({'type': 'header', 'title': 'FRECUENTES'});
-              for (final category in categories) {
-                final celebrations =
-                    repository.getCelebrationsByCategory(category.id);
-                for (final celebration in celebrations) {
-                  if (favorites.contains(celebration['id'])) {
-                    items.add({
-                      'type': 'celebration',
-                      'title': celebration['title'],
-                      'categoryId': category.id,
-                      'id': celebration['id'],
-                      'assetPath': celebration['assetPath'],
-                    });
+              // Sección favoritos
+              if (favorites.isNotEmpty) {
+                items.add({'type': 'header', 'title': 'FRECUENTES'});
+                for (final category in categories) {
+                  final celebrations =
+                      repository.getCelebrationsByCategory(category.id);
+                  for (final celebration in celebrations) {
+                    if (favorites.contains(celebration['id'])) {
+                      items.add({
+                        'type': 'celebration',
+                        'title': celebration['title'],
+                        'categoryId': category.id,
+                        'id': celebration['id'],
+                        'assetPath': celebration['assetPath'],
+                      });
+                    }
                   }
                 }
               }
-            }
 
-            // Secciones por categoría
-            for (final category in categories) {
-              final celebrations =
-                  repository.getCelebrationsByCategory(category.id);
-              final nonFavoriteCelebrations = celebrations
-                  .where((c) => !favorites.contains(c['id']))
-                  .toList();
+              // Secciones por categoría
+              for (final category in categories) {
+                final celebrations =
+                    repository.getCelebrationsByCategory(category.id);
+                final nonFavoriteCelebrations = celebrations
+                    .where((c) => !favorites.contains(c['id']))
+                    .toList();
 
-              if (nonFavoriteCelebrations.isEmpty) continue;
+                if (nonFavoriteCelebrations.isEmpty) continue;
 
-              items.add({
-                'type': 'header',
-                'title': category.title.toUpperCase(),
-              });
-              for (final celebration in nonFavoriteCelebrations) {
                 items.add({
-                  'type': 'celebration',
-                  'title': celebration['title'],
-                  'categoryId': category.id,
-                  'id': celebration['id'],
-                  'assetPath': celebration['assetPath'],
+                  'type': 'header',
+                  'title': category.title.toUpperCase(),
                 });
+                for (final celebration in nonFavoriteCelebrations) {
+                  items.add({
+                    'type': 'celebration',
+                    'title': celebration['title'],
+                    'categoryId': category.id,
+                    'id': celebration['id'],
+                    'assetPath': celebration['assetPath'],
+                  });
+                }
               }
-            }
 
-            // Primer ítem de tipo "celebration" -- ahí (y solo ahí) va el
-            // GlobalKey del tour, nunca en el ListView entero (ver nota en
-            // home_tour.dart sobre el bug de las franjas grises).
-            final firstCelebrationIndex =
-                items.indexWhere((i) => i['type'] == 'celebration');
-            _listKeyAssigned = firstCelebrationIndex != -1;
+              // Primer ítem de tipo "celebration" -- ahí (y solo ahí) va el
+              // GlobalKey del tour, nunca en el ListView entero (ver nota
+              // en home_tour.dart sobre el bug de las franjas grises).
+              final firstCelebrationIndex =
+                  items.indexWhere((i) => i['type'] == 'celebration');
+              _listKeyAssigned = firstCelebrationIndex != -1;
 
-            return PrimaryScrollController(
-              controller: _scrollController,
-              child: ListView.builder(
+              return ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 28),
                 itemCount: items.length + 2,
                 itemBuilder: (context, index) {
@@ -233,8 +241,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     contentPadding: EdgeInsets.zero,
                     title: Text(
                       item['title']!,
-                      style:
-                          MunusTextStyles.bodyText(ref.watch(fontSizeProvider)),
+                      style: MunusTextStyles.bodyText(
+                          ref.watch(fontSizeProvider)),
                     ),
                     trailing: isFavorite
                         ? _FavoriteRibbon(
@@ -265,14 +273,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   }
                   return tile;
                 },
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );
   }
 }
+
 class _FavoriteRibbon extends StatefulWidget {
   final VoidCallback onRemove;
 

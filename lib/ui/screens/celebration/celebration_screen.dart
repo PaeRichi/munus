@@ -195,146 +195,152 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
     final preferencesAsync =
         ref.watch(celebrationPreferencesProvider(celebrationId));
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.celebrationMeta['title']!,
-    style: const TextStyle(
-      fontFamily: 'CormorantGaramond',
-      fontSize: 24,
-      fontWeight: FontWeight.w400,
-      color: MunusColors.textMain,
+    // El PrimaryScrollController tiene que envolver el Scaffold ENTERO,
+    // no solo el ListView del cuerpo. Ver la nota completa en
+    // home_screen.dart -- el Scaffold busca el PrimaryScrollController
+    // mirando hacia sus ancestros, nunca hacia adentro de su propio body,
+    // así que el wrapper tiene que estar afuera del Scaffold para que el
+    // gesto de "tocar arriba para volver al inicio" funcione en iOS.
+    return PrimaryScrollController(
+      controller: _scrollController,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.celebrationMeta['title']!,
+      style: const TextStyle(
+        fontFamily: 'CormorantGaramond',
+        fontSize: 24,
+        fontWeight: FontWeight.w400,
+        color: MunusColors.textMain,
+      ),
     ),
-  ),
-  actions: [
-  Consumer(
-    builder: (context, ref, _) {
-      final favoritesAsync = ref.watch(favoritesProvider);
-      final isFavorite = favoritesAsync.maybeWhen(
-        data: (favorites) => favorites.contains(celebrationId),
-        orElse: () => false,
-      );
-      return IconButton(
-        key: _favoritoKey,
-        icon: TweenAnimationBuilder<double>(
-          key: ValueKey(isFavorite),
-          tween: Tween(begin: 1.5, end: 1.0),
-          duration: const Duration(milliseconds: 280),
-          curve: Curves.easeOutBack,
-          builder: (context, scale, child) => Transform.scale(
-            scale: scale,
-            child: child,
-          ),
-          child: Opacity(
-            opacity: isFavorite ? 1.0 : 0.35,
-            child: Image.asset(
-              'assets/images/tirita_sola.png',
-              height: 30,
+    actions: [
+    Consumer(
+      builder: (context, ref, _) {
+        final favoritesAsync = ref.watch(favoritesProvider);
+        final isFavorite = favoritesAsync.maybeWhen(
+          data: (favorites) => favorites.contains(celebrationId),
+          orElse: () => false,
+        );
+        return IconButton(
+          key: _favoritoKey,
+          icon: TweenAnimationBuilder<double>(
+            key: ValueKey(isFavorite),
+            tween: Tween(begin: 1.5, end: 1.0),
+            duration: const Duration(milliseconds: 280),
+            curve: Curves.easeOutBack,
+            builder: (context, scale, child) => Transform.scale(
+              scale: scale,
+              child: child,
+            ),
+            child: Opacity(
+              opacity: isFavorite ? 1.0 : 0.35,
+              child: Image.asset(
+                'assets/images/tirita_sola.png',
+                height: 30,
+              ),
             ),
           ),
-        ),
-        tooltip: isFavorite
-            ? 'Quitar de frecuentes'
-            : 'Agregar a frecuentes',
-        onPressed: () async {
-          final service = ref.read(favoritesServiceProvider);
-          await service.toggleFavorite(celebrationId);
-          ref.invalidate(favoritesProvider);
-        },
-      );
+          tooltip: isFavorite
+              ? 'Quitar de frecuentes'
+              : 'Agregar a frecuentes',
+          onPressed: () async {
+            final service = ref.read(favoritesServiceProvider);
+            await service.toggleFavorite(celebrationId);
+            ref.invalidate(favoritesProvider);
+          },
+        );
+      },
+    ),
+    IconButton(
+    key: _qrKey,
+    icon: const Icon(Icons.qr_code),
+    color: MunusColors.textDiscrete,
+    tooltip: 'Mostrar QR para la asamblea',
+    onPressed: () async {
+      final service = ref.read(assemblyUrlServiceProvider);
+      final prefsService = ref.read(celebrationPreferencesServiceProvider);
+      final preferences = await prefsService.getPreferences(celebrationId);
+      final assetPath = await _resolvedAssetPathFuture;
+      final url = service.generateUrl(assetPath, preferences);
+      if (context.mounted) {
+    showAssemblyQrSheet(
+      context,
+      url: url,
+      celebrationTitle: widget.celebrationMeta['title'] ?? '',
+    );
+      }
     },
   ),
-  IconButton(
-  key: _qrKey,
-  icon: const Icon(Icons.qr_code),
-  color: MunusColors.textDiscrete,
-  tooltip: 'Mostrar QR para la asamblea',
-  onPressed: () async {
-    final service = ref.read(assemblyUrlServiceProvider);
-    final prefsService = ref.read(celebrationPreferencesServiceProvider);
-    final preferences = await prefsService.getPreferences(celebrationId);
-    final assetPath = await _resolvedAssetPathFuture;
-    final url = service.generateUrl(assetPath, preferences);
-    if (context.mounted) {
-  showAssemblyQrSheet(
-    context,
-    url: url,
-    celebrationTitle: widget.celebrationMeta['title'] ?? '',
-  );
-    }
-  },
-),
-  IconButton(
-    icon: const Text('A-',
-        style: TextStyle(
-            fontWeight: FontWeight.w500,
-            color: MunusColors.textDiscrete)),
-    onPressed: () =>
-        ref.read(fontSizeProvider.notifier).decrease(),
+    IconButton(
+      icon: const Text('A-',
+          style: TextStyle(
+              fontWeight: FontWeight.w500,
+              color: MunusColors.textDiscrete)),
+      onPressed: () =>
+          ref.read(fontSizeProvider.notifier).decrease(),
+    ),
+    IconButton(
+      icon: const Text('A+',
+          style: TextStyle(
+              fontWeight: FontWeight.w500,
+              color: MunusColors.textDiscrete)),
+      onPressed: () =>
+          ref.read(fontSizeProvider.notifier).increase(),
+    ),
+    IconButton(
+      icon: Icon(
+    showOptional ? Icons.visibility : Icons.visibility_off,
+    color: MunusColors.textRubric,
   ),
-  IconButton(
-    icon: const Text('A+',
-        style: TextStyle(
-            fontWeight: FontWeight.w500,
-            color: MunusColors.textDiscrete)),
-    onPressed: () =>
-        ref.read(fontSizeProvider.notifier).increase(),
-  ),
-  IconButton(
-    icon: Icon(
-  showOptional ? Icons.visibility : Icons.visibility_off,
-  color: MunusColors.textRubric,
-),
-    tooltip: showOptional
-        ? 'Ocultar rúbricas opcionales'
-        : 'Mostrar rúbricas opcionales',
-    onPressed: () => setState(() => showOptional = !showOptional),
-  ),
-],
-      ),
-      body: FutureBuilder<Celebration>(
-        future: _celebrationFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState != ConnectionState.done) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          }
-          final celebration = snapshot.data!;
-          final elements = celebration.sections.first.elements.where((e) {
-            if (!showOptional &&
-                e.type == LiturgicalElementType.rubric &&
-                !e.isRequired) {
-              return false;
+      tooltip: showOptional
+          ? 'Ocultar rúbricas opcionales'
+          : 'Mostrar rúbricas opcionales',
+      onPressed: () => setState(() => showOptional = !showOptional),
+    ),
+  ],
+        ),
+        body: FutureBuilder<Celebration>(
+          future: _celebrationFuture,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState != ConnectionState.done) {
+              return const Center(child: CircularProgressIndicator());
             }
-            return true;
-          }).toList();
-
-          return preferencesAsync.when(
-            loading: () =>
-                const Center(child: CircularProgressIndicator()),
-            error: (_, _) => const Center(
-                child: Text('Error al cargar preferencias')),
-            data: (preferences) {
-              final fontSize = ref.watch(fontSizeProvider);
-              final elementWidgets = _buildElementWidgets(
-                  elements, preferences, fontSize, celebrationId);
-
-              if (!_tourLaunched) {
-                _hasSeenTourFuture.then(_maybeShowCelebrationTour);
+            if (snapshot.hasError) {
+              return Center(child: Text('Error: ${snapshot.error}'));
+            }
+            final celebration = snapshot.data!;
+            final elements = celebration.sections.first.elements.where((e) {
+              if (!showOptional &&
+                  e.type == LiturgicalElementType.rubric &&
+                  !e.isRequired) {
+                return false;
               }
+              return true;
+            }).toList();
 
-              return PrimaryScrollController(
-  controller: _scrollController,
-  child: ListView(
-    padding: const EdgeInsets.symmetric(
-        horizontal: 24, vertical: 32),
-    children: elementWidgets,
-  ),
-);
-            },
-          );
-        },
+            return preferencesAsync.when(
+              loading: () =>
+                  const Center(child: CircularProgressIndicator()),
+              error: (_, _) => const Center(
+                  child: Text('Error al cargar preferencias')),
+              data: (preferences) {
+                final fontSize = ref.watch(fontSizeProvider);
+                final elementWidgets = _buildElementWidgets(
+                    elements, preferences, fontSize, celebrationId);
+
+                if (!_tourLaunched) {
+                  _hasSeenTourFuture.then(_maybeShowCelebrationTour);
+                }
+
+                return ListView(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 24, vertical: 32),
+                  children: elementWidgets,
+                );
+              },
+            );
+          },
+        ),
       ),
     );
   }
