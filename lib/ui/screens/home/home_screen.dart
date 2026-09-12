@@ -64,6 +64,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     await _showSingleTarget(regionalToggleTarget(_regionalToggleKey));
     if (!mounted) return;
 
+    // El paso anterior deja el scroll abajo del todo (ahí vive el
+    // selector CEA/CEE) -- lo volvemos arriba antes de soltar al
+    // usuario, para que no arranque a usar la app con la lista de
+    // rituales scrolleada hasta el final sin haber tocado nada.
+    if (_scrollController.hasClients) {
+      await _scrollController.animateTo(
+        0,
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeOut,
+      );
+    }
+    if (!mounted) return;
+
     ref.read(homeTourServiceProvider).markAsSeen();
     showTourFinishDialog(
       context,
