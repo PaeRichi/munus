@@ -81,11 +81,21 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
     super.dispose();
   }
 
-  void _maybeShowCelebrationTour(bool hasSeenTour) {
+void _maybeShowCelebrationTour(bool hasSeenTour) {
     if (hasSeenTour || _tourLaunched) return;
     _tourLaunched = true;
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      if (!mounted) return;
+      // Delay defensivo: providers async separados del que gatilla el
+      // tour (ej. favoritesProvider, que decide cómo se ve el ícono de
+      // favorito) pueden resolver y disparar un rebuild justo después del
+      // primer frame, corriendo levemente la posición de los íconos del
+      // AppBar. Sin este respiro, el tour a veces terminaba apuntando a
+      // un ícono equivocado -- reportado en ambas plataformas, apuntando
+      // a un ícono DISTINTO cada vez, patrón típico de una carrera de
+      // tiempos y no de un error de cálculo fijo.
+      await Future.delayed(const Duration(milliseconds: 300));
       if (!mounted) return;
       // Ya no hace falta chequear si _optionsKey está montado: si
       // _optionsElementFound es true, el scroll automático (ver
@@ -113,7 +123,6 @@ class _CelebrationScreenState extends ConsumerState<CelebrationScreen> {
       ).show(context: context);
     });
   }
-
   List<Widget> _buildElementWidgets(
     List<LiturgicalElement> elements,
     Map<String, String> preferences,
