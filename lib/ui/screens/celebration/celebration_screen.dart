@@ -341,11 +341,15 @@ void _maybeShowCelebrationTour(bool hasSeenTour) {
                   _hasSeenTourFuture.then(_maybeShowCelebrationTour);
                 }
 
-                return ListView(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 24, vertical: 32),
-                  children: elementWidgets,
-                );
+                return SafeArea(
+  top: false,
+  bottom: true,
+  child: ListView(
+    padding: const EdgeInsets.symmetric(
+        horizontal: 24, vertical: 32),
+    children: elementWidgets,
+  ),
+);
               },
             );
           },
