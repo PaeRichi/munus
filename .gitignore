@@ -117,3 +117,16 @@ app.*.symbols
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Android Studio / IntelliJ local files
+.idea/workspace.xml
+.idea/caches/
+.idea/markdown.xml
+.idea/studiobot.xml
+.idea/vcs.xml
+.idea/libraries/Dart_SDK.xml
+.idea/libraries/Flutter_Plugins.xml
